@@ -95,6 +95,7 @@ const NavBar = () => {
                                     Contacto
                                 </a>
                             </li>
+                    
                         </ul>
                     </nav>
                 </header>
@@ -139,6 +140,13 @@ const NavBar = () => {
               <a href="#" className="nav-menu-link nav-link nav-menu-link_active">
                 Contacto
               </a>
+            </li>
+            <li className="nav-menu-item">
+            <Link to="/contact">
+            <button className="button3" id="dog" >
+              Crear Perro
+            </button>
+          </Link>
             </li>
           </ul>
         </nav>

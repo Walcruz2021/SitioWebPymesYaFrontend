@@ -9,18 +9,51 @@
 // );
 
 
+// import React from 'react';
+// import {Provider} from "react-redux"
+// import { createRoot } from 'react-dom/client';
+// import { store } from './store'
+// import Home from './pages/Home/Home';
+// // import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import ReactDOM from 'react-dom';
+// import {BrowserRouter} from 'react-router-dom';
+// const root = createRoot(document.getElementById('root') as HTMLDivElement);
+
+// root.render(
+//   <React.StrictMode>
+
+//       <Home />
+
+//   </React.StrictMode>
+// );
+
+
+// root.render(
+//   <React.StrictMode>
+// <BrowserRouter>
+//       <Home />
+// </BrowserRouter>
+
+//   </React.StrictMode>
+// );
+
+// ReactDOM.render((
+//   <BrowserRouter>
+//       <App/>
+//   </BrowserRouter>
+// ), document.getElementById('root')); 
+
+// registerServiceWorker();
+
 import React from 'react';
-import {Provider} from "react-redux"
-import { createRoot } from 'react-dom/client';
-import { store } from './store'
-import Home from './pages/Home/Home';
+import ReactDOM from 'react-dom';
 
-const root = createRoot(document.getElementById('root') as HTMLDivElement);
+import App from "./App"
 
-root.render(
+
+ReactDOM.render(
   <React.StrictMode>
-
-      <Home />
-
-  </React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );

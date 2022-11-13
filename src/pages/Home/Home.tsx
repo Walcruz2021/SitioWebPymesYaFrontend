@@ -64,7 +64,7 @@ const Home = () => {
     //console.log(selectCompanies.companies[0].nameCompany,"dsfsdf")
     return (
         <>
- <Link to="/createDog">
+ <Link to="/contact">
             <button className="button3" id="dog" >
               Crear Perro
             </button>
