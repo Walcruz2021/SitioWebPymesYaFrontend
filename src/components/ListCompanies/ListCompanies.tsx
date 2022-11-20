@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
-
+import { Link } from 'react-router-dom';
 import useFetchVip from '../../hooks/useFetchVip';
 import { ProductItem } from '../../types/typeApp';
 import Company from './Company/Company';
@@ -19,16 +19,19 @@ const ListCompanies = () => {
             {
                 companies && companies.map(company => (
                     <div className="ContainerCompany">
-                        <Company
-                            key={company._id}
-                            company={company}
-                        />
+                        <Link to={`/detailsCompany/${company._id}`}>
+                            <Company
+                                key={company._id}
+                                company={company}
+                            />
+                        </Link>
                     </div>
+
 
                 ))
             }
 
-        </div>
+        </div >
     )
 }
 

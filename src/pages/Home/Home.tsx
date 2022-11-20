@@ -4,7 +4,7 @@ import ListCompanies from '../../components/ListCompanies/ListCompanies'
 import { useSelector, useDispatch } from 'react-redux';
 import useFetchCat from '../../hooks/useFetchCat';
 import useFetchSelect from '../../hooks/useFetchSelect';
-import { getTurnos } from '../../reducer/actions'
+
 import Select from "react-select"
 import './styles.css';
 import { CompanyItem } from '../../types/typeApp';
@@ -40,11 +40,11 @@ const Home = () => {
         isError: false
     })
 
-    useEffect(()=>{
+    useEffect(() => {
         setSelectCompanies({
-            ...selectCompanies,isLoading:false
+            ...selectCompanies, isLoading: false
         })
-    },[])
+    }, [])
 
     const buttonSelected = async (select: any) => {
         setSelectCompanies({
@@ -53,7 +53,7 @@ const Home = () => {
             isError: false
         });
         const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${select.value}`);
-        if(response.data.listCompanies.length>0){
+        if (response.data.listCompanies.length > 0) {
             setSelectCompanies({
                 companies: response.data.listCompanies,
                 isLoading: false,
@@ -64,11 +64,11 @@ const Home = () => {
     //console.log(selectCompanies.companies[0].nameCompany,"dsfsdf")
     return (
         <>
- <Link to="/contact">
-            <button className="button3" id="dog" >
-              Crear Perro
-            </button>
-          </Link>
+            <Link to="/contact">
+                <button className="button3" id="dog" >
+                    Crear Perro
+                </button>
+            </Link>
 
             <NavBar />
 
@@ -82,17 +82,19 @@ const Home = () => {
             {selectCompanies.companies.length > 0 && <h1>{selectedOption.label}</h1>}
             <div className="ContainerListComp">
 
-                {selectCompanies.isLoading ==false?
-                    
+                {selectCompanies.isLoading == false ?
+
                     selectCompanies.companies.map(comp => (
-                    <div className="ContainerCompany">
-                       <Company
-                        key={comp._id}
-                        company={comp}
-                       />
-                    </div>
-                   ))
-                : <h1>cargando...</h1>
+                        <div className="ContainerCompany">
+                            <Link to={`/detailsCompany/${comp._id}`}>
+                            <Company
+                                key={comp._id}
+                                company={comp}
+                            />
+                            </Link>
+                        </div>
+                    ))
+                    : <h1>cargando...</h1>
                 }
             </div>
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
