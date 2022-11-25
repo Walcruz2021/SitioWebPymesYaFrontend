@@ -19,7 +19,8 @@ const Company = ({company}: Props) => {
                 <p>
                     identifier: ${company.identifier}
                 </p>
-                
+                <img src={company.avatar} />
+                {/* <img>{company.avatar}</img> */}
                 {/* <Button variant="primary" onClick={() => handleAddToCart(product)}>Agregar al carrito</Button> */}
             </div>
         

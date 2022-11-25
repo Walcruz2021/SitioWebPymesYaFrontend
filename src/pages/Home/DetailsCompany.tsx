@@ -37,6 +37,7 @@ const DetailsCompany = () => {
                 <p>{details.phone}</p>
                 <p>{details.country}</p>
                 <p>{details.cityName}</p>
+                <img src={details.avatar} />
             </div>
             
                 : <h1>Loading....</h1>

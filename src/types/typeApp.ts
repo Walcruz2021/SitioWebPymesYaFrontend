@@ -27,6 +27,7 @@ export type ProductItem = {
 
 export type CompanyItem={
     _id:number,
+    avatar:any,
     nameCompany:String,
     identifier:number,
     phone:number,
