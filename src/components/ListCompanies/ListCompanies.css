@@ -5,12 +5,67 @@
 .ContainerCompany{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    border:1px;
-    background-color: white;
+ 
     gap:15px;
-    margin-top: 10px;
-    border: 1.19px solid rgba(224, 224, 224, 1);
-    margin-left: 10px;
-    margin-right: 10px;
-    padding: 20px;
+   
+
+    /* estilos a las imagenes */
+    
+}
+
+.grid-container{
+display: grid;
+
+/*repite 12 columnas de 240px cada una (pero no seran responsive) */
+/*grid-template-columns: repeat(12,240px)*/
+
+/* creara columnas segun sea necesario dependiendo del ancho de la pantalla */
+/*grid-template-columns: repeat(auto-fill,240px);*/
+
+/* con esto el ancho de las columnas se va a ir adaptando al ancho del grid y no sera un ancho estatico */
+/* el fill a medida que se vaya agrandando la pantalla si en el caso las cards pocas generara un espacio "invisible"
+a los costados reservando ese lugar  */
+
+/* grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); */
+
+/* en eset caso a diferencia del fill, el fit no reservara ese espacio, por tanto las cards abarcaran todo el espacio
+disponible en la pantalla */
+grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+
+
+/* tamaño de las filas */
+grid-auto-rows:minmax(200px,auto);
+
+/* separacion de las cards */
+gap:20px
+}
+
+.grid-item{
+    display: grid;
+    align-items:center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    border: solid 1px rgb(255,255,255);
+    background-color: aqua;
+    
+}
+
+.grid-item:hover{
+    filter:opacity(0.9);
+    transform:scale(1.04)
+}
+
+/* con esto le damos estilos especificamente a la primera card la cual seria mas ancha que las demas*/
+.item1{
+    /* comeinza en la linea 1 (recordar que el gris se divide en lineas por cada cards que exista)*/
+/* grid-column-start:1; */
+/* finaliza en la linea 3 */
+/* grid-column-end:3; */
+
+/* reemplazara a los codigos anteriores (start y end) */
+
+/* grid-column: 1/-1; */
+/* otra forma */
+
+grid-column: 1/span 3;
 }

@@ -9,7 +9,7 @@
   }
   
   .header {
-    background-color: #0769e9;
+    background-color: #070708;
     height: 80px;
     position: fixed;
     width: 100%;
@@ -44,7 +44,7 @@
   }
   
   .nav-menu-item {
-    font-size: 18px;
+    font-size: 12px;
     margin: 0 10px;
     line-height: 80px;
     text-transform: uppercase;

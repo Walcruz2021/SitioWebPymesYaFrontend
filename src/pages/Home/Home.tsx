@@ -64,21 +64,9 @@ const Home = () => {
     //console.log(selectCompanies.companies[0].nameCompany,"dsfsdf")
     return (
         <>
-            <Link to="/contact">
-                <button className="button3" id="dog" >
-                    Crear Perro
-                </button>
-            </Link>
-
             <NavBar />
-
-            <Container>
                 <Select defaultValue={selectedOption} options={arrayOptions} onChange={setSelectedOption} />
                 <button onClick={() => buttonSelected(selectedOption)}>Buscar</button>
-
-            </Container>
-
-
             {selectCompanies.companies.length > 0 && <h1>{selectedOption.label}</h1>}
             <div className="ContainerListComp">
 
@@ -98,9 +86,9 @@ const Home = () => {
                 }
             </div>
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
-            <Container>
+            <div>
                 <ListCompanies />
-            </Container>
+            </div>
 
         </>
     )

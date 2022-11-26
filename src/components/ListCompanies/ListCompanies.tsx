@@ -15,6 +15,7 @@ const ListCompanies = () => {
     if (isLoading) return <h1>Cargando...</h1>
 
     return (
+        <>
         <div className="ContainerListComp">
             {
                 companies && companies.map(company => (
@@ -31,7 +32,21 @@ const ListCompanies = () => {
                 ))
             }
 
-        </div >
+        </div> 
+
+        {/* video 
+        https://www.youtube.com/watch?v=f3902x_dqqQ&ab_channel=YoelvisMulen%7Bcode%7D */}
+        {/* <div className="grid-container">
+         <div className="grid-item item1">1</div>
+         <div className="grid-item">2</div>
+         <div className="grid-item">3</div>
+         <div className="grid-item">4</div>
+         <div className="grid-item">5</div>
+         <div className="grid-item">6</div>
+         <div className="grid-item">7</div>
+         <div className="grid-item">8</div>
+        </div> */}
+        </>
     )
 }
 

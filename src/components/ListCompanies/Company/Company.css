@@ -1,8 +1,50 @@
 
 .CardCompany{
     padding: 10px;
+background-color: white;
+    /* para que todo elemento que este fuera del contenedor card se oculte y no aparezca afuera*/
+    overflow: hidden;
+    transition:all 400ms ease;
+    
+    margin-top: 10px;
+    border: 1.19px solid rgba(224, 224, 224, 1);
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+
+    /* estilo a las imagenes */
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+
+
 }
-.CardCompany h4{
+
+
+.CardCompany:hover {
+box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+/* al posicionar el mouse se trasladara hacia arriba */
+transform: translateY(-3%);
+}
+
+.CardCompany img{
+    width: 100%;
+    height: 300px;
+}
+
+.CardCompany .Contenido h4{
 font-size: 1rem;
 text-align: center;
+text-decoration: none;
+font-weight: 400;
+margin-bottom: 10px;
 }
+
+.CardCompany .Contenido p{
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    /* espacio por cada parrafo */
+    line-height: 1.5;
+    color:#6a6a6a
+    }
