@@ -20,12 +20,13 @@ const ListCompanies = () => {
             {
                 companies && companies.map(company => (
                     <div className="ContainerCompany">
-                        <Link to={`/detailsCompany/${company._id}`}>
+                        <Link style={{ textDecoration: 'none'}}  to={`/detailsCompany/${company._id}`}>
                             <Company
                                 key={company._id}
                                 company={company}
                             />
                         </Link>
+                        
                     </div>
 
 

@@ -34,6 +34,8 @@ const Home = () => {
     }
     const [loading, setLoading] = useState<Boolean>(false)
     const [selectedOption, setSelectedOption] = useState<any>(null)
+
+    console.log(selectedOption)
     const [selectCompanies, setSelectCompanies] = useState<CompanyFetch>({
         companies: [],
         isLoading: true,
@@ -62,10 +64,24 @@ const Home = () => {
         }
     }
     //console.log(selectCompanies.companies[0].nameCompany,"dsfsdf")
+
+    const carga = function (e: React.ChangeEvent<HTMLInputElement>, value: any) {
+        const opcion = e.target.value;
+        setSelectCompanies(opcion);
+      };
+
     return (
         <>
             <NavBar />
-                <Select defaultValue={selectedOption} options={arrayOptions} onChange={setSelectedOption} />
+                {/* <Select defaultValue={selectedOption} options={arrayOptions} onChange={setSelectedOption} /> */}
+                <select name="categorias" id="categoria" onClick={carga}>
+                <option value={-1}>Seleccione opcion</option>
+        {arrayOptions.map((item, i) => (
+          <option value={i}>
+            {item.label}
+          </option>
+        ))} 
+                </select>
                 <button onClick={() => buttonSelected(selectedOption)}>Buscar</button>
             {selectCompanies.companies.length > 0 && <h1>{selectedOption.label}</h1>}
             <div className="ContainerListComp">
@@ -74,7 +90,7 @@ const Home = () => {
 
                     selectCompanies.companies.map(comp => (
                         <div className="ContainerCompany">
-                            <Link to={`/detailsCompany/${comp._id}`}>
+                            <Link style={{ textDecoration: 'none'}} to={`/detailsCompany/${comp._id}`}>
                             <Company
                                 key={comp._id}
                                 company={comp}

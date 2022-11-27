@@ -13,7 +13,7 @@ const Company = ({company}: Props) => {
     
             <div className="CardCompany">
 
-<img src={company.avatar} />
+                <img src={company.avatar} />
 
 
                 <div className="Contenido">
@@ -22,8 +22,9 @@ const Company = ({company}: Props) => {
                     {company.notesComp}
                 </p>
                 <p>
-                    identifier: ${company.identifier}
-                </p>    
+                    identifier: {company.identifier}
+                </p>
+                <p>dfsdf</p>    
                 </div>
                 
                 
