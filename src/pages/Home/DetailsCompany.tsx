@@ -5,6 +5,8 @@ import { faShoppingCart, faBars,faMobile,faAddressCard} from '@fortawesome/free-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import NavBar from "../../components/NavBar/NavBar"
 import axios from 'axios'
+import "./DetailsCompany.css"
+import IonIcon from '@reacticons/ionicons';
 
 const DetailsCompany = () => {
 
@@ -29,15 +31,21 @@ const DetailsCompany = () => {
         <div>
          <NavBar/>
             {details ?
-            <div>
+            <div className="containerDetails">
                 <h1>{details.nameCompany}</h1>
+                <img src={details.avatar} />
                 <p>{details.notesComp}</p>
-                <FontAwesomeIcon icon={faAddressCard} />
+                <div className="icon">
                
+                <IonIcon className="IconPhone" name="call-outline"></IonIcon>
+                <IonIcon name="home-outline"></IonIcon>
+
+                </div>
+           
                 <p>{details.phone}</p>
                 <p>{details.country}</p>
                 <p>{details.cityName}</p>
-                <img src={details.avatar} />
+               
             </div>
             
                 : <h1>Loading....</h1>

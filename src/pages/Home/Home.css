@@ -1,3 +1,31 @@
 h1,h2,h3{
     text-align: center;
 }
+
+
+.select{
+    position: fixed;
+}
+
+.contenedorEmpresa{
+    margin-top: 50px;
+}
+
+.containerSelect{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+    
+}
+
+.containerSelect button{
+    color: white;
+    background-color: rgb(44, 99, 161);
+    cursor: pointer;
+    
+}
+
+.containerFind{
+    margin-top: 15px;
+}

@@ -16,6 +16,8 @@
     top: 0;
     left: 0;
   }
+
+
   
   .nav {
     display: flex;
@@ -133,5 +135,16 @@
     .nav-toggle:focus:not(:focus-visible) {
       outline: none;
     }
+    
+    .select{
+      margin-top: 50px;
+      width: 100%;
+    }
+
   }
   
+  .select{
+    margin-top: 20px;
+    width: 40%;
+  }
+

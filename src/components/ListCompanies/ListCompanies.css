@@ -50,10 +50,10 @@ gap:20px
     
 }
 
-.grid-item:hover{
+/* .grid-item:hover{
     filter:opacity(0.9);
     transform:scale(1.04)
-}
+} */
 
 /* con esto le damos estilos especificamente a la primera card la cual seria mas ancha que las demas*/
 .item1{

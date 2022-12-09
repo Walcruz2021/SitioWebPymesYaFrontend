@@ -16,16 +16,10 @@ background-color: white;
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
-
-
 }
 
 
-.CardCompany:hover {
-box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-/* al posicionar el mouse se trasladara hacia arriba */
-transform: translateY(-3%);
-}
+
 
 .CardCompany img{
     width: 100%;

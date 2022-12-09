@@ -4,12 +4,17 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import { Badge, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+
+import { CompanyFetch } from '../../types/typeApp';
 import "./NavBar.css"
+
 
 const NavBar = () => {
 
-  const [state, setState] = useState<Boolean>(false)
 
+
+  const [state, setState] = useState<Boolean>(false)
+  const [selectedOption, setSelectedOption] = useState<any>(null)
 
   const handleButton = () => {
     setState(!state)
@@ -39,6 +44,7 @@ const NavBar = () => {
 
       {state ? <>
         <header className="header">
+
           <nav className="nav">
             <Link className="logo nav-link" to="/">
               Logo
@@ -78,15 +84,19 @@ const NavBar = () => {
 
             </ul>
           </nav>
+
         </header>
       </> : <>
+
+      {/* aqui es cuando se aprieta el icono Hamburguesa */}
+        
         <header className="header">
           <nav className="nav">
             <Link to="/" className="logo nav-link">
               Logo
             </Link>
 
-
+           
             <button className="nav-toggle" aria-label="Abrir menú">
               {/* <i className="fas fa-bars"></i> */}
 

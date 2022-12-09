@@ -4,7 +4,6 @@ import ListCompanies from '../../components/ListCompanies/ListCompanies'
 import { useSelector, useDispatch } from 'react-redux';
 import useFetchCat from '../../hooks/useFetchCat';
 import useFetchSelect from '../../hooks/useFetchSelect';
-
 import Select from "react-select"
 import './styles.css';
 import { CompanyItem } from '../../types/typeApp';
@@ -65,46 +64,53 @@ const Home = () => {
     }
     //console.log(selectCompanies.companies[0].nameCompany,"dsfsdf")
 
-    const carga = function (e: React.ChangeEvent<HTMLInputElement>, value: any) {
-        const opcion = e.target.value;
-        setSelectCompanies(opcion);
-      };
-
     return (
         <>
             <NavBar />
-                {/* <Select defaultValue={selectedOption} options={arrayOptions} onChange={setSelectedOption} /> */}
-                <select name="categorias" id="categoria" onClick={carga}>
-                <option value={-1}>Seleccione opcion</option>
-        {arrayOptions.map((item, i) => (
-          <option value={i}>
-            {item.label}
-          </option>
-        ))} 
-                </select>
+
+            {/* LISTADO DE EMPRESAS */}
+            <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+            <div>
+                <ListCompanies />
+            </div>
+
+
+            {/* SELECCION DE EMPRESA A BUSCAR */}
+
+
+            <div className="containerSelect">
+                <Select defaultValue={selectedOption} options={arrayOptions} onChange={setSelectedOption} />
                 <button onClick={() => buttonSelected(selectedOption)}>Buscar</button>
-            {selectCompanies.companies.length > 0 && <h1>{selectedOption.label}</h1>}
+
+            </div>
+
+            <div className="containerFind">
+                {selectCompanies.companies.length > 0 && <h1>{selectedOption.label}</h1>}
+
+            </div>
+
+
             <div className="ContainerListComp">
 
                 {selectCompanies.isLoading == false ?
 
                     selectCompanies.companies.map(comp => (
                         <div className="ContainerCompany">
-                            <Link style={{ textDecoration: 'none'}} to={`/detailsCompany/${comp._id}`}>
-                            <Company
-                                key={comp._id}
-                                company={comp}
-                            />
+                            <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+                                <Company
+                                    key={comp._id}
+                                    company={comp}
+                                />
                             </Link>
                         </div>
                     ))
                     : <h1>cargando...</h1>
                 }
             </div>
-            <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
-            <div>
-                <ListCompanies />
-            </div>
+
+
+
+
 
         </>
     )
