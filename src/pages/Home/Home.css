@@ -23,6 +23,7 @@ h1,h2,h3{
     color: white;
     background-color: rgb(44, 99, 161);
     cursor: pointer;
+    border: white;
     
 }
 

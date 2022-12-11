@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useContext } from 'react';
 import { Badge, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import IonIcon from '@reacticons/ionicons';
 
 import { CompanyFetch } from '../../types/typeApp';
 import "./NavBar.css"
@@ -66,19 +67,19 @@ const NavBar = () => {
             <ul className="nav-menu">
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link" to="ourCompany">
-                  Nuestra Empresa
+                <IonIcon className="IconSideBar" name="people-outline"></IonIcon>
                 </Link>
               </li>
 
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link" to="ourCompany">
-                  Sitio Web a tu Medida
+                <IonIcon className="IconSideBar" name="globe-outline"></IonIcon>
                 </Link>
               </li>
 
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link nav-menu-link_active" to="/contact">
-                  Contacto
+                <IonIcon className="IconSideBar" name="chatbubble-ellipses-outline"></IonIcon>
                 </Link>
               </li>
 
@@ -112,20 +113,24 @@ const NavBar = () => {
 
             <ul className="nav-menu nav-menu_visible">
               <li className="nav-menu-item">
+              
                 <Link className="nav-menu-link nav-link" to="ourCompany">
-                  Nuestra Empresa
+                <IonIcon className="IconSideBar" name="people-outline"></IonIcon>
+
                 </Link>
               </li>
 
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link" to="ourCompany">
-                  Sitio Web a tu Medida
+                <IonIcon className="IconSideBar" name="globe-outline"></IonIcon>
+       
                 </Link>
               </li>
 
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link nav-menu-link_active" to="/contact">
-                  Contacto
+                <IonIcon className="IconSideBar" name="chatbubble-ellipses-outline"></IonIcon>
+
                 </Link>
               </li>
             </ul>

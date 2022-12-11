@@ -44,25 +44,54 @@
     margin-right: 40px;
     list-style: none;
   }
+
+ 
+.nav-menu li{
+position: relative;
+list-style: none;
+/* display: inline-block; */
+margin: 0 20px;
+color: white;
+}
+
+
+  /* con esto le ponemos una linea con transicion en los items del menu */
+.nav-menu li::before{
+  content:"";
+  height: 3px;
+  width: 0%;
+  background-color: aliceblue;
+  position: absolute;
+  left: 0;
+  /* mientras mas px tenga menos separada estara la linea del item */
+  bottom: 30px;
+  transition: 0.4s ease-out;
+}
+
+.nav-menu li:hover::before{
+  width: 100%;
+}
+
   
   .nav-menu-item {
     font-size: 12px;
     margin: 0 10px;
-    line-height: 80px;
+    line-height: 90px;
     text-transform: uppercase;
     width: max-content;
+
   }
   
-  .nav-menu-link {
+  /* .nav-menu-link {
     padding: 8px 12px;
     border-radius: 3px;
-  }
+  } */
   
-  .nav-menu-link:hover,
+  /* .nav-menu-link:hover,
   .nav-menu-link_active {
     background-color: #034574;
     transition: 0.5s;
-  }
+  } */
   
   /* TOGGLE */
   .nav-toggle {
@@ -79,6 +108,14 @@
   
 .container{
   width: 90%;
+}
+
+
+.IconSideBar{
+  font-size: 25px;
+  color: white;
+  margin-right: 5px;
+
 }
 
   /* MOBILE */
@@ -117,11 +154,22 @@
     .nav-menu-item {
       line-height: 70px;
     }
-  
-    .nav-menu-link:hover,
-    .nav-menu-link_active {
-      background: none;
-      color: #83c5f7;
+
+
+  /* con esto le ponemos una linea con transicion en los items del menu */
+    .nav-menu li::before{
+      content:"";
+      height: 3px;
+      width: 0%;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      transition: 0.4s ease-out;
+    }
+    
+    .nav-menu li:hover::before{
+      width: 100%;
     }
   
     .nav-toggle {

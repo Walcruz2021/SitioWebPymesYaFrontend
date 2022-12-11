@@ -34,16 +34,19 @@ const DetailsCompany = () => {
             <div className="containerDetails">
                 <h1>{details.nameCompany}</h1>
                 <img src={details.avatar} />
+                
+                <IonIcon className="IconCss" name="bookmarks-outline"></IonIcon>
                 <p>{details.notesComp}</p>
-                <div className="icon">
+              
                
-                <IonIcon className="IconPhone" name="call-outline"></IonIcon>
-                <IonIcon name="home-outline"></IonIcon>
-
-                </div>
-           
+                <IonIcon className="IconCss" name="call-outline"></IonIcon>
                 <p>{details.phone}</p>
+                
+                <IonIcon className="IconCss" name="home-outline"></IonIcon>
                 <p>{details.country}</p>
+                
+                
+           
                 <p>{details.cityName}</p>
                
             </div>

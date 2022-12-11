@@ -1,10 +1,16 @@
 import NavBar from "../../components/NavBar/NavBar"
 import "./OurCompany.css"
+import eccomerce from "./imagenes/ecomerce.jpg"
+import sitioWeb from "./imagenes/sitioweb.jpg"
+import software from "./imagenes/softwareEmp.png"
+
+
 
 const OurCompany = () => {
     return (
         <div>
             <NavBar />
+         <div className="ContainerServ">   
             <h1>Nuestra Empresa</h1>
             <div className="classPortada">
                 <p>Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual
@@ -14,11 +20,16 @@ const OurCompany = () => {
                     ventajas competitivas con los cuales podras posicionarte en le mercado</p>
             </div>
 
-            <h5>Ofrecemos tres Servicios</h5>
 
-            <div className="ContainerServ">
+            <h5 className="titServ">Ofrecemos tres Servicios</h5>
+    
+            <div className="ContainerServ2">
+
             <div className="grid-container">
-                <h5 className="titServA">e-Commerce</h5>
+                <div className="titServA">
+                <img src={eccomerce}></img>
+                </div>
+
                 <div className="titServB">
                     <p>eCommerce o Comercio Electronico es la practica de comprar y vender productos a traves de tu sitio Web
                         Tu tienda online estara disponible en todo el mundo. Recuerda que con tu tienda virtual, los clientes tendran acceso a tus productos
@@ -31,7 +42,9 @@ const OurCompany = () => {
             </div>
 
             <div className="grid-container">
-                <h6 className="titServA">SITIOS PARA GESTION DE DATOS</h6>
+                <div className="titServA">
+                <img src={software}></img>
+                </div>
                 <div className="titServB">
                     <p>PymesWeb ofrece un sitios web,accesible solo para la empresa contratante, que te permitira gestionar tus ventas,inventarios,compras, turnos en caso de que seas un consultorio,etc
                         Puedes ver un ejemplo de un Gestion de Turno para una Peluqueria Canina en el siguiente 
@@ -42,8 +55,10 @@ const OurCompany = () => {
             </div>
 
             <div className="grid-container">
+                <div className="titServA">
 
-                <h6 className="titServA">Sitio Web Basico</h6>
+                <img src={sitioWeb}></img>
+                </div>
                 <div className="titServB">
                     <p>Que lo BASICO no te confunda, con este sitio Web podras posicionar tu marca y tener un reconocimiento tanto a nivel Local como Nacional
                         Al estar diseñadas para verse desde cualquier parte del mundo, tendras la posibilidad de abrir fronteras y de que los clientes que no puedan ir a tu negocio
@@ -53,7 +68,7 @@ const OurCompany = () => {
 
             </div>
             </div>
-         
+            </div>
         </div>
 
     )
