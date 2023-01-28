@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { Badge, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
-
+import {FaGithub} from "react-icons/fa"
 import { CompanyFetch } from '../../types/typeApp';
 import "./NavBar.css"
 
@@ -90,14 +90,14 @@ const NavBar = () => {
       </> : <>
 
       {/* aqui es cuando se aprieta el icono Hamburguesa */}
-        
+
         <header className="header">
           <nav className="nav">
             <Link to="/" className="logo nav-link">
               Logo
             </Link>
 
-           
+
             <button className="nav-toggle" aria-label="Abrir menú">
               {/* <i className="fas fa-bars"></i> */}
 
@@ -113,17 +113,17 @@ const NavBar = () => {
 
             <ul className="nav-menu nav-menu_visible">
               <li className="nav-menu-item">
-              
                 <Link className="nav-menu-link nav-link" to="ourCompany">
                 <IonIcon className="IconSideBar" name="people-outline"></IonIcon>
 
                 </Link>
+
               </li>
 
               <li className="nav-menu-item">
                 <Link className="nav-menu-link nav-link" to="ourCompany">
+                {/* <IonIcon className="IconSideBar" name="globe-outline"></IonIcon> */}
                 <IonIcon className="IconSideBar" name="globe-outline"></IonIcon>
-       
                 </Link>
               </li>
 

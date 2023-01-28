@@ -36,12 +36,14 @@ export type CompanyItem={
     country:string,
     cityName:string,
     level:number,
-    Category:string 
+    Category:string,
+    siteWeb:string 
 }
 
 export type CategoryItem={
     _id:string,
     name:string,
+    logo:string
 }
 
 

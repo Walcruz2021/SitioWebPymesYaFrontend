@@ -1,14 +1,16 @@
 import { Button, Card } from 'react-bootstrap';
 import { CompanyItem } from '../../../types/typeApp';
-
+import IonIcon from '@reacticons/ionicons';
 import './Company.css'
 
 type Props = {
     company: CompanyItem;
    
 }
+// ESTE COMPONENTE ES EL QUE SE IMPRIME AL CARGAR LA PAGINA PRINCIPAL
 
 const Company = ({company}: Props) => {
+    console.log(company,"--->")
     return (
     
             <div className="CardCompany">
@@ -17,14 +19,10 @@ const Company = ({company}: Props) => {
 
 
                 <div className="Contenido">
-                <h4>{company.nameCompany}</h4>
+                <h4>{company.nameCompany}</h4>  
                 <p>
-                    {company.notesComp}
+                    {company.cityName}-{company.country}
                 </p>
-                <p>
-                    identifier: {company.identifier}
-                </p>
-                <p>dfsdf</p>    
                 </div>
                 
                 

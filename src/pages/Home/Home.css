@@ -1,8 +1,12 @@
 h1,h2,h3{
     text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-
+body{
+    background-color: white;
+}
 .select{
     position: fixed;
 }
@@ -30,3 +34,146 @@ h1,h2,h3{
 .containerFind{
     margin-top: 15px;
 }
+
+
+
+.IconSearch{
+    font-size: 25px;
+    color:white;
+    margin-top: 15px;
+}
+
+.IconButton{
+    display:grid;
+    text-align: center;
+    background-color: black;
+    border: 0cm;
+    cursor: pointer;
+}
+
+.containerWeb{
+    padding: 1rem;
+    background-image: url(../Home/imagenes/sitioweb2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 15px;
+    height: 25rem;
+}
+
+.containerWeb h4{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+}
+
+.buttonBanner{
+
+    border: 2.5px solid #4CAF50; /* Green */
+    padding: 20px;
+    margin: auto;
+    margin-top: 8rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    cursor:pointer;
+    width:15rem;
+    color:white
+}
+
+.buttonBanner:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}   
+
+.buttonBanner {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.iconHosp{
+    height: 40px;
+    color: white;    
+}
+
+.containerSearch{
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    margin-bottom: 15px;  */
+    background-color: black;
+    padding: 0.5rem;
+    height:14rem;
+} 
+
+  
+  .containerButtons {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    
+    /* position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  */
+  }
+  
+  .containerButtons li {
+    list-style: none;
+    margin: 10px 20px;
+    text-align: center;
+  }
+
+  .containerButtons h6{
+    text-align: center;
+  }
+  
+  .containerButtons li button {
+    /* este junto con position:relative top:50% left:50% transform:translate (...) de .containerButtons provocan que los iconos queden fijos */
+    /* position: relative;   */
+    
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 63px;
+    background: #333;
+    border-radius: 20%;
+    font-size: 30px;
+    color: #666;
+    transition: .5s;
+  }
+
+  .titButton{
+    font-size: 1rem;
+    color: #666;
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+  
+  .containerButtons li button::before {
+    /* hace mas ancho la luz intermitente del costado (content y position) */
+    content: '';
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    /* background: #ffee10; */
+    transition: .5s;
+    transform: scale(.9);
+    /* z-index: -1; ubica al icono en elc entro */
+    z-index: -1;  
+}
+  
+  .containerButtons li button:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  }
+  
+  .containerButtons li button:hover {
+    color: #ffee10;
+    box-shadow: 0 0 15px #ffee10;
+    text-shadow: 0 0 15px #ffee10;
+  }

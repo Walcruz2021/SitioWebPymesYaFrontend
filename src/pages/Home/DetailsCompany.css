@@ -1,12 +1,27 @@
 .containerDetails{
-    width: 100%;
+    width: 40%;
     text-align: center;
     padding: 20x;
     margin-top: 15px;
+    margin: auto;
+}
+
+.containerDetailsInt{
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 15px;
 }
 
 
+.containerDetailsInt p{
+  margin-top: 15px;
+  color:#929191 ;
+}
+
   .IconCss{
     font-size: 25px;
-    color:#424242
+    color:#424242;
+    margin-top: 15px;
   }
+
+

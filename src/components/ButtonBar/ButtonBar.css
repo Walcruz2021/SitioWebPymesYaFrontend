@@ -1,0 +1,157 @@
+.containerButtonBar{
+    background-color:#dcdcdc;
+    height: 10rem;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.footer-informacion{
+    color:#8f8d8d;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}
+
+.menu{
+    color:#4b4a4a
+}
+
+.IconRedes{
+    color: white;
+    font-size: 2rem;
+}
+
+.redes-sociales{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+.menu h3{
+    margin-right: 7rem;
+}
+
+.iconoTec{
+    height: 2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.iconosTec{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.iconosTec img{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.iconosTec p{
+    font-weight: bold;
+}
+
+/* CUANDO LA PANTALLA SEA MENOR A 1250 SE PRUCIRA LOS CAMBIOS */
+@media (max-width: 1250px){
+    .containerButtonBar{
+        height: 12rem;
+    }
+} 
+
+@media (max-width: 1130px){
+    .containerButtonBar{
+        height: 14rem;
+    }
+} 
+
+@media (max-width: 960px){
+    .containerButtonBar{
+        height: 15rem;
+    }
+} 
+
+@media (max-width: 868px){
+    .containerButtonBar{
+        height: 16rem;
+    }
+}
+
+@media (max-width: 866px){
+    .containerButtonBar{
+        height: 17.5rem;
+    }
+}
+
+@media (max-width: 790px){
+    .containerButtonBar{
+        height: 18.5rem;
+    }
+}
+
+@media (max-width: 790px){
+    .containerButtonBar{
+        height: 19.5rem;
+    }
+}
+
+@media (max-width: 690px){
+    .containerButtonBar{
+        height: 20rem;
+    }
+}
+
+
+@media (max-width: 680px){
+    .containerButtonBar{
+        height: 29rem;
+    }
+}
+
+@media (max-width: 645px){
+    .containerButtonBar{
+        height: 31rem;
+    }
+}
+
+@media (max-width: 577px){
+    .containerButtonBar{
+        height: 32rem;
+    }
+}
+
+
+
+/* GALAXY S20-ULTRA ANDRODI 11 */
+@media (max-width: 412px){
+    .containerButtonBar{
+        height: 37.5rem;
+    }
+}
+
+/* GALAXY S20-ANDROID 11 */
+@media (max-width: 384px){
+    .containerButtonBar{
+        height: 37rem;
+    }
+}
+
+
+/* IPHONE11 PRO IOS 4.6 */
+@media (max-width: 375px){
+    .containerButtonBar{
+        height: 36.2rem;
+    }
+}
+
+/* IPHONE 12/13 PRO MAX IOS 14.6*/
+@media (max-width: 428px){
+    .containerButtonBar{
+        height: 36.2rem;
+    }
+}
