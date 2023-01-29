@@ -16,6 +16,7 @@
     color:#8f8d8d;
     font-size: 0.9rem;
     line-height: 1.5rem;
+    text-align: justify;
 }
 
 .menu{
@@ -145,7 +146,7 @@
 /* IPHONE11 PRO IOS 4.6 */
 @media (max-width: 375px){
     .containerButtonBar{
-        height: 36.2rem;
+        height: 10rem;
     }
 }
 

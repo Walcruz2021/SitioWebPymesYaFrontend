@@ -22,14 +22,13 @@ const ButtonBar = () => {
                 <p>Soy un Desarrollador apasionado por la innovacion y el impacto de las teconologias en nuestra vida.
                     Participe en varios proyectos y sigo el camino infinito del aprendizaje</p>
                 Algunas tecnologias con las que cuento de conocimientos y en las que tengo experiencia para sacar adelante cualquier proyecto
-                <div className="iconosTec">
+                {/* <div className="iconosTec">
                     <div>
                  
                     <img className="iconoTec" src={mongo}></img>
                     <img className="iconoTec" src={sql}></img>
                     <img className="iconoTec" src={postgress}></img>
-                    </div>
-                    <div>
+                   
                    
                     <img className="iconoTec" src={java}></img>
                     <img className="iconoTec" src={react}></img>
@@ -38,7 +37,7 @@ const ButtonBar = () => {
                     <img className="iconoTec" src={express}></img>
                     <img className="iconoTec" src={node}></img>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 

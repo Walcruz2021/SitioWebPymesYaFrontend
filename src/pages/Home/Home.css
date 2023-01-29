@@ -106,7 +106,66 @@ body{
     height:14rem;
 } 
 
-  
+/* IPHONE SE -*/ 
+
+@media (max-width: 375px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+/* IPHONE XR -*/ 
+
+@media (max-width: 414px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+
+/* IPHONE 12 PRO -*/ 
+
+@media (max-width: 844px){
+  .containerSearch{
+      height: 28rem;
+  }
+}
+
+/* SAMSUNG GALAXY S8 -*/ 
+
+@media (max-width: 360px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+/* SAMSUNG GALAXY S20 ULTRA  -*/ 
+
+@media (max-width: 412px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+/* SAMSUNG GALAXY A51/71  -*/ 
+
+@media (max-width: 412px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+/* IPHONE 12/13 */
+
+@media (max-width: 428px){
+  .containerSearch{
+      height: 75rem;
+  }
+} 
+
+
+
+
   .containerButtons {
     margin: 0;
     padding: 0;
