@@ -15,10 +15,19 @@
 
 .containerForm{
     background-color: white;
-    width: 32%;
     margin: auto;
     border: 2px solid #c2c2c2;
-    padding: 5px;
+    padding: 10px;
+    min-width: 50%;
+   
+}
+
+/* ESCRITORIO */
+@media (min-width: 768px) {
+    .containerForm {
+        max-width: 10%;
+    }
+    
 }
 
 .titForm{

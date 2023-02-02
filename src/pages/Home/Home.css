@@ -73,10 +73,7 @@ body{
 
     border: 2.5px solid #4CAF50; /* Green */
     padding: 20px;
-    margin: auto;
-    margin-top: 8rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin: 5em auto 1em;
     cursor:pointer;
     width:15rem;
     color:white
@@ -97,95 +94,35 @@ body{
     color: white;    
 }
 
-.containerSearch{
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    margin-bottom: 15px;  */
-    background-color: black;
-    padding: 0.5rem;
-    height:14rem;
-} 
-
-/* IPHONE SE -*/ 
-
-@media (max-width: 375px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
-
-/* IPHONE XR -*/ 
-
-@media (max-width: 414px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
 
 
-/* IPHONE 12 PRO -*/ 
-
-@media (max-width: 844px){
-  .containerSearch{
-      height: 28rem;
-  }
+/* *****************MENU***************** */
+.containerButtons{
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+justify-content: space-between;
 }
 
-/* SAMSUNG GALAXY S8 -*/ 
 
-@media (max-width: 360px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
-
-/* SAMSUNG GALAXY S20 ULTRA  -*/ 
-
-@media (max-width: 412px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
-
-/* SAMSUNG GALAXY A51/71  -*/ 
-
-@media (max-width: 412px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
-
-/* IPHONE 12/13 */
-
-@media (max-width: 428px){
-  .containerSearch{
-      height: 75rem;
-  }
-} 
-
-
-
-
-  .containerButtons {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    
-    /* position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  */
-  }
-  
   .containerButtons li {
     list-style: none;
     margin: 10px 20px;
     text-align: center;
+   flex: none;
+   width: calc((100% - 10px)/8);
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 1rem;
+   padding: 0.5em 0;
+  
   }
 
   .containerButtons h6{
     text-align: center;
+    font-size: 10px;
   }
   
   .containerButtons li button {
@@ -206,8 +143,9 @@ body{
   .titButton{
     font-size: 1rem;
     color: #666;
-    margin-right: 15px;
+    
     margin-top: 10px;
+    text-align: center;
   }
   
   .containerButtons li button::before {
@@ -236,3 +174,5 @@ body{
     box-shadow: 0 0 15px #ffee10;
     text-shadow: 0 0 15px #ffee10;
   }
+
+

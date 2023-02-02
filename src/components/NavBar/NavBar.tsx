@@ -23,7 +23,7 @@ const NavBar = () => {
 
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
-  console.log(navToggle)
+  // console.log(navToggle)
 
   if (navToggle && navMenu) {
     navToggle.addEventListener("click", () => {

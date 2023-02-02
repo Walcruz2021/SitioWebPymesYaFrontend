@@ -11,6 +11,15 @@ import gmail from "./imagenes/gmail.png"
 import { IconBase } from 'react-icons/lib';
 import IonIcon from '@reacticons/ionicons';
 
+import { useState } from "react";
+
+export interface stateInput {
+    email: string;
+    name: string;
+    message: string
+}
+
+
 // Shape of form values
 interface FormValues {
     name: string;
@@ -24,15 +33,31 @@ interface OtherProps {
 
 // Aside: You may see InjectedFormikProps<OtherProps, FormValues> instead of what comes below in older code.. InjectedFormikProps was artifact of when Formik only exported a HoC. It is also less flexible as it MUST wrap all props (it passes them through).
 const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
+    const [stateInput, setStateInput] = useState({
+        email: "",
+        name: "",
+        mensaje: ""
+    })
+
     const { touched, errors, isSubmitting, message } = props;
 
     function submitForm(e: any) {
 
         e.preventDefault()
-        console.log(e.target, "addPersona")
-        emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
-            .then(response => console.log(response))
-            .catch(error => console.log(error))
+        const name = e.target.name.value
+        const email = e.target.email.value
+        const message = e.target.message.value
+
+        //console.log(e.target)
+        if (name.length > 0 && email.length > 0 && message.length>0) {
+            console.log("mensaje enviado")
+            emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
+                .then(response => console.log(response))
+                .catch(error => console.log(error))
+        }else{
+            console.log("mensaje no enviado")
+        }
+
 
     }
 
@@ -106,6 +131,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
     );
 };
 
+
 // The type of props MyForm receives
 interface MyFormProps {
 
@@ -115,6 +141,7 @@ interface MyFormProps {
 
 // Wrap our form with the withFormik HoC
 const MyForm = withFormik<MyFormProps, FormValues>({
+
     // Transform outer props into form values
     mapPropsToValues: props => {
         return {
@@ -125,11 +152,11 @@ const MyForm = withFormik<MyFormProps, FormValues>({
     },
 
     // Add a custom validation function (this can be async too!)
-    validate: (values: FormValues) => {
+    validate: (values: FormValues, setStateInput) => {
         let errors: FormikErrors<FormValues> = {};
         if (!values.name) {
             errors.name = (" * por favor ingresa nombre");
-            console.log(values)
+            //console.log(values)
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
             errors.name = (" * el nombre con solo letras y espacios")
         }
@@ -146,7 +173,7 @@ const MyForm = withFormik<MyFormProps, FormValues>({
 
         if (!values.message) {
             errors.message = ("* por favor ingrese mensaje");
-            console.log(values)
+            //console.log(values)
         } else if (!/^[a-zA-Z0-9\_\-\s]{4,100}$/.test(values.message)) {
             errors.message = (" * el mensaje con solo letras y espacios")
         }
@@ -155,13 +182,14 @@ const MyForm = withFormik<MyFormProps, FormValues>({
 
     handleSubmit: (e, { resetForm }) => {
 
-        console.log(e)
+        //console.log(e)
         resetForm()
     },
 })(InnerForm);
 
 // Use <MyForm /> wherevs
 const Basic = () => (
+
     <div>
         <MyForm message="Complete el Formulario" />
     </div>

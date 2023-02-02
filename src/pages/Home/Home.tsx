@@ -18,6 +18,17 @@ import IonIcon from '@reacticons/ionicons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {exportImg} from "./imagenes/icons/hospital.png"
 
+
+import mongo from "../../pages/Home/imagenes/mongodb.png"
+import sql from "../../pages/Home/imagenes/sql.png"
+import postgress from "../../pages/Home/imagenes/postgress.png"
+import java from "../../pages/Home/imagenes/java.png"
+import react from "../../pages/Home/imagenes/react.png"
+import javaS from "../../pages/Home/imagenes/javaS.png"
+import lengC from "../../pages/Home/imagenes/lengC.png"
+import express from "../../pages/Home/imagenes/express.png"
+import node from "../../pages/Home/imagenes/node.png"
+
 const Home = () => {
     const { categories } = useFetchCat();
     console.log(categories)
@@ -77,11 +88,13 @@ const Home = () => {
             <NavBar />
             {/* LISTADO DE EMPRESAS */}
             <h2>SELECCIONA UNA CATEGORIA</h2>
-            <div className="containerSearch">
-                <ul className="containerButtons">
+       
+            <ul className="containerButtons">
+                   
                     <li>
                         <button onClick={() => buttonSelected("63c87cc2a40ae240e81e0e13")}>
                             <IonIcon name="business-outline"></IonIcon>
+                            
                         </button>
                         <h6 className="titButton">Hoteles</h6>
                     </li>
@@ -98,12 +111,7 @@ const Home = () => {
                         <h6 className="titButton">Supermercados</h6>
 
                     </li>
-                    {/* <li>
-                        <button onClick={() => buttonSelected("5506033d-36d8-463f-98a9-8144b52042be")}>
-                            <IonIcon name="restaurant-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Restaurantes</h6>
-                    </li> */}
+                    
                     <li>
                         <button onClick={() => buttonSelected("63c87c8ba40ae240e81e0e0f")}>
                             <IonIcon name="bicycle-outline"></IonIcon>
@@ -116,6 +124,8 @@ const Home = () => {
                         </button>
                         <h6 className="titButton">Hospitales</h6>
                     </li>
+                    
+                                       
                     <li>
                         <button onClick={() => buttonSelected("63c87c54a40ae240e81e0e0b")}>
                             <IonIcon name="paw-outline"></IonIcon>
@@ -152,8 +162,18 @@ const Home = () => {
                         </button>
                         <h6 className="titButton">Librerias</h6>
                     </li>
+                    <li>
+                        <button onClick={() => buttonSelected("6362ae72dd463420189414d3")}>
+                            <IonIcon name="add-circle-outline"></IonIcon>
+                        </button>
+                        <h6 className="titButton">Otros</h6>
+                    </li>
+                    
+                    
                 </ul>
-            </div>
+
+                
+            
 
             <div className="ContainerListComp">
 
