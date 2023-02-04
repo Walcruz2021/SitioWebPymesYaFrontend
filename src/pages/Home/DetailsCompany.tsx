@@ -36,9 +36,10 @@ const DetailsCompany = () => {
                     <br></br>
                     <h1>{details.nameCompany}</h1>
                     <br></br>
+                    <div className="containerImg">
                     <img src={details.avatar} />
-                    <div className="containerDetailsInt">
-
+                    </div>
+                    <div className="containerDetailsInt">      
                         <IonIcon className="IconCss" name="bookmarks-outline"></IonIcon>
                         <p>{details.notesComp}</p>
 

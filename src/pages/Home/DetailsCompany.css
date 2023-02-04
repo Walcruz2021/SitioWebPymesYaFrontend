@@ -10,18 +10,29 @@
   display: grid;
   grid-template-columns: auto auto;
   margin-top: 15px;
+  text-align: center;
 }
 
 
 .containerDetailsInt p{
   margin-top: 15px;
   color:#929191 ;
+  text-align: justify;
+
 }
 
   .IconCss{
     font-size: 25px;
     color:#424242;
     margin-top: 15px;
+    margin-right: 20px;
   }
 
+.containerImg{
+  width: 100%;
+  min-height: 30%;
+}
 
+.containerImg img{
+  width: 100%;
+}

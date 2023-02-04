@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, {useEffect }from 'react';
 import * as Yup from 'yup';
 import { withFormik, FormikProps, FormikErrors, Form, Field, ErrorMessage } from 'formik';
 import NavBar from "../../components/NavBar/NavBar"
@@ -10,6 +10,9 @@ import phone from "./imagenes/phone.png"
 import gmail from "./imagenes/gmail.png"
 import { IconBase } from 'react-icons/lib';
 import IonIcon from '@reacticons/ionicons';
+import Swal from 'sweetalert2'
+
+import { useHistory} from 'react-router-dom';
 
 import { useState } from "react";
 
@@ -31,19 +34,27 @@ interface OtherProps {
     message: string;
 }
 
+
+
 // Aside: You may see InjectedFormikProps<OtherProps, FormValues> instead of what comes below in older code.. InjectedFormikProps was artifact of when Formik only exported a HoC. It is also less flexible as it MUST wrap all props (it passes them through).
 const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
-    const [stateInput, setStateInput] = useState({
-        email: "",
-        name: "",
-        mensaje: ""
+    const [stateInput,setStateInput]=useState({
+        email:"",
+        name:"",
+        message:""
     })
-
+    
+ 
     const { touched, errors, isSubmitting, message } = props;
+    let history=useHistory()
+    // useEffect(() => {
+    //    setStateInput("false")
+    //   }, []);
 
     function submitForm(e: any) {
 
         e.preventDefault()
+        
         const name = e.target.name.value
         const email = e.target.email.value
         const message = e.target.message.value
@@ -51,16 +62,42 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
         //console.log(e.target)
         if (name.length > 0 && email.length > 0 && message.length>0) {
             console.log("mensaje enviado")
-            emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
-                .then(response => console.log(response))
-                .catch(error => console.log(error))
+            
+            // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
+            //     .then(response => console.log(response))
+            //     .catch(error => console.log(error))
+
+                Swal.fire(
+                    'Mensaje Enviado!',
+                    'You clicked the button!',
+                    'success'
+                  );
+           setStateInput({
+            name:"",
+            email:"",
+            message:""
+           })
+                //   setTimeout(function(){
+                //    history.push('/')
+                //   },2000)
         }else{
             console.log("mensaje no enviado")
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
         }
-
+    }
+    
+    function onChange1(e:any){
+        setStateInput({
+            ...stateInput,
+            [e.target.name]: e.target.value,
+          });
 
     }
-
     return (
         <>
             <NavBar />
@@ -69,9 +106,10 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
                     <h5>Formulario de Contacto</h5>
                 </div>
                 <Form className="Form" onSubmit={(e: any) => submitForm(e)}>
+                {/* <Form className="Form"> */}
                     <h1>{message}</h1>
                     <label className="labelForm" htmlFor="email">E-mail</label>
-                    <Field type="email" name="email" className="Field" />
+                    <Field type="email" name="email" className="Field" value={stateInput.email} onChange={(e:any)=>onChange1(e)}/>
                     {touched.email && errors.email &&
                         <ErrorMessage
                             name="email"
@@ -80,7 +118,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
                     }
 
                     <label className="labelForm" htmlFor="name">Nombre</label>
-                    <Field type="name" name="name" className="Field" />
+                    <Field type="name" name="name" className="Field"  value={stateInput.name} onChange={(e:any)=>onChange1(e)}/>
                     {touched.name && errors.name &&
                         <ErrorMessage
                             name="name"
@@ -89,7 +127,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
                     }
 
                     <label className="labelForm" htmlFor="name">Mensaje</label>
-                    <Field type="message" name="message" className="Field" />
+                    <Field type="message" name="message" className="Field" value={stateInput.message} onChange={(e:any)=>onChange1(e)} />
                     {touched.message && errors.message &&
                         <ErrorMessage
                             name="message"
@@ -152,11 +190,12 @@ const MyForm = withFormik<MyFormProps, FormValues>({
     },
 
     // Add a custom validation function (this can be async too!)
-    validate: (values: FormValues, setStateInput) => {
+    validate: (values: FormValues) => {
+        console.log(values)
         let errors: FormikErrors<FormValues> = {};
         if (!values.name) {
             errors.name = (" * por favor ingresa nombre");
-            //console.log(values)
+            
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
             errors.name = (" * el nombre con solo letras y espacios")
         }
@@ -182,16 +221,48 @@ const MyForm = withFormik<MyFormProps, FormValues>({
 
     handleSubmit: (e, { resetForm }) => {
 
-        //console.log(e)
-        resetForm()
+        console.log(e)
+        // resetForm()
+        //e.preventDefault()
+        
+        // const name = e.name
+        // const email = e.email
+        // const message = e.message
+
+        //console.log(e.target)
+        // if (name.length > 0 && email.length > 0 && message.length>0) {
+        //     console.log("mensaje enviado")
+        //     resetForm()
+        //     Swal.fire(
+        //         'Mensaje Enviado!',
+        //         'You clicked the button!',
+        //         'success'
+        //       );
+        //     emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.email, '6wRJW_4Y-H_LANUgQ')
+        //          .then(response => console.log(response))
+        //          .catch(error => console.log(error))
+               
+        //           resetForm()
+        //         //   setTimeout(function(){
+        //         //    history.push('/')
+        //         //   },2000)
+        // }else{
+        //     console.log("mensaje no enviado")
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'Oops...',
+        //         text: 'Something went wrong!',
+        //         footer: '<a href="">Why do I have this issue?</a>'
+        //       })
+        // }
     },
 })(InnerForm);
 
 // Use <MyForm /> wherevs
 const Basic = () => (
-
+    
     <div>
-        <MyForm message="Complete el Formulario" />
+        <MyForm message="Complete el Formulario"/>
     </div>
 );
 

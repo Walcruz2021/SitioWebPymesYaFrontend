@@ -101,7 +101,8 @@ body{
   background-color: black;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
+  
+  padding-right: 1.2rem;
 justify-content: space-between;
 }
 
