@@ -1,5 +1,5 @@
 .containerDetails{
-    width: 40%;
+   
     text-align: center;
     padding: 20x;
     margin-top: 15px;
@@ -13,7 +13,19 @@
   text-align: center;
 }
 
-
+@media (min-width: 768px) {
+  .containerDetailsInt {
+  width: auto;
+  padding-left: 20rem;
+  padding-right: 20rem;
+  }
+  .containerImg{
+    width: auto;
+    padding-left: 30rem;
+  padding-right: 30rem;
+  }
+  
+}
 .containerDetailsInt p{
   margin-top: 15px;
   color:#929191 ;
