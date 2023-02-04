@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { CompanyItem } from '../../types/typeApp'
 import { faShoppingCart, faBars, faMobile, faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NavBar from "../../components/NavBar/NavBar"
+import NavBar from "../../components/NavBar/NavBarBoostrap"
 import axios from 'axios'
 import "./DetailsCompany.css"
 import IonIcon from '@reacticons/ionicons';

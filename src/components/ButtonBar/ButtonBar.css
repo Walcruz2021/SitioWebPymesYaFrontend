@@ -12,7 +12,7 @@
     line-height: 1.5rem;
     text-align: justify;
     background-color:#dcdcdc;
-    
+    padding-bottom: 1rem;
 }
 
 
@@ -22,12 +22,15 @@
 }
 
 
+/* pantalla grande */
 @media (min-width: 768px) {
 
     .barra {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
     }
     
 }

@@ -22,7 +22,8 @@ const ButtonBar = () => {
                     <p>Soy un Desarrollador apasionado por la innovacion y el impacto de las teconologias en nuestra vida.
                         Participe en varios proyectos y sigo el camino infinito del aprendizaje</p>
                     <p>Algunas tecnologias con las que cuento de conocimientos y en las que tengo experiencia para sacar adelante cualquier proyecto</p>
-                    <div className="containerIcons">
+                
+                    <div className="containerIcons">   
                         <img className="iconoTec" src={mongo}></img>
                         <img className="iconoTec" src={sql}></img>
                         <img className="iconoTec" src={postgress}></img>
@@ -37,12 +38,12 @@ const ButtonBar = () => {
                 </div>
 
                 <nav className="navegacion">
-
+              
                     {/* <h3>Redes Sociales</h3> */}
-
                     <a href="https://www.facebook.com/walter.cruz.161214/" target="_blank"><IonIcon className="IconRedes" name={'logo-linkedin'} /></a>
                     <a href="https://www.linkedin.com/in/walcruz1988/" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>
 
+                   
 
                 </nav>
             </div>

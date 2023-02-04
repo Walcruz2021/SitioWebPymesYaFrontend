@@ -1,4 +1,4 @@
-import NavBar from "../../components/NavBar/NavBar"
+import NavBar from "../../components/NavBar/NavBarBoostrap"
 import "./OurCompany.css"
 import eccomerce from "./imagenes/ecomerce.jpg"
 import sitioWeb from "./imagenes/sitioweb.jpg"

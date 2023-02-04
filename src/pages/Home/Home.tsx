@@ -11,23 +11,13 @@ import { CompanyFetch } from '../../types/typeApp';
 import axios from 'axios'
 import Company from '../../components/ListCompanies/Company/Company';
 import "./Home.css"
-import NavBar from '../../components/NavBar/NavBar';
+import NavBar from '../../components/NavBar/NavBarBoostrap';
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {exportImg} from "./imagenes/icons/hospital.png"
-
-
-import mongo from "../../pages/Home/imagenes/mongodb.png"
-import sql from "../../pages/Home/imagenes/sql.png"
-import postgress from "../../pages/Home/imagenes/postgress.png"
-import java from "../../pages/Home/imagenes/java.png"
-import react from "../../pages/Home/imagenes/react.png"
-import javaS from "../../pages/Home/imagenes/javaS.png"
-import lengC from "../../pages/Home/imagenes/lengC.png"
-import express from "../../pages/Home/imagenes/express.png"
-import node from "../../pages/Home/imagenes/node.png"
+ import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 
 const Home = () => {
     const { categories } = useFetchCat();
@@ -85,7 +75,7 @@ const Home = () => {
 
     return (
         <>
-            <NavBar />
+           <NavBarBoostrap/>
             {/* LISTADO DE EMPRESAS */}
             <h2>SELECCIONA UNA CATEGORIA</h2>
        

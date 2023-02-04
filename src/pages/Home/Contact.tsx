@@ -2,7 +2,7 @@
 import React, {useEffect }from 'react';
 import * as Yup from 'yup';
 import { withFormik, FormikProps, FormikErrors, Form, Field, ErrorMessage } from 'formik';
-import NavBar from "../../components/NavBar/NavBar"
+import NavBar from "../../components/NavBar/NavBarBoostrap"
 import emailjs from "@emailjs/browser"
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import "./Contact.css"
