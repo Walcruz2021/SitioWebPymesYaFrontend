@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
 import DetailsCompany from "./pages/Home/DetailsCompany"
 import OurCompany from "./pages/Home/OurCompany";
-
+import Services from "./pages/Home/Services";
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
@@ -39,7 +39,9 @@ const App = () => {
         <Route exact path="/"><Home/></Route>
         <Route path="/contact"><Contact /></Route>
         <Route path="/ourCompany"><OurCompany /></Route>
+        <Route path="/services"><Services /></Route>
         <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
+
     </Switch>
  </Router>
 

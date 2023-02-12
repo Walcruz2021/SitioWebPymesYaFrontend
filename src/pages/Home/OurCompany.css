@@ -88,9 +88,6 @@ padding: 1rem;
     line-height: 2rem;
 }
 
-
-
-
 .IconService{
     font-size: 25px;
     color: #5F9EA0;
@@ -173,3 +170,30 @@ margin-left: 10px;
         "titServA titServB"
     }
 } */
+.containerDescription{
+    width: 90%;
+}
+
+.carousel{
+text-align: center;
+padding: 1rem;
+width: 100%;
+border: 1.5px solid #ebe9e9;
+}
+
+.carousel-item{
+    background-color: white;
+    height: 30rem;
+    padding-top: 15px;
+
+}
+
+.carousel-control-prev-icon{
+    background-color: #ebe9e9;
+    padding: 1.5rem;
+}
+
+.carousel-control-next-icon{
+    background-color: #ebe9e9;
+    padding: 1.5rem;
+}

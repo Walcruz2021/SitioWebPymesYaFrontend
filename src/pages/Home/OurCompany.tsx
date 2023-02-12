@@ -1,14 +1,19 @@
 import NavBar from "../../components/NavBar/NavBarBoostrap"
 import "./OurCompany.css"
-import eccomerce from "./imagenes/ecomerce.jpg"
-import sitioWeb from "./imagenes/sitioweb.jpg"
+import desarrollo from "./imagenes/desarrollo.png"
+import diseño from "./imagenes/diseño.png"
 import software from "./imagenes/softwareEmp.png"
-import IonIcon from '@reacticons/ionicons';
+import presupuesto from "./imagenes/presupuesto.png"
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 
+
 const OurCompany = () => {
+
+
     return (
+
         <div>
+
             <NavBar />
             <div className="titGlobal">
                 <h1>NUESTRA EMPRESA</h1>
@@ -20,76 +25,68 @@ const OurCompany = () => {
                     Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
                     PymesWeb no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
                     ventajas competitivas con los cuales podras posicionarte en le mercado</p>
-            </div>
 
-            <div className="titGlobal">
-                <h2 className="titServ">OFRECEMOS TRES SERVICIOS</h2>
-            </div>
 
-            <div className="ContainerServ">
+                {/* 
+                <h3>RENDIMIENTO</h3>
+                <p>
+                    Buscamos entender tu visión y necesidades hacerlas nuestras.
+                </p>
 
-                <div className="Card">
+                <h3>DESARROLLO</h3>
+                <p>
+                    Trabajamos contigo para diseñar una solución pensada en ti y tus usuarios
+                    Desarrollo especializado en soluciones empresariales para cualquier tipo de negocio ya sea web, móvil o desktop y justo lo que necesitas.</p>
 
-                    <div className="servicio">
-                        <IonIcon className="IconService" name="card"></IonIcon>
-                        <div className="titGlobal">
-                            <h3>ECOMMERCE</h3>
+                <h3>INTEGRACIONES</h3>
+                <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
+
+
+
+                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+                    <ol className="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <h3>DESARROLLO</h3>
+                            <img src={desarrollo}></img>
+                            <p>
+                                Trabajamos contigo para diseñar una solución pensada en ti y tus usuarios
+                                Desarrollo especializado en soluciones empresariales para cualquier tipo de negocio ya sea web, móvil o desktop y justo lo que necesitas.</p>
                         </div>
-                    </div>
-                    <div className="CardCont">
-                        <img src={eccomerce}></img>
-
-                        <p>eCommerce o Comercio Electronico es la practica de comprar y vender productos a traves de tu sitio Web
-                            Tu tienda online estara disponible en todo el mundo. Recuerda que con tu tienda virtual, los clientes tendran acceso a tus productos
-                            los 365 dias del año las 24 horas
-                            La gestión de tus publicaciones y ventas estará centralizada en tu cuenta de Mercado Libre. Es decir, todo lo que publiques se verá también en tu tienda virtual y los productos que vendas podrás cobrarlos usando Mercado Pago,
+                        <div className="carousel-item">
+                            <h3>DISEÑOS</h3>
+                            <img src={diseño}></img>
+                            <p>
+                                Buscamos entender tu visión y necesidades hacerlas nuestras.
                             </p>
-                    </div>
-                </div>
-
-                <div className="Card">
-                    <div className="servicio">
-                        <IonIcon className="IconService" name="desktop-sharp"></IonIcon>
-                        <div className="titGlobal">
-                            <h3>SOFTWARE DE GESTION WEB</h3>
-
+                        </div>
+                        <div className="carousel-item">
+                            <h3>RECURSOS</h3>
+                            <img src={presupuesto}></img>
+                            {/* <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
+                            <p>
+                                Sabemos la importancia de optmizar recursos y de sorprenderte con los buenos resultados, por lo tanto, tenemos en cuenta 
+                                diferentes rutas, opciones y enfoques. Estamos atentos y abiertos a escucharte </p>
                         </div>
                     </div>
-                    <div className="CardCont">
-                        <img src={software}></img>
-                        <p>Podras realizar distintas tareas de forma mucho mas facil y rapida que recurriendo a sistemas tradicionales
-                            basados en anotaciones manuales. Podras llevar la contabilidad, control inventario, personalizar documentos,
-                            sacar el maximo partido a los datos gracias a las estadisticas, etc
-                            Te permitirá agilizar y optimizar la operatoria diaria de tu empresa o negocio
-                            Puedes ver un ejemplo de un Gestion de Turno para una Peluqueria Canina en el siguiente <a href="https://app-peluqueria-canina.vercel.app/" target="_blank">APP GESTION TURNOS</a></p>
-                            
-                            
-                    </div>
-
+                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="sr-only">Next</span>
+                    </a>
                 </div>
+
+
             </div>
 
-            <div className="Card3">
-                <div className="ImgClass">
-                    <img src={sitioWeb}></img>
-                </div>
 
-                <div className="servSitioWeb CardCont">
-                    <div className="servicio">
-                        <IonIcon className="IconService" name="globe-outline"></IonIcon>
-                        <div className="titGlobal">
-                            <h3>SITIO WEB</h3>
-                        </div>
-                    </div>
-                    <p>Que lo BASICO no te confunda, con este sitio Web podras posicionar tu marca y tener un reconocimiento tanto a nivel Local como Nacional
-                        Al estar diseñadas para verse desde cualquier parte del mundo, tendras la posibilidad de abrir fronteras y de que los clientes que no puedan ir a tu negocio
-                        fisico, lo puedan hacer de forma virtual informandose de los servicios que prestas
-                    </p>
-                    {/* <IonIcon className="IconService" name="rocket-outline"></IonIcon>
-                    <IonIcon className="IconService" name="timer-outline"></IonIcon>
-                    <IonIcon className="IconService" name="ribbon-outline"></IonIcon> */}
-                </div>
-            </div>
 
             <ButtonBar />
         </div>

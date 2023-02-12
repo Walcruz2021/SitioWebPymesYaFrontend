@@ -11,6 +11,7 @@
   grid-template-columns: auto auto;
   margin-top: 15px;
   text-align: center;
+  padding: 1rem;
 }
 
 @media (min-width: 768px) {
