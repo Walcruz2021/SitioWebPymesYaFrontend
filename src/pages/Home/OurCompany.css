@@ -83,7 +83,7 @@ margin: auto;
 padding: 1rem;
 }
 
-.classPortada p{
+.classPortada p,li,h4{
     color: #8f8d8d;
     line-height: 2rem;
 }
@@ -183,8 +183,9 @@ border: 1.5px solid #ebe9e9;
 
 .carousel-item{
     background-color: white;
-    height: 30rem;
     padding-top: 15px;
+
+
 
 }
 
@@ -196,4 +197,10 @@ border: 1.5px solid #ebe9e9;
 .carousel-control-next-icon{
     background-color: #ebe9e9;
     padding: 1.5rem;
+}
+
+
+.itemsDesings li{
+text-align: left;
+ 
 }

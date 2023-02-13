@@ -20,11 +20,11 @@ const OurCompany = () => {
             </div>
 
             <div className="classPortada">
-                <p>Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual
+                <p>Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
                     Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindandoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal
                     Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
                     PymesWeb no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
-                    ventajas competitivas con los cuales podras posicionarte en le mercado</p>
+                    ventajas competitivas con los cuales podras posicionarte en el mercado</p>
 
 
                 {/* 
@@ -53,24 +53,50 @@ const OurCompany = () => {
                         <div className="carousel-item active">
                             <h3>DESARROLLO</h3>
                             <img src={desarrollo}></img>
-                            <p>
-                                Trabajamos contigo para diseñar una solución pensada en ti y tus usuarios
-                                Desarrollo especializado en soluciones empresariales para cualquier tipo de negocio ya sea web, móvil o desktop y justo lo que necesitas.</p>
+                            <p>Trabajamos contigo para diseñar una solución pensada en ti y tus usuarios
+                            Desarrollo especializado en soluciones empresariales para cualquier tipo de negocio ya sea web, móvil o desktop.</p>
+                            <li>Facilidad de Uso</li>
+                            <p>La facilidad de uso de la plataforma elegida es un criterio muy importante que debe ser tomado en cuenta.Los usuarios 
+                            necesitan ser productivos y autosuficientes al grabar nuevas operaciones y al buscar la informacion que necesitan, 
+                            una plataforma que brinde esta posibilidad proporcionara un impacto positivo en la calidad del servicio al cliente</p>
+                            <li>Tecnologia Innovadora</li>
+                            <p>Es importante que la tecnología aplicada sea lo suficientemente innovadora como para no convertirse en obsoleta 
+                            prematuramente.La tecnología evoluciona muy rápidamente y lo que puede ser suficiente hoy en día, puede ser un cuello 
+                            de botella en el futuro</p>
+
                         </div>
                         <div className="carousel-item">
                             <h3>DISEÑOS</h3>
                             <img src={diseño}></img>
                             <p>
-                                Buscamos entender tu visión y necesidades hacerlas nuestras.
+                            El diseño no es solo lo que parece y se siente. El diseño es como funciona ("Steve Jobs")
                             </p>
+                            <h4>El éxito de un software también depende de:</h4>
+                            <div className="itemsDesings">
+                            <li>Su facilidad de uso.</li>
+                            <li>Una buena interfaz de usuario.</li>
+                            <li>Sus funcionalidades.</li>
+                            <li>Unos contenidos adecuados</li>
+                            </div>
                         </div>
                         <div className="carousel-item">
-                            <h3>RECURSOS</h3>
+                            <h3>PRESUPUESTO</h3>
                             <img src={presupuesto}></img>
                             {/* <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
                             <p>
+                                Tenemos el Conocimiento y la Preocupacion por satisfacer las necesidades, espectativas y deseos de nuestros clientes. 
                                 Sabemos la importancia de optmizar recursos y de sorprenderte con los buenos resultados, por lo tanto, tenemos en cuenta 
-                                diferentes rutas, opciones y enfoques. Estamos atentos y abiertos a escucharte </p>
+                                diferentes rutas, opciones y enfoques. Estamos atentos y abiertos a escucharte. 
+                            </p>
+                            <h4>Tipos de Presupuestos</h4>
+                            <li>PRESUPUESTOS FLEXIBLES</li>
+                            <p>Abierto a posibles modificaciones,cambios o ampliaciones tanto en el servicio como en el presupuesto</p>
+
+<li>PRESUPUESTOS FIJOS</li>
+<p>Cerrado, que no admiten cambios, ampliaciones o modificaciones en el servicio</p>
+
+<li>A CORTO/LARGO PLAZO</li>
+<p>Sabemos que el tiempo es clave para reducir los costes y mejorar la productividad de tu empresa. Es un aspecto fundamental que las empresas no pueden dejar del lado</p>
                         </div>
                     </div>
                     <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
