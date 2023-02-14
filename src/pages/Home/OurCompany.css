@@ -75,7 +75,7 @@ margin: auto;
 }
 
 .classPortada{
-    text-align: justify;
+   
     margin-top: 5px;
     /* font-family: Garamond, serif; */
     font-family: "ArIaL", serif;
@@ -86,6 +86,7 @@ padding: 1rem;
 .classPortada p,li,h4{
     color: #8f8d8d;
     line-height: 2rem;
+    text-align: justify;
 }
 
 .IconService{
@@ -103,7 +104,6 @@ padding: 1rem;
   margin-top: 20px;
   padding: 1rem;
 }
-
 
 
 .ImgClass img{
@@ -125,7 +125,6 @@ margin-left: 10px;
 }
 
 
-
 .servSitioWeb p{
 
     margin-top: 10px;
@@ -137,29 +136,7 @@ margin-left: 10px;
 }
 
 
-/* PANTALLA GRANDE */
-/* 
-@media (min-width: 600px){
-    .grid-container{
-        gap: 20px;
-        grid-template-columns: 20% 80%; 
-        grid-template-areas: 
-      
-        "titServA titServB"
-    }
-    .ContainerServ{
-        width: 90%;
-        margin-left: 40px;
-        margin-right: 40px
-    }
-    
-    .ContainerServ2{
-    width: 80%;
-    margin-left: 60px;
-    margin-right:60px;
-    }
-    
-} */
+
 
 /* @media (min-width: 900px){
     .grid-container{
@@ -181,12 +158,21 @@ width: 100%;
 border: 1.5px solid #ebe9e9;
 }
 
+/* PANTALLA GRANDE */
+
+@media (min-width: 900px){
+    .carousel{
+        width: 70%;
+        padding: auto;
+        text-align: center;
+        margin: 0 auto;
+    }
+} 
+
+
 .carousel-item{
     background-color: white;
     padding-top: 15px;
-
-
-
 }
 
 .carousel-control-prev-icon{
@@ -199,8 +185,13 @@ border: 1.5px solid #ebe9e9;
     padding: 1.5rem;
 }
 
+.itemsDesings{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding:2rem;
+}
 
 .itemsDesings li{
 text-align: left;
- 
 }

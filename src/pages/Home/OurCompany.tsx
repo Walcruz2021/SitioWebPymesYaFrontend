@@ -55,14 +55,14 @@ const OurCompany = () => {
                             <img src={desarrollo}></img>
                             <p>Trabajamos contigo para diseñar una solución pensada en ti y tus usuarios
                             Desarrollo especializado en soluciones empresariales para cualquier tipo de negocio ya sea web, móvil o desktop.</p>
+                            <div className="itemsDesings">
                             <li>Facilidad de Uso</li>
-                            <p>La facilidad de uso de la plataforma elegida es un criterio muy importante que debe ser tomado en cuenta.Los usuarios 
-                            necesitan ser productivos y autosuficientes al grabar nuevas operaciones y al buscar la informacion que necesitan, 
-                            una plataforma que brinde esta posibilidad proporcionara un impacto positivo en la calidad del servicio al cliente</p>
                             <li>Tecnologia Innovadora</li>
+                            </div>
+                            <p>La facilidad de uso de la plataforma elegida es un criterio muy importante que debe ser tomado en cuenta. 
+                            Una plataforma que brinde esta posibilidad proporcionara un impacto positivo en la calidad del servicio al cliente</p>
                             <p>Es importante que la tecnología aplicada sea lo suficientemente innovadora como para no convertirse en obsoleta 
-                            prematuramente.La tecnología evoluciona muy rápidamente y lo que puede ser suficiente hoy en día, puede ser un cuello 
-                            de botella en el futuro</p>
+                            prematuramente.</p>
 
                         </div>
                         <div className="carousel-item">
@@ -89,14 +89,18 @@ const OurCompany = () => {
                                 diferentes rutas, opciones y enfoques. Estamos atentos y abiertos a escucharte. 
                             </p>
                             <h4>Tipos de Presupuestos</h4>
-                            <li>PRESUPUESTOS FLEXIBLES</li>
-                            <p>Abierto a posibles modificaciones,cambios o ampliaciones tanto en el servicio como en el presupuesto</p>
+                            <div className="itemsDesings">
+                            <li>Presupuestos Flexibles</li>
+                            {/* <p>Abierto a posibles modificaciones,cambios o ampliaciones tanto en el servicio como en el presupuesto</p> */}
 
-<li>PRESUPUESTOS FIJOS</li>
-<p>Cerrado, que no admiten cambios, ampliaciones o modificaciones en el servicio</p>
+<li>Presupuestos Fijos</li>
+{/* <p>Cerrado, que no admiten cambios, ampliaciones o modificaciones en el servicio</p> */}
 
-<li>A CORTO/LARGO PLAZO</li>
-<p>Sabemos que el tiempo es clave para reducir los costes y mejorar la productividad de tu empresa. Es un aspecto fundamental que las empresas no pueden dejar del lado</p>
+<li>A corto/largo plazo</li>
+{/* <p>Sabemos que el tiempo es clave para reducir los costes y mejorar la productividad de tu empresa. Es un aspecto fundamental que las empresas no pueden dejar del lado</p> */}
+
+                            </div>
+                            
                         </div>
                     </div>
                     <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
