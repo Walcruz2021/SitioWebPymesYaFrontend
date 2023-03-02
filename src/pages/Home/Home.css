@@ -102,6 +102,20 @@ body{
   margin: 0 auto;
   padding: 0.5rem;
   /* justify-content: space-between; se comenta esta linea debido a que al estar en modo mobile no tiene margen a la derecha*/
+  /* justify-content: space-between; */
+}
+
+/* pantalla escritorio */
+@media (min-width: 768px) {
+  .containerButtons{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0.5rem;
+    /* justify-content: space-between; se comenta esta linea debido a que al estar en modo mobile no tiene margen a la derecha*/
+    justify-content: space-between;
+  }
 }
 
 
