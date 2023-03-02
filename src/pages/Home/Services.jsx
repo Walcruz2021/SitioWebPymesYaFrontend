@@ -36,12 +36,12 @@ const Services = () => {
 
       <div className="ContainerServ">
         <div className="Card">
-          <div className="servicio">
+          {/* <div className="servicio">
             <IonIcon className="IconService" name="card"></IonIcon>
+          </div> */}
             <div className="titGlobal">
-              <h3>ECOMMERCE</h3>
+              <h4>ECOMMERCE</h4>
             </div>
-          </div>
           <div className="CardCont">
             <img src={eccomerce}></img>
 
@@ -104,12 +104,12 @@ const Services = () => {
         </div>
 
         <div className="Card">
-          <div className="servicio">
+          {/* <div className="servicio">
             <IonIcon className="IconService" name="desktop-sharp"></IonIcon>
+          </div> */}
             <div className="titGlobal">
-              <h3>SOFTWARE DE GESTION WEB</h3>
+              <h4>SOFTWARE DE GESTION WEB</h4>
             </div>
-          </div>
           <div className="CardCont">
             <img src={software}></img>
             <p>
