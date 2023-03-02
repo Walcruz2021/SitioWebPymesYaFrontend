@@ -14,18 +14,18 @@
   padding: 1rem;
 }
 
+/* pantalla escritorio */
 @media (min-width: 768px) {
   .containerDetailsInt {
   width: auto;
-  padding-left: 20rem;
-  padding-right: 20rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
   }
   .containerImg{
     width: auto;
-    padding-left: 30rem;
-  padding-right: 30rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
-  
 }
 .containerDetailsInt p{
   margin-top: 15px;
