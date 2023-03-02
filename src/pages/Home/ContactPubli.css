@@ -117,9 +117,9 @@
     margin-top: 15px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-padding-left: 1rem;
-padding-right: 1rem;
     text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .mediosContact h3{
@@ -135,4 +135,9 @@ text-align: center;
 .textContact{
     color: #706f6f;
     font-size: 1.2rem;
+}
+
+.containerText{
+    padding-left: 1rem;
+    padding-right: 1rem;
 }

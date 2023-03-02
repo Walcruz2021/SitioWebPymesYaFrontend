@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BrowserRouter as Router,Route,Routes ,Switch} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
+import ContactPubli from "./pages/Home/ContactPubli";
 import DetailsCompany from "./pages/Home/DetailsCompany"
 import OurCompany from "./pages/Home/OurCompany";
 import Services from "./pages/Home/Services";
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/ourCompany"><OurCompany /></Route>
         <Route path="/services"><Services /></Route>
         <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
+        <Route path="/contactPubli"><ContactPubli /></Route>
 
     </Switch>
  </Router>
