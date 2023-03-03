@@ -140,4 +140,10 @@ text-align: center;
 .containerText{
     padding-left: 1rem;
     padding-right: 1rem;
+    text-align: center;
+}
+
+.containerText p{
+    text-align: justify;
+    color:#5a5959
 }
