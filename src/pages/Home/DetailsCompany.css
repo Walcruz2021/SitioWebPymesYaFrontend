@@ -8,16 +8,16 @@
 
 .containerDetailsInt{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 5% 92%;
   margin-top: 15px;
+  gap: 15px;
   text-align: center;
-  padding: 1rem;
+  padding: 0.7rem;
 }
 
 /* pantalla escritorio */
 @media (min-width: 768px) {
   .containerDetailsInt {
-  width: 100%;
   padding-left: 10rem;
   padding-right: 10rem;
   }
