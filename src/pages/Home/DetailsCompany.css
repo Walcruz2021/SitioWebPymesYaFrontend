@@ -17,7 +17,7 @@
 /* pantalla escritorio */
 @media (min-width: 768px) {
   .containerDetailsInt {
-  width: auto;
+  width: 100%;
   padding-left: 10rem;
   padding-right: 10rem;
   }
