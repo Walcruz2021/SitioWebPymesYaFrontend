@@ -27,7 +27,7 @@
     padding-right: 10rem;
   }
 }
-.containerDetailsInt p{
+.containerDetailsInt p,a{
   margin-top: 15px;
   color:#929191 ;
   text-align: justify;
@@ -37,7 +37,7 @@
   .IconCss{
     font-size: 25px;
     color:#424242;
-    margin-top: 15px;
+    margin-top: 7px;
     margin-right: 20px;
   }
 
@@ -48,4 +48,9 @@
 
 .containerImg img{
   width: 100%;
+}
+
+.containerDetailsInt a{
+text-decoration: none;
+padding: 0;
 }

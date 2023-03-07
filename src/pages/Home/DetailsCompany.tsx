@@ -11,8 +11,8 @@ import ButtonBar from '../../components/ButtonBar/ButtonBar';
 
 const DetailsCompany = () => {
 
-    console.log(useParams(),"efds")
-    const { id} = useParams<{ id: string }>();
+    console.log(useParams(), "efds")
+    const { id } = useParams<{ id: string }>();
     const [details, setDetails] = useState<CompanyItem>()
 
 
@@ -37,9 +37,9 @@ const DetailsCompany = () => {
                     <h1>{details.nameCompany}</h1>
                     <br></br>
                     <div className="containerImg">
-                    <img src={details.avatar} />
+                        <img src={details.avatar} />
                     </div>
-                    <div className="containerDetailsInt">      
+                    <div className="containerDetailsInt">
                         <IonIcon className="IconCss" name="bookmarks-outline"></IonIcon>
                         <p>{details.notesComp}</p>
 
@@ -47,7 +47,13 @@ const DetailsCompany = () => {
                         <p>{details.phone}</p>
 
                         <IonIcon className="IconCss" name="desktop-sharp"></IonIcon>
-                        <p>{details.siteWeb}</p>
+                        
+                        <a
+                            href={details.siteWeb}
+                            target="_blank"
+                        >
+                            Link de Sitio Web
+                        </a>
 
                         <IonIcon className="IconCss" name="business-sharp"></IonIcon>
                         <p>{details.country}</p>
