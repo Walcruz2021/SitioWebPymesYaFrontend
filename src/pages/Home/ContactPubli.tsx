@@ -1,4 +1,4 @@
-import React, {useEffect }from 'react';
+import React, { useEffect } from 'react';
 import * as Yup from 'yup';
 import { withFormik, FormikProps, FormikErrors, Form, Field, ErrorMessage } from 'formik';
 import NavBar from "../../components/NavBar/NavBarBoostrap"
@@ -11,7 +11,7 @@ import { IconBase } from 'react-icons/lib';
 import IonIcon from '@reacticons/ionicons';
 import Swal from 'sweetalert2'
 
-import { useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useState } from "react";
 
@@ -37,15 +37,15 @@ interface OtherProps {
 
 // Aside: You may see InjectedFormikProps<OtherProps, FormValues> instead of what comes below in older code.. InjectedFormikProps was artifact of when Formik only exported a HoC. It is also less flexible as it MUST wrap all props (it passes them through).
 const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
-    const [stateInput,setStateInput]=useState({
-        email:"",
-        name:"",
-        message:""
+    const [stateInput, setStateInput] = useState({
+        email: "",
+        name: "",
+        message: ""
     })
-    
- 
+
+
     const { touched, errors, isSubmitting, message } = props;
-    let history=useHistory()
+    let history = useHistory()
     // useEffect(() => {
     //    setStateInput("false")
     //   }, []);
@@ -53,48 +53,48 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
     function submitForm(e: any) {
 
         e.preventDefault()
-        
+
         const name = e.target.name.value
         const email = e.target.email.value
         const message = e.target.message.value
 
         //console.log(e.target)
-        if (name.length > 0 && email.length > 0 && message.length>0) {
+        if (name.length > 0 && email.length > 0 && message.length > 0) {
             console.log("mensaje enviado")
-            
+
             // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
             //     .then(response => console.log(response))
             //     .catch(error => console.log(error))
 
-                Swal.fire(
-                    'Mensaje Enviado!',
-                    'You clicked the button!',
-                    'success'
-                  );
-           setStateInput({
-            name:"",
-            email:"",
-            message:""
-           })
-                //   setTimeout(function(){
-                //    history.push('/')
-                //   },2000)
-        }else{
+            Swal.fire(
+                'Mensaje Enviado!',
+                'You clicked the button!',
+                'success'
+            );
+            setStateInput({
+                name: "",
+                email: "",
+                message: ""
+            })
+            //   setTimeout(function(){
+            //    history.push('/')
+            //   },2000)
+        } else {
             console.log("mensaje no enviado")
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: 'Something went wrong!',
                 footer: '<a href="">Why do I have this issue?</a>'
-              })
+            })
         }
     }
-    
-    function onChange1(e:any){
+
+    function onChange1(e: any) {
         setStateInput({
             ...stateInput,
             [e.target.name]: e.target.value,
-          });
+        });
 
     }
     return (
@@ -108,10 +108,10 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
             </div>
             <div className="containerText">
                 <p>Hoy en día, dar a conocer una marca puede resultar más fácil que hace algunos años gracias al internet. Algunas tecnologías se han convertido en fuertes aliados de los emprendedores para llegar a más personas y aumentar sus ventas.</p>
-            <p>Internet es un amplio mercado que está creciendo exponencialmente, por lo que contar con las últimas tendencias de marketing digital es sumamente esencial para potenciar una marca. Tanto en términos rentables como en optimización en general. Allí, la publicidad online nace como una alternativa eficaz para anunciar la filosofía, productos y/o servicios de una determinada empresa a su público objetivo. Más que todo, a través de impactos interactivos que atrapen su atención, es decir, banners, anuncios, impresiones en video.</p>
-             <p>PYMES VIRTUAL te ofrece la posibilidad de que tu empresa sea accesible a cualqueir persona que este buscando tus servicios</p>
+                <p>Internet es un amplio mercado que está creciendo exponencialmente, por lo que contar con las últimas tendencias de marketing digital es sumamente esencial para potenciar una marca. Tanto en términos rentables como en optimización en general. Allí, la publicidad online nace como una alternativa eficaz para anunciar la filosofía, productos y/o servicios de una determinada empresa a su público objetivo. Más que todo, a través de impactos interactivos que atrapen su atención, es decir, banners, anuncios, impresiones en video, etc.</p>
+                <p>PYMES WEB te ofrece la posibilidad de que tu empresa sea accesible a cualquier persona que este buscando tus servicios</p>
             </div>
-            
+
             <div className="mediosContact">
                 <div>
                     <img className="iconoContact" src={phone} alt="phoneContact" />
@@ -164,7 +164,7 @@ const MyForm = withFormik<MyFormProps, FormValues>({
         let errors: FormikErrors<FormValues> = {};
         if (!values.name) {
             errors.name = (" * por favor ingresa nombre");
-            
+
         } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.name)) {
             errors.name = (" * el nombre con solo letras y espacios")
         }
@@ -193,7 +193,7 @@ const MyForm = withFormik<MyFormProps, FormValues>({
         console.log(e)
         // resetForm()
         //e.preventDefault()
-        
+
         // const name = e.name
         // const email = e.email
         // const message = e.message
@@ -210,7 +210,7 @@ const MyForm = withFormik<MyFormProps, FormValues>({
         //     emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.email, '6wRJW_4Y-H_LANUgQ')
         //          .then(response => console.log(response))
         //          .catch(error => console.log(error))
-               
+
         //           resetForm()
         //         //   setTimeout(function(){
         //         //    history.push('/')
@@ -229,9 +229,9 @@ const MyForm = withFormik<MyFormProps, FormValues>({
 
 // Use <MyForm /> wherevs
 const Basic = () => (
-    
+
     <div>
-        <MyForm message="Complete el Formulario"/>
+        <MyForm message="Complete el Formulario" />
     </div>
 );
 

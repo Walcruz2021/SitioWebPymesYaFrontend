@@ -12,21 +12,16 @@ const Services = () => {
     <div>
       <NavBar />
       <div className="titGlobal">
-        <h1>NUESTRA EMPRESA</h1>
+        <h1>NUESTROS SERVICIOS</h1>
       </div>
 
       <div className="classPortada">
         <p>
-          Necesitas ver la adopcion de la Tecnologia como una herramienta
-          indispensable para seguir siendo competitivo en el mundo actual Los
-          consumidores buscan opciones de consumo, segun se adapten a sus
-          necesidades, brindandoles comodidad, eficencia y mayor tranquilidad
-          sobre la seguridad personal Necesitas alinearte a esta tendencia, y
-          buscar las alternativas digitales para atender a tus clientes PymesWeb
-          no solo te ofrece esta herramienta, ademas te asesora y tiene como
-          objetivo principal que adoptes la tecnologia para tu negocio de manera
-          que establezcas ventajas competitivas con los cuales podras
-          posicionarte en le mercado
+        Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
+                    Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindandoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.
+                    Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
+                    PymesWeb no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
+                    ventajas competitivas con los cuales podras posicionarte en el mercado
         </p>
       </div>
 
@@ -47,10 +42,10 @@ const Services = () => {
 
             <p>
               eCommerce o Comercio Electronico es la practica de comprar y
-              vender productos a traves de tu sitio Web Tu tienda online estara
+              vender productos a traves de tu sitio Web. Tu tienda online estara
               disponible en todo el mundo. Recuerda que con tu tienda virtual,
               los clientes tendran acceso a tus productos los 365 dias del año
-              las 24 horas La gestión de tus publicaciones y ventas estará
+              las 24 horas. La gestión de tus publicaciones y ventas estará
               centralizada en tu cuenta de Mercado Libre. Es decir, todo lo que
               publiques se verá también en tu tienda virtual y los productos que
               vendas podrás cobrarlos usando Mercado Pago,
@@ -116,16 +111,18 @@ const Services = () => {
               Podras realizar distintas tareas de forma mucho mas facil y rapida
               que recurriendo a sistemas tradicionales basados en anotaciones
               manuales. Podras llevar la contabilidad, control inventario,
-              personalizar documentos, sacar el maximo partido a los datos
-              gracias a las estadisticas, etc Te permitirá agilizar y optimizar
-              la operatoria diaria de tu empresa o negocio Puedes ver un ejemplo
+              personalizar documentos, sacar el máximo partido a los datos
+              gracias a las estadisticas, etc. Te permitirá agilizar y optimizar
+              la operatoria diaria de tu empresa o negocio. 
+              
+              {/* Puedes ver un ejemplo
               de un Gestion de Turno para una Peluqueria Canina en el siguiente{" "}
               <a
                 href="https://app-peluqueria-canina.vercel.app/"
                 target="_blank"
               >
                 APP GESTION TURNOS
-              </a>
+              </a> */}
             </p>
           </div>
         </div>
@@ -144,8 +141,8 @@ const Services = () => {
             </div>
           </div>
           <p>
-            Que lo BASICO no te confunda, con este sitio Web podras posicionar
-            tu marca y tener un reconocimiento tanto a nivel Local como Nacional
+            Con un sitio Web podras posicionar
+            tu marca y tener un reconocimiento tanto a nivel Local como Nacional.
             Al estar diseñadas para verse desde cualquier parte del mundo,
             tendras la posibilidad de abrir fronteras y de que los clientes que
             no puedan ir a tu negocio fisico, lo puedan hacer de forma virtual

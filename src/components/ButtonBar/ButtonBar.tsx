@@ -19,9 +19,9 @@ const ButtonBar = () => {
             <div className="barra">
                 <div className="containerInfo">
                     <h3>Sobre<span>Mi</span></h3>
-                    <p>Soy un Desarrollador apasionado por la innovacion y el impacto de las teconologias en nuestra vida.
-                        Participe en varios proyectos y sigo el camino infinito del aprendizaje</p>
-                    <p>Algunas tecnologias con las que cuento de conocimientos y en las que tengo experiencia para sacar adelante cualquier proyecto</p>
+                    <p>Somos Desarrolladores apasionados por la innovacion y el impacto de las teconologias en nuestra vida.
+                        Participamos en varios proyectos y seguimos el camino infinito del aprendizaje</p>
+                    <p>Algunas tecnologias con las que contamos de conocimientos y en las que tenemos experiencia para sacar adelante cualquier proyecto</p>
                 
                     <div className="containerIcons">   
                         <img className="iconoTec" src={mongo}></img>

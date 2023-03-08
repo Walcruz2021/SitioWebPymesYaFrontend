@@ -50,7 +50,7 @@ text-align: center;
 }
 
 .Card img{
-    width: 50%;
+    width: 100%;
 
     /* La etiqueta img por defecto se comporta como un elemento inline, si quieres alinearla al centro basta con establecer su valor en de 
     display en block y agregar un margen automático para ponerla en el centro tal y como lo haríamos con cualquier otra etiqueta */
@@ -61,6 +61,25 @@ text-align: center;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* ESCRITORIO */
+@media (min-width: 768px) {
+    .Card img {
+		width: 50%;
+
+		/* La etiqueta img por defecto se comporta como un elemento inline, si quieres alinearla al centro basta con establecer su valor en de 
+		display en block y agregar un margen automático para ponerla en el centro tal y como lo haríamos con cualquier otra etiqueta */
+		display: block;
+		margin: auto;
+		height: 290px;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-top: 10px;
+    }
+    
+}
+
     
 .CardCont {
     border: 1px solid #eeeaea; 
