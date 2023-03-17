@@ -10,7 +10,7 @@ type Props = {
 // ESTE COMPONENTE ES EL QUE SE IMPRIME AL CARGAR LA PAGINA PRINCIPAL
 
 const Company = ({company}: Props) => {
-    console.log(company,"--->")
+    //console.log(company,"--->")
     return (
     
             <div className="CardCompany">

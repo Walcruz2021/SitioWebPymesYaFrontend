@@ -15,16 +15,15 @@ const DetailsCompany = () => {
     const { id } = useParams<{ id: string }>();
     const [details, setDetails] = useState<CompanyItem>()
 
-
+console.log(details,"empresa")
     useEffect(() => {
         functionDetails()
     }, [])
 
     const functionDetails = async () => {
-
-        //http://localhost:3002/api/detailsCompany/63618166dde9b62b24bcd4cc
-        //https://backendtiendavirtual.onrender.com/api/detailsCompany/6362b27daaf58410488c4f7c
-        const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
+        //const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
+        const data = await axios(`https://backendcompanywalter.up.railway.app/api/detailsCompany/${id}`);
+        
         setDetails(data.data.search)
     }
 

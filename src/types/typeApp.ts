@@ -30,7 +30,7 @@ export type CompanyItem={
     avatar:any,
     nameCompany:String,
     identifier:number,
-    phone:number,
+    phone:string,
     address:string,
     notesComp:string,
     country:string,

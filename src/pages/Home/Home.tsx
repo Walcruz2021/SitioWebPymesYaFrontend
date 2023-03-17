@@ -17,11 +17,11 @@ import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import {exportImg} from "./imagenes/icons/hospital.png"
- import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
+import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 
 const Home = () => {
     const { categories } = useFetchCat();
-    console.log(categories)
+    //console.log(categories)
     const arrayOptions = []
 
 
@@ -49,6 +49,8 @@ const Home = () => {
         isError: false
     })
 
+    console.log(selectCompanies, "---> companias OTRAS>")
+
     useEffect(() => {
         setSelectCompanies({
             ...selectCompanies, isLoading: false
@@ -56,7 +58,9 @@ const Home = () => {
     }, [])
 
     const buttonSelected = async (value: any) => {
-        console.log(value, "----->")
+
+        //console.log(value, "categoria elegida en el menu")
+        setSelectedOption(value)
         setSelectCompanies({
             ...selectCompanies,
             isLoading: true,
@@ -75,100 +79,101 @@ const Home = () => {
 
     return (
         <>
-           <NavBarBoostrap/>
+            <NavBarBoostrap />
             {/* LISTADO DE EMPRESAS */}
             <h2>SELECCIONA UNA CATEGORIA</h2>
-       
+
             <ul className="containerButtons">
-                   
-                    <li>
-                        <button onClick={() => buttonSelected("63c87cc2a40ae240e81e0e13")}>
-                            <IonIcon name="business-outline"></IonIcon>
-                            
-                        </button>
-                        <h6 className="titButton">Hoteles</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("63c87c1aa40ae240e81e0e09")}>
-                            <IonIcon name="fast-food-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Restaurantes</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362adecdd463420189414d2")}>
-                            <IonIcon name="cart-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Supermercados</h6>
 
-                    </li>
-                    
-                    <li>
-                        <button onClick={() => buttonSelected("63c87c8ba40ae240e81e0e0f")}>
-                            <IonIcon name="bicycle-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Gimnasios</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("63c87c76a40ae240e81e0e0d")}>
-                            <IonIcon name="fitness-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Hospitales</h6>
-                    </li>
-                    
-                                       
-                    <li>
-                        <button onClick={() => buttonSelected("63c87c54a40ae240e81e0e0b")}>
-                            <IonIcon name="paw-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Veterinarias</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6361a622884b44df2751139a")}>
-                            <IonIcon name="location-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Drugstores</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362ad64dd463420189414cf")}>
-                            <IonIcon name="hammer-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Ferreterias</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362ad83dd463420189414d0")}>
-                            <IonIcon name="layers-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Mayoristas</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362add2dd463420189414d1")}>
-                            <IonIcon name="restaurant-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Carnicerias</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362ae72dd463420189414d3")}>
-                            <IonIcon name="color-palette-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Librerias</h6>
-                    </li>
-                    <li>
-                        <button onClick={() => buttonSelected("6362ae72dd463420189414d3")}>
-                            <IonIcon name="add-circle-outline"></IonIcon>
-                        </button>
-                        <h6 className="titButton">Otros</h6>
-                    </li>
-                    
-                    
-                </ul>
+                <li>
+                    <button onClick={() => buttonSelected("63c87cc2a40ae240e81e0e13")}>
+                        <IonIcon name="business-outline"></IonIcon>
 
-                
-            
+                    </button>
+                    <h6 className="titButton">Hoteles</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("63c87c1aa40ae240e81e0e09")}>
+                        <IonIcon name="fast-food-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Restaurantes</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6362adecdd463420189414d2")}>
+                        <IonIcon name="cart-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Supermercados</h6>
+
+                </li>
+
+                <li>
+                    <button onClick={() => buttonSelected("63c87c8ba40ae240e81e0e0f")}>
+                        <IonIcon name="bicycle-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Gimnasios</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("63c87c76a40ae240e81e0e0d")}>
+                        <IonIcon name="fitness-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Hospitales</h6>
+                </li>
+
+
+                <li>
+                    <button onClick={() => buttonSelected("63c87c54a40ae240e81e0e0b")}>
+                        <IonIcon name="paw-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Veterinarias</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6361a622884b44df2751139a")}>
+                        <IonIcon name="location-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Drugstores</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6362ad64dd463420189414cf")}>
+                        <IonIcon name="hammer-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Ferreterias</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6362ad83dd463420189414d0")}>
+                        <IonIcon name="layers-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Mayoristas</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6362add2dd463420189414d1")}>
+                        <IonIcon name="restaurant-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Carnicerias</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6362ae72dd463420189414d3")}>
+                        <IonIcon name="color-palette-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Librerias</h6>
+                </li>
+                <li>
+                    <button onClick={() => buttonSelected("6408e10042e6881a681f6955")}>
+                        <IonIcon name="add-circle-outline"></IonIcon>
+                    </button>
+                    <h6 className="titButton">Otros</h6>
+                </li>
+
+
+            </ul>
+
+
+
 
             <div className="ContainerListComp">
 
                 {selectCompanies.isLoading == false ?
 
+                    selectedOption === "6408e10042e6881a681f6955" ?
                     selectCompanies.companies.map(comp => (
                         <div className="ContainerCompany">
                             <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
@@ -178,7 +183,17 @@ const Home = () => {
                                 />
                             </Link>
                         </div>
-                    ))
+                    ))   
+                    :  selectCompanies.companies.map(comp => (
+                            <div className="ContainerCompany">
+                                <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+                                    <Company
+                                        key={comp._id}
+                                        company={comp}
+                                    />
+                                </Link>
+                            </div>
+                        ))
                     : <h1>cargando...</h1>
                 }
 
@@ -192,9 +207,9 @@ const Home = () => {
             <div className="containerWeb">
                 <h4>¿Queres que tu empresa este en esta pagina?</h4>
                 <Link style={{ textDecoration: 'none' }} to={`/contactPubli`}>
-                <h3 className="buttonBanner">Clic Aqui</h3>
-                                
-                            </Link>
+                    <h3 className="buttonBanner">Clic Aqui</h3>
+
+                </Link>
             </div>
 
             <ButtonBar />
