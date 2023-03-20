@@ -10,6 +10,7 @@ import { CompanyItem } from '../../types/typeApp';
 import { CompanyFetch } from '../../types/typeApp';
 import axios from 'axios'
 import Company from '../../components/ListCompanies/Company/Company';
+import CompanyOtros from '../../components/ListCompanies/Company/CompanyOtros';
 import "./Home.css"
 import NavBar from '../../components/NavBar/NavBarBoostrap';
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
@@ -23,7 +24,7 @@ const Home = () => {
     const { categories } = useFetchCat();
     //console.log(categories)
     const arrayOptions = []
-
+var compOtros=[]
 
     const a = "construct-outline"
     if (categories.length > 0) {
@@ -171,19 +172,42 @@ const Home = () => {
 
             <div className="ContainerListComp">
 
-                {selectCompanies.isLoading == false ?
+                {/* {selectCompanies.isLoading == false ?
 
                     selectedOption === "6408e10042e6881a681f6955" ?
-                    selectCompanies.companies.map(comp => (
+                    
+                    selectCompanies.companies.map(comp =>(
+                        comp.typeCategory==="Marroquineria"?
                         <div className="ContainerCompany">
+                           <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+                               <CompanyOtros
+                                  key={comp._id}
+                                  company={comp}
+                              />
+                          </Link>
+                       </div>
+                       :
+                        comp.typeCategory==="Comercio Electronico"?
+                         <div className="ContainerCompany">
                             <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-                                <Company
-                                    key={comp._id}
-                                    company={comp}
-                                />
-                            </Link>
+                                <CompanyOtros
+                                   key={comp._id}
+                                   company={comp}
+                               />
+                           </Link>
                         </div>
-                    ))   
+                       :
+                       comp.typeCategory==="Tienda de Ropas"?
+                        <div className="ContainerCompany">
+                           <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+                               <CompanyOtros
+                                  key={comp._id}
+                                  company={comp}
+                              />
+                          </Link>
+                       </div>
+                       :null
+                    ))
                     :  selectCompanies.companies.map(comp => (
                             <div className="ContainerCompany">
                                 <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
@@ -195,7 +219,42 @@ const Home = () => {
                             </div>
                         ))
                     : <h1>cargando...</h1>
-                }
+                } */}
+
+{selectCompanies.isLoading == false ?
+
+selectedOption === "6408e10042e6881a681f6955" ?
+
+selectCompanies.companies.map(comp =>(
+    
+    <div className="ContainerCompany">
+       <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+           <CompanyOtros
+              key={comp._id}
+              company={comp}
+          />
+      </Link>
+   </div>
+ 
+
+))
+:
+selectCompanies.companies.map(comp =>(
+    
+    <div className="ContainerCompany">
+       <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
+           <Company
+              key={comp._id}
+              company={comp}
+          />
+      </Link>
+   </div>
+ 
+
+))
+
+: <h1>cargando...</h1>
+}
 
             </div>
 
