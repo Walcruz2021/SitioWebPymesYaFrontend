@@ -144,7 +144,7 @@ const Services = () => {
             Con un sitio Web podrás posicionar
             tu marca y tener un reconocimiento tanto a nivel Local como Nacional.
             Al estar diseñadas para verse desde cualquier parte del mundo,
-            tendr►0s la posibilidad de abrir fronteras y de que los clientes que
+            tendrás la posibilidad de abrir fronteras y de que los clientes que
             no puedan ir a tu negocio fisico, lo puedan hacer de forma virtual
             informandose de los servicios que prestas
           </p>
