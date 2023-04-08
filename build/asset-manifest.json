@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d598d130.css",
-    "main.js": "/static/js/main.35200bb4.js",
+    "main.js": "/static/js/main.a93bc1d3.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
     "static/media/sitioweb.jpg": "/static/media/sitioweb.be3edf9734c8faa0a129.jpg",
     "static/media/sitioweb2.jpg": "/static/media/sitioweb2.299638ab87aec967517e.jpg",
@@ -17,10 +17,10 @@
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
     "main.d598d130.css.map": "/static/css/main.d598d130.css.map",
-    "main.35200bb4.js.map": "/static/js/main.35200bb4.js.map"
+    "main.a93bc1d3.js.map": "/static/js/main.a93bc1d3.js.map"
   },
   "entrypoints": [
     "static/css/main.d598d130.css",
-    "static/js/main.35200bb4.js"
+    "static/js/main.a93bc1d3.js"
   ]
 }

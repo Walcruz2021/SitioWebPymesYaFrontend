@@ -67,7 +67,8 @@ const Home = () => {
             isError: false
         });
 
-        const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
+        //const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
+        const response = await axios(`https://backendcompanywalter.up.railway.app/api/listCompaniesByCategory/${value}`);
         if (response.data.listCompanies.length > 0) {
             setSelectCompanies({
                 companies: response.data.listCompanies,
