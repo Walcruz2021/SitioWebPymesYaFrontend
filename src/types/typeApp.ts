@@ -37,7 +37,8 @@ export type CompanyItem={
     cityName:string,
     level:number,
     Category:string,
-    siteWeb:string 
+    siteWeb:string,
+    typeCategory:string 
 }
 
 export type CategoryItem={

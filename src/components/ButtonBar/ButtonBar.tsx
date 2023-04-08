@@ -18,8 +18,8 @@ const ButtonBar = () => {
         <>
             <div className="barra">
                 <div className="containerInfo">
-                    <h3>Sobre<span>Mi</span></h3>
-                    <p>Somos Desarrolladores apasionados por la innovacion y el impacto de las teconologias en nuestra vida.
+                    <h3>Sobre<span> Nosotros</span></h3>
+                    <p>Somos Desarrolladores apasionados por la innovacion y el impacto de las tecnologias en nuestra vida.
                         Participamos en varios proyectos y seguimos el camino infinito del aprendizaje</p>
                     <p>Algunas tecnologias con las que contamos de conocimientos y en las que tenemos experiencia para sacar adelante cualquier proyecto</p>
                 
@@ -40,8 +40,8 @@ const ButtonBar = () => {
                 <nav className="navegacion">
               
                     {/* <h3>Redes Sociales</h3> */}
-                    <a href="https://www.facebook.com/walter.cruz.161214/" target="_blank"><IonIcon className="IconRedes" name={'logo-linkedin'} /></a>
-                    <a href="https://www.linkedin.com/in/walcruz1988/" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>
+                    <a href="https://www.instagram.com/PymesYaWeb/?hl=es" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
+                    <a href="https://www.facebook.com/profile.php?id=100091172464194" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>
 
                    
 

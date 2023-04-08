@@ -18,9 +18,9 @@ const Services = () => {
       <div className="classPortada">
         <p>
         Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
-                    Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindandoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.
+                    Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindándoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.
                     Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
-                    PymesWeb no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
+                    PymesYa no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
                     ventajas competitivas con los cuales podras posicionarte en el mercado
         </p>
       </div>
@@ -108,7 +108,7 @@ const Services = () => {
           <div className="CardCont">
             <img src={software}></img>
             <p>
-              Podras realizar distintas tareas de forma mucho mas facil y rapida
+              Podrás realizar distintas tareas de forma mucho mas fácil y rápida
               que recurriendo a sistemas tradicionales basados en anotaciones
               manuales. Podras llevar la contabilidad, control inventario,
               personalizar documentos, sacar el máximo partido a los datos
@@ -141,10 +141,10 @@ const Services = () => {
             </div>
           </div>
           <p>
-            Con un sitio Web podras posicionar
+            Con un sitio Web podrás posicionar
             tu marca y tener un reconocimiento tanto a nivel Local como Nacional.
             Al estar diseñadas para verse desde cualquier parte del mundo,
-            tendras la posibilidad de abrir fronteras y de que los clientes que
+            tendrás la posibilidad de abrir fronteras y de que los clientes que
             no puedan ir a tu negocio fisico, lo puedan hacer de forma virtual
             informandose de los servicios que prestas
           </p>

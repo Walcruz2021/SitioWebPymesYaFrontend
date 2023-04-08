@@ -20,13 +20,12 @@ const OurCompany = () => {
             </div>
 
             <div className="classPortada">
-                <p>Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
-                    Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindandoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.
-                    Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
-                    PymesWeb no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
-                    ventajas competitivas con los cuales podras posicionarte en el mercado</p>
 
-
+                   <p>"Nuestro objetivo principal es que las personas del dia a dia encuentren tu negocio de una manera fácil y sencilla. Que conozcan tu marca y sepan llegar a ella".</p>
+                   <p>Quienes Somos?.. Somos un grupo de desarrolladores que tienen como funciones 2 cosas.
+                    <p>1) Que las personas que visiten esta página encuentren tu marca, tu negocio, tu bien mas preciado, como una opcion a visitar y conocer</p>
+                    <p>2) Que adoptes la tecnologia en tu negocio y le saques el máximo provecho ya que te aportará beneficios, no solo económicos,  sino una mejora en la imagen de tu empresa</p>
+                   </p>
                 {/* 
                 <h3>RENDIMIENTO</h3>
                 <p>
@@ -41,7 +40,7 @@ const OurCompany = () => {
                 <h3>INTEGRACIONES</h3>
                 <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
 
-
+<br></br>
                 <h4>Tenemos en cuenta 3 pilares fundamentales:</h4>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
