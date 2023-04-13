@@ -44,5 +44,3 @@ const useFetchComp = () => {
 }
 
 export default useFetchComp;
-
-
