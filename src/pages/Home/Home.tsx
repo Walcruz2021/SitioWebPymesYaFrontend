@@ -168,6 +168,7 @@ const Home = () => {
 
                 {selectCompanies.isLoading == false ?
 
+                    //pregunta si las empresas elegidas correspondena la opcion OTROS del MENU
                     selectedOption === "6408e10042e6881a681f6955" ?
 
                         selectCompanies.companies.map(comp => (
@@ -182,16 +183,19 @@ const Home = () => {
                             </div>
                         ))
                         :
+                    //en caso contrario imprime las empresas que pagaron por el aviso
                         <>
                             <ListCompaniesFilterTrue companies={selectCompanies.companies} />
 
                         </>
 
+                    //queda cargando hasta que el LOADING este en FALSE
                     : <h1>cargando...</h1>
                 }
 
             </div>
 
+            {/* imprime las empresas que no pagaron por el servicio */}
             {
                 selectedOption ?
                 <>
@@ -199,7 +203,7 @@ const Home = () => {
                 <ListCompaniesFilterFalse companies={selectCompanies.companies} />
                 </>
 
-                    : null
+                : null
 
             }
 

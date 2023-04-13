@@ -14,8 +14,10 @@ import {
     faHammer
   } from "@fortawesome/free-solid-svg-icons";
 import "./Servicios.css"
+import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import ListProfessionalsVip from '../../components/ListCompanies/ListProfessionalsVip'
 
-const Servicios=()=>{
+const ServiceProf=()=>{
     const [selectedOption, setSelectedOption] = useState<any>(null)
     const [selectCompanies, setSelectCompanies] = useState<CompanyFetch>({
         companies: [],
@@ -47,7 +49,7 @@ return(
 <NavBarBoostrap />
 <h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
 
-<div className="containerMenu">
+
 <ul className="containerButtons">
 
 {/* <li>
@@ -111,9 +113,6 @@ return(
 
 </ul>
 
-
-</div>
-
 <div className="ContainerListComp">
 
 {selectCompanies.isLoading == false ?
@@ -132,10 +131,22 @@ return(
         :
         <h1>cargando...</h1>
     }
-
-    
-
 </div>
+
+<h2>LOS MEJORES PROFESIONALES A TU DISPOSICION</h2>
+            <div>
+                <ListProfessionalsVip />
+            </div>
+
+<div className="containerWeb">
+                <h4>¿Queres que tu servicio esté en esta página?</h4>
+                <Link style={{ textDecoration: 'none' }} to={`/contactPubli`}>
+                    <h3 className="buttonBanner">Clic Aqui</h3>
+
+                </Link>
+            </div>
+
+<ButtonBar/>
 
 </>
 
@@ -143,4 +154,4 @@ return(
 
 }
 
-export default Servicios
+export default ServiceProf
