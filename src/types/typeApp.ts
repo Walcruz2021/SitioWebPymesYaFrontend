@@ -38,7 +38,8 @@ export type CompanyItem={
     level:number,
     Category:string,
     siteWeb:string,
-    typeCategory:string 
+    typeCategory:string,
+    levelPay:string
 }
 
 export type CategoryItem={

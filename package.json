@@ -34,7 +34,7 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
-  "homepage":"http://pymes.com",
+  "homepage":"http://pymesya.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -1,30 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
 import ListCompanies from '../../components/ListCompanies/ListCompanies'
-import { useSelector, useDispatch } from 'react-redux';
 import useFetchCat from '../../hooks/useFetchCat';
-import useFetchSelect from '../../hooks/useFetchSelect';
-import Select from "react-select"
 import './styles.css';
-import { CompanyItem } from '../../types/typeApp';
 import { CompanyFetch } from '../../types/typeApp';
 import axios from 'axios'
-import Company from '../../components/ListCompanies/Company/Company';
 import CompanyOtros from '../../components/ListCompanies/Company/CompanyOtros';
 import "./Home.css"
-import NavBar from '../../components/NavBar/NavBarBoostrap';
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 // import {exportImg} from "./imagenes/icons/hospital.png"
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
+import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue"
+import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse"
 
 const Home = () => {
     const { categories } = useFetchCat();
     //console.log(categories)
     const arrayOptions = []
-var compOtros=[]
+    var compOtros = []
 
     const a = "construct-outline"
     if (categories.length > 0) {
@@ -68,7 +64,8 @@ var compOtros=[]
             isError: false
         });
 
-        const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
+        //const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
+        const response = await axios(`https://backendcompanywalter.up.railway.app/api/listCompaniesByCategory/${value}`);
         if (response.data.listCompanies.length > 0) {
             setSelectCompanies({
                 companies: response.data.listCompanies,
@@ -167,96 +164,45 @@ var compOtros=[]
 
             </ul>
 
-
-
-
             <div className="ContainerListComp">
 
-                {/* {selectCompanies.isLoading == false ?
+                {selectCompanies.isLoading == false ?
 
                     selectedOption === "6408e10042e6881a681f6955" ?
-                    
-                    selectCompanies.companies.map(comp =>(
-                        comp.typeCategory==="Marroquineria"?
-                        <div className="ContainerCompany">
-                           <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-                               <CompanyOtros
-                                  key={comp._id}
-                                  company={comp}
-                              />
-                          </Link>
-                       </div>
-                       :
-                        comp.typeCategory==="Comercio Electronico"?
-                         <div className="ContainerCompany">
-                            <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-                                <CompanyOtros
-                                   key={comp._id}
-                                   company={comp}
-                               />
-                           </Link>
-                        </div>
-                       :
-                       comp.typeCategory==="Tienda de Ropas"?
-                        <div className="ContainerCompany">
-                           <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-                               <CompanyOtros
-                                  key={comp._id}
-                                  company={comp}
-                              />
-                          </Link>
-                       </div>
-                       :null
-                    ))
-                    :  selectCompanies.companies.map(comp => (
+
+                        selectCompanies.companies.map(comp => (
+
                             <div className="ContainerCompany">
                                 <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-                                    <Company
+                                    <CompanyOtros
                                         key={comp._id}
                                         company={comp}
                                     />
                                 </Link>
                             </div>
                         ))
+                        :
+                        <>
+                            <ListCompaniesFilterTrue companies={selectCompanies.companies} />
+
+                        </>
+
                     : <h1>cargando...</h1>
-                } */}
-
-{selectCompanies.isLoading == false ?
-
-selectedOption === "6408e10042e6881a681f6955" ?
-
-selectCompanies.companies.map(comp =>(
-    
-    <div className="ContainerCompany">
-       <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-           <CompanyOtros
-              key={comp._id}
-              company={comp}
-          />
-      </Link>
-   </div>
- 
-
-))
-:
-selectCompanies.companies.map(comp =>(
-    
-    <div className="ContainerCompany">
-       <Link style={{ textDecoration: 'none' }} to={`/detailsCompany/${comp._id}`}>
-           <Company
-              key={comp._id}
-              company={comp}
-          />
-      </Link>
-   </div>
- 
-
-))
-
-: <h1>cargando...</h1>
-}
+                }
 
             </div>
+
+            {
+                selectedOption ?
+                <>
+                <h3 className="classSubt">OTRAS QUE TE PUEDAN INTERESAR</h3>
+                <ListCompaniesFilterFalse companies={selectCompanies.companies} />
+                </>
+
+                    : null
+
+            }
+
 
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
             <div>
@@ -279,13 +225,3 @@ selectCompanies.companies.map(comp =>(
 export default Home;
 
 
-// {arrayOptions.map((logo) => (
-//     <button className="IconButton" onClick={() => buttonSelected(logo.value)}>
-//         <div>
-
-//         <i className="material-icons"></i>
-//         {/* <FontAwesomeIcon icon="fa-solid fa-user" /> */}
-
-//         </div>
-//     </button>
-// ))} 
