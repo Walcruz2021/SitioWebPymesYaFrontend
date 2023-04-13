@@ -1,0 +1,99 @@
+.containerMenu{
+  padding: 1rem;
+}
+
+/* *****************MENU***************** */
+.containerButtons{
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0.5rem;
+    /* justify-content: space-between; se comenta esta linea debido a que al estar en modo mobile no tiene margen a la derecha*/
+    /* justify-content: space-between; */
+  }
+  
+  /* pantalla escritorio */
+  @media (min-width: 768px) {
+    .containerButtons{
+      background-color: black;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      padding: 0.5rem;
+      /* justify-content: space-between; se comenta esta linea debido a que al estar en modo mobile no tiene margen a la derecha*/
+      justify-content: space-between;
+    }
+  }
+  
+  
+    .containerButtons li {
+      list-style: none;
+      margin: 10px 20px;
+      text-align: center;
+     flex: none;
+     width: calc((100% - 10px)/8);
+     /* display: flex; */
+     justify-content: center;
+     align-items: center;
+     margin-bottom: 1rem;
+     
+    
+    }
+  
+    .containerButtons h6{
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    .containerButtons li button {
+      /* este junto con position:relative top:50% left:50% transform:translate (...) de .containerButtons provocan que los iconos queden fijos */
+      /* position: relative;   */
+      
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      /* posicion del icono mientras mayor sea eje=63 el icono estara mas abajo */
+      line-height: 30px; 
+      background: #333;
+      border-radius: 20%;
+      font-size: 30px;
+      color: #666;
+      transition: .5s;
+    }
+  
+    .titButton{
+      font-size: 1rem;
+      color: #666;
+      
+      margin-top: 10px;
+      text-align: center;
+    }
+    
+    .containerButtons li button::before {
+      /* hace mas ancho la luz intermitente del costado (content y position) */
+      content: '';
+      position: absolute; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20%;
+      /* background: #ffee10; */
+      transition: .5s;
+      transform: scale(.9);
+      /* z-index: -1; ubica al icono en elc entro */
+      z-index: -1;  
+  }
+    
+    .containerButtons li button:hover::before {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #ffee10;
+    }
+    
+    .containerButtons li button:hover {
+      color: #ffee10;
+      box-shadow: 0 0 15px #ffee10;
+      text-shadow: 0 0 15px #ffee10;
+    }
+  

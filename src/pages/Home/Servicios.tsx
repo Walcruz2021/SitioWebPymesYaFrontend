@@ -1,4 +1,4 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
+import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import IonIcon from '@reacticons/ionicons';
 import React, { useEffect, useState } from 'react'
 import { CompanyFetch } from '../../types/typeApp';
@@ -13,7 +13,7 @@ import {
     faToilet,
     faHammer
   } from "@fortawesome/free-solid-svg-icons";
-
+import "./Servicios.css"
 
 const Servicios=()=>{
     const [selectedOption, setSelectedOption] = useState<any>(null)
@@ -43,10 +43,11 @@ const Servicios=()=>{
         }
     }
 return(
-<div>
-<NavBar />
-<h1>SELECCIONE UNA CATEGORIA DE SERVICIO</h1>
+<>
+<NavBarBoostrap />
+<h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
 
+<div className="containerMenu">
 <ul className="containerButtons">
 
 {/* <li>
@@ -110,6 +111,9 @@ return(
 
 </ul>
 
+
+</div>
+
 <div className="ContainerListComp">
 
 {selectCompanies.isLoading == false ?
@@ -133,7 +137,7 @@ return(
 
 </div>
 
-</div>
+</>
 
 )
 
