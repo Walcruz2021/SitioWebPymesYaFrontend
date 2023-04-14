@@ -6,9 +6,7 @@ import { ProductItem } from '../../types/typeApp';
 import Company from './Company/Company';
 import "./ListCompanies.css"
 
-const ListCompanies = () => {
-
-
+const ListCompanies = (codigo:any) => {
 
     const { companies, isLoading } = useFetchVip();
 

@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import useFetchVip from '../../hooks/useFetchVip';
+import useFetchProfVip from '../../hooks/useFetchProfVip';
 import { ProductItem } from '../../types/typeApp';
-import Company from './Company/Company';
+import CompanyServ from './Company/CompanyServ';
 import "./ListCompanies.css"
 
 const ListProfessionalsVip = () => {
 
 
-
-    const { companies, isLoading } = useFetchVip();
+    const { companies, isLoading } = useFetchProfVip();
 
     if (isLoading) return <h1>Cargando...</h1>
 
@@ -20,13 +19,10 @@ const ListProfessionalsVip = () => {
             {
                 companies && companies.map(company => (
                     <div className="ContainerCompany">
-                        <Link style={{ textDecoration: 'none'}}  to={`/detailsCompany/${company._id}`}>
-                            <Company
+                            <CompanyServ
                                 key={company._id}
                                 company={company}
                             />
-                        </Link>
-                        
                     </div>
 
 

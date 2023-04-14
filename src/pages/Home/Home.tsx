@@ -46,7 +46,6 @@ const Home = () => {
         isError: false
     })
 
-    console.log(selectCompanies, "---> companias OTRAS>")
 
     useEffect(() => {
         setSelectCompanies({
@@ -207,17 +206,16 @@ const Home = () => {
 
             }
 
-
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+
             <div>
-                <ListCompanies />
+                <ListCompanies/>
             </div>
 
             <div className="containerWeb">
                 <h4>¿Queres que tu empresa este en esta pagina?</h4>
                 <Link style={{ textDecoration: 'none' }} to={`/contactPubli`}>
                     <h3 className="buttonBanner">Clic Aqui</h3>
-
                 </Link>
             </div>
 

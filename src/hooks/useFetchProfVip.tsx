@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import getCompaniesVip from "../helpers/getCompaniesVip"
+import getProfesionalsVip from "../helpers/getProfesionalsVip"
 import { CompanyFetch } from "../types/typeApp"
 
 
@@ -13,7 +13,7 @@ const useFetchVip = () => {
 
     useEffect(() => {
 
-        getCompaniesVip()
+        getProfesionalsVip()
             .then(data => {
                 const dataCompanies=data.listCompanies
                 setData({
