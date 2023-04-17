@@ -12,11 +12,11 @@ function NavBarBoostrap() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/contact">Contacto</Nav.Link>
-            <Nav.Link href="/OurCompany">Quienes Somos</Nav.Link>
-            <Nav.Link href="/services">Nuestros Servicios</Nav.Link>
+            {/* <Nav.Link href="/OurCompany">Quienes Somos</Nav.Link> */}
+            {/* <Nav.Link href="/services">Nuestros Servicios</Nav.Link> */}
             <Nav.Link href="/empleos">EMPLEOS</Nav.Link>
             <Nav.Link href="/servicios">SERVICIOS</Nav.Link>
-            <Nav.Link href="/empleos">ALQUILERES</Nav.Link>
+            {/* <Nav.Link href="/empleos">ALQUILERES</Nav.Link> */}
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
