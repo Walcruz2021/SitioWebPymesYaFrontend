@@ -32,21 +32,14 @@ const CompanyEmpleo = ({ company }: Props) => {
             <div className="CardCompany">
                 <div className="Contenido">
                     <h4>{company.nameCompany}</h4>
-                    <p>{company.phone}</p>
                     <p>
                         {company.cityName}-{company.country}
                     </p>
                     
                 </div>
 
-                {/* <img>{company.avatar}</img> */}
-                {/* <Button variant="primary" onClick={() => handleAddToCart(product)}>Agregar al carrito</Button> */}
-                <button className="buttonCardServ" onClick={() => functionDetails()}>Ver Servicios</button>
-            
-            {/* {stateModal === true ?
-                <ModalComp company={company} state={stateModal} setState={setVisualModal} /> : null
-            } */}
-            
+                <button className="buttonCardServ" onClick={() => functionDetails()}>Ver Empleo</button>
+                
             </div>
 
         </>

@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
-
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import useFetchEmpleos from '../../hooks/useFetchEmpleos';
-import CompanyEmpleo from './Company/CompanyEmpleo';
+import useFetchEmpVip from '../../hooks/useFetchEmpVip';
+import { ProductItem } from '../../types/typeApp';
+import CompanyServ from './Company/CompanyServ';
 import "./ListCompanies.css"
 
-const ListEmpleos = (codigo:any) => {
+const ListEmpleosVip = () => {
 
-    const { companies, isLoading } = useFetchEmpleos();
+
+    const { companies, isLoading } = useFetchEmpVip();
 
     if (isLoading) return <h1>Cargando...</h1>
 
@@ -17,12 +19,10 @@ const ListEmpleos = (codigo:any) => {
             {
                 companies && companies.map(company => (
                     <div className="ContainerCompany">
-                            <CompanyEmpleo
+                            <CompanyServ
                                 key={company._id}
                                 company={company}
                             />
-                  
-                        
                     </div>
 
 
@@ -31,9 +31,9 @@ const ListEmpleos = (codigo:any) => {
 
         </div> 
 
-   
+    
         </>
     )
 }
 
-export default ListEmpleos;
+export default ListEmpleosVip;

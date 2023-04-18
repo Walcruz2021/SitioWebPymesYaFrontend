@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Servicios.css"
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
-import ListCompaniesVip from '../../components/ListCompanies/ListCompanies'
+import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'
 import ListProfessionalsVip from '../../components/ListCompanies/ListProfessionalsVip'
 
 const ServiceProf = () => {

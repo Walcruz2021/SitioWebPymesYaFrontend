@@ -15,8 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Servicios.css"
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
-import ListCompaniesVip from '../../components/ListCompanies/ListCompanies'
-import ListProfessionalsVip from '../../components/ListCompanies/ListProfessionalsVip'
+import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'
+import ListEmpleosVip from '../../components/ListCompanies/ListEmpleosVip'
 import ListEmpleos from '../../components/ListCompanies/ListEmpleos'
 const EmpleosProf = () => {
 
@@ -33,7 +33,7 @@ const EmpleosProf = () => {
 
             <h2>EMPLEOS DESTACADOS</h2>
             <div>
-                <ListProfessionalsVip />
+                <ListEmpleosVip />
             </div>
 
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>

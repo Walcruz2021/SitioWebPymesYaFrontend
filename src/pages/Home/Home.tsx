@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
-import ListCompanies from '../../components/ListCompanies/ListCompanies'
+import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'
 import useFetchCat from '../../hooks/useFetchCat';
 import './styles.css';
 import { CompanyFetch } from '../../types/typeApp';
@@ -209,7 +209,7 @@ const Home = () => {
             <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
 
             <div>
-                <ListCompanies/>
+                <ListCompaniesVip/>
             </div>
 
             <div className="containerWeb">
