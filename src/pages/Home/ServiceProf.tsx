@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import CompanyServ from '../../components/ListCompanies/Company/CompanyServ';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import rutaBackend from "../../helpers/rutaBackend"
 import {
     faTruck,
     faBrush,
@@ -43,7 +44,7 @@ const ServiceProf = () => {
         });
 
         //const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
-        const response = await axios(`https://backendcompanywalter.up.railway.app/api/listCompaniesByCategory/${value}`);
+        const response = await axios(`${rutaBackend}/api/listCompaniesByCategory/${value}`);
         if (response.data.listCompanies.length > 0) {
             setSelectCompanies({
                 companies: response.data.listCompanies,

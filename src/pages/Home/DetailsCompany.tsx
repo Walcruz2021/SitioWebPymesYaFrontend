@@ -8,6 +8,7 @@ import axios from 'axios'
 import "./DetailsCompany.css"
 import IonIcon from '@reacticons/ionicons';
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
+import rutaBackend from '../../helpers/rutaBackend';
 
 const DetailsCompany = () => {
 
@@ -22,7 +23,7 @@ console.log(details,"empresa")
 
     const functionDetails = async () => {
         //const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
-        const data = await axios(`https://backendcompanywalter.up.railway.app/api/detailsCompany/${id}`);
+        const data = await axios(`${rutaBackend}/api/detailsCompany/${id}`);
         
         setDetails(data.data.search)
     }
