@@ -10,7 +10,7 @@ import "./Home.css"
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
-
+import rutaBackend from '../../helpers/rutaBackend';
 // import {exportImg} from "./imagenes/icons/hospital.png"
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue"
@@ -64,7 +64,7 @@ const Home = () => {
         });
 
         //const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
-        const response = await axios(`https://backendcompanywalter.up.railway.app/api/listCompaniesByCategory/${value}`);
+        const response = await axios(`${rutaBackend}/api/listCompaniesByCategory/${value}`);
         if (response.data.listCompanies.length > 0) {
             setSelectCompanies({
                 companies: response.data.listCompanies,
