@@ -15,7 +15,7 @@ import {
     faHammer
 } from "@fortawesome/free-solid-svg-icons";
 import "./Servicios.css"
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'
 import ListProfessionalsVip from '../../components/ListCompanies/ListProfessionalsVip'
 
@@ -159,7 +159,7 @@ const ServiceProf = () => {
                 </Link>
             </div>
 
-            <ButtonBar />
+            <ButtonBarBoostrap />
 
         </>
 

@@ -52,8 +52,8 @@ const App = () => {
    <Switch >
         <Route exact path="/"><Home/></Route>
         <Route path="/contact"><Contact /></Route>
-        {/* <Route path="/ourCompany"><OurCompany /></Route> */}
-        {/* <Route path="/services"><Services /></Route> */}
+        <Route path="/ourCompany"><OurCompany /></Route>
+        <Route path="/services"><Services /></Route>
         <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
         <Route path="/contactPubli"><ContactPubli /></Route>
         <Route path="/servicios"><ServiceProf/></Route>

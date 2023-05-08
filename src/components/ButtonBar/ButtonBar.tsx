@@ -33,7 +33,7 @@ const ButtonBar = () => {
                         <img className="iconoTec" src={lengC}></img>
                         <img className="iconoTec" src={express}></img>
                         <img className="iconoTec" src={node}></img>
-                    </div>
+                    </div> 
 
                 </div>
 
@@ -42,8 +42,6 @@ const ButtonBar = () => {
                     {/* <h3>Redes Sociales</h3> */}
                     <a href="https://www.instagram.com/PymesYaWeb/?hl=es" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
                     <a href="https://www.facebook.com/profile.php?id=100091172464194" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>
-
-                   
 
                 </nav>
             </div>
