@@ -1,7 +1,19 @@
+
+
 .classHistory img {
   display: block;
   margin: auto;
   padding: 1rem;
+  width: 98%;
+}
+
+@media (min-width: 768px) {
+  .classHistory img{
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    width: 80%;
+  }
 }
 
 .classHistory p{
