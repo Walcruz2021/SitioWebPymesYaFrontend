@@ -1,68 +1,29 @@
-.containerHistory{
-    padding: 2rem;
-    text-align: justify;
-    line-height: 2.5rem;
+.classHistory img {
+  display: block;
+  margin: auto;
+  padding: 1rem;
 }
 
-.buttonHist{
-    padding-left: 15px;
-    padding-right: 15px;
+.classHistory p{
+  font-size: 1.2rem;
 }
 
-.historias-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .historia {
-    width: 300px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .historia img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .historia h3 {
-    margin-top: 10px;
-  }
-  
-  .historia p {
-    margin-top: 5px;
-  }
-  
-  .boton {
-    display: block;
-    width: 80px;
-    margin-top: 10px;
-    padding: 5px;
-    text-align: center;
-    background-color: #f2f2f2;
-    color: #333;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
+.buttonHistory {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 2rem;
+}
 
-  .buttonHistory {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  
-  .buttonHistory:hover {
-    background-color: white;
-    color: black;
-    border: 3px solid #4CAF50;
-  }
+.buttonHistory:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid #4caf50;
+}
