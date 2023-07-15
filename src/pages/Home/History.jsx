@@ -37,12 +37,12 @@ const History = ({
 }) => {
   return (
     <div className="classHistory">
-      <h3>{titulo}</h3>
-      <p>{contenido1}</p>
-      <p>{contenido2}</p>
-      <img src={imagen1} alt={titulo} />
-      <h3>{titulo2}</h3>
-      <p>{contenido3}</p>
+       <h3>{titulo}</h3> {/*grimoldi */}
+      <p>{contenido1}</p> {/*(grim/En el año 1860..)*/}
+      <p>{contenido2}</p> {/*(grim/En 1895 mientras..)*/}
+      <img src={imagen1} alt={titulo} /> 
+      <h3>{titulo2}</h3> {/*Un heroes sin capa */}
+      <p>{contenido3}</p> 
       <p>{contenido4}</p>
       <h3>{titulo3}</h3>
       <p>{contenido5}</p>
