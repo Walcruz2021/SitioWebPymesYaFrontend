@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.78ce9646.css",
+    "main.css": "/static/css/main.3a3ad6b8.css",
     "main.js": "/static/js/main.be1fd905.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
     "static/media/imgGrimoldi1.jpg": "/static/media/imgGrimoldi1.91374d5866b31728fe58.jpg",
@@ -32,11 +32,11 @@
     "static/media/monedero.png": "/static/media/monedero.f05fbdebacb2a2ef5b16.png",
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
-    "main.78ce9646.css.map": "/static/css/main.78ce9646.css.map",
+    "main.3a3ad6b8.css.map": "/static/css/main.3a3ad6b8.css.map",
     "main.be1fd905.js.map": "/static/js/main.be1fd905.js.map"
   },
   "entrypoints": [
-    "static/css/main.78ce9646.css",
+    "static/css/main.3a3ad6b8.css",
     "static/js/main.be1fd905.js"
   ]
 }
