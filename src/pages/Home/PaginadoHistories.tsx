@@ -19,6 +19,11 @@ import microsoft1 from "./imagenes/microsoft/imgMicrosoft1.jpg"
 import microsoft2 from "./imagenes/microsoft/imgMicrosoft2.jpg"
 import microsoft3 from "./imagenes/microsoft/imgMicrosoft3.jpg"
 import microsoft4 from "./imagenes/microsoft/imgMicrosoft4.jpg"
+import carnegie1 from "./imagenes/carnegie/imgCarnegie1.jpg"
+import carnegie2 from "./imagenes/carnegie/imgCarnegie2.jpg"
+import carnegie3 from "./imagenes/carnegie/imgCarnegie3.jpg"
+import carnegie5 from "./imagenes/carnegie/imgCarnegie5.jpg"
+import carnegie6 from "./imagenes/carnegie/imgCarnegie6.jpg"
 
 const PaginadoHistories = () => {
 
@@ -49,19 +54,19 @@ const PaginadoHistories = () => {
             contenido2: 'Melville consiguió trabajo en la droguería La Estrella, propiedad de los hermanos suizos Demarchi. Su dedicación y habilidades destacaron rápidamente, ganándose la confianza de los Demarchi. No solo aprendió el idioma rápidamente, sino que también encontró una oportunidad para desarrollar su potencial emprendedor.',
             imagen1: imgBagley1,
             titulo2: "La Esperidina",
-            imagen2: imgBagley2,
             contenido3: 'Después de dos años de servicio ejemplar, Melville se asoció con sus empleadores y juntos establecieron una innovadora casa de pastas y licores que en esa época era una idea innovadora. Fue durante ese tiempo que, gracias al bioquímico Domingo Parodi, asociado de los suizos, Melville ideó el primer producto de la compañía: la Hesperidina. Esta bebida estimulante y con propiedades curativas fue un verdadero éxito.',
             contenido4: 'El éxito de la bebida curativa fue inmediato. Influyeron las propiedades sanadoras de las naranjas y el sabor que cautivó a los argentinos y a los uruguayos. Pero estos factores se complementaron con una genialidad de Bagley, la original campaña publicitaria del lanzamiento basada en la intriga.',
             contenido5: 'La Hesperidina se convirtió en un enigma para el público. Antes de su lanzamiento, misteriosas pintadas con el nombre "Hesperidina" aparecían en las aceras de la ciudad. Además, se podían ver carteles con mensajes enigmáticos que decían: "Se viene la Hesperidina". Esta intrigante campaña publicitaria generó una gran expectación.',
             contenido6: 'Tuvo, además, una valiosa e inesperada ayuda que le posibilitó multiplicar la difusión del aperitivo. Durante la cruenta Guerra del Paraguay, los jefes argentinos advirtieron una gran cantidad de bajas debidas al paludismo o malaria. Los remedios aportados por los médicos no lograban detener los contagios. Sin embargo, la solución se encontraba al alcance de la mano y en abundancia. Los soldados que masticaban cáscaras de naranjas amargas como una golosina no eran derrotados por el paludismo. Lo mismo ocurría con aquellos que saciaban el hambre cotidiano con esa fruta. Se corrió la voz para que todos se proveyeran en los miles de naranjos que creían naturalmente. ¿El tratamiento puso fin al problema? No en forma completa. Pero el descenso de casos de malaria fue notable.',
             contenido7: 'Mientras las tropas aplicaban la terapia de las naranjas amargas en territorio guaraní, el joven Bagley preparaba en Buenos Aires su bebida curativa, a base de naranjas amargas que revolucionaba el mercado, sin descuidar ninguna arista del negocio.',
             contenido8: 'Dos años después del lanzamiento, Melville decidió rediseñar la botella original. Adoptó la forma clásica de un barril, lo cual causó sensación. Sin embargo, también atrajo a imitadores que intentaron aprovecharse del éxito de la Hesperidina. Melville llevó a los tribunales a aquellos que trataban de copiar su producto, pero el problema persistió.',
-            imagen3: imgBagley3,
             contenido9: 'A pesar de los obstáculos, Melville no se rindió. Buscó la protección de los tribunales y encargó la impresión de etiquetas al prestigioso Bank Note Company de Nueva York. En 1876, logró captar la atención del presidente Nicolás Avellaneda, quien creó la Oficina Nacional de Patentes de Invención. La Hesperidina de Bagley se convirtió en el primer registro de patente el 27 de octubre de ese año.',
+            imagen2: imgBagley2,
             contenido10: "Melville continuó diversificando su negocio. En 1875, un año antes de patentar su marca, lanzó las primeras galletitas Bagley: Lola. También introdujo la primera mermelada, hecha con la pulpa de las naranjas amargas utilizadas para la Hesperidina. Estos tres productos se afianzaron en el mercado gracias a la visión publicitaria de Melville, quien creó el eslogan: Las tres cosas buenas de Bagley. A medida que aumentaba la demanda debido a la inmigración y surgía más competencia, Melville comprendió la importancia de diversificar su oferta. En la década de 1870, la empresa se consolidó y aprovechó la expansión del ferrocarril para traspasar las fronteras de Buenos Aires. Melville también se convirtió en un miembro activo de la Unión Industrial Argentina.",
             contenido11: "Desafortunadamente, la vida de Melville llegó a su fin prematuramente en julio de 1880, a los 42 años. Sin embargo, su segunda esposa, Mary Hamilton, y sus socios continuaron el legado de la empresa. La compañía se convirtió en sociedad anónima en 1901 y siguió creciendo y mejorando la calidad de sus productos.",
             contenido12: "La marca Bagley se expandió constantemente, lanzando nuevos productos como las famosas Criollitas en la década de 1940. Durante todo este tiempo, Melville había creado una empresa que trascendió las épocas, sosteniéndose durante más de ciento cincuenta años. Hoy en día, la Hesperidina es solo uno de los muchos productos que forman parte del grupo Cepas. En cuanto a Bagley, en 1996 fue adquirida por la reconocida empresa internacional Danone, pero siempre manteniendo el peso de su historia y formando parte de la vida cotidiana de los argentinos.",
-            contenido13: "La historia de Melville Sewell Bagley es un testimonio inspirador de perseverancia y visión empresarial. A pesar de los desafíos y obstáculos que encontró en su camino, Melville supo adaptarse, innovar y diversificar su negocio para mantenerse relevante en el mercado. Su legado continúa inspirando a las nuevas generaciones de emprendedores argentinos a seguir sus sueños y alcanzar el éxito."
+            contenido13: "La historia de Melville Sewell Bagley es un testimonio inspirador de perseverancia y visión empresarial. A pesar de los desafíos y obstáculos que encontró en su camino, Melville supo adaptarse, innovar y diversificar su negocio para mantenerse relevante en el mercado. Su legado continúa inspirando a las nuevas generaciones de emprendedores argentinos a seguir sus sueños y alcanzar el éxito.",
+            imagen3: imgBagley3,
         },
         {
             titulo: 'COCA COLA',
@@ -139,6 +144,42 @@ const PaginadoHistories = () => {
             contenido18: "El juicio se prolongó durante años y fue un tema candente en la industria de la tecnología. Aunque Apple argumentó que Microsoft había robado sus ideas, el juez dictaminó que Microsoft no había infringido los derechos de autor y que tenía el derecho de desarrollar un sistema operativo con una interfaz gráfica similar.",
             contenido19: "Microsoft obtuvo legalmente la tecnología del entorno gráfico y del ratón, y sacó al mercado Microsoft Windows, como directo competidor de Macintosh.",
             imagen4: microsoft4
+        },
+        {
+            titulo: 'ANDREW CARNEGIE',
+            contenido1: 'En un tiempo donde la pobreza se cernía como una sombra opresiva sobre la vida de los menos afortunados, un niño nació en las tierras escocesas en 1835. Andrew Carnegie, hijo de un desempleado tejedor, creció bajo el peso del hambre y la desesperanza. Pero el destino no fue cruel por mucho tiempo, ya que su familia emigró a Estados Unidos en busca de una vida mejor cuando tenía apenas 13 años.',
+            contenido2: 'La semilla de la ambición ya estaba plantada en su corazón gracias a su tierra natal, y fue en las tierras estadounidenses donde esa semilla floreció en un terreno fértil. Carnegie, con su astucia y talento, encontró su lugar en una de las industrias en auge de Estados Unidos.',
+            imagen1: carnegie1,
+            titulo2: "",
+            contenido3: "En las entrañas de la Compañía Ferroviaria de Pensilvania, su ascenso fue meteórico, una historia clásica del sueño americano. De muchacho pobre a hombre rico, su vida resonaba con la melodía del trabajo duro y la inteligencia incansable.",
+            contenido4: "La educación y pasión de Carnegie por la lectura tomaron un giro significativo cuando el coronel James Anderson abrió las puertas de su biblioteca privada a los jóvenes trabajadores. Carnegie se alimentó de conocimiento y experiencias, cultivándose no solo en el ámbito económico, sino también en el intelectual y cultural. Pero, como en toda historia atrapante, había otro lado de la moneda.",
+            titulo3: "Carrera y evolución en los negocios",
+            contenido5: "1860-1865: Guerra de Secesion. Conforme ascendía en la jerarquía empresarial, tejía una red de inversiones que le permitirían forjar su propio camino. La Guerra de Secesión fue el telón de fondo para sus primeras incursiones en el negocio, formando asociaciones y haciendo movimientos estratégicos que harían que su fortuna creciera como el fuego devora la madera seca.",
+            contenido6: "Antes de que estallara la Guerra Civil Estadounidense, Carnegie había formado una sociedad con el señor Woodruff, el inventor de un coche cama para los viajes de primera clase. Los coches cama facilitaban los viajes de negocios para distancias de aproximadamente 500 millas (805 km). La inversión demostró ser un éxito y una fuente de beneficios para Woodruff y Carnegie. El joven llegó a ser el superintendente de la Pennsylvania Railroad's Western Division, e introdujo varias mejoras en el servicio.",
+            contenido7: "En 1864, Carnegie invirtió 40 000 $ en la granja Storey de Oil Creek en el Condado de Venango (Pensilvania). En un año, la granja produjo alrededor de 1 000 000 $ de dividendos en efectivo, y el petróleo de los pozos se vendió provechosamente. La demanda de productos derivados del hierro, tales como corazas para lanchas cañoneras, cañones y armazones, así como un centenar de otros productos industriales, hicieron de Pittsburgh un centro de producción durante el tiempo de la guerra.",
+            contenido8: "Carnegie trabajó con otros para montar un laminador de acero, aumentar la producción de acero y hacerse con el control de la industria, lo que supondría la fuente de su fortuna. Luego hizo varias inversiones en la industria del hierro antes de la guerra.",
+            contenido9: "Tras la guerra, abandonó los ferrocarriles para dedicar todas sus energías al comercio con las fundiciones de hierro. Trabajó para mejorar varias fundiciones, finalmente formando parte de The Keystone Bridge Works y la Union Ironworks. Siendo superintendente de la Keystone Bridge Company's, se dio cuenta de la debilidad de las estructuras de madera tradicionales. Fueron reemplazadas en gran medida por puentes de hierro hecho en sus fundiciones.",
+            titulo6:"1875-1900: El imperio del acero",
+            imagen2: carnegie2,
+            contenido10: "Carnegie logró amasar una fortuna en la industria del acero, controlando el mayor funcionamiento integrado de acero y hierro nunca antes propiedad de un particular en los Estados Unidos. Una de sus dos grandes innovaciones fue la reducción de costos gracias a la producción en masa de raíles de acero para vías férreas. El segundo fue implementar la integración vertical con todos los suministradores de materias primas. A finales de la década 1880, Carnegie Steel era la mayor fábrica de arrabio, raíles de acero y coque del mundo, con una capacidad productiva de aproximadamente 2000 toneladas de metal de arrabio al día. En 1888, compró a la empresa competidora Homestead Steel Works, que contaba con una enorme planta junto con el suministro de carbón y minas de hierro, una larga vía de ferrocarril de unos 685 km y una flota de barcos de vapor. Luego fusionó sus participaciones y las de sus asociados en 1892 al crear la empresa Carnegie Steel Company.",
+            contenido11: "Hacia 1889, el excedente de acero de Estados Unidos superaba al de Inglaterra y Carnegie poseía la mayor parte",
+            titulo4: "1892: Huelga de Homestead",
+            contenido12: "Pero en el camino hacia la grandeza, dejó un rastro de sufrimiento y crueldad. La huelga de Homestead fue un choque sangriento entre el poder y los derechos de los trabajadores. Mientras Carnegie disfrutaba de lujosos viajes a Escocia, su socio Frick llevaba a cabo una lucha sin piedad contra los sindicatos. Las vidas se perdieron, el aire se llenó de humo y el acero de Carnegie se forjó en medio del caos y el dolor",
+            contenido13: "La huelga de Homestead fue una sangrienta confrontación laboral que duró 143 días en 1892, una de las más graves en la historia de Estados Unidos. El conflicto se centró en la planta principal de Carnegie Steel en Homestead, y surgió de una disputa laboral entre la Asociación Amalgamada de Trabajadores del Hierro y el Acero (AA) y Carnegie Steel Company",
+            contenido14: "Carnegie se fue de viaje a Escocia antes de que los disturbios alcanzaran su punto máximo. Al hacerlo, dejó la mediación de la disputa en manos de su socio Henry Clay Frick. Frick era bien conocido en los círculos industriales por mantener un firme sentimiento antisindical.  Con la industria del acero bien y los precios más altos, la AA pidió un aumento salarial; la AA representó a unos 800 de los 3.800 trabajadores de la planta. Frick respondió de inmediato con una disminución salarial promedio del 22 % que afectaría a casi la mitad de los miembros del sindicato y eliminaría varios puestos de la unidad de negociación. Aunque en público Carnegie condenó el uso de esquiroles y le dijo a los asociados que ninguna fábrica de acero era digna de derramar ni una sola gota de sangre,? apoyó la idea de Frick de destruir el sindicato y también se expresó a favor de reorganizar todo el asunto",
+            contenido15: "El sindicato y la empresa no llegaron a un acuerdo y la dirección bloqueó al sindicato. Los trabajadores consideraron el paro como un cierre patronal de la dirección y no como una huelga de los trabajadores. Como tal, los trabajadores habrían estado dentro de su derecho a protestar, y la acción gubernamental subsecuente habría sido un conjunto de procedimientos criminales diseñados para aplastar lo que fue visto como una demostración fundamental del creciente movimiento de derechos laborales, fuertemente opuesto por la dirección. Frick trajo miles de rompehuelgas para trabajar en las acerías y agentes de Pinkerton (famosos por romper huelgas) para hostigar y atacar a los huelguistas.",
+            imagen6: carnegie6,
+            contenido16: "El 6 de julio, la llegada de una fuerza de 300 agentes de Pinkerton de la ciudad de Nueva York y Chicago resultó en una pelea en la que diez hombres murieron (siete huelguistas y tres matones de Pinkerton), y cientos resultaron heridos. El gobernador de Pensilvania, Robert Pattison, ordenó a dos brigadas de la milicia estatal que se dirigieran al lugar del ataque. Posteriormente, la empresa reanudó con éxito sus operaciones con empleados inmigrantes no sindicalizados en lugar de los trabajadores de la planta de Homestead, y Carnegie regresó a los Estados Unidos. Sin embargo, su reputacion fue dañada permanentemente por los eventos de Homestead.",
+            contenido17: "Sin embargo, ¿qué hizo Carnegie con el dinero que ganó gracias a semejante derramamiento de sangre?",
+            contenido18: "Gastó mucho en la construcción de 2.509 bibliotecas públicas gratuitas, con la intención de ayudar a trabajadores comunes a avanzar en la vida, como había hecho él",
+            contenido19: "Es un proyecto que aún continúa a través de instituciones como la Biblioteca Pública de Nueva York, en el corazón de Manhattan, con su red de 62 sucursales, que se construyeron con el dinero de Carnegie.",
+            contenido20: "Para sus críticos, era simplemente una hipocresía que alguien como Carnegie se hiciera pasar por un amigo de los trabajadores.",
+            contenido21: "En 1889 escribió su famoso ensayo El evangelio de la riqueza, donde propuso que los ricos deben ser administradores de la riqueza para beneficio de toda la sociedad, mediante las donaciones.",
+            imagen5:carnegie5,
+            contenido22:"Allí defiende el capitalismo, afirmando que tanto el empleador como el empleado hoy viven mejor que en el pasado gracias a todas las facilidades que trajo el nuevo sistema económico. Y señala que la riqueza de algunos trae beneficios para todos.",
+            contenido23:"Aunque pagaba a sus empleados los bajos salarios típicos de esa época,luego donó la mayor parte de su dinero para financiar diversas bibliotecas, escuelas y universidades en Estados Unidos, el Reino Unido y otros países, así como para crear fondos de pensiones para los empleados de más antigüedad.",
+            contenido24:"En un giro irónico, el hombre que abogaba por el evangelio de la riqueza gastó enormes sumas en bibliotecas públicas y obras filantrópicas. Las mismas manos que habían presidido conflictos brutales ahora extendían un manto de educación y apoyo. Sin embargo, su intento de lavar su conciencia dejaba un sabor amargo en los labios de aquellos que veían su caridad como una cortina que ocultaba la verdadera naturaleza de sus acciones.",
+            contenido25:"La historia de Andrew Carnegie es un recordatorio crudo de los extremos de la ambición humana. Su ascenso es inspirador, su generosidad es admirable, pero no podemos olvidar las lágrimas y el sufrimiento que también marcaron su camino. En su legado, encontramos un espejo que refleja tanto el poder del éxito como la oscuridad que puede acechar detrás de él.",
         }
     ];
 
@@ -175,10 +216,13 @@ const PaginadoHistories = () => {
                     imagen2={historias[historiaActual].imagen2}
                     imagen3={historias[historiaActual].imagen3}
                     imagen4={historias[historiaActual].imagen4}
+                    imagen5={historias[historiaActual].imagen5}
+                    imagen6={historias[historiaActual].imagen6}
                     titulo2={historias[historiaActual].titulo2}
                     titulo3={historias[historiaActual].titulo3}
                     titulo4={historias[historiaActual].titulo4}
                     titulo5={historias[historiaActual].titulo5}
+                    titulo6={historias[historiaActual].titulo6}
                     contenido3={historias[historiaActual].contenido3}
                     contenido4={historias[historiaActual].contenido4}
                     contenido5={historias[historiaActual].contenido5}
@@ -196,6 +240,12 @@ const PaginadoHistories = () => {
                     contenido17={historias[historiaActual].contenido17}
                     contenido18={historias[historiaActual].contenido18}
                     contenido19={historias[historiaActual].contenido19}
+                    contenido20={historias[historiaActual].contenido20}
+                    contenido21={historias[historiaActual].contenido21}
+                    contenido22={historias[historiaActual].contenido22}
+                    contenido23={historias[historiaActual].contenido23}
+                    contenido24={historias[historiaActual].contenido24}
+                    contenido25={historias[historiaActual].contenido25}
                     siguiente={siguienteHistoria}
                     anterior={anteriorHistoria}
                     buttonBack={buttonBack}
