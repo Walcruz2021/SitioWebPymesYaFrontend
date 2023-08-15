@@ -3,16 +3,17 @@
 .classHistory img {
   display: block;
   margin: auto;
-  padding: 1rem;
-  width: 98%;
+  padding: 0.7rem;
+  width: 99%;
 }
-
+/* PANTALLA GRANDE */
 @media (min-width: 768px) {
   .classHistory img{
     display: block;
     margin: auto;
     padding: 1rem;
-    width: 80%;
+    width: 75%;
+    height: 45rem;
   }
 }
 
