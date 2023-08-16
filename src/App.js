@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BrowserRouter as Router,Route,Routes,Link,HashRouter,Switch} from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
-import ContactPubli from "./pages/Home/ContactPubli";
+import FormAddEmpresa from "./pages/Home/FormAddEmpresa";
 import DetailsCompany from "./pages/Home/DetailsCompany"
 import OurCompany from "./pages/Home/OurCompany";
 import Services from "./pages/Home/Services";
@@ -55,7 +55,7 @@ const App = () => {
         <Route path="/ourCompany"><OurCompany /></Route>
         <Route path="/services"><Services /></Route>
         <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
-        <Route path="/contactPubli"><ContactPubli /></Route>
+        <Route path="/contactPubli"><FormAddEmpresa /></Route>
         <Route path="/servicios"><ServiceProf/></Route>
         <Route path="/empleos"><EmpleosProf/></Route>
         <Route path="/histories"><PaginadoHistories/></Route>
