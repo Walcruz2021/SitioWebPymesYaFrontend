@@ -80,7 +80,22 @@ text-align: center;
     
 }
 
+.containerOurServ{
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: justify;
+	line-height: 2.5rem;
+}
     
+.containerOurServ p,
+li,
+h4 {
+  color: #8f8d8d;
+  line-height: 2rem;
+  text-align: justify;
+}
+
+
 .CardCont {
     border: 1px solid #eeeaea; 
 

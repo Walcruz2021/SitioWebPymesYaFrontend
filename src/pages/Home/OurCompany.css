@@ -1,18 +1,12 @@
-.container{
-    width: 90%;
+.container {
+  width: 90%;
 }
 
-
-
-
-
-
-.titServ{
-    text-align: center;
-    font-size: 20px;
-    margin-top: 15px;
-    color: black;
-
+.titServ {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 15px;
+  color: black;
 }
 /* 
 .titCard{
@@ -22,43 +16,47 @@ text-align: center;
 margin: auto;
 } */
 
-
-
-.classPortada{
-   
-    margin-top: 5px;
-    /* font-family: Garamond, serif; */
-    font-family: "ArIaL", serif;
-    font-size: 17px;
-padding: 1rem;
+.classPortada {
+  margin-top: 5px;
+  /* font-family: Garamond, serif; */
+  font-family: "ArIaL", serif;
+  font-size: 17px;
+  padding: 1rem;
 }
 
-.classPortada p,li,h4{
-    color: #8f8d8d;
-    line-height: 2rem;
-    text-align: justify;
+.classPortada h4{
+    text-align: center;
 }
 
+@media (min-width: 768px) {
+    .classPortada {
+        padding-left: 13rem;
+        padding-right: 13rem;
+        text-align: justify;
+        line-height: 2.5rem;
+    }
+  }
 
+.classPortada p,
+li,
+h4 {
+  color: #8f8d8d;
+  line-height: 2rem;
+  text-align: justify;
+}
 
-.Card3{
+.Card3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-  grid-auto-rows: minmax(200px,auto);
-  gap:15px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  gap: 15px;
   margin-top: 20px;
   padding: 1rem;
 }
 
-
-.ImgClass img{
-width: 100%;
+.ImgClass img {
+  width: 100%;
 }
-
-
-
-
-
 
 /* @media (min-width: 900px){
     .grid-container{
@@ -69,51 +67,50 @@ width: 100%;
         "titServA titServB"
     }
 } */
-.containerDescription{
-    width: 90%;
+.containerDescription {
+  width: 90%;
 }
 
-.carousel{
-text-align: center;
-padding: 1rem;
-width: 100%;
-border: 1.5px solid #ebe9e9;
+.carousel {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  border: 1.5px solid #ebe9e9;
 }
 
 /* PANTALLA GRANDE */
 
-@media (min-width: 900px){
-    .carousel{
-        width: 70%;
-        padding: auto;
-        text-align: center;
-        margin: 0 auto;
-    }
-} 
-
-
-.carousel-item{
-    background-color: white;
-    padding-top: 15px;
-}
-
-.carousel-control-prev-icon{
-    background-color: #ebe9e9;
-    padding: 1.5rem;
-}
-
-.carousel-control-next-icon{
-    background-color: #ebe9e9;
-    padding: 1.5rem;
-}
-
-.itemsDesings{
+@media (min-width: 900px) {
+  .carousel {
+    width: 70%;
+    padding: auto;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 10px;
-    padding:2rem;
+  }
 }
 
-.itemsDesings li{
-text-align: left;
+.carousel-item {
+  background-color: white;
+  padding-top: 15px;
+}
+
+.carousel-control-prev-icon {
+  background-color: #ebe9e9;
+  padding: 1.5rem;
+}
+
+.carousel-control-next-icon {
+  background-color: #ebe9e9;
+  padding: 1.5rem;
+}
+
+.itemsDesings {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 2rem;
+}
+
+.itemsDesings li {
+  text-align: left;
 }

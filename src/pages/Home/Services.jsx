@@ -15,7 +15,7 @@ const Services = () => {
         <h1>NUESTROS SERVICIOS</h1>
       </div>
 
-      <div className="classPortada">
+      <div className="containerOurServ">
         <p>
         Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
                     Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindándoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.

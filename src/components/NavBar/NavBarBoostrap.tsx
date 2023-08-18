@@ -14,7 +14,8 @@ function NavBarBoostrap() {
             <Nav.Link href="/contact">Contacto</Nav.Link>
             {/* <Nav.Link href="/empleos">EMPLEOS</Nav.Link> */}
             <Nav.Link href="/servicios">SERVICIOS</Nav.Link>
-            <Nav.Link href="/histories">HISTORIAS</Nav.Link>         
+            <Nav.Link href="/histories">HISTORIAS</Nav.Link>
+            <Nav.Link href="/finanzas">FINANZAS</Nav.Link>         
           </Nav>
         </Navbar.Collapse>
       </Container>

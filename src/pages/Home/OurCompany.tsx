@@ -20,12 +20,11 @@ const OurCompany = () => {
             </div>
 
             <div className="classPortada">
-
-                   <p>"Nuestro objetivo principal es que las personas del dia a dia encuentren tu negocio de una manera fácil y sencilla. Que conozcan tu marca y sepan llegar a ella".</p>
-                   <p>Quienes Somos?.. Somos un grupo de desarrolladores que tienen como funciones 2 cosas.
+                <p>Nuestro objetivo principal es que las personas del dia a dia encuentren tu negocio de una manera fácil y sencilla. Que conozcan tu marca y sepan llegar a ella.</p>
+                <p>Quienes Somos? Somos un grupo de desarrolladores que tienen como funciones 2 cosas:
                     <p>1) Que las personas que visiten esta página encuentren tu marca, tu negocio, tu bien mas preciado, como una opcion a visitar y conocer</p>
                     <p>2) Que adoptes la tecnologia en tu negocio y le saques el máximo provecho ya que te aportará beneficios, no solo económicos,  sino una mejora en la imagen de tu empresa</p>
-                   </p>
+                </p>
                 {/* 
                 <h3>RENDIMIENTO</h3>
                 <p>
@@ -40,8 +39,8 @@ const OurCompany = () => {
                 <h3>INTEGRACIONES</h3>
                 <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
 
-<br></br>
-                <h4>Tenemos en cuenta 3 pilares fundamentales:</h4>
+                <br></br>
+                <h4>Tenemos en cuenta 3 pilares fundamentales</h4>
                 <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
