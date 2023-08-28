@@ -15,11 +15,17 @@ function NavBarBoostrap() {
             {/* <Nav.Link href="/empleos">EMPLEOS</Nav.Link> */}
             <Nav.Link href="/servicios">SERVICIOS</Nav.Link>
             <Nav.Link href="/histories">HISTORIAS</Nav.Link>
-            <Nav.Link href="/finanzas">FINANZAS</Nav.Link>         
+            <NavDropdown title="FINANZAS" id="basic-nav-dropdown">
+              <NavDropdown.Item href="/finanzas/bolsaValores">Bolsa de Valores</NavDropdown.Item>
+              {/* <NavDropdown.Item href="/variaciones">Variaciones Bolsa</NavDropdown.Item> */}
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/variaciones">Variaciones Bolsa</NavDropdown.Item>
+            </NavDropdown>
+         
           </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar >
   );
 }
 
