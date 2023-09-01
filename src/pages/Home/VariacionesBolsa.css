@@ -1,25 +1,46 @@
+
+.classContainerVar p {
+  font-size: 1.1rem;
+}
+
+.classContainerVar span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.classContainerVar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  text-align: justify;
+  width: 100%;
+  line-height: 2rem;
+  color: rgb(139, 139, 137);
+}
+
 .classContainerVar img {
-    /* centrar imagen */
+  display: block;
+  margin: auto;
+  padding: 0.7rem;
+  width: 99%;
+}
+
+/* ESCRITORIO */
+@media (min-width: 768px) {
+  .classContainerVar {
+    padding-left: 13rem;
+    padding-right: 13rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  .classContainerVar img {
     display: block;
     margin: auto;
+    padding: 1rem;
+    width: 75%;
+    height: 45rem;
   }
-  .classContainerVar p{
-  font-size: 1.1rem;
-  }
-
-  .classContainerVar span{
-    font-size: 1.1rem;
-    font-weight: bold;
-    }
-  
-  @media (min-width: 768px) {
-    .classContainerVar {
-      padding-left: 13rem;
-      padding-right: 13rem;
-      padding-top: 2rem;
-      text-align: justify;
-      width: 100%;
-      line-height: 2rem;
-      color: rgb(139, 139, 137);
-    }
-  }
+}
