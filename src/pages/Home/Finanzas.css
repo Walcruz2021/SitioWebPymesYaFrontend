@@ -18,6 +18,8 @@ font-size: 1.1rem;
   color: rgb(139, 139, 137);
 }
 
+/* PANTALLA GRANDE */
+
 @media (min-width: 768px) {
   .classContainerFin {
     padding-left: 13rem;
@@ -32,7 +34,7 @@ font-size: 1.1rem;
     display: block;
     margin: auto;
     padding: 1rem;
-    width: 75%;
-    height: 45rem;
+    width: 65%;
+    height: 33rem;
   }
 }
