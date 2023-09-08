@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.2bb19d82.css",
-    "main.js": "/static/js/main.380b9a5f.js",
+    "main.css": "/static/css/main.185dde46.css",
+    "main.js": "/static/js/main.bb745d78.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
     "static/media/imgGrimoldi1.jpg": "/static/media/imgGrimoldi1.91374d5866b31728fe58.jpg",
     "static/media/imgGrimoldi3.jpg": "/static/media/imgGrimoldi3.8f39bac746fdf324df84.jpg",
+    "static/media/MichaelBurry.jpg": "/static/media/MichaelBurry.65cdadad8f3cacbdf63b.jpg",
     "static/media/imgMicrosoft4.jpg": "/static/media/imgMicrosoft4.f420d95d9c8a63186027.jpg",
     "static/media/sitioweb.jpg": "/static/media/sitioweb.be3edf9734c8faa0a129.jpg",
     "static/media/imgCarnegie1.jpg": "/static/media/imgCarnegie1.51ae76ab2651aa291c1e.jpg",
@@ -41,11 +42,11 @@
     "static/media/monedero.png": "/static/media/monedero.f05fbdebacb2a2ef5b16.png",
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
-    "main.2bb19d82.css.map": "/static/css/main.2bb19d82.css.map",
-    "main.380b9a5f.js.map": "/static/js/main.380b9a5f.js.map"
+    "main.185dde46.css.map": "/static/css/main.185dde46.css.map",
+    "main.bb745d78.js.map": "/static/js/main.bb745d78.js.map"
   },
   "entrypoints": [
-    "static/css/main.2bb19d82.css",
-    "static/js/main.380b9a5f.js"
+    "static/css/main.185dde46.css",
+    "static/js/main.bb745d78.js"
   ]
 }
