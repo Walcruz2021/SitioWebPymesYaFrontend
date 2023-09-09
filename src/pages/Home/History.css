@@ -1,13 +1,33 @@
 
 
+.classHistory {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  text-align: justify;
+  width: 100%;
+  line-height: 2rem;
+  color: rgb(139, 139, 137);
+}
+
 .classHistory img {
   display: block;
   margin: auto;
   padding: 0.7rem;
-  width: 99%;
+  width: 100%;
 }
+
 /* PANTALLA GRANDE */
-@media (min-width: 768px) {
+@media (min-device-width : 1068px) {
+  .classHistory {
+    padding-left: 13rem;
+    padding-right: 13rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
   .classHistory img{
     display: block;
     margin: auto;

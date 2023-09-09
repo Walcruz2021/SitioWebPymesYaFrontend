@@ -20,7 +20,7 @@ font-size: 1.1rem;
 
 /* PANTALLA GRANDE */
 
-@media (min-width: 768px) {
+@media (min-device-width : 1068px) {
   .classContainerFin {
     padding-left: 13rem;
     padding-right: 13rem;

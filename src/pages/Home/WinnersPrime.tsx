@@ -28,7 +28,7 @@ const WinnersPrime = () => {
         // alert('OPERAR EN CORTO: Es una operativa bursatil que consiste en apostar por la cai­da de un determinado valor. Las posiciones cortas suponen vender un activo con la idea deque el precio bajara para comprarlo despues a un nivel inferior')
         Swal.fire({
             title: "CDS (credit default swap)",
-            text: "CDS es similar a una póliza de seguro. Se diferencia significativamente de ella, en que no se requiere que el comprador de la permuta sea el propietario del tí­tulo. Es decir, un seguro se establece sobre algo que es propiedad del asegurado, pero un CDS se hace sobre un bien que no es propiedad del que contrata la permuta. A este tipo de CDS se le denomina 'desnudo' (naked), y en realidad es equivalente a una apuesta.",
+            text: "CDS es similar a una póliza de seguro. Imagina que tienes un juguete muy valioso, como un coche de control remoto que te encanta. Ahora, piensa en un amigo tuyo que está un poco preocupado de que puedas dañar ese juguete o que lo pierdas. Entonces, tu amigo te hace una oferta: Si me das un poquito de tu dinero todos los meses, yo te prometo que si algo le pasa a tu coche de control remoto, te daré otro nuevo o te dará suficiente dinero para comprar uno nuevo. Eso es básicamente lo que hace un Credit Default Swap (CDS) en el mundo financiero, pero en lugar de juguetes, se trata de dinero prestado o deudas.",
             imageUrl: "images/thumbs-up.jpg"
           })
     };

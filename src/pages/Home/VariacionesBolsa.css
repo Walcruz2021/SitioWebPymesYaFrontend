@@ -25,27 +25,8 @@
   width: 99%;
 }
 
-/* ESCRITORIO CEL HORIZONTAL*/
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-  .classContainerVar {
-    padding-left: 7rem;
-    padding-right: 7rem;
-    padding-top: 2rem;
-    text-align: justify;
-    width: 100%;
-    line-height: 2rem;
-    color: rgb(139, 139, 137);
-  }
-  .classContainerVar img {
-    display: block;
-    margin: auto;
-    padding: 1rem;
-    width: 75%;
-    height: 45rem;
-  }
-}
-
-@media only screen and (min-device-width : 480px) and (max-device-width : 896px){
+/* ESCRITORIO HORIZONTAL*/
+@media (min-device-width : 1068px){
   .classContainerVar {
     padding-left: 13rem;
     padding-right: 13rem;
@@ -64,43 +45,3 @@
   }
 }
 
-/* Tablets de baja resolución y teléfonos Móviles (horizontal)  */
-/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px){
-  .classContainerVar {
-    padding-left: 7rem;
-    padding-right: 7rem;
-    padding-top: 2rem;
-    text-align: justify;
-    width: 100%;
-    line-height: 2rem;
-    color: rgb(139, 139, 137);
-  }
-  .classContainerVar img {
-    display: block;
-    margin: auto;
-    padding: 1rem;
-    width: 75%;
-    height: 45rem;
-  }
-} */
-
-
-/* ESCRITORIO */
-@media only screen and (min-width : 1824px){
-  .classContainerVar {
-    padding-left: 13rem;
-    padding-right: 13rem;
-    padding-top: 2rem;
-    text-align: justify;
-    width: 100%;
-    line-height: 2rem;
-    color: rgb(139, 139, 137);
-  }
-  .classContainerVar img {
-    display: block;
-    margin: auto;
-    padding: 1rem;
-    width: 75%;
-    height: 45rem;
-  }
-}
