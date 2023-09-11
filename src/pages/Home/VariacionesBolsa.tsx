@@ -134,7 +134,7 @@ const VariacionesBolsa = () => {
                     de regulación y la asunción de riesgos excesivos por parte de algunas instituciones financieras.</p>
 
                 <h4>TE PUEDE INTERESAR</h4>
-                <Link to="/winnersPrime">Ganador con esta Crisis</Link>
+                <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
             </div >
             <ButtonBarBoostrap />
         </>

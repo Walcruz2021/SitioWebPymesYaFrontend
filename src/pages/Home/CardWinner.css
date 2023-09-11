@@ -1,0 +1,46 @@
+.classContainerCardWinner img {
+    display: block;
+    margin: auto;
+    padding: 0.7rem;
+    width: 99%;
+  }
+  .classContainerCardWinner p{
+  font-size: 1.1rem;
+  }
+
+  .classContainerCardWinner h5{
+    font-size: 1rem;
+    text-align: center;
+    }
+  
+  .classContainerCardWinner {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  
+  /* PANTALLA GRANDE */
+  
+  @media (min-device-width : 1068px) {
+    .classContainerCardWinner {
+      padding-left: 13rem;
+      padding-right: 13rem;
+      padding-top: 2rem;
+      text-align: justify;
+      width: 100%;
+      line-height: 2rem;
+      color: rgb(139, 139, 137);
+    }
+    .classContainerCardWinner img {
+      display: block;
+      margin: auto;
+      padding: 1rem;
+      width: 65%;
+      height: 33rem;
+    }
+  }
+  
