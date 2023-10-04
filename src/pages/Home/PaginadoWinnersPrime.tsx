@@ -44,12 +44,21 @@ const PaginadoWinnersPrime = () => {
         })
     };
 
+    const alertInfCDO = () => {
+        // alert('OPERAR EN CORTO: Es una operativa bursatil que consiste en apostar por la cai­da de un determinado valor. Las posiciones cortas suponen vender un activo con la idea deque el precio bajara para comprarlo despues a un nivel inferior')
+        Swal.fire({
+            title: "CDO (obligacion garantizada por deuda)",
+            text: "Es un tipo de instrumento de inversión que agrupa distintos tipos de deuda (hipotecas, bonos, líneas de crédito, préstamos para automóviles) y es vendido a los inversionistas, los cuales obtienen un flujo de dinero constante por el mismo. Para los bancos la venta de los CDO les da más fondos para prestar a otros clientes.",
+            imageUrl: "images/thumbs-up.jpg"
+        })
+    };
+
     const cardsWinners = [
         {
             titulo: 'MICHAEL BURRY',
             contenido1: (
                 <>
-                    Es un médico, exneurólogo y gestor de fondos de cobertura (hedge funds) estadounidense. Fué el fundador del Fondo Scion Capital LLC, que operó desde el año 2000 hasta el 2008 y luego cerró para centrarse en sus propias inversiones personales. Burry fue uno de los primeros inversores en reconocer la crisis de hipotecas subprime e invertir mediante seguros de impago {<span onMouseEnter={alertInfCDS} style={{ fontWeight: 'bold', cursor: 'pointer' }}> CDS</span>},
+                    Es un médico, exneurólogo y gestor de fondos de cobertura (hedge funds) estadounidense. Fué el fundador del Fondo Scion Capital LLC, que operó desde el año 2000 hasta el 2008 y luego cerró para centrarse en sus propias inversiones personales. Burry fue uno de los primeros inversores en reconocer la crisis de hipotecas subprime e invertir mediante seguros de impago {<span onMouseEnter={alertInfCDS} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black'}}> CDS</span>},
                 </>
             ),
             imagen1: michaelBurry,
@@ -57,28 +66,34 @@ const PaginadoWinnersPrime = () => {
             contenido5: "Tuvo tanto éxito con sus selecciones de acciones que atrajo el interacción de compañias como Vanguard, White Mountains Insurance Group e inversionistas destacados como Joel Greenblatt.",
             contenido6: (
                 <>
-                    En 2005, Burry comenzó a centrarse en el mercado de alto riesgo. A través de su análisis de las prácticas de préstamos hipotecarios en 2003 y 2004, pronosticó correctamente que la burbuja inmobiliaria colapsarí­a ya en 2007. La investigación de Burry sobre los valores de los inmuebles residenciales lo convenció de que las hipotecas de alto riesgo, especialmente aquellas con tasas "teaser", y los bonos basados en estas hipotecas comenzarí­an a perder valor cuando las tasas originales fueran reemplazadas por tasas mucho más altas, a menudo en tan solo dos años después del inicio. Esta conclusión lo llevo a adquirir posiciones en <span onMouseEnter={alertInfCorto} style={{ fontWeight: 'bold', cursor: 'pointer' }}> corto </span> en el mercado al persuadir a Goldman Sachs y otras firmas de inversion para que le vendieran <span onMouseEnter={alertInfIncCredi} style={{ fontWeight: 'bold', cursor: 'pointer' }}> swaps de incumplimiento crediticio</span> contra negocios de alto riesgo que el consideraba vulnerables.                </>
+                    En 2005, Burry comenzó a centrarse en el mercado de alto riesgo. A través de su análisis de las prácticas de préstamos hipotecarios en 2003 y 2004, pronosticó correctamente que la burbuja inmobiliaria colapsarí­a ya en 2007. La investigación de Burry sobre los valores de los inmuebles residenciales lo convenció de que las hipotecas de alto riesgo, especialmente aquellas con tasas "teaser", y los bonos basados en estas hipotecas comenzarí­an a perder valor cuando las tasas originales fueran reemplazadas por tasas mucho más altas, a menudo en tan solo dos años después del inicio. Esta conclusión lo llevo a adquirir posiciones en <span onMouseEnter={alertInfCorto} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black' }}> corto </span> en el mercado al persuadir a Goldman Sachs y otras firmas de inversion para que le vendieran <span onMouseEnter={alertInfIncCredi} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black' }}> swaps de incumplimiento crediticio</span> contra negocios de alto riesgo que el consideraba vulnerables.                </>
             ),
             contenido7: "Este análisis resultó correcto y Burry se benefició en consecuencia. Desde entonces, Burry ha dicho: 'No salgo a buscar buenas ventas en corto. Me paso el tiempo buscando buenas compras en largo'.",
             contenido8: "En un artículo de opinión del 3 de abril de 2010 para The New York Times, Burry argumentó que cualquiera que haya estudiado cuidadosamente los mercados financieros en 2003, 2004 y 2005 podría haber reconocido el creciente riesgo en los mercados de alto riesgo. Culpó a los reguladores federales por no escuchar las advertencias desde fuera de un cálculo cerrado de asesores.",
             imagen2: cristianBale,
-            contenido10: 'En The Big Short, Christian Bale usa un par de pantalones cortos cargo y una camisa prestada del Michael Burry real '
+            contenido10: 'En The Big Short, Christian Bale usa un par de pantalones cortos y una camisa prestada del Michael Burry real '
 
         },
         {
             titulo: 'STEVE EISMAN',
             imagen1: stevenEisman,
-            contenido1: 'Steve Eisman, nacido el 8 de julio de 1962, es un empresario e inversor estadounidense, conocido por haber puesto en corto obligaciones de deuda colateralizada (CDO), beneficiándose así­ del colapso de la burbuja inmobiliaria estadounidense en 2007-2008',
+            contenido1: 
+            <>
+            'Steve Eisman, nacido el 8 de julio de 1962, es un empresario e inversor estadounidense, conocido por haber puesto en {<span onMouseEnter={alertInfCorto} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black' }} >corto</span>} obligaciones de deuda colateralizada <span onMouseEnter={alertInfCDO} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black' }} >(CDO)</span>, beneficiándose así­ del colapso de la burbuja inmobiliaria estadounidense en 2007-2008',
+            </>, 
             contenido2: 'A partir de 2004 y hasta el inicio del año 2007, Eisman, casado con una exbanquera, fue gerente de portafolios del fondo de cobertura FrontPoint Partners.',
             contenido3: 'Es una de las personas cuyo bolsillo y portafolios engordaron a medida que aumentaban las quiebras de los hogares estadounidenses que habí­an pedido créditos hipotecarios subprime a tasas de interés variables.',
             contenido4: 'Su trabajo consistí­a en invertir el dinero de clientes acomodados en títulos financieros, dopados en la bolsa por el éxito eufórico de los préstamos subprime cuyos  riesgos los bancos diseminaban por todo el mundo, vendiéndolos por trozos en forma de obligaciones (CDO, obligación de deuda colateral, y RMBS, tí­tulos financieros adosados a préstamos hipotecarios).',
             contenido5: 'Eisman descubrió al viajar a Florida, California, Nevada y Arizona, epicentros de los préstamos subprime, el laxismo de los bancos y de las empresas que concedían los créditos, que ni siquiera conocí­an la situación financiera de sus clientes.',
             contenido6: "A comienzos de 2005, los colaboradores más estrechos de Eisman, entre ellos Vincent Daniel, compartí­an la impresión de que muchos en Wall Street no entendí­an lo que hacían. En 2005 había 625.000 millones de dólares en préstamos hipotecarios basura (es decir, aprobados a personas sin medios económicos), de los cuales 507.000 millones de dólares acabaron transformados en bonos hipotecarios. Los préstamos basura seguían en expansión incluso cuando los tipos de intereses subí­an, lo que no tení­a sentido. 'El mercado financiero tendrí­a que no prestar a quien no pudiera pagar'. Pero lo hacía, sin registrarlo en los libros. Prestaba, luego vendí­a los préstamos hipotecarios a los departamentos de renta fija de los grandes bancos de inversión de Wall Street, que a su vez los empaquetaban en bonos y se los volvían a vender normalmente a inversores profesionales",
-            contenido7: 'El financista identificó una cantidad importante de créditos dudosos y decidió apostar a su fracaso, convenciendo a Goldman Sachs y Deutsche Bank de crear seguros destinados a cubrirse en caso de que un acreedor no pudiese reembolsar un préstamo (Credit default swaps, o CDS).',
+            contenido7: 
+            <>
+            'El financista identificó una cantidad importante de créditos dudosos y decidió apostar a su fracaso, convenciendo a Goldman Sachs y Deutsche Bank de crear seguros destinados a cubrirse en caso de que un acreedor no pudiese reembolsar un préstamo <span onMouseEnter={alertInfCDS} style={{ fontWeight: 'bold', cursor: 'pointer',textDecoration:'underline black'}}>(Credit default swaps, o CDS)</span>.',
+            </>,
             contenido8: 'A inicios de 2007 se multiplicaban los incumplimientos de pagos de las hipotecas, y los inversores, que especulaban con una continua alza del mercado inmobiliario, decidieron retirarse repentinamente del mercado, precipitando la caída de los precios.',
             contenido9: 'En ocho meses, 84 empresas de créditos hipotecarios en Estados Unidos se arruinaron. Y el valor del portafolio de Steve Eisman aumentó, pasando de 700 millones de dólares a 1.500 millones, y seguia apreciándose.',
             imagen2: steveCarrel,
-            contenido10: 'La vida de Steve Eisman es interpretada por Steve Carell con el papel de Mark Baum en la pelicula Big SHort'
+            contenido10: 'La vida de Steve Eisman es interpretada por Steve Carell con el papel de Mark Baum en la pelicula The Big SHort'
         }
     ];
 

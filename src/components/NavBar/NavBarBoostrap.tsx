@@ -20,6 +20,7 @@ function NavBarBoostrap() {
               {/* <NavDropdown.Item href="/variaciones">Variaciones Bolsa</NavDropdown.Item> */}
               <NavDropdown.Divider />
               <NavDropdown.Item href="/variaciones">Variaciones Bolsa</NavDropdown.Item>
+              <NavDropdown.Item href="/inversionBolsa">Inversion en Bolsa</NavDropdown.Item>
             </NavDropdown>
          
           </Nav>

@@ -1,0 +1,42 @@
+.classContainerInvBolsa img {
+    display: block;
+    margin: auto;
+    padding: 0.7rem;
+    width: 99%;
+  }
+  .classContainerInvBolsa p{
+  font-size: 1.1rem;
+  }
+  
+  .classContainerInvBolsa {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  
+
+  /* PANTALLA GRANDE */
+
+@media (min-device-width : 1068px) {
+    .classContainerInvBolsa {
+      padding-left: 13rem;
+      padding-right: 13rem;
+      padding-top: 2rem;
+      text-align: justify;
+      width: 100%;
+      line-height: 2rem;
+      color: rgb(139, 139, 137);
+    }
+    .classContainerInvBolsa img {
+      display: block;
+      margin: auto;
+      padding: 1rem;
+      width: 100%;
+      height: 40rem;
+    }
+  }
+  
