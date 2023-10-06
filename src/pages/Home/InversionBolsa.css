@@ -40,3 +40,20 @@
     }
   }
   
+  .blackP{
+    font-weight: bold;
+  }
+
+  
+  .containerCompRedes{
+    text-align: center;
+    margin-top: 1.3rem;
+  }
+
+
+  .IconComp{
+    color: rgb(77, 76, 76);
+    font-size: 5rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+}

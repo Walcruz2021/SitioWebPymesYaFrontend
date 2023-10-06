@@ -45,3 +45,20 @@
   }
 }
 
+.containerCompRedes1{
+  text-align: center;
+}
+
+.containerCompRedes1 h3{
+  color:rgb(139, 139, 137);
+  margin-bottom: 0
+
+}
+
+.IconComp1{
+  color: rgb(77, 76, 76);
+  font-size: 5rem;
+  margin-bottom: 2.7rem;
+  margin-top: 0.1rem;
+}
+

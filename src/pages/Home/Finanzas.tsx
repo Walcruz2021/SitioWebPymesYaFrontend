@@ -1,6 +1,7 @@
 import "./Finanzas.css"
 import NavBar from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
+import IonIcon from '@reacticons/ionicons';
 const panaderia = require("./imagenes/panaderiaBeto.png")
 const panaderia2 = require("./imagenes/panaderiaBeto2.png")
 const pepe = require("./imagenes/Pepe.png")
@@ -66,7 +67,14 @@ const Finanzas = () => {
                     compartir las ganancias con ellos. Estos dividendos pueden ser una fuente de ingresos adicionales
                     para los inversores. Al invertir en empresas que pagan dividendos, puedes obtener un flujo de
                     ingresos adicional en lugar de simplemente ver crecer el valor de las acciones. </p>
+            
+                    <div className="containerCompRedes">
+      <h3>Comparte Nuestras Publicaciones</h3>
+     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/bolsaValores" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
+     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/bolsaValores" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
+     </div>
             </div >
+           
             <ButtonBarBoostrap />
         </>
     )

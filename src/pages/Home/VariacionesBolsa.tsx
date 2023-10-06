@@ -4,6 +4,7 @@ import michaelBurry from "../Home/imagenes/bolsaValores/MichaelBurry.jpg"
 import subprime from "../Home/imagenes/bolsaValores/crisisSubprime1.jpg"
 import subprime2 from "../Home/imagenes/bolsaValores/crisisSubprime2.jpg"
 import { Link } from 'react-router-dom';
+import IonIcon from '@reacticons/ionicons';
 import "./VariacionesBolsa.css"
 
 const VariacionesBolsa = () => {
@@ -136,6 +137,11 @@ const VariacionesBolsa = () => {
                 <h4>TE PUEDE INTERESAR</h4>
                 <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
             </div >
+            <div className="containerCompRedes1">
+      <h3>Comparte Nuestras Publicaciones</h3>
+     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/variaciones" target="_blank"><IonIcon className="IconComp1" name={'logo-facebook'} /></a>
+     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/variaciones" target="_blank"><IonIcon className="IconComp1" name={'logo-linkedin'} /></a>
+     </div>
             <ButtonBarBoostrap />
         </>
     )

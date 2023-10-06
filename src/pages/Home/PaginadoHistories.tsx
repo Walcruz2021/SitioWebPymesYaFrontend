@@ -25,6 +25,7 @@ import carnegie3 from "./imagenes/carnegie/imgCarnegie3.jpg"
 import carnegie5 from "./imagenes/carnegie/imgCarnegie5.jpg"
 import carnegie6 from "./imagenes/carnegie/imgCarnegie6.jpg"
 
+
 const PaginadoHistories = () => {
 
     const [historiaActual, setHistoriaActual] = useState(0);
@@ -251,7 +252,10 @@ const PaginadoHistories = () => {
                     buttonBack={buttonBack}
                     buttonNext={buttonNext}
                 />
+    
+
             </div>
+       
             <ButtonBarBoostrap />
         </>
     );

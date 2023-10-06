@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./History.css";
-
+import IonIcon from '@reacticons/ionicons';
 
 //ESTE ES EL QUE DETERMINA LA POSICION DE LOS PARRAFOS TITULOS E IMAGENES
 const History = ({
@@ -95,7 +95,11 @@ const History = ({
           Anterior Historia
         </button>
       ) : null}
-      
+       <div className="containerCompRedes">
+      <h3>Comparte Nuestras Publicaciones</h3>
+     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/histories" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
+     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/histories" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
+     </div>
     </div>
   );
 };
