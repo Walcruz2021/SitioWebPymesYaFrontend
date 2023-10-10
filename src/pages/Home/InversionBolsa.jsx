@@ -6,6 +6,7 @@ import rsi from "../Home/imagenes/bolsaValores/RSI.png"
 import sFloat from "../Home/imagenes/bolsaValores/shortFloat.png"
 import avgVolume from "../Home/imagenes/bolsaValores/avgVolume.png"
 import IonIcon from '@reacticons/ionicons';
+import { Helmet } from 'react-helmet';
 
 const InversionBolsa = () => {
   return (
@@ -82,10 +83,55 @@ const InversionBolsa = () => {
         a una disminución significativa en su precio. La condición de sobreventa puede sugerir que la acción ha 
         sido vendida en exceso y puede haber una oportunidad potencial para que los inversores compren a precios más 
         bajos antes de que el precio se recupere</p>
+
+      <h3>Otros Detalles</h3>
+     <p className="blackP">BOOK/SH</p>
+     <p>Valor Contable Activo-Pasivo. En este caso es por acción</p>
+
+     <p className="blackP">CASH/SH</p>
+     <p>Dinero disponible por cada acción</p>
+
+     <p className="blackP">DIVIDENDO</p>
+     <p>Es el retorno que nos otorgará la empresa por cada acción anual</p>
+
+     <p className="blackP">DIVIDENDO %</p>
+     <p>Es el porcentaje de dólares, en este caso el calculo se realizará de la siguiente forma  DIVIDENDO/Prec. actual de la accion</p>
+
+     <p className="blackP">PAYOUT %</p>
+     <p>Porcentaje de beneficios que se destina a Dividendos</p>
+
+     <p>Recuerda que la inversión en la bolsa implica riesgos, y no hay garantía de ganancias. Es importante tener una estrategia bien pensada 
+      y ser paciente a lo largo del tiempo. Además, la diversificación y la educación financiera son claves para tomar decisiones informadas.</p>
+      
+      <p className="blackP">¡¡¡ Si te gustó y te ayudó esta información sólo comparte la misma. De esta manera me estarías ayudando con mis sponsors. Muchas gracias y desde ya mucha suerte !!!</p>
+      
+     
+        <Helmet>
+        {/* Etiqueta meta para una imagen de vista previa (debe ser una URL completa) */}
+        <meta property="og:image" content={rsi} />
+
+        {/* Etiqueta meta para un título */}
+        <meta property="og:title" content="Inversion en Bolsa" />
+
+        {/* Etiqueta meta para una descripción */}
+        <meta property="og:description" content="Consejos a la hora de invertir en la Bolsa" />
+
+        {/* URL canónica de tu página */}
+        <link rel="canonical" href="www.pymesya.com/inversionBolsa" />
+
+        {/* Otros metadatos, como el tipo de contenido */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="www.pymesya.com/inversionBolsa" />
+
+        {/* Etiqueta meta para el sitio web de Facebook */}
+        <meta property="fb:app_id" content="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" />
+      </Helmet>
      
      <div className="containerCompRedes">
       <h3>Comparte Nuestras Publicaciones</h3>
      <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
+     <a name="fb_share" type="box_count" share_url="www.pymesya.com"></a>
+     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" type="button_count">Compartir en FB</a>
      <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
      </div>
       </div>

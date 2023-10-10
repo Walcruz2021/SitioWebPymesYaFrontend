@@ -1,0 +1,62 @@
+.classContainerSitio p {
+    font-size: 1.1rem;
+  }
+  
+  .classContainerSitio span {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  .classContainerSitio {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  
+  .classContainerSitio img {
+    display: block;
+    margin: auto;
+    padding: 0.7rem;
+    width: 99%;
+  }
+
+  .containerCompRedes{
+    text-align: center;
+    margin-top: 1.3rem;
+  }
+
+
+  .IconComp{
+    color: rgb(77, 76, 76);
+    font-size: 5rem;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.classContainerSitio h5{
+  text-align: center;
+}
+
+/* ESCRITORIO HORIZONTAL*/
+@media (min-device-width : 1068px){
+    .classContainerSitio {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 2rem;
+      text-align: justify;
+      width: 100%;
+      line-height: 2rem;
+      color: rgb(139, 139, 137);
+    }
+    .classContainerSitio img {
+      display: block;
+      margin: auto;
+      padding: 1rem;
+      width: 90%;
+      height: 40rem;
+    }
+  }

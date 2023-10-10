@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.15d18bd9.css",
-    "main.js": "/static/js/main.989b6fb6.js",
+    "main.css": "/static/css/main.885c151e.css",
+    "main.js": "/static/js/main.818627fa.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
     "static/media/steveCarrel.jpg": "/static/media/steveCarrel.e92691e87467de4ca1f2.jpg",
     "static/media/imgGrimoldi1.jpg": "/static/media/imgGrimoldi1.91374d5866b31728fe58.jpg",
@@ -20,6 +20,7 @@
     "static/media/imgBagley1.jpg": "/static/media/imgBagley1.0f79266879edaa410b4f.jpg",
     "static/media/crisisSubprime2.jpg": "/static/media/crisisSubprime2.46bbbb4e3bece55481bd.jpg",
     "static/media/imgCarnegie2.jpg": "/static/media/imgCarnegie2.178874aab64044e82bf1.jpg",
+    "static/media/imgFinViz.png": "/static/media/imgFinViz.413ba211266adc4523d4.png",
     "static/media/crisisSubprime1.jpg": "/static/media/crisisSubprime1.571cea8a931b86895db0.jpg",
     "static/media/imgKFC3.jpg": "/static/media/imgKFC3.c6240e6ec7e5e19480ae.jpg",
     "static/media/imgCocaCola1.webp": "/static/media/imgCocaCola1.5ad1d98450f878b5434a.webp",
@@ -41,15 +42,18 @@
     "static/media/cardEcom.png": "/static/media/cardEcom.9ace4f5ccacfa58efcc1.png",
     "static/media/gmail.png": "/static/media/gmail.ef0b155e621d561df8fa.png",
     "static/media/react.png": "/static/media/react.598c274386446bb54ac6.png",
+    "static/media/avgVolume.png": "/static/media/avgVolume.cca35847493aa785da11.png",
+    "static/media/shortFloat.png": "/static/media/shortFloat.59a604ac4b786337e05a.png",
+    "static/media/RSI.png": "/static/media/RSI.0575a420ab1a5c551718.png",
     "static/media/express.png": "/static/media/express.a68db2a3e4bcee0f5a0b.png",
     "static/media/monedero.png": "/static/media/monedero.f05fbdebacb2a2ef5b16.png",
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
-    "main.15d18bd9.css.map": "/static/css/main.15d18bd9.css.map",
-    "main.989b6fb6.js.map": "/static/js/main.989b6fb6.js.map"
+    "main.885c151e.css.map": "/static/css/main.885c151e.css.map",
+    "main.818627fa.js.map": "/static/js/main.818627fa.js.map"
   },
   "entrypoints": [
-    "static/css/main.15d18bd9.css",
-    "static/js/main.989b6fb6.js"
+    "static/css/main.885c151e.css",
+    "static/js/main.818627fa.js"
   ]
 }
