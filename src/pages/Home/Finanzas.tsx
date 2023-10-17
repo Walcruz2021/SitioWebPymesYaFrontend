@@ -10,6 +10,17 @@ const Finanzas = () => {
         <>
             <NavBar />
             <div className="classContainerFin">
+            <div className="containerLike">
+                    <div
+                        className="fb-like"
+                        data-href="http://www.pymesya.com/bolsaValores"
+                        data-width=""
+                        data-layout=""
+                        data-action=""
+                        data-size="large"
+                        data-share="true"
+                    ></div>
+                </div>
                 <p>La primera opción que, quizás, pasa por tu cabeza cuando piensas en invertir parte de tus ahorros
                     sea la bolsa. La compra y venta de valores es la gran protagonista de los mercados financieros. Pero
                     ¿entiendes qué es y cómo funciona la bolsa? ¿Conoces a que se debe el aumento o baja de la misma?
@@ -67,12 +78,7 @@ const Finanzas = () => {
                     compartir las ganancias con ellos. Estos dividendos pueden ser una fuente de ingresos adicionales
                     para los inversores. Al invertir en empresas que pagan dividendos, puedes obtener un flujo de
                     ingresos adicional en lugar de simplemente ver crecer el valor de las acciones. </p>
-            
-                    <div className="containerCompRedes">
-      <h3>Comparte Nuestras Publicaciones</h3>
-     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/bolsaValores" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
-     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/bolsaValores" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
-     </div>
+        
             </div >
            
             <ButtonBarBoostrap />

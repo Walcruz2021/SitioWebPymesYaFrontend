@@ -7,13 +7,46 @@ import sFloat from "../Home/imagenes/bolsaValores/shortFloat.png";
 import avgVolume from "../Home/imagenes/bolsaValores/avgVolume.png";
 import IonIcon from "@reacticons/ionicons";
 import { Helmet } from "react-helmet";
-
+import { FacebookProvider, Like, ShareButton } from "react-facebook";
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+// import { useShare } from 'react-facebook';
 const InversionBolsa = () => {
+  // const { share, isLoading, error } = useShare();
+
+  // async function handleShare() {
+  //   await share({
+  //     href: 'http://www.facebook.com',
+  //   });
+  // }
+
+  const titulo = "Inversion en Bolsa";
+  const descripcion = "Consejos a la hora de Invertir";
+  const imagen = "URL-de-la-imagen-del-producto";
+  const url = "www.pymesya.com/inversionBolsa";
+
   return (
     <>
+      <Helmet>
+        <title>{titulo}</title>
+        <meta property="og:title" content={titulo} />
+        <meta property="og:description" content={descripcion} />
+        <meta property="og:image" content={imagen} />
+        <meta property="og:url" content={url} />
+      </Helmet>
       <NavBarBoostrap />
       <div className="classContainerInvBolsa">
         <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
+        <div className="containerLike">
+          <div
+            className="fb-like"
+            data-href="http://www.pymesya.com/inversionBolsa"
+            data-width=""
+            data-layout=""
+            data-action=""
+            data-size="large"
+            data-share="true"
+          ></div>
+        </div>
         <p>
           Para tener éxito, a la hora de invertir en la bolsa, es importante
           hacer una investigación exhaustiva y tomar decisiones informadas
@@ -198,60 +231,6 @@ const InversionBolsa = () => {
           esta manera me estarías ayudando con mis sponsors. Muchas gracias y
           desde ya mucha suerte !!!
         </p>
-
-        <Helmet>
-          {/* Etiqueta meta para una imagen de vista previa (debe ser una URL completa) */}
-          <meta property="og:image" content={rsi} />
-
-          {/* Etiqueta meta para un título */}
-          <meta property="og:title" content="Inversion en Bolsa" />
-
-          {/* Etiqueta meta para una descripción */}
-          <meta
-            property="og:description"
-            content="Consejos a la hora de invertir en la Bolsa"
-          />
-
-          {/* URL canónica de tu página */}
-          <link rel="canonical" href="www.pymesya.com/inversionBolsa" />
-
-          {/* Otros metadatos, como el tipo de contenido */}
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="www.pymesya.com/inversionBolsa" />
-
-          {/* Etiqueta meta para el sitio web de Facebook */}
-          <meta
-            property="fb:app_id"
-            content="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa"
-          />
-        </Helmet>
-
-        <div className="containerCompRedes">
-          <h3>Comparte Nuestras Publicaciones</h3>
-          <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
-          <a
-            href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/inversionBolsa"
-            title="xxxxxxxxx"
-            target="_blank"
-          >
-            <IonIcon className="IconComp" name={"logo-linkedin"} />
-          </a>
-
-          {/* <div
-            class="fb-share-button"
-            data-href="http://www.pymesya.com/inversionBolsa"
-            data-layout="button_count"
-            data-size="small"
-          >
-            <a
-              target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.pymesya.com%2FinversionBolsa&amp;src=sdkpreparse"
-              class="fb-xfbml-parse-ignore"
-            >
-              <IonIcon className="IconComp" name={"logo-facebook"} />
-            </a>
-          </div> */}
-        </div>
       </div>
 
       <ButtonBarBoostrap />

@@ -96,10 +96,9 @@ const History = ({
         </button>
       ) : null}
        <div className="containerCompRedes">
-      <h3>Comparte Nuestras Publicaciones</h3>
-     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/histories" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
-     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/histories" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
+      <h3>¿Te sientes Indetificado con alguna Historia?</h3>
      </div>
+     <div className="fb-comments" data-href="http://www.pymesya.com/histories" data-size="large" data-width="100%" data-numposts="5"></div>
     </div>
   );
 };

@@ -13,6 +13,17 @@ const VariacionesBolsa = () => {
             <NavBar />
             <div className="classContainerVar">
                 <h1>VARIACIONES DE LA BOLSA</h1>
+                <div className="containerLike">
+                    <div
+                        className="fb-like"
+                        data-href="http://www.pymesya.com/variaciones"
+                        data-width=""
+                        data-layout=""
+                        data-action=""
+                        data-size="large"
+                        data-share="true"
+                    ></div>
+                </div>
                 <p>Las bolsas de valores son sistemas complejos y están influenciadas por una amplia gama de factores
                     que pueden afectar sus movimientos al alza o a la baja. Algunos de los factores más importantes que
                     pueden influir en el comportamiento de una bolsa de valores incluyen:</p>
@@ -136,12 +147,8 @@ const VariacionesBolsa = () => {
 
                 <h4>TE PUEDE INTERESAR</h4>
                 <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
+                
             </div >
-            <div className="containerCompRedes1">
-      <h3>Comparte Nuestras Publicaciones</h3>
-     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/variaciones" target="_blank"><IonIcon className="IconComp1" name={'logo-facebook'} /></a>
-     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/variaciones" target="_blank"><IonIcon className="IconComp1" name={'logo-linkedin'} /></a>
-     </div>
             <ButtonBarBoostrap />
         </>
     )
