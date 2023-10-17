@@ -41,7 +41,7 @@ const InversionBolsa = () => {
             className="fb-like"
             data-href="http://www.pymesya.com/inversionBolsa"
             data-width=""
-            data-layout=""
+            data-layout="button_count"
             data-action=""
             data-size="large"
             data-share="true"

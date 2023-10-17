@@ -18,7 +18,7 @@ const VariacionesBolsa = () => {
                         className="fb-like"
                         data-href="http://www.pymesya.com/variaciones"
                         data-width=""
-                        data-layout=""
+                        data-layout="button_count"
                         data-action=""
                         data-size="large"
                         data-share="true"

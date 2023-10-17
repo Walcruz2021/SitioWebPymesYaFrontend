@@ -47,7 +47,7 @@ const ConsejosSitioWeb = () => {
                 <h1>Consejos de un Sitio Web para tu Negocio</h1>
 
                 <div className="containerLike">
-                    <div className="fb-like" data-href="http://www.pymesya.com/tecnologias/sitioWeb" data-width="" data-layout="" data-action="" data-size="large" data-share="true"></div>
+                    <div className="fb-like" data-href="http://www.pymesya.com/tecnologias/sitioWeb" data-width="" data-layout="button_count" data-action="" data-size="large" data-share="true"></div>
                 </div>
 
                 <p>Este breve artículo tiene como objetivo orientar a los propietarios de empresas, ya sean pequeñas, medianas o grandes, esos emprendedores
