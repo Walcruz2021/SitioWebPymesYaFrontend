@@ -24,7 +24,8 @@ import carnegie2 from "./imagenes/carnegie/imgCarnegie2.jpg"
 import carnegie3 from "./imagenes/carnegie/imgCarnegie3.jpg"
 import carnegie5 from "./imagenes/carnegie/imgCarnegie5.jpg"
 import carnegie6 from "./imagenes/carnegie/imgCarnegie6.jpg"
-
+import netflix1 from "./imagenes/netflix/imgNetflix1.jpg"
+import netflix2 from "./imagenes/netflix/imgNetflix2.jpg"
 
 const PaginadoHistories = () => {
 
@@ -33,6 +34,26 @@ const PaginadoHistories = () => {
     const [buttonNext, setButtonNext] = useState(true)
 
     const historias = [
+        {
+            titulo: 'NETFLIX',
+            contenido1: "Hace más de dos décadas, en el soleado California, nacía una pequeña empresa con un sueño grande: Netflix.",
+            contenido2: "En sus inicios en 1997, se aventuraron en el mundo del entretenimiento ofreciendo algo revolucionario: ¡alquiler de DVD por correo postal! Sí, así como lo oyes, el antiguo y confiable buzón se volvía la puerta mágica hacia películas y series.",
+            imagen1: netflix1,
+            titulo2: "",
+            contenido3: "Pero espera, la historia no termina ahí. En el apoteósico año 2000, ésta compañia decide darle un toque de genialidad a su servicio de DVD con un sistema de recomendación personalizado. Los clientes, armados con su ratón y teclado, calificaban con estrellas las joyas cinematográficas que llegaban a sus buzones. Una experiencia única en la que cada película recibía un trato de estrella de Hollywood.",
+            contenido6: "Los suscriptores hacían una selección de varios títulos del catálogo de la empresa, la cual les enviaba el primero en un sobre con el porte pagado para su regreso. Una vez que recibian de regreso la primera película, enviaba la segunda y así sucesivamente.",
+            contenido7: "Luego, en el emocionante octubre de 2006, Netflix lanzó el desafío: el Netflix Prize, un concurso que no buscaba menos que mejorar su sistema de recomendación. Imagina a equipos de cerebritos compitiendo por un millón de dólares para crear el algoritmo más audaz. BellKor's Pragmatic Chaos se alzó con la victoria, ¡y por tan solo 20 minutos! ¡Hablemos de suspenso!",
+            contenido8: "Ah, pero la evolución no se detiene. Netflix, que antes solo se asomaba tímidamente por las computadoras, decide conquistar el mundo de las consolas de videojuegos y los reproductores de Blu-ray. Para 2010, ya estaba en tu iPad, iPhone, y hasta en tu Nintendo Wii. ¡Nada detenía el avance de esta revolución del streaming!",
+            imagen2: netflix2,
+            contenido11: "En 2017, el pulgar arriba y abajo se convierte en la nueva forma de decir 'me gusta' o 'ni fu ni fa'. Pero, ¿cómo llegamos a esto? La clave estaba en la mejora continua y la minería de datos. Netflix no solo te ofrecía entretenimiento, sino que también se convertía en un detective, descifrando tus gustos a través de tus elecciones. ¡Sherlock Holmes estaría celoso!",
+            contenido12: "Y así, en el épico 2019, Netflix se transforma en una potencia mediática, desde la concepción hasta la difusión de obras. ¿Cómo comenzó todo? La leyenda cuenta que Reed Hastings, harto de las multas en Blockbuster, decidió crear una cadena sin compromisos. Pero según Marc Randolph, el cofundador, la idea nació de querer emprender en el mundo del comercio electrónico y eligieron al DVD como su héroe.",
+            contenido13: "Netflix requería ofrecer una plataforma funcional en todo momento, que permitiera el visionado de una gran cantidad de personas al mismo tiempo, sin poner en riesgo la calidad de la imagen. Para hacer realidad este sueño digital, Netflix se asocia con nada más y nada menos que con los servicios informáticos de Amazon. ¿La fórmula del éxito? Acceso ilimitado, personalizado, sin publicidad y la astuta táctica de permitir compartir contraseñas, porque más contraseñas significan más datos y un algoritmo más feliz.",
+            titulo5:"DEMANDA",
+            contenido14: "Ah, pero no todo es risas y diversión. Con grandes datos viene una gran responsabilidad, y Netflix no escapa a la controversia. La demanda legal 'Doe Vs. Netflix' en 2009 deja entrever los temores de algunos sobre cómo la compañía maneja sus toneladas de datos personales. ¡El drama en la vida real!. Debido a la gran cantidad de datos personales que administra Netflix, especialistas en el tema han expresado temor a la forma en que estos son tratados por la compañía. La demanda legal conocida como 'Doe Vs. Netflix' es un ejemplo de dichos temores.",
+            contenido15: "En diciembre de 2009, una clienta del servicio de alquiler de DVD por correspondencia en los Estados Unidos interpuso una demanda en una corte federal por violación a la protección de la privacidad cometido por Netflix. La demandante, conocida bajo el seudónimo de 'Jane Doe', era una madre de familia lesbiana residente del estado de Ohio quien culpaba a la empresa de invadir su privacidad al liberar los datos de su registro de rentas -junto con el de casi medio millón de clientes- para que los participantes del Premio Netflix o Netflix Prize pudieran mejorar el sistema de predicción de la plataforma. Aunque dichos datos no incluían el nombre de los clientes sino que los identificaba únicamente con un código numérico, dos semanas después de lanzada la convocatoria del concurso, dos investigadores de la Universidad de Texas, Arvind Narayanan y Vitaly Shmatikov, fueron capaces de identificar por nombre a algunos de los clientes cuyos datos fueron liberados.",
+            contenido16: "Publicado en línea, el borrador del artículo académico de Narayanan y Shmatikov afirmaba que, al cruzar los datos de Netflix con reseñas del sitio Internet Movie Database (IMDb) se podían determinar no solo el nombre de la persona sino incluso rasgos de su personalidad como preferencias políticas, afiliación religiosa, sexualidad e incluso complexión física. Aunque la identidad de la mujer nunca fue descubierta por ningún equipo del concurso ni por nadie más, el argumento en la demanda era el temor de que su homosexualidad fuera descubierta a través de su consumo de películas (el cual incluía un alto número de títulos con temática homosexual) y que esta revelación afectara su vida familiar y profesional. En marzo de 2010, Netflix y 'Jane Doe' llegaron a un acuerdo que nunca se hizo público. Como resultado de la demanda, la segunda edición del Premio Netflix nunca se realizó aunque se había anunciadO",
+            contenido17: "Así, la historia de Netflix es una montaña rusa de innovación, desafíos legales y conquistas tecnológicas. ¿Quién hubiera pensado que aquel servicio de DVD por correo sería la fuerza que cambió la forma en que el mundo ve entretenimiento? El telón se levanta, las luces se encienden, ¡bienvenidos al show de Netflix!"
+        },
         {
             titulo: 'GRIMOLDI',
             contenido1: "En el año 1860 arribó al país un joven oriundo de Italia. Tomaso Grimoldi tenía 18 años y en poco tiempo desarrolló su talento como zapatero remendón. Instalado en la calle Piedad 1110 (hoy Bartolomé Mitre) y asociado con Cayetano Rimoldi y Martín Nillergi, también italianos, se ocupó de los zapatos de los vecinos. El negocio iba tan bien, que en 1868 sumaron a un aprendiz de once años: Luis Grisetti.Ese año, Tomaso –ya convertido en Tomás–, se casó con Ángela Rimoldi, hermana de su compañero. Fueron naciendo los ocho hijos y desde chicos, los varones fueron ejercitados en los secretos del oficio. El aprendiz Grisetti también era considerado de la familia. Más aún cuando en 1888, a los 31 años, contrajo matrimonio con Celestina Grimoldi.",
@@ -160,7 +181,7 @@ const PaginadoHistories = () => {
             contenido7: "En 1864, Carnegie invirtió $ 40.000  en la granja Storey de Oil Creek en el Condado de Venango (Pensilvania). En un año, la granja produjo alrededor de $ 1.000.000  de dividendos en efectivo, y el petróleo de los pozos se vendió provechosamente. La demanda de productos derivados del hierro, tales como corazas para lanchas cañoneras, cañones y armazones, así como un centenar de otros productos industriales, hicieron de Pittsburgh un centro de producción durante el tiempo de la guerra.",
             contenido8: "",
             contenido9: "Tras la guerra, abandonó los ferrocarriles para dedicar todas sus energías al comercio con las fundiciones de hierro. Trabajó para mejorar varias fundiciones, finalmente formando parte de The Keystone Bridge Works y la Union Ironworks. Siendo superintendente de la Keystone Bridge Company's, se dio cuenta de la debilidad de las estructuras de madera tradicionales. Con el tiempo fueron reemplazadas en gran medida por puentes de hierro hecho en sus fundiciones.",
-            titulo6:"1875-1900: El imperio del acero",
+            titulo6: "1875-1900: El imperio del acero",
             imagen2: carnegie2,
             contenido10: "Carnegie logró amasar una fortuna en la industria del acero, controlando el mayor funcionamiento integrado de acero y hierro. Una de sus dos grandes innovaciones fue la reducción de costos gracias a la producción en masa de raíles de acero para vías férreas. El segundo fue implementar la integración vertical con todos los suministradores de materias primas. A finales de la década 1880, Carnegie Steel era la mayor fábrica de arrabio, raíles de acero y coque del mundo, con una capacidad productiva de aproximadamente 2000 toneladas de metal de arrabio al día. En 1888, compró a la empresa competidora Homestead Steel Works, que contaba con una enorme planta junto con el suministro de carbón y minas de hierro, una larga vía de ferrocarril de unos 685 km y una flota de barcos de vapor. Luego fusionó sus participaciones y las de sus asociados en 1892 al crear la empresa Carnegie Steel Company.",
             contenido11: "Hacia 1889, el excedente de acero de Estados Unidos superaba al de Inglaterra y Carnegie poseía la mayor parte",
@@ -176,11 +197,11 @@ const PaginadoHistories = () => {
             contenido19: "Es un proyecto que aún continúa a través de instituciones como la Biblioteca Pública de Nueva York, en el corazón de Manhattan, con su red de 62 sucursales, que se construyeron con el dinero de Carnegie.",
             contenido20: "Para sus críticos, era simplemente una hipocresía que alguien como Carnegie se hiciera pasar por un amigo de los trabajadores.",
             contenido21: "En 1889 escribió su famoso ensayo 'El evangelio de la riqueza', donde propuso que los ricos deben ser administradores de la riqueza para beneficio de toda la sociedad, mediante las donaciones.",
-            imagen5:carnegie5,
-            contenido22:"Allí defiende el capitalismo, afirmando que tanto el empleador como el empleado hoy viven mejor que en el pasado gracias a todas las facilidades que trajo el nuevo sistema económico. Y señala que la riqueza de algunos trae beneficios para todos.",
-            contenido23:"Aunque pagaba a sus empleados los bajos salarios típicos de esa época, luego donó la mayor parte de su dinero para financiar diversas bibliotecas, escuelas y universidades en Estados Unidos, el Reino Unido y otros países, así como para crear fondos de pensiones para los empleados de más antigüedad.",
-            contenido24:"En un giro irónico, el hombre que abogaba por el evangelio de la riqueza gastó enormes sumas en bibliotecas públicas y obras filantrópicas. Las mismas manos que habían presidido conflictos brutales ahora extendían un manto de educación y apoyo. Sin embargo, su intento de lavar su conciencia dejaba un sabor amargo en los labios de aquellos que veían su caridad como una cortina que ocultaba la verdadera naturaleza de sus acciones.",
-            contenido25:"La historia de Andrew Carnegie es un recordatorio crudo de los extremos de la ambición humana. Su ascenso es inspirador, su generosidad es admirable, pero no podemos olvidar las lágrimas y el sufrimiento que también marcaron su camino. En su legado, encontramos un espejo que refleja tanto el poder del éxito como la oscuridad que puede acechar detrás de él.",
+            imagen5: carnegie5,
+            contenido22: "Allí defiende el capitalismo, afirmando que tanto el empleador como el empleado hoy viven mejor que en el pasado gracias a todas las facilidades que trajo el nuevo sistema económico. Y señala que la riqueza de algunos trae beneficios para todos.",
+            contenido23: "Aunque pagaba a sus empleados los bajos salarios típicos de esa época, luego donó la mayor parte de su dinero para financiar diversas bibliotecas, escuelas y universidades en Estados Unidos, el Reino Unido y otros países, así como para crear fondos de pensiones para los empleados de más antigüedad.",
+            contenido24: "En un giro irónico, el hombre que abogaba por el evangelio de la riqueza gastó enormes sumas en bibliotecas públicas y obras filantrópicas. Las mismas manos que habían presidido conflictos brutales ahora extendían un manto de educación y apoyo. Sin embargo, su intento de lavar su conciencia dejaba un sabor amargo en los labios de aquellos que veían su caridad como una cortina que ocultaba la verdadera naturaleza de sus acciones.",
+            contenido25: "La historia de Andrew Carnegie es un recordatorio crudo de los extremos de la ambición humana. Su ascenso es inspirador, su generosidad es admirable, pero no podemos olvidar las lágrimas y el sufrimiento que también marcaron su camino. En su legado, encontramos un espejo que refleja tanto el poder del éxito como la oscuridad que puede acechar detrás de él.",
         }
     ];
 
@@ -252,10 +273,10 @@ const PaginadoHistories = () => {
                     buttonBack={buttonBack}
                     buttonNext={buttonNext}
                 />
-    
+
 
             </div>
-       
+
             <ButtonBarBoostrap />
         </>
     );
