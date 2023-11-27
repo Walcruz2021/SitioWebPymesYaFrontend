@@ -9,7 +9,7 @@ import OurCompany from "./pages/Home/OurCompany";
 import Services from "./pages/Home/Services";
 import ServiceProf from "./pages/Home/ServiceProf";
 import EmpleosProf from "./pages/Home/EmpleosProf";
-import PaginadoHistories from "./pages/Home/PaginadoHistories";
+import History from "./pages/Home/History";
 import Finanzas from "./pages/Home/Finanzas"
 import VariacionesBolsa from "./pages/Home/VariacionesBolsa"
 import WinnerPrime from "./pages/Home/CardWinner"
@@ -64,7 +64,7 @@ const App = () => {
         <Route path="/contactPubli"><ContactPubli /></Route>
         <Route path="/servicios"><ServiceProf/></Route>
         <Route path="/empleos"><EmpleosProf/></Route>
-        <Route path="/histories"><PaginadoHistories/></Route>
+        <Route path="/histories"><History/></Route>
         <Route path="/finanzas"><Finanzas/></Route>
         <Route path="/variaciones"><VariacionesBolsa/></Route>
         <Route path="/winnersPrime"><PaginadoWinnersPrime/></Route>
