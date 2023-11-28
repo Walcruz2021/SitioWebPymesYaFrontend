@@ -9,6 +9,19 @@ export type NoteItem = {
 
 };
 
+export type Note = {
+  [key: string]: any;
+title1:string
+};
+
+type NoteProps = {
+  note: NoteItem;
+  siguiente: () => void;
+  anterior: () => void;
+  buttonBack: boolean;
+  buttonNext: boolean;
+};
+
 export type ProductFetch = {
   products: ProductItem[];
   isLoading: boolean;

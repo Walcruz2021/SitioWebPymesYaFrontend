@@ -1,10 +1,16 @@
 import { NoteItem } from "../../../types/typeApp"
+import "./Note.css";
 
 type Props = {
-    note: NoteItem
+    note: NoteItem,
+    siguiente: () => void;
+    anterior: () => void;
+    buttonBack: boolean;
+    buttonNext: boolean;
+
 }
 
-const Note = ({ note }: Props) => {
+const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
     const noteKeys = Object.keys(note)
 
     function clasifiedParagraph(value: string) {
@@ -41,10 +47,20 @@ const Note = ({ note }: Props) => {
         }
     }
     return (
-        <div>
+        <div className="classNote">
             {noteKeys.map((key) => (
-                clasifiedTitle(key) ? <h1>{note[key]}</h1> : clasifiedParagraph(key) ? <p>{note[key]}</p> : clasifiedImg(key)?<img src={note[key]} alt="MDN" />:null
+                clasifiedTitle(key) ? <h1>{note[key]}</h1> : clasifiedParagraph(key) ? <p>{note[key]}</p> : clasifiedImg(key) ? <img src={note[key]} alt="MDN" /> : null
             ))}
+            {buttonNext ? (
+                <button className="buttonNote" onClick={siguiente}>
+                    Siguiente Historia
+                </button>
+            ) : null}
+            {buttonBack ? (
+                <button className="buttonNote" onClick={anterior}>
+                    Anterior Historia
+                </button>
+            ) : null}
         </div>
     )
 }

@@ -1,0 +1,66 @@
+
+
+.classNote {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  text-align: justify;
+  width: 100%;
+  line-height: 2rem;
+  color: rgb(139, 139, 137);
+}
+
+.classNote img {
+  display: block;
+  margin: auto;
+  padding: 0.7rem;
+  width: 100%;
+}
+
+/* PANTALLA GRANDE */
+@media (min-device-width : 1068px) {
+  .classNote {
+    padding-left: 13rem;
+    padding-right: 13rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  .classNote img{
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    width: 75%;
+    height: 45rem;
+  }
+}
+
+.classNote p{
+  font-size: 1.1rem;
+}
+
+.buttonNote {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.buttonNote:hover {
+  background-color: white;
+  color: black;
+  border: 3px solid #4caf50;
+}
+
+.fb-comments{
+  text-align: center;
+}
