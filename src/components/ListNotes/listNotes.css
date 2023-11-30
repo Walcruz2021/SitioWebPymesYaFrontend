@@ -1,3 +1,30 @@
-.containerListNotes{
-    
+/* .contPaginadoNote{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+} */
+
+.elemento{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (min-device-width : 1068px) {
+  .contenedor {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20rem; /* Margen izquierdo */
+    margin-right: 20rem; /* Margen derecho */
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+  
+  .elemento {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

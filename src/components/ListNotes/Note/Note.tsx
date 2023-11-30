@@ -18,7 +18,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
         if (value === "paragraph") {
             return true
         } else {
-            value = value.slice(0, -2)
+            value = value.slice(0, -1)
             if (value === "paragraph") {
                 return true
             } else return false
@@ -29,7 +29,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
         if (value === "title") {
             return true
         } else {
-            value = value.slice(0, -2)
+            value = value.slice(0, -1)
             if (value === "title") {
                 return true
             } else return false
@@ -37,10 +37,12 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
     }
     function clasifiedImg(value: string) {
         value = value.slice(0, -1)
+        //console.log(value)
         if (value === "img") {
             return true
         } else {
-            value = value.slice(0, -2)
+            value = value.slice(0, -1)
+            console.log(value)
             if (value === "img") {
                 return true
             } else return false
@@ -61,6 +63,10 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                     Anterior Historia
                 </button>
             ) : null}
+            <div className="containerCompRedes">
+                <h3>¿Te sientes Indentificado con alguna Historia?</h3>
+            </div>
+            <div className="fb-comments" data-href="http://www.pymesya.com/histories" data-size="large" data-width="100%" data-numposts="5"></div>
         </div>
     )
 }

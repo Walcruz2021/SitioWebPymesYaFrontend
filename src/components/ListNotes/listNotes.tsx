@@ -73,28 +73,28 @@ const ListNotes = (codigo: any) => {
             } else return false
         }
     }
-    function clasifiedTitle(value: string) {
-        value = value.slice(0, -1)
-        if (value === "title") {
-            return true
-        } else {
-            value = value.slice(0, -2)
-            if (value === "title") {
-                return true
-            } else return false
-        }
-    }
-    function clasifiedImg(value: string) {
-        value = value.slice(0, -1)
-        if (value === "img") {
-            return true
-        } else {
-            value = value.slice(0, -2)
-            if (value === "img") {
-                return true
-            } else return false
-        }
-    }
+    // function clasifiedTitle(value: string) {
+    //     value = value.slice(0, -1)
+    //     if (value === "title") {
+    //         return true
+    //     } else {
+    //         value = value.slice(0, -2)
+    //         if (value === "title") {
+    //             return true
+    //         } else return false
+    //     }
+    // }
+    // function clasifiedImg(value: string) {
+    //     value = value.slice(0, -1)
+    //     if (value === "img") {
+    //         return true
+    //     } else {
+    //         value = value.slice(0, -2)
+    //         if (value === "img") {
+    //             return true
+    //         } else return false
+    //     }
+    // }
 
     const siguienteHistoria = () => {
 
@@ -121,7 +121,13 @@ const ListNotes = (codigo: any) => {
         <>
             <NavBarBoostrap />
             <div className="containerListNotes">
-
+                <div className="contenedor">
+                    {notes ? notes.map(note => (
+                        <div className="elemento">
+                            <h6>{note.title1}</h6>
+                        </div>
+                    )) : null}
+                </div>
 
                 <Note
                     note={notes[historiaActual]}
@@ -130,12 +136,8 @@ const ListNotes = (codigo: any) => {
                     buttonBack={buttonBack}
                     buttonNext={buttonNext}
                 />
-
-
-
             </div>
             <ButtonBarBoostrap />
-
         </>
     )
 
