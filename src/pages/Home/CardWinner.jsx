@@ -37,12 +37,12 @@ const CardWinner = ({
       <h5>{contenido10}</h5>
      
       {buttonNext ? (
-        <button className="buttonHistory" onClick={siguiente}>
+        <button className="buttonNote" onClick={siguiente}>
           Siguiente Historia
         </button>
       ) : null}
       {buttonBack ? (
-        <button className="buttonHistory" onClick={anterior}>
+        <button className="buttonNote" onClick={anterior}>
           Anterior Historia
         </button>
       ) : null}
