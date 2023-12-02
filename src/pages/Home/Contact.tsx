@@ -121,17 +121,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
                     <p>Lunes a Sábados de 9:00 a 21:00hs</p>
                 </div>
             </div>
-
-            <div className="containerCompRedes">
-                <h3>¿Te sientes Indentificado con alguna Historia?</h3>
-            </div>
-            <div
-                className="fb-comments"
-                data-href="http://www.pymesya.com/histories"
-                data-size="large"
-                data-width="100%"
-                data-numposts="5"
-            />
+            
             {/* <div className="mediosContact">
                 <h3>PREGUNTAS FRECUENTES</h3>
 

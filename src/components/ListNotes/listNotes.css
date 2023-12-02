@@ -9,6 +9,11 @@
   margin-right: 10px;
 }
 
+.contenedor{
+  margin-top: 5px;
+}
+
+/* ESCRITORIO */
 @media (min-device-width : 1068px) {
   .contenedor {
     display: flex;
