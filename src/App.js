@@ -16,6 +16,7 @@ import WinnerPrime from "./pages/Home/CardWinner"
 import PaginadoWinnersPrime from "./pages/Home/PaginadoWinnersPrime"
 import InversionBolsa from "./pages/Home/InversionBolsa";
 import ConsejosSitioWeb from "./pages/Home/ConsejosSitioWeb";
+import Leliqs from "./pages/Home/Leliqs"
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
 //npm install react-router-dom
@@ -69,6 +70,7 @@ const App = () => {
         <Route path="/variaciones"><VariacionesBolsa/></Route>
         <Route path="/winnersPrime"><PaginadoWinnersPrime/></Route>
         <Route path="/inversionBolsa"><InversionBolsa/></Route>
+        <Route path="/leliqs"><Leliqs/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
     </Switch>
  </Router>

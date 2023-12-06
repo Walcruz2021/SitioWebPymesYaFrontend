@@ -1,9 +1,9 @@
 const ComentaryFace = () => {
     return (
         <>
-            <div className="containerCompRedes">
+            {/* <div className="containerCompRedes">
                 <h3>¿Te sientes Identificado con alguna Historia?</h3>
-            </div>
+            </div> */}
             <div
                 className="fb-comments"
                 data-href="http://www.pymesya.com/histories"
