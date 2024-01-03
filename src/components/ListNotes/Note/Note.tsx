@@ -1,5 +1,6 @@
 import { NoteItem } from "../../../types/typeApp"
 import "./Note.css";
+import ButtonDonacion from "../../../pages/Home/ButtonDonacion"
 
 type Props = {
     note: NoteItem,
@@ -51,6 +52,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
         <>
 
             <div className="classNote">
+
                 {/* {noteKeys.map((key) => (
                     clasifiedTitle(key) ? <h1>{note[key]}</h1> : clasifiedParagraph(key) ? <p>{note[key]}</p> : clasifiedImg(key) ? <img src={note[key]} alt="MDN" /> : null
                 ))} */}
@@ -67,8 +69,12 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                         Anterior Historia
                     </button>
                 ) : null}
+                <br />
+                <br />
+                <ButtonDonacion />
+
             </div>
-        
+
         </>
     )
 }

@@ -9,6 +9,7 @@ import IonIcon from "@reacticons/ionicons";
 import { Helmet } from "react-helmet";
 import { FacebookProvider, Like, ShareButton } from "react-facebook";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
+import ButtonDonacion from "./ButtonDonacion";
 // import { useShare } from 'react-facebook';
 const InversionBolsa = () => {
   // const { share, isLoading, error } = useShare();
@@ -35,6 +36,7 @@ const InversionBolsa = () => {
       </Helmet>
       <NavBarBoostrap />
       <div className="classContainerInvBolsa">
+        <ButtonDonacion />
         <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
         <div className="containerLike">
           <div
@@ -231,6 +233,8 @@ const InversionBolsa = () => {
           esta manera me estarías ayudando con mis sponsors. Muchas gracias y
           desde ya mucha suerte !!!
         </p>
+
+        <ButtonDonacion />
       </div>
 
       <ButtonBarBoostrap />

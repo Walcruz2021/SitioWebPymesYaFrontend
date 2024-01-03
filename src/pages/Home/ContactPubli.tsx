@@ -106,6 +106,8 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
             <div className="titGlobal">
                 <h3>MEDIOS DE CONTACTO</h3>
             </div>
+
+        
             <div className="containerText">
                 <p>Hoy en día, dar a conocer una marca puede resultar más fácil que hace algunos años gracias al internet. Algunas tecnologías se han convertido en fuertes aliados de los emprendedores para llegar a más personas y aumentar sus ventas.</p>
                 <p>Internet es un amplio mercado que está creciendo exponencialmente, por lo que contar con las últimas tendencias de marketing digital es sumamente esencial para potenciar una marca. Tanto en términos rentables como en optimización en general. Allí, la publicidad online nace como una alternativa eficaz para anunciar la filosofía, productos y/o servicios de una determinada empresa a su público objetivo. Más que todo, a través de impactos interactivos que atrapen su atención, es decir, banners, anuncios, impresiones en video, etc.</p>

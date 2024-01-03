@@ -6,6 +6,7 @@ import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import "./listNotes.css"
 import ComentaryFace from "./ComentaryFace"
+import ButtonDonacion from "../../pages/Home/ButtonDonacion";
 const ListNotes = (codigo: any) => {
 
     const { notes, isLoading } = useFetchNote()
@@ -68,13 +69,16 @@ const ListNotes = (codigo: any) => {
             <NavBarBoostrap />
 
             <div className="containerListNotes">
+
+                   
                 <div className="contenedor">
+                    
                     {notes ? notes.map(note => (
                         <div className="elemento">
                             <h6>{note.title1}</h6>
                         </div>
                     )) : null}
-                </div> 
+                </div>
 
                 <Note
                     note={notes[historiaActual]}
@@ -82,8 +86,8 @@ const ListNotes = (codigo: any) => {
                     anterior={anteriorHistoria}
                     buttonBack={buttonBack}
                     buttonNext={buttonNext}
-                /> 
-                
+                />
+
             </div>
             <ButtonBarBoostrap />
 

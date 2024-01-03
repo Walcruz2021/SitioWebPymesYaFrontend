@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.eeb8b3ba.css",
-    "main.js": "/static/js/main.1ac177f8.js",
+    "main.css": "/static/css/main.1ce00b71.css",
+    "main.js": "/static/js/main.be70773f.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
     "static/media/mShops.png": "/static/media/mShops.62dc840192f5b2f39544.png",
     "static/media/wix.png": "/static/media/wix.18a2ef671b0e23d8932a.png",
     "static/media/steveCarrel.jpg": "/static/media/steveCarrel.e92691e87467de4ca1f2.jpg",
     "static/media/MichaelBurry.jpg": "/static/media/MichaelBurry.65cdadad8f3cacbdf63b.jpg",
     "static/media/sitioweb.jpg": "/static/media/sitioweb.be3edf9734c8faa0a129.jpg",
+    "static/media/leliqsInformeImg.png": "/static/media/leliqsInformeImg.279c425a8f8ba064b491.png",
     "static/media/shopify2.png": "/static/media/shopify2.4f9f7913ac82227aacb7.png",
     "static/media/panaderiaBeto.png": "/static/media/panaderiaBeto.37b860adcf8750b439b3.png",
     "static/media/sitioweb2.jpg": "/static/media/sitioweb2.299638ab87aec967517e.jpg",
@@ -16,6 +17,7 @@
     "static/media/imgFinViz.png": "/static/media/imgFinViz.413ba211266adc4523d4.png",
     "static/media/donWeb.png": "/static/media/donWeb.775e2cb56b665269e25c.png",
     "static/media/crisisSubprime1.jpg": "/static/media/crisisSubprime1.571cea8a931b86895db0.jpg",
+    "static/media/luisCaputo.webp": "/static/media/luisCaputo.f9e9a6bb757ed68883f7.webp",
     "static/media/stevenEisman.jpg": "/static/media/stevenEisman.f4095dce784fbf456aec.jpg",
     "static/media/Pepe.png": "/static/media/Pepe.66030348ae3ec25b66da.png",
     "static/media/cristianBale.jpg": "/static/media/cristianBale.e89971fe137845eda3e0.jpg",
@@ -35,11 +37,11 @@
     "static/media/monedero.png": "/static/media/monedero.f05fbdebacb2a2ef5b16.png",
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
-    "main.eeb8b3ba.css.map": "/static/css/main.eeb8b3ba.css.map",
-    "main.1ac177f8.js.map": "/static/js/main.1ac177f8.js.map"
+    "main.1ce00b71.css.map": "/static/css/main.1ce00b71.css.map",
+    "main.be70773f.js.map": "/static/js/main.be70773f.js.map"
   },
   "entrypoints": [
-    "static/css/main.eeb8b3ba.css",
-    "static/js/main.1ac177f8.js"
+    "static/css/main.1ce00b71.css",
+    "static/js/main.be70773f.js"
   ]
 }

@@ -6,13 +6,16 @@ import subprime2 from "../Home/imagenes/bolsaValores/crisisSubprime2.jpg"
 import { Link } from 'react-router-dom';
 import IonIcon from '@reacticons/ionicons';
 import "./VariacionesBolsa.css"
+import ButtonDonacion from "./ButtonDonacion"
 
 const VariacionesBolsa = () => {
     return (
         <>
             <NavBar />
             <div className="classContainerVar">
+                <ButtonDonacion />
                 <h1>VARIACIONES DE LA BOLSA</h1>
+
                 <div className="containerLike">
                     <div
                         className="fb-like"
@@ -147,7 +150,9 @@ const VariacionesBolsa = () => {
 
                 <h4>TE PUEDE INTERESAR</h4>
                 <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
-                
+                <br></br>
+                <br></br>
+                <ButtonDonacion />
             </div >
             <ButtonBarBoostrap />
         </>

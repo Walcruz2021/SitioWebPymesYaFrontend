@@ -18,6 +18,8 @@ const ButtonBar = () => {
         <>
             <div className="barra">
                 <div className="containerInfo">
+
+            
                     <h3>Sobre<span> Nosotros</span></h3>
                     <p>Somos Desarrolladores apasionados por la innovacion y el impacto de las tecnologias en nuestra vida.
                         Participamos en varios proyectos y seguimos el camino infinito del aprendizaje</p>

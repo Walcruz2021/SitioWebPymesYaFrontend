@@ -2,15 +2,18 @@ import "./Finanzas.css"
 import NavBar from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import IonIcon from '@reacticons/ionicons';
+import ButtonDonacion from "./ButtonDonacion";
 const panaderia = require("./imagenes/panaderiaBeto.png")
 const panaderia2 = require("./imagenes/panaderiaBeto2.png")
 const pepe = require("./imagenes/Pepe.png")
+
 const Finanzas = () => {
     return (
         <>
             <NavBar />
             <div className="classContainerFin">
-            <div className="containerLike">
+                <ButtonDonacion />
+                <div className="containerLike">
                     <div
                         className="fb-like"
                         data-href="http://www.pymesya.com/bolsaValores"
@@ -21,11 +24,11 @@ const Finanzas = () => {
                         data-share="true"
                     ></div>
                 </div>
+                <h1>¿QUE ES LA BOLSA DE VALORES?</h1>
                 <p>La primera opción que, quizás, pasa por tu cabeza cuando piensas en invertir parte de tus ahorros
                     sea la bolsa. La compra y venta de valores es la gran protagonista de los mercados financieros. Pero
                     ¿entiendes qué es y cómo funciona la bolsa? ¿Conoces a que se debe el aumento o baja de la misma?
                     Te ayudamos a responder a estas y otras preguntas clave.</p>
-                <h1>¿QUE ES LA BOLSA DE VALORES?</h1>
                 <p>
                     Quizá al leer “bolsa de valores” pienses en un gran edificio con gente corriendo y gritando, donde
                     es muy fácil perder dinero. Es por eso que mucha gente huye de ella sin conocer todos los beneficios
@@ -78,9 +81,11 @@ const Finanzas = () => {
                     compartir las ganancias con ellos. Estos dividendos pueden ser una fuente de ingresos adicionales
                     para los inversores. Al invertir en empresas que pagan dividendos, puedes obtener un flujo de
                     ingresos adicional en lugar de simplemente ver crecer el valor de las acciones. </p>
-        
+
+                    <ButtonDonacion />
+
             </div >
-           
+
             <ButtonBarBoostrap />
         </>
     )

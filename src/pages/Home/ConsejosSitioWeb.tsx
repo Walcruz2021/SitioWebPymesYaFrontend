@@ -10,6 +10,7 @@ import { Helmet } from 'react-helmet';
 import "./ConsejosSitioWeb.css"
 import Swal from "sweetalert2";
 import IonIcon from '@reacticons/ionicons';
+import ButtonDonacion from "./ButtonDonacion"
 
 const ConsejosSitioWeb = () => {
 
@@ -44,6 +45,7 @@ const ConsejosSitioWeb = () => {
         <>
             <NavBar />
             <div className="classContainerSitio">
+                <ButtonDonacion/>
                 <h1>Consejos de un Sitio Web para tu Negocio</h1>
 
                 <div className="containerLike">
@@ -196,7 +198,7 @@ const ConsejosSitioWeb = () => {
                     es la mejor alternativa para tu compañia, analizando siempre todos los PRO y CONTRAS, considerando tiempo, economia, ingresos al crear el
                     sitio, etc. </p>
 
-
+                    <ButtonDonacion/>
                 {/* <div className="containerCompRedes">
       <h3>Comparte Nuestras Publicaciones</h3>
      <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
