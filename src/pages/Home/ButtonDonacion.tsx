@@ -5,7 +5,7 @@ function ButtonDonacion() {
   return (
     <div className="containerButtonDon">
       <a
-        href="link.mercadopago.com.ar/pymeya"
+        href="https://link.mercadopago.com.ar/pymeya"
         className="btnDon primaryDon"
         target="_blank"
       >
