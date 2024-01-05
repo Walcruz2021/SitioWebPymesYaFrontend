@@ -26,6 +26,7 @@
 font-size: 12px;
 }
 
+/* CENTRADO DEL TEXTO DEL BOTON EN MOBILE */
 @media (max-width: 768px) {
   .btnDon {
     padding: 1rem 2rem; /* Modifica el padding para dispositivos móviles */

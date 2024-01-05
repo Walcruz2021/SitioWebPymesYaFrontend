@@ -86,6 +86,7 @@ const ListNotes = (codigo: any) => {
                     anterior={anteriorHistoria}
                     buttonBack={buttonBack}
                     buttonNext={buttonNext}
+
                 />
 
             </div>
