@@ -9,13 +9,13 @@
   margin-right: 10px;
 }
 
-.contenedor{
+.contenedorTitulos{
   margin-top: 5px;
 }
 
 /* ESCRITORIO */
 @media (min-device-width : 1068px) {
-  .contenedor {
+  .contenedorTitulos {
     display: flex;
     justify-content: space-between;
     margin-left: 20rem; /* Margen izquierdo */

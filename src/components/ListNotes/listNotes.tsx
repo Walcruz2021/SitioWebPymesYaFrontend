@@ -71,7 +71,7 @@ const ListNotes = (codigo: any) => {
             <div className="containerListNotes">
 
                    
-                <div className="contenedor">
+                <div className="contenedorTitulos">
                     
                     {notes ? notes.map(note => (
                         <div className="elemento">

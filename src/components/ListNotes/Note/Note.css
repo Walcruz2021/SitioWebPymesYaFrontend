@@ -20,8 +20,8 @@
 /* PANTALLA GRANDE */
 @media (min-device-width : 1068px) {
   .classNote {
-    padding-left: 13rem;
-    padding-right: 13rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     padding-top: 0.7rem;
     text-align: justify;
     width: 100%;
