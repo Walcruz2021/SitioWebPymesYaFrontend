@@ -6,15 +6,27 @@ function ButtonDonacion() {
     <div className="containerButtonDon">
       <a
         href="https://link.mercadopago.com.ar/pymeya"
-        className="btnDon primaryDon"
+        className="btnDon1 primaryDon1"
         target="_blank"
       >
-        DONACIÓN
+        MERCADO PAGO
       </a>
-      <p className="textButtonDon">
+      {/* <p className="textButtonDon">
         Con tu colaboracion podremos seguir creando notas que te interen y te
         ayuden a diario
-      </p>
+      </p> */}
+
+      <a
+        href="https://www.paypal.com/donate/?hosted_button_id=48HZX2ZGSWKRQ"
+        className="btnDon2 primaryDon2"
+        target="_blank"
+      >
+        PAYPAL
+      </a>
+      {/* <p className="textButtonDon">
+        Con tu colaboracion podremos seguir creando notas que te interen y te
+        ayuden a diario
+      </p> */}
     </div>
   )
 };

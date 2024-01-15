@@ -5,6 +5,10 @@
 
     https://ionic.io/ionicons
 
+    //CSS CON TAILWIND
+cuadricula: 
+
+    //
 FORMULARIO QUE SE ESTA OMITIENDO HASTA QUE FUNCIONE BIEN (ARCHIVO CONTACTS)
 
     <div className="containerTitForm">
