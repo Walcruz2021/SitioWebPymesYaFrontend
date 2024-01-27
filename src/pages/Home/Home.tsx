@@ -161,8 +161,6 @@ const Home = () => {
                     </button>
                     <h6 className="titButton">Otros</h6>
                 </li>
-
-
             </ul>
 
             <div className="ContainerListComp">
@@ -216,7 +214,7 @@ const Home = () => {
 
             <div className="containerWeb">
                 <h4>¿Queres que tu empresa este en esta pagina?</h4>
-                <Link style={{ textDecoration: 'none' }} to={`/contactPubli`}>
+                <Link style={{ textDecoration: 'none' }} to={`/login`}>
                     <h3 className="buttonBanner">Clic Aqui</h3>
                 </Link>
             </div>
