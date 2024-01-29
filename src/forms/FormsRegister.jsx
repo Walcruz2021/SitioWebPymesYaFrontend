@@ -2,59 +2,76 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 //import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../hooks/configFirebase";
+import { createUserWithEmailAndPassword,updateProfile,getAuth } from "firebase/auth";
 
-import alertToastify  from "../hooks/alertToastify";
+import alertToastify from "../hooks/alertToastify";
 
-function FomrsRegister() {
+function FormsRegister() {
   //const notify = () => toast("Wow so easy!");
   return (
     <>
-      <div className="pr-5 pl-5 m-10">
+      <div>
+        <h2>FORMULARIO DE REGISTRO</h2>
         <Formik
           initialValues={{ name: "", email: "", password: "" }}
-          // validate={(values) => {
-          //   const error = {};
-          //   if (!values.nombre) {
-          //     // errors.nombre = "por favor ingresa nombre";
-          //     console.log(values);
-          //   } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.nombre)) {
-          //     // errors.nombre = "el nombre con solo letras y espacios";
-          //   }
+          validate={(values) => {
+            const error = {};
+            //   if (!values.nombre) {
+            //     // errors.nombre = "por favor ingresa nombre";
+            //     console.log(values);
+            //   } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.nombre)) {
+            //     // errors.nombre = "el nombre con solo letras y espacios";
+            //   }
 
-          //   if (!values.email) {
-          //     // errors.email = "por favor ingresa correo";
-          //   } else if (
-          //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          //   ) {
-          //     // errors.email = "correo invalido";
-          //   }
+            if (!values.email) {
+              error.email = "por favor ingresa correo";
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,}(?:\.[A-Z]{2,})?$/i.test(
+                values.email
+              )
+            ) {
+              error.email = "correo inválido";
+            }
 
-          //   //Letras, numeros, guion y guion_bajo-espacios y Mayusculas
-          //   // if (!/^[a-zA-Z0-9\_\-\s]{4,30}$/.test(values.notesTurn)) {
-          //   //   errors.notesTurn =
-          //   //     "30 caracteres max y no permite caracteres especiales";
-          //   // }
+            if (!values.password) {
+              error.password = "por favor ingresa contraseña";
+            }
+            //Letras, numeros, guion y guion_bajo-Mayusculas SIN espacios
+            else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,12}$/.test(
+                values.password
+              )
+            ) {
+              error.password = "min 6 caracteres máximo 12. Sin espacios";
+            }
 
-          //   // return errors;
-          // }}
+            return error;
+          }}
           onSubmit={async (values, { resetForm }) => {
             try {
+              
               const userCredential = await createUserWithEmailAndPassword(
                 auth,
-                values.name,
+                //values.name,
                 values.email,
                 values.password
               );
-              console.log(userCredential);
+              // Accede al usuario recién creado
+              const user = userCredential.user;
+              await updateProfile(user, {
+                displayName:values.name,
+              });
+              window.location.reload();
             } catch (error) {
               console.error(error.code, error.message);
-              if ((error.code = "auth/invalid-email")) {
-                alertToastify();
+              if (error.code === "auth/weak-password") {
+                //alertToastify();
+                alert("password has few characters");
+              } else if (error.code === "auth/email-already-in-use") {
+                alert("email already exists");
               }
             }
-
             resetForm();
           }}
         >
@@ -69,7 +86,7 @@ function FomrsRegister() {
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
-              <label className="form-label">Apellido y Nombre:</label>
+              <label className="form-label">Apellido y Nombre</label>
               <Field type="text" name="name" className="form-control">
                 {/* <ErrorMessage
               name="email"
@@ -78,39 +95,49 @@ function FomrsRegister() {
               </Field>
 
               <div className="mt-2">
-                <label className="form-label">Email:</label>
-                <Field type="email" name="email" className="form-control">
-                  {/* <ErrorMessage
-              name="email"
-              component={() => <div className="error">{errors.email}</div>}
-            ></ErrorMessage> */}
-                </Field>
+                <label className="form-label">Email</label>
+                <Field type="email" name="email" className="form-control" />
+                <ErrorMessage
+                  name="email"
+                  component={() => <div className="error">{errors.email}</div>}
+                ></ErrorMessage>
               </div>
 
               <div className="mt-2">
                 <label htmlFor="password" className="form-label">
-                  Contraseña:
+                  Contraseña
                 </label>
                 <Field
                   type="password"
                   name="password"
                   className="form-control mt-2"
-                >
-                  {/* <ErrorMessage
-              name="nombre"
-              component={() => <div className="error">{errors.nombre}</div>}
-            ></ErrorMessage> */}
-                </Field>
+                ></Field>
+                <ErrorMessage
+                  name="password"
+                  component={() => (
+                    <div className="error">{errors.password}</div>
+                  )}
+                />
               </div>
 
               <div className="mt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="form-control btn btn-lg btn-primary"
-                >
-                  Registrarse
-                </button>
+                {values.email && values.password && !errors.password ? (
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="form-control btn btn-lg btn-primary"
+                  >
+                    Registrarse
+                  </button>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled
+                    className="form-control btn btn-lg btn-primary"
+                  >
+                    Registrarse
+                  </button>
+                )}
               </div>
             </Form>
           )}
@@ -120,4 +147,4 @@ function FomrsRegister() {
   );
 }
 
-export default FomrsRegister;
+export default FormsRegister;

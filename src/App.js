@@ -18,6 +18,8 @@ import InversionBolsa from "./pages/Home/InversionBolsa";
 import ConsejosSitioWeb from "./pages/Home/ConsejosSitioWeb";
 import Leliqs from "./pages/Home/Leliqs"
 import LoginFirebase from "./pages/Home/LoginFirebase";
+import LoginGoogle from "./pages/Home/LoginGoogle";
+
 // import FormServices from "./pages/Home/FormServices";
 
 
