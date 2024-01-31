@@ -3,11 +3,13 @@ import { useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBarBoostrap";
 import FormsRegister from "../../forms/FormsRegister";
 import FormsLogin from "../../forms/FormsLogin";
+import FormAddService from "../../forms/FormAddService";
 import "./LoginFirebase.css";
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 
-function LoginFirebase() {
+function LoginFirebase(){
   const [userState, setUserState] = useState(null);
 
   useEffect(() => {
@@ -37,8 +39,9 @@ function LoginFirebase() {
       <div className="classContainerSitio">
         {userState ? (
           <>
-            <p>Bienvenido, {userState.displayName}!</p>
+            <p>Bienvenido {userState.displayName}!</p>
             <button onClick={handleLogout}>Cerrar Sesión</button>
+            <FormAddService/>
           </>
         ) : (
           <>
@@ -47,6 +50,8 @@ function LoginFirebase() {
           </>
         )}
       </div>
+      <ButtonBarBoostrap/>
+
     </>
   );
 }

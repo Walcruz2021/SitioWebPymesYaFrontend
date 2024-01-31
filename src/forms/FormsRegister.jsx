@@ -3,7 +3,11 @@ import Button from "react-bootstrap/Button";
 import { Formik, Field, ErrorMessage, Form } from "formik";
 //import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 import { auth } from "../hooks/configFirebase";
-import { createUserWithEmailAndPassword,updateProfile,getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  getAuth,
+} from "firebase/auth";
 
 import alertToastify from "../hooks/alertToastify";
 
@@ -14,15 +18,20 @@ function FormsRegister() {
       <div>
         <h2>FORMULARIO DE REGISTRO</h2>
         <Formik
-          initialValues={{ name: "", email: "", password: "" }}
+          initialValues={{ firstName: "", lastName:"" , email: "", password: "" }}
           validate={(values) => {
             const error = {};
-            //   if (!values.nombre) {
-            //     // errors.nombre = "por favor ingresa nombre";
-            //     console.log(values);
-            //   } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.nombre)) {
-            //     // errors.nombre = "el nombre con solo letras y espacios";
-            //   }
+            if (!values.firstName) {
+              error.firtsName = "por favor ingresa nombre";
+            } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.firstName)) {
+              error.firstName = "el nombre sin espacios ni caracteres especiales";
+            }
+
+            if (!values.lastName) {
+              error.lastName = "por favor ingresa apellido";
+            } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.lastName)) {
+              error.lastName = "el apellido sin espacios ni carcateres especiales";
+            }
 
             if (!values.email) {
               error.email = "por favor ingresa correo";
@@ -50,17 +59,15 @@ function FormsRegister() {
           }}
           onSubmit={async (values, { resetForm }) => {
             try {
-              
               const userCredential = await createUserWithEmailAndPassword(
                 auth,
-                //values.name,
                 values.email,
                 values.password
               );
               // Accede al usuario recién creado
               const user = userCredential.user;
               await updateProfile(user, {
-                displayName:values.name,
+                displayName: `${values.firstName} ${values.lastName}`,
               });
               window.location.reload();
             } catch (error) {
@@ -86,13 +93,27 @@ function FormsRegister() {
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
-              <label className="form-label">Apellido y Nombre</label>
-              <Field type="text" name="name" className="form-control">
-                {/* <ErrorMessage
-              name="email"
-              component={() => <div className="error">{errors.email}</div>}
-            ></ErrorMessage> */}
-              </Field>
+              <label className="form-label">Nombre</label>
+
+              <Field type="text" name="firstName" className="form-control" />
+
+              <ErrorMessage
+                name="firstName"
+                component={() => (
+                  <div className="error">{errors.firstName}</div>
+                )}
+              ></ErrorMessage>
+
+              <label className="form-label">Apellido</label>
+
+              <Field type="text" name="lastName" className="form-control" />
+
+              <ErrorMessage
+                name="lastName"
+                component={() => (
+                  <div className="error">{errors.lastName}</div>
+                )}
+              ></ErrorMessage>
 
               <div className="mt-2">
                 <label className="form-label">Email</label>
@@ -121,7 +142,15 @@ function FormsRegister() {
               </div>
 
               <div className="mt-4">
-                {values.email && values.password && !errors.password ? (
+                {values.email &&
+                !errors.email &&
+                values.password &&
+                !errors.password &&
+                values.firstName &&
+                !errors.firstName && 
+                values.lastName &&
+                !errors.lastName
+                ? (
                   <button
                     type="submit"
                     disabled={isSubmitting}

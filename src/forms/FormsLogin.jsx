@@ -30,32 +30,31 @@ function FormsLogin() {
       <div>
         <h2 className="mt-5">FORMULARIO DE INICIO DE SESION</h2>
         <Formik
-          initialValues={{ name: "", email: "", password: "" }}
-          // validate={(values) => {
-          //   const error = {};
-          //   if (!values.nombre) {
-          //     // errors.nombre = "por favor ingresa nombre";
-          //     console.log(values);
-          //   } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(values.nombre)) {
-          //     // errors.nombre = "el nombre con solo letras y espacios";
-          //   }
+          initialValues={{ email: "", password: "" }}
+          validate={(values) => {
+            const error = {};
 
-          //   if (!values.email) {
-          //     // errors.email = "por favor ingresa correo";
-          //   } else if (
-          //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-          //   ) {
-          //     // errors.email = "correo invalido";
-          //   }
+            if (!values.email) {
+              error.email = "por favor ingresa correo";
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+            ) {
+              error.email = "correo invalido";
+            }
 
-          //   //Letras, numeros, guion y guion_bajo-espacios y Mayusculas
-          //   // if (!/^[a-zA-Z0-9\_\-\s]{4,30}$/.test(values.notesTurn)) {
-          //   //   errors.notesTurn =
-          //   //     "30 caracteres max y no permite caracteres especiales";
-          //   // }
-
-          //   // return errors;
-          // }}
+            if (!values.password) {
+              error.password = "por favor ingresa contraseña";
+            }
+            //Letras, numeros, guion y guion_bajo-Mayusculas SIN espacios
+            else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,12}$/.test(
+                values.password
+              )
+            ) {
+              error.password = "min 6 caracteres máximo 12. Sin espacios";
+            }
+            return error;
+          }}
           onSubmit={async (values, { resetForm }) => {
             try {
               const auth = getAuth();
@@ -65,8 +64,6 @@ function FormsLogin() {
                 values.password
               );
               alert(`Bienvenido${userCredential.user.email}`);
-          
-              
             } catch (error) {
               console.error(error.code, error.message);
               if (error.code === "auth/invalid-email") {
@@ -90,12 +87,11 @@ function FormsLogin() {
             <Form onSubmit={handleSubmit}>
               <div className="mt-2">
                 <label className="form-label">Email</label>
-                <Field type="email" name="email" className="form-control">
-                  {/* <ErrorMessage
-              name="email"
-              component={() => <div className="error">{errors.email}</div>}
-            ></ErrorMessage> */}
-                </Field>
+                <Field type="email" name="email" className="form-control" />
+                <ErrorMessage
+                  name="email"
+                  component={() => <div className="error">{errors.email}</div>}
+                ></ErrorMessage>
               </div>
 
               <div className="mt-2">
@@ -106,22 +102,33 @@ function FormsLogin() {
                   type="password"
                   name="password"
                   className="form-control mt-2"
-                >
-                  {/* <ErrorMessage
-              name="nombre"
-              component={() => <div className="error">{errors.nombre}</div>}
-            ></ErrorMessage> */}
-                </Field>
+                />
+
+                <ErrorMessage
+                  name="password"
+                  component={() => (
+                    <div className="error">{errors.password}</div>
+                  )}
+                ></ErrorMessage>
               </div>
 
               <div className="mt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="form-control btn btn-lg btn-secondary"
-                >
-                  Inicio de Sesion
-                </button>
+                {values.email && values.password && !errors.password && !errors.email ? (
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="form-control btn btn-lg btn-secondary"
+                  >
+                    Inicio de Sesion
+                  </button>
+                ) : (
+                  <button
+                    disabled
+                    className="form-control btn btn-lg btn-secondary"
+                  >
+                    Inicio de Sesion
+                  </button>
+                )}
               </div>
             </Form>
           )}
@@ -134,7 +141,7 @@ function FormsLogin() {
             Google E-mail
           </button>
         </div>
-        <ButtonBarBoostrap />
+      
       </div>
     </>
   );
