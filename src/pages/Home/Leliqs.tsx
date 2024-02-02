@@ -2,7 +2,7 @@ import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import imgLeliq from "../Home/imagenes/leliqsInformeImg.png";
-import { Helmet } from "react-helmet";
+//import { Helmet } from "react-helmet";
 import imgCaputo from "../Home/imagenes/luisCaputo.webp"
 import "./Leliqs.css"
 import ComentaryFace from "../../components/ListNotes/ComentaryFace";
@@ -25,13 +25,13 @@ const Leliqs = () => {
 
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <title>{titulo}</title>
                 <meta property="og:title" content={titulo} />
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={imagen} />
                 <meta property="og:url" content={url} />
-            </Helmet>
+            </Helmet> */}
             <NavBarBoostrap />
             <div className="classContainerInvBolsa">
                 <ButtonDonacion/>

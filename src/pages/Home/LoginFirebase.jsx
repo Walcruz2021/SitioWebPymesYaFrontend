@@ -41,7 +41,7 @@ function LoginFirebase(){
           <>
             <p>Bienvenido {userState.displayName}!</p>
             <button onClick={handleLogout}>Cerrar Sesión</button>
-            <FormAddService/>
+            <FormAddService fullName={userState.displayName} email={userState.email}/>
           </>
         ) : (
           <>

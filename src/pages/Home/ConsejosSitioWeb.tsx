@@ -6,7 +6,7 @@ import tiendaNube from "../Home/imagenes/consejosWeb/tiendaNube.png"
 import wordPress from "../Home/imagenes/consejosWeb/wordPress.png"
 import mShops from "../Home/imagenes/consejosWeb/mShops.png"
 import shopify from "../Home/imagenes/consejosWeb/shopify2.png"
-import { Helmet } from 'react-helmet';
+//import { Helmet } from 'react-helmet';
 import "./ConsejosSitioWeb.css"
 import Swal from "sweetalert2";
 import IonIcon from '@reacticons/ionicons';
@@ -32,14 +32,14 @@ const ConsejosSitioWeb = () => {
         })
     };
 
-    <Helmet>
-        {/* Metadatos de Facebook */}
-        <meta property="og:url" content="http://www.pymesya.com/tecnologias/sitioWeb" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Consejo para tu Sitio Web" />
-        <meta property="og:description" content="Tu Sitio Web a tu alcance. Te pouede salir mas barato de lo que imaginas" />
-        <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-    </Helmet>
+    // <Helmet>
+    //     {/* Metadatos de Facebook */}
+    //     <meta property="og:url" content="http://www.pymesya.com/tecnologias/sitioWeb" />
+    //     <meta property="og:type" content="website" />
+    //     <meta property="og:title" content="Consejo para tu Sitio Web" />
+    //     <meta property="og:description" content="Tu Sitio Web a tu alcance. Te pouede salir mas barato de lo que imaginas" />
+    //     <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
+    // </Helmet>
 
     return (
         <>

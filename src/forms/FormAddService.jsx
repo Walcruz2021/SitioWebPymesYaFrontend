@@ -10,9 +10,11 @@ import {
 import Select from "react-select";
 import {useDispatch} from "react-redux"
 import addCompanyService from "../reducer/actions"
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
+const FormAddService = (fullName,email) => {
 
-const FormAddService = () => {
+console.log(fullName)
 const dispatch=useDispatch()
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
