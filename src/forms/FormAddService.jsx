@@ -1,21 +1,14 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState } from "react";
-//import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
-import { auth } from "../hooks/configFirebase";
-import {
-  createUserWithEmailAndPassword,
-  updateProfile,
-  getAuth,
-} from "firebase/auth";
 import Select from "react-select";
-import {useDispatch} from "react-redux"
-import addCompanyService from "../reducer/actions"
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import addCompanyService from "../reducer/actions";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
-const FormAddService = (fullName,email) => {
-
-console.log(fullName)
-const dispatch=useDispatch()
+const FormAddService = (fullName) => {
+  const MySwal = withReactContent(Swal);
+  const dispatch = useDispatch();
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
     { value: "6435bcb66b3be033805c6f09", label: "Herreria" },
@@ -24,67 +17,93 @@ const dispatch=useDispatch()
     { value: "6435bcce6b3be033805c6f0f", label: "Albañileria" },
     { value: "6435bf606b3be033805c6f13", label: "Plomeria" },
     { value: "6435c24c6b3be033805c6f19", label: "Electricidad" },
-    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" }
+    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" },
   ];
 
+  //select's state (about Category)
   const [selectedOption, setSelectedOption] = useState(null);
-  //console.log(selectedOption);
+
   return (
     <>
       <div>
         <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
         <Formik
           initialValues={{
-            phone1:"",
-            phone2:"",
-            address: ""
+            phone1: "",
+            phone2: "",
+            address: "",
+            service: "",
           }}
           validate={(values) => {
             const error = {};
-            // if (!values.firstName) {
-            //   error.firtsName = "por favor ingresa nombre";
-            // } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.firstName)) {
-            //   error.firstName =
-            //     "el nombre sin espacios ni caracteres especiales";
-            // }
+            if (!values.phone1) {
+              error.phone1 = "por favor ingresa numero de telefono de contacto";
+            } else if (!/^(\d{6,15})?$/.test(values.phone1)) {
+              error.phone1 = "mínimo 6 máximo 15 carácteres";
+            }
 
-            // if (!values.lastName) {
-            //   error.lastName = "por favor ingresa apellido";
-            // } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.lastName)) {
-            //   error.lastName =
-            //     "el apellido sin espacios ni carcateres especiales";
-            // }
+            if (!/^(\d{6,15})?$/.test(values.phone2)) {
+              error.phone2 = "mínimo 6 máximo 15 carácteres";
+            }
 
-            // if (!values.email) {
-            //   error.email = "por favor ingresa correo";
-            // } else if (
-            //   !/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,}(?:\.[A-Z]{2,})?$/i.test(
-            //     values.email
-            //   )
-            // ) {
-            //   error.email = "correo inválido";
-            // }
+            //permite la leta ñ y letras con acentos
+            if (!values.address) {
+              error.address = "Por favor ingresa domicilio";
+            } else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{6,60}$/.test(
+                values.address
+              )
+            ) {
+              error.address =
+                "Domicilio sin caracteres especiales no permitidos. Mínimo 6, Máximo 60 caracteres.";
+            }
 
-            // if (!values.password) {
-            //   error.password = "por favor ingresa contraseña";
-            // }
-            // //Letras, numeros, guion y guion_bajo-Mayusculas SIN espacios
-            // else if (
-            //   !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,12}$/.test(
-            //     values.password
-            //   )
-            // ) {
-            //   error.password = "min 6 caracteres máximo 12. Sin espacios";
-            // }
+            //permite la leta ñ y letras con acentos
+            if (!values.service) {
+              error.service = "Por favor ingresa el servicio de tu profesión";
+            } else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
+                values.service
+              )
+            ) {
+              error.service =
+                "Servicio sin caracteres especiales. Mínimo 10, Máximo 300 caracteres.";
+            }
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
             try {
-              dispatch(addCompanyService(values))
+              const addService = {
+                nameCompany: fullName.fullName,
+                identifier: "",
+                phone: values.phone1,
+                address: values.address,
+                notesComp: values.service,
+                country: "Argentina",
+                cityName: "Salta",
+                level: 1,
+                Category: selectedOption.value,
+                levelPlay: false,
+                siteWeb: "",
+                email: fullName.email,
+                typeComp: 2,
+                codeInter: "",
+                branchOffice: [],
+              };
+              dispatch(addCompanyService(addService));
+              MySwal.fire({
+                title: "¡Servicio Agregado Correcta!",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "rgb(21, 151, 67)",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  resetForm();
+                }
+              });
             } catch (error) {
               console.error(error.code, error.message);
             }
-            resetForm();
           }}
         >
           {({
@@ -99,36 +118,28 @@ const dispatch=useDispatch()
           }) => (
             <Form onSubmit={handleSubmit}>
               <label className="form-label">Cel de Contacto</label>
-
               <Field type="number" name="phone1" className="form-control" />
-
               <ErrorMessage
-                name="phone"
+                name="phone1"
                 component={() => <div className="error">{errors.phone1}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Cel de Contacto Adicional</label>
-
               <Field type="number" name="phone2" className="form-control" />
-
               <ErrorMessage
-                name="phone"
+                name="phone2"
                 component={() => <div className="error">{errors.phone2}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Domicilio</label>
-
               <Field type="text" name="address" className="form-control" />
-
               <ErrorMessage
                 name="address"
                 component={() => <div className="error">{errors.address}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Servicio</label>
-
               <Field type="text" name="service" className="form-control" />
-
               <ErrorMessage
                 name="service"
                 component={() => <div className="error">{errors.service}</div>}
@@ -144,13 +155,19 @@ const dispatch=useDispatch()
               />
 
               <div className="mt-4">
-                {values.address  ? (
+                {values.phone1 &&
+                values.address &&
+                values.service &&
+                selectedOption &&
+                !errors.phone1 &&
+                !errors.address &&
+                !errors.service ? (
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="form-control btn btn-lg btn-primary"
                   >
-                    Registrarse
+                    Adherir Servicio
                   </button>
                 ) : (
                   <button
@@ -158,7 +175,7 @@ const dispatch=useDispatch()
                     disabled
                     className="form-control btn btn-lg btn-primary"
                   >
-                    Enviar Aviso
+                    Adherir Servicio
                   </button>
                 )}
               </div>
@@ -171,3 +188,9 @@ const dispatch=useDispatch()
 };
 
 export default FormAddService;
+
+// tengo este error al trabajar con actions y reducer en react ""Actions must be plain objects. Instead, the actual type was: 'function'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions"
+// ChatGPT
+// Este error sugiere que estás intentando despachar una función directamente en lugar de un objeto plano (plain object) como acción en tu aplicación React con Redux. Este problema suele ocurrir cuando intentas despachar una acción asíncrona o una función directamente sin el middleware adecuado.
+
+// La solución común es utilizar middleware como redux-thunk para manejar acciones asíncronas o funciones. redux-thunk permite que tus acciones sean funciones en lugar de objetos, lo que te permite realizar operaciones asíncronas antes de despachar la acción real.
