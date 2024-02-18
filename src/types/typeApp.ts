@@ -53,8 +53,10 @@ export type CompanyItem = {
   _id: number;
   avatar: any;
   nameCompany: String;
+  userCompany:String;
   identifier: number;
   phone: string;
+  phone2:string;
   address: string;
   notesComp: string;
   country: string;

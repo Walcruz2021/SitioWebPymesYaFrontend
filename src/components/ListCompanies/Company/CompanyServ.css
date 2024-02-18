@@ -9,3 +9,8 @@
     background-color: #4CAF50; /* Green */
     color: white;
 }
+
+.Contenido h4{
+    color:rgb(17, 122, 87);
+    font-weight: bold
+}

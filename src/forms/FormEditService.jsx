@@ -1,13 +1,14 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState } from "react";
 import Select from "react-select";
-import { useDispatch } from "react-redux";
-import {addCompanyService} from "../reducer/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { editCompanyService } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const FormAddService = ({user,email}) => {
-
+const FormEditService = ({dataUser,phone,phone2,notesComp,address,idCompany,email}) => {
+console.log(email)
+  const service1 = useSelector((state) => state.validation.data.search);
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
   const options = [
@@ -27,24 +28,26 @@ const FormAddService = ({user,email}) => {
   return (
     <>
       <div>
-        <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
+        <h2>EDITE SU SERVICIO</h2>
         <Formik
           initialValues={{
-            phone1: "",
-            phone2: "",
-            address: "",
-            service: "",
+            phone1:phone,
+            phone2:phone2,
+            address:address,
+            service:notesComp,
           }}
           validate={(values) => {
             const error = {};
             if (!values.phone1) {
               error.phone1 = "por favor ingresa numero de telefono de contacto";
             } else if (!/^(\d{6,15})?$/.test(values.phone1)) {
-              error.phone1 = "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
+              error.phone1 =
+                "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
             }
 
             if (!/^(\d{6,15})?$/.test(values.phone2)) {
-              error.phone2 = "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
+              error.phone2 =
+                "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
             }
 
             //permite la leta ñ y letras con acentos
@@ -73,13 +76,14 @@ const FormAddService = ({user,email}) => {
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
+            console.log(values)
             try {
-              const addService = {
-                nameCompany:"Herreria WALTER",
-                userCompany: user,
+              const editService = {
+                nameCompany: "Herreria WALTER",
+                userCompany: dataUser,
                 identifier: "",
                 phone: values.phone1,
-                phone2:values.phone2,
+                phone2: values.phone2,
                 address: values.address,
                 notesComp: values.service,
                 country: "Argentina",
@@ -93,9 +97,9 @@ const FormAddService = ({user,email}) => {
                 codeInter: "",
                 branchOffice: [],
               };
-              dispatch(addCompanyService(addService));
+              dispatch(editCompanyService(idCompany,editService));
               MySwal.fire({
-                title: "¡Servicio Agregado Correcta!",
+                title: "¡Servicio Modificado Correctamente!",
                 icon: "success",
                 confirmButtonText: "Aceptar",
                 confirmButtonColor: "rgb(21, 151, 67)",
@@ -118,36 +122,37 @@ const FormAddService = ({user,email}) => {
             handleSubmit,
             isSubmitting,
             /* and other goodies */
+            
           }) => (
             <Form onSubmit={handleSubmit}>
               <label className="form-label">Cel de Contacto</label>
-              <Field type="number" name="phone1" className="form-control" />
+              <Field type="number" name="phone1" className="form-control"/>
               <ErrorMessage
                 name="phone1"
                 component={() => <div className="error">{errors.phone1}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Cel de Contacto Adicional</label>
-              <Field type="number" name="phone2" className="form-control" />
+              <Field type="number" name="phone2" className="form-control"/>
               <ErrorMessage
                 name="phone2"
                 component={() => <div className="error">{errors.phone2}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Domicilio</label>
-              <Field type="text" name="address" className="form-control" />
+              <Field type="text" name="address" className="form-control"/>
               <ErrorMessage
                 name="address"
                 component={() => <div className="error">{errors.address}</div>}
               ></ErrorMessage>
 
-              <label className="form-label">Descripcion de Servicio</label>
-              <Field type="text" name="service" className="form-control" />
+              <label className="form-label">Servicio</label>
+              <Field type="text" name="service" className="form-control"/>
               <ErrorMessage
                 name="service"
                 component={() => <div className="error">{errors.service}</div>}
               ></ErrorMessage>
-  
+
               <label className="form-label">
                 Seleccione Area de tu Servicio
               </label>
@@ -190,7 +195,7 @@ const FormAddService = ({user,email}) => {
   );
 };
 
-export default FormAddService;
+export default FormEditService;
 
 // tengo este error al trabajar con actions y reducer en react ""Actions must be plain objects. Instead, the actual type was: 'function'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions"
 // ChatGPT
