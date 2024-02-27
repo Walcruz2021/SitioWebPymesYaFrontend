@@ -1,10 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.ef5bbd36.css",
-    "main.js": "/static/js/main.9cce40d3.js",
+    "main.js": "/static/js/main.d316c426.js",
     "static/media/softwareEmp.png": "/static/media/softwareEmp.6f4654a9fe6dc7d0beed.png",
+    "static/media/crisisTequila.jpg": "/static/media/crisisTequila.1005a9e9658fbfcbd29c.jpg",
     "static/media/mShops.png": "/static/media/mShops.62dc840192f5b2f39544.png",
+    "static/media/CambioMando.jpg": "/static/media/CambioMando.b896e05a29a5125b2cfd.jpg",
     "static/media/wix.png": "/static/media/wix.18a2ef671b0e23d8932a.png",
+    "static/media/fobaproa.jpg": "/static/media/fobaproa.38b8a74d8094e45ebbe7.jpg",
     "static/media/steveCarrel.jpg": "/static/media/steveCarrel.e92691e87467de4ca1f2.jpg",
     "static/media/MichaelBurry.jpg": "/static/media/MichaelBurry.65cdadad8f3cacbdf63b.jpg",
     "static/media/sitioweb.jpg": "/static/media/sitioweb.be3edf9734c8faa0a129.jpg",
@@ -40,10 +43,10 @@
     "static/media/mongodb.png": "/static/media/mongodb.83b60de876d715e1db75.png",
     "index.html": "/index.html",
     "main.ef5bbd36.css.map": "/static/css/main.ef5bbd36.css.map",
-    "main.9cce40d3.js.map": "/static/js/main.9cce40d3.js.map"
+    "main.d316c426.js.map": "/static/js/main.d316c426.js.map"
   },
   "entrypoints": [
     "static/css/main.ef5bbd36.css",
-    "static/js/main.9cce40d3.js"
+    "static/js/main.d316c426.js"
   ]
 }
