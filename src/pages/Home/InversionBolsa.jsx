@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 import { FacebookProvider, Like, ShareButton } from "react-facebook";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import ButtonDonacion from "./ButtonDonacion";
+import { Link } from "react-router-dom";
 // import { useShare } from 'react-facebook';
 const InversionBolsa = () => {
   // const { share, isLoading, error } = useShare();
@@ -35,7 +36,7 @@ const InversionBolsa = () => {
         <meta property="og:url" content={url} />
       </Helmet>
       <NavBarBoostrap />
-      <div className="classContainerInvBolsa">
+      <div className="classContainerSitio">
         <ButtonDonacion />
         <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
         <div className="containerLike">
@@ -49,6 +50,7 @@ const InversionBolsa = () => {
             data-share="true"
           ></div>
         </div>
+        <Link to="/inversionBolsaP2">Click Aquí para más Consejos</Link>
         <p>
           Para tener éxito, a la hora de invertir en la bolsa, es importante
           hacer una investigación exhaustiva y tomar decisiones informadas
@@ -81,7 +83,8 @@ const InversionBolsa = () => {
           la cual, nos porporciona toda la información necesaria a la ahora de
           invertir. En este caso a modo de ejemplo, se elegirá a la empresa
           Microsoft y analizaremos un poco su estado patrimonial
-          superficialmente
+          superficialmente. Sólo debes buscar a la compañía en el buscador de la
+          página por medio de su etiqueta, en este caso es MSFT.
         </p>
         <img src={finviz} />
 
@@ -228,13 +231,13 @@ const InversionBolsa = () => {
           educación financiera son claves para tomar decisiones informadas.
         </p>
 
-        <p className="blackP">
+        {/* <p className="blackP">
           ¡¡¡ Si te gustó y te ayudó esta información sólo comparte la misma. De
           esta manera me estarías ayudando con mis sponsors. Muchas gracias y
           desde ya mucha suerte !!!
-        </p>
+        </p> */}
 
-        <ButtonDonacion />
+        <Link to="/inversionBolsaP2">Click Aquí para más Consejos</Link>
       </div>
 
       <ButtonBarBoostrap />

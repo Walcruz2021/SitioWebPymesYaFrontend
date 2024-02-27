@@ -15,13 +15,14 @@ import VariacionesBolsa from "./pages/Home/VariacionesBolsa"
 import WinnerPrime from "./pages/Home/CardWinner"
 import PaginadoWinnersPrime from "./pages/Home/PaginadoWinnersPrime"
 import InversionBolsa from "./pages/Home/InversionBolsa";
+import InversionBolsa2 from "./pages/Home/InversionBolsa2";
 import ConsejosSitioWeb from "./pages/Home/ConsejosSitioWeb";
 import Leliqs from "./pages/Home/Leliqs"
 import LoginFirebase from "./pages/Home/LoginFirebase";
-import LoginGoogle from "./pages/Home/LoginGoogle";
+//import LoginGoogle from "./pages/Home/LoginGoogle";
 
 // import FormServices from "./pages/Home/FormServices";
-
+import CrisisTequila from "./pages/Home/CrisisTequila"
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
@@ -76,11 +77,16 @@ const App = () => {
         <Route path="/variaciones"><VariacionesBolsa/></Route>
         <Route path="/winnersPrime"><PaginadoWinnersPrime/></Route>
         <Route path="/inversionBolsa"><InversionBolsa/></Route>
+        <Route path="/inversionBolsaP2"><InversionBolsa2/></Route>
         <Route path="/leliqs"><Leliqs/></Route>
+        <Route path="/crisisMexico"><CrisisTequila/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
+<<<<<<< HEAD
         <Route path="/login"><LoginFirebase/></Route>
         {/* <Route path="/formServices"><FormServices/></Route> */}
+=======
+>>>>>>> 08c01ecf50a8d2667ac0f83db6621eab6cdb8b8e
     </Switch>
  </Router>
     </>

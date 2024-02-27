@@ -22,6 +22,7 @@ function NavBarBoostrap() {
               <NavDropdown.Item href="/variaciones">Variaciones Bolsa</NavDropdown.Item>
               <NavDropdown.Item href="/inversionBolsa">Inversion en Bolsa</NavDropdown.Item>
               <NavDropdown.Item href="/leliqs">Lelics</NavDropdown.Item>
+              <NavDropdown.Item href="/crisisMexico">Crisis del Tequila</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="TECNOLOGIAS" id="basic-nav-dropdown">
               <NavDropdown.Item href="/tecnologias/sitioWeb">Consejos Sitio Web</NavDropdown.Item>

@@ -5,7 +5,7 @@ import imgLeliq from "../Home/imagenes/leliqsInformeImg.png";
 //import { Helmet } from "react-helmet";
 import imgCaputo from "../Home/imagenes/luisCaputo.webp"
 import "./Leliqs.css"
-import ComentaryFace from "../../components/ListNotes/ComentaryFace";
+import ComentaryFace from "../../components/ListNotes/ComentaryFaceHistory";
 import ButtonDonacion from "./ButtonDonacion";
 
 // import { useShare } from 'react-facebook';
@@ -33,7 +33,7 @@ const Leliqs = () => {
                 <meta property="og:url" content={url} />
             </Helmet> */}
             <NavBarBoostrap />
-            <div className="classContainerInvBolsa">
+            <div className="classContainerSitio">
                 <ButtonDonacion/>
                 <h1>LELIQS: Concepto a tener en cuenta</h1>
                 <div className="containerLike">
