@@ -1,0 +1,35 @@
+.containerGlobalWeb{
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+}
+
+.containerGlobalWeb img {
+    display: block;
+    margin: auto;
+    padding: 0.7rem;
+    width: 99%;
+  }
+
+@media (min-device-width : 1068px){
+    .containerGlobalWeb {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      padding-top: 2rem;
+      text-align: justify;
+      width: 100%;
+      line-height: 2rem;
+      color: rgb(139, 139, 137);
+    }
+    .containerGlobalWeb img {
+      display: block;
+      margin: auto;
+      padding: 1rem;
+      width: 90%;
+      height: 40rem;
+    }
+}

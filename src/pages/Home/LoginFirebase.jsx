@@ -17,9 +17,14 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { validationAddService, addCompanyService } from "../../reducer/actions";
 import { useDispatch, useSelector } from "react-redux";
 import iconAddNote from "../../icons/iconAddNote.png";
+import CardAddEditService from "./CardAddEditService";
+import CardEditService from "./CardEditService"
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 function LoginFirebase() {
   const [userState, setUserState] = useState(null);
-
+  const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
   // const userCompany = {
   //   username: "Walter Cruz", // Aquí deberías pasar los datos que el backend espera para validar el servicio
@@ -37,13 +42,12 @@ function LoginFirebase() {
     return () => onsubscribe();
   }, [dispatch]);
 
-
   useEffect(() => {
-    if(userState && userState.email){
+    if (userState && userState.email) {
       dispatch(validationAddService(userState.email));
     }
   }, [dispatch, userState]);
-  
+
   const handleLogout = async () => {
     try {
       await signOut(auth);
@@ -62,7 +66,7 @@ function LoginFirebase() {
 
   return (
     <>
-      <div className="classContainerSitio">
+      <div>
         {userState ? (
           <>
             <Navbar bg="light" expand="lg">
@@ -108,16 +112,32 @@ function LoginFirebase() {
               </Container>
             </Navbar>
             {validation.status === 200 && validation.data.search ? (
-              <FormEditService dataUser={userState.displayName}
-              email={userState.email}
-              phone={validation.data.search[0].phone}
-              phone2={validation.data.search[0].phone2}
-              notesComp={validation.data.search[0].notesComp}
-              address={validation.data.search[0].address}
-              idCompany={validation.data.search[0]._id}
+              // <FormEditService dataUser={userState.displayName}
+              // email={userState.email}
+              // phone={validation.data.search[0].phone}
+              // phone2={validation.data.search[0].phone2}
+              // notesComp={validation.data.search[0].notesComp}
+              // address={validation.data.search[0].address}
+              // idCompany={validation.data.search[0]._id}
+              // />
+              <CardAddEditService
+                user={userState.displayName}
+                email={userState.email}
               />
             ) : validation.status === 201 ? (
-              <h2>ya no cuenta con oportunidad</h2>
+              MySwal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Acabaste con tu Límite. Sólo puedes Editar los Servicios que tienes. Pódes elimnar y agregar un nuevo",
+                // footer: '<a href="#">Why do I have this issue?</a>'
+              }),
+              <div> 
+                {validation.data.search.map((serv) => (
+                  <React.Fragment key={serv._id}>
+                    <CardEditService serv={serv} />
+                  </React.Fragment>
+                ))}
+              </div>
             ) : (
               <FormAddService
                 user={userState.displayName}
@@ -128,8 +148,10 @@ function LoginFirebase() {
         ) : (
           <>
             <NavBar />
-            <FormsRegister />
-            <FormsLogin />
+            <div className="containerGlobalWeb">
+              <FormsRegister />
+              <FormsLogin />
+            </div>
           </>
         )}
       </div>

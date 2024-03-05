@@ -1,0 +1,17 @@
+.containerCard {
+  display: flex;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+.containerCard > * {
+  margin: 0 10px; /* Ajusta el espaciado entre los botones según sea necesario */
+}
+
+
+.imgCard{
+  height: 20rem;
+  width: 30%;
+}

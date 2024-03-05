@@ -35,7 +35,7 @@ const CrisisTequila = () => {
         <meta property="og:url" content={url} />
       </Helmet>
       <NavBarBoostrap />
-      <div className="classContainerSitio">
+      <div className="containerGlobalWeb">
         <ButtonDonacion />
         <h1>CRISIS DE MEXICO: EFECTO TEQUILA</h1>
         <div className="containerLike">

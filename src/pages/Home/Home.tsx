@@ -14,7 +14,6 @@ import rutaBackend from '../../helpers/rutaBackend';
 // import {exportImg} from "./imagenes/icons/hospital.png"
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
-
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue"
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse"
 

@@ -1,16 +1,18 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { editCompanyService } from "../reducer/actions";
+import { editServiceUser,getCompanyByUser } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const FormEditService = ({dataUser,phone,phone2,notesComp,address,idCompany,email}) => {
-console.log(email)
-  const service1 = useSelector((state) => state.validation.data.search);
-  const MySwal = withReactContent(Swal);
+
+const FormEditService = (props) => {
+  const { serv } = props;
+  console.log(props)
   const dispatch = useDispatch();
+  
+  const MySwal = withReactContent(Swal);
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
     { value: "6435bcb66b3be033805c6f09", label: "Herreria" },
@@ -27,14 +29,14 @@ console.log(email)
 
   return (
     <>
-      <div>
-        <h2>EDITE SU SERVICIO</h2>
+      <div className="containerGlobalWeb">
+        <h2>EDITE SU SERVICIOxx</h2>
         <Formik
           initialValues={{
-            phone1:phone,
-            phone2:phone2,
-            address:address,
-            service:notesComp,
+            phone1:"edfds",
+            phone2:"edfds",
+            address:"edfds",
+            noteService:"edfds"
           }}
           validate={(values) => {
             const error = {};
@@ -63,14 +65,14 @@ console.log(email)
             }
 
             //permite la leta ñ y letras con acentos
-            if (!values.service) {
-              error.service = "Por favor ingresa el servicio de tu profesión";
+            if (!values.noteService) {
+              error.noteService = "Por favor ingresa el servicio de tu profesión";
             } else if (
               !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
-                values.service
+                values.noteService
               )
             ) {
-              error.service =
+              error.noteService =
                 "Servicio sin caracteres especiales. Mínimo 10, Máximo 300 caracteres.";
             }
             return error;
@@ -79,25 +81,18 @@ console.log(email)
             console.log(values)
             try {
               const editService = {
+                fullName: serv.fullName,
                 nameCompany: "Herreria WALTER",
-                userCompany: dataUser,
-                identifier: "",
                 phone: values.phone1,
                 phone2: values.phone2,
                 address: values.address,
-                notesComp: values.service,
+                Category: selectedOption.value,
                 country: "Argentina",
                 cityName: "Salta",
-                level: 1,
-                Category: selectedOption.value,
-                levelPlay: false,
-                siteWeb: "",
-                email: email,
-                typeComp: 2,
-                codeInter: "",
-                branchOffice: [],
+                email: serv.email,
+                noteService: values.noteService
               };
-              dispatch(editCompanyService(idCompany,editService));
+              dispatch(editServiceUser(serv._id,editService));
               MySwal.fire({
                 title: "¡Servicio Modificado Correctamente!",
                 icon: "success",
@@ -147,10 +142,10 @@ console.log(email)
               ></ErrorMessage>
 
               <label className="form-label">Servicio</label>
-              <Field type="text" name="service" className="form-control"/>
+              <Field type="text" name="noteService" className="form-control"/>
               <ErrorMessage
-                name="service"
-                component={() => <div className="error">{errors.service}</div>}
+                name="noteService"
+                component={() => <div className="error">{errors.noteService}</div>}
               ></ErrorMessage>
 
               <label className="form-label">
@@ -165,7 +160,7 @@ console.log(email)
               <div className="mt-4">
                 {values.phone1 &&
                 values.address &&
-                values.service &&
+                values.noteService &&
                 selectedOption &&
                 !errors.phone1 &&
                 !errors.address &&

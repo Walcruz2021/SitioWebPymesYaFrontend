@@ -12,7 +12,7 @@ const VariacionesBolsa = () => {
     return (
         <>
             <NavBar />
-            <div className="classContainerSitio">
+            <div className="containerGlobalWeb">
                 <ButtonDonacion />
                 <h1>VARIACIONES DE LA BOLSA</h1>
 

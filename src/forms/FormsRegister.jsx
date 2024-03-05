@@ -8,10 +8,12 @@ import {
   updateProfile,
   getAuth,
 } from "firebase/auth";
-
+import {addUserService} from "../reducer/actions"
 import alertToastify from "../hooks/alertToastify";
+import { useDispatch } from "react-redux";
 
 function FormsRegister() {
+  const dispatch=useDispatch()
   //const notify = () => toast("Wow so easy!");
   return (
     <>
@@ -30,7 +32,7 @@ function FormsRegister() {
             if (!values.lastName) {
               error.lastName = "por favor ingresa apellido";
             } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.lastName)) {
-              error.lastName = "el apellido sin espacios ni carcateres especiales";
+              error.lastName = "el apellido sin espacios ni caracteres especiales";
             }
 
             if (!values.email) {
@@ -66,9 +68,22 @@ function FormsRegister() {
               );
               // Accede al usuario recién creado
               const user = userCredential.user;
+
               await updateProfile(user, {
                 displayName: `${values.firstName} ${values.lastName}`,
               });
+              
+              const newUserService={
+                fullName:`${values.firstName} ${values.lastName}`,
+                // phone:values.phone,
+                // phone2:values.phone2,
+                country:"Argentina",
+                cityName:"Salta",
+                address:values.address,
+                status:true,
+                email:values.email
+              }
+              dispatch(addUserService(newUserService))
               window.location.reload();
             } catch (error) {
               console.error(error.code, error.message);

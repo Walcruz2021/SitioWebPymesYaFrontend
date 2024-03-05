@@ -11,6 +11,7 @@ import "./ConsejosSitioWeb.css"
 import Swal from "sweetalert2";
 import IonIcon from '@reacticons/ionicons';
 import ButtonDonacion from "./ButtonDonacion"
+import "./ClassGeneralWeb.css"
 
 const ConsejosSitioWeb = () => {
 
@@ -44,7 +45,7 @@ const ConsejosSitioWeb = () => {
     return (
         <>
             <NavBar />
-            <div className="classContainerSitio">
+            <div className="containerGlobalWeb">
                 <ButtonDonacion/>
                 <h1>Consejos de un Sitio Web para tu Negocio</h1>
 

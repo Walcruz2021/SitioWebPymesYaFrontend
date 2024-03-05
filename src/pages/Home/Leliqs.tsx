@@ -33,7 +33,7 @@ const Leliqs = () => {
                 <meta property="og:url" content={url} />
             </Helmet> */}
             <NavBarBoostrap />
-            <div className="classContainerSitio">
+            <div className="containerGlobalWeb">
                 <ButtonDonacion/>
                 <h1>LELIQS: Concepto a tener en cuenta</h1>
                 <div className="containerLike">

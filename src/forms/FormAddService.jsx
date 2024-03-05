@@ -1,15 +1,31 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
-import { useDispatch } from "react-redux";
-import {addCompanyService} from "../reducer/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addCompanyService, getUserLogin } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import NavBarBoostrap from "../components/NavBar/NavBarBoostrap";
+import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import LoginFirebase from "../pages/Home/LoginFirebase";
+import { useHistory } from 'react-router-dom';
 
-const FormAddService = ({user,email}) => {
+const FormAddService = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserLogin());
+  }, [dispatch]);
+
+  const [user, setUser] = useState("null");
+
+  var userFullName = useSelector((state) => state.userDataName);
+
+  var userEmail = useSelector((state) => state.userDataEmail);
 
   const MySwal = withReactContent(Swal);
-  const dispatch = useDispatch();
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
     { value: "6435bcb66b3be033805c6f09", label: "Herreria" },
@@ -26,7 +42,8 @@ const FormAddService = ({user,email}) => {
 
   return (
     <>
-      <div>
+      {/* <NavBarBoostrap /> */}
+      <div className="containerGlobalWeb">
         <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
         <Formik
           initialValues={{
@@ -40,11 +57,13 @@ const FormAddService = ({user,email}) => {
             if (!values.phone1) {
               error.phone1 = "por favor ingresa numero de telefono de contacto";
             } else if (!/^(\d{6,15})?$/.test(values.phone1)) {
-              error.phone1 = "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
+              error.phone1 =
+                "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
             }
 
             if (!/^(\d{6,15})?$/.test(values.phone2)) {
-              error.phone2 = "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
+              error.phone2 =
+                "mínimo 6 máximo 15 carácteres. Si carácteres especiales";
             }
 
             //permite la leta ñ y letras con acentos
@@ -75,23 +94,17 @@ const FormAddService = ({user,email}) => {
           onSubmit={async (values, { resetForm }) => {
             try {
               const addService = {
-                nameCompany:"Herreria WALTER",
-                userCompany: user,
-                identifier: "",
+                nameCompany: "Herreria WALTER",
+                fullName: userFullName,
                 phone: values.phone1,
-                phone2:values.phone2,
+                phone2: values.phone2,
                 address: values.address,
-                notesComp: values.service,
+                Category: selectedOption.value,
                 country: "Argentina",
                 cityName: "Salta",
-                level: 1,
-                Category: selectedOption.value,
-                levelPlay: false,
-                siteWeb: "",
-                email: email,
-                typeComp: 2,
-                codeInter: "",
-                branchOffice: [],
+                status: true,
+                email: userEmail,
+                noteService: values.service,
               };
               dispatch(addCompanyService(addService));
               MySwal.fire({
@@ -103,6 +116,7 @@ const FormAddService = ({user,email}) => {
                 if (result.isConfirmed) {
                   resetForm();
                 }
+                history.push('/login');
               });
             } catch (error) {
               console.error(error.code, error.message);
@@ -147,7 +161,7 @@ const FormAddService = ({user,email}) => {
                 name="service"
                 component={() => <div className="error">{errors.service}</div>}
               ></ErrorMessage>
-  
+
               <label className="form-label">
                 Seleccione Area de tu Servicio
               </label>
@@ -186,6 +200,7 @@ const FormAddService = ({user,email}) => {
           )}
         </Formik>
       </div>
+      {/* <ButtonBarBoostrap /> */}
     </>
   );
 };
