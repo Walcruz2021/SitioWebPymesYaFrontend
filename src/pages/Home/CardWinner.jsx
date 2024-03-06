@@ -21,7 +21,7 @@ const CardWinner = ({
   buttonNext
 }) => {
   return (
-    <div className="classContainerCardWinner">
+    <div className="classContainerSitio">
       <h3>{titulo}</h3> {/*ANDREW CARNEGIE*/}
       <p>{contenido1}</p> 
       <p>{contenido2}</p> 

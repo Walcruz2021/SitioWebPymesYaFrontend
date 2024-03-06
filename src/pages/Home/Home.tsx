@@ -79,6 +79,10 @@ const Home = () => {
     return (
         <>
             <NavBarBoostrap />
+            <div className="alert alert-primary">
+            <h3 className="titNewPapers">¡ Agregamos nuevo contenido en Inversión en Bolsa !</h3>
+            </div>
+
             {/* LISTADO DE EMPRESAS */}
             <h2>SELECCIONA UNA CATEGORIA</h2>
 

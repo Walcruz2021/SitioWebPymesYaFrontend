@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import "./listNotes.css"
-import ComentaryFace from "./ComentaryFace"
+import ComentaryFace from "./ComentaryFaceHistory"
 import ButtonDonacion from "../../pages/Home/ButtonDonacion";
 const ListNotes = (codigo: any) => {
 
