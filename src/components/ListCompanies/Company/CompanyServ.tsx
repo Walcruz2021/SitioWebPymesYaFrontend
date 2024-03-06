@@ -31,8 +31,13 @@ const CompanyServ = ({ company }: Props) => {
         <>
             <div className="CardCompany">
                 <div className="Contenido">
-                    <h4>{company.nameCompany}</h4>
+                    <h4>Company</h4>
+                    <p>{company.nameCompany}</p>
+                    <h4>Prestador Servicio</h4>
+                    <p>{company.userCompany}</p>
+                    <h4>Contacto</h4>
                     <p>{company.phone}</p>
+                    <p>{company.phone2}</p>
                     <p>
                         {company.cityName}-{company.country}
                     </p>

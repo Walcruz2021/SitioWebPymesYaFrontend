@@ -36,7 +36,7 @@ const InversionBolsa = () => {
         <meta property="og:url" content={url} />
       </Helmet>
       <NavBarBoostrap />
-      <div className="classContainerSitio">
+      <div className="containerGlobalWeb">
         <ButtonDonacion />
         <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
         <div className="containerLike">

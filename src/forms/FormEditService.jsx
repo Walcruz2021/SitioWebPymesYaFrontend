@@ -1,30 +1,17 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { useState, useEffect } from "react";
+import { useState,useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { addCompanyService, getUserLogin } from "../reducer/actions";
+import { editServiceUser,getCompanyByUser } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import NavBarBoostrap from "../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import LoginFirebase from "../pages/Home/LoginFirebase";
-import { useHistory } from 'react-router-dom';
 
-const FormAddService = () => {
-  const history = useHistory();
+
+const FormEditService = (props) => {
+  const { serv } = props;
+  console.log(props)
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getUserLogin());
-  }, [dispatch]);
-
-  const [user, setUser] = useState("null");
-
-  var userFullName = useSelector((state) => state.userDataName);
-
-  var userEmail = useSelector((state) => state.userDataEmail);
-
+  
   const MySwal = withReactContent(Swal);
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
@@ -42,15 +29,14 @@ const FormAddService = () => {
 
   return (
     <>
-      {/* <NavBarBoostrap /> */}
       <div className="containerGlobalWeb">
-        <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
+        <h2>EDITE SU SERVICIOxx</h2>
         <Formik
           initialValues={{
-            phone1: "",
-            phone2: "",
-            address: "",
-            service: "",
+            phone1:"edfds",
+            phone2:"edfds",
+            address:"edfds",
+            noteService:"edfds"
           }}
           validate={(values) => {
             const error = {};
@@ -79,36 +65,36 @@ const FormAddService = () => {
             }
 
             //permite la leta ñ y letras con acentos
-            if (!values.service) {
-              error.service = "Por favor ingresa el servicio de tu profesión";
+            if (!values.noteService) {
+              error.noteService = "Por favor ingresa el servicio de tu profesión";
             } else if (
               !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
-                values.service
+                values.noteService
               )
             ) {
-              error.service =
+              error.noteService =
                 "Servicio sin caracteres especiales. Mínimo 10, Máximo 300 caracteres.";
             }
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
+            console.log(values)
             try {
-              const addService = {
+              const editService = {
+                fullName: serv.fullName,
                 nameCompany: "Herreria WALTER",
-                fullName: userFullName,
                 phone: values.phone1,
                 phone2: values.phone2,
                 address: values.address,
                 Category: selectedOption.value,
                 country: "Argentina",
                 cityName: "Salta",
-                status: true,
-                email: userEmail,
-                noteService: values.service,
+                email: serv.email,
+                noteService: values.noteService
               };
-              dispatch(addCompanyService(addService));
+              dispatch(editServiceUser(serv._id,editService));
               MySwal.fire({
-                title: "¡Servicio Agregado Correcta!",
+                title: "¡Servicio Modificado Correctamente!",
                 icon: "success",
                 confirmButtonText: "Aceptar",
                 confirmButtonColor: "rgb(21, 151, 67)",
@@ -116,7 +102,6 @@ const FormAddService = () => {
                 if (result.isConfirmed) {
                   resetForm();
                 }
-                history.push('/login');
               });
             } catch (error) {
               console.error(error.code, error.message);
@@ -132,34 +117,35 @@ const FormAddService = () => {
             handleSubmit,
             isSubmitting,
             /* and other goodies */
+            
           }) => (
             <Form onSubmit={handleSubmit}>
               <label className="form-label">Cel de Contacto</label>
-              <Field type="number" name="phone1" className="form-control" />
+              <Field type="number" name="phone1" className="form-control"/>
               <ErrorMessage
                 name="phone1"
                 component={() => <div className="error">{errors.phone1}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Cel de Contacto Adicional</label>
-              <Field type="number" name="phone2" className="form-control" />
+              <Field type="number" name="phone2" className="form-control"/>
               <ErrorMessage
                 name="phone2"
                 component={() => <div className="error">{errors.phone2}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Domicilio</label>
-              <Field type="text" name="address" className="form-control" />
+              <Field type="text" name="address" className="form-control"/>
               <ErrorMessage
                 name="address"
                 component={() => <div className="error">{errors.address}</div>}
               ></ErrorMessage>
 
-              <label className="form-label">Descripcion de Servicio</label>
-              <Field type="text" name="service" className="form-control" />
+              <label className="form-label">Servicio</label>
+              <Field type="text" name="noteService" className="form-control"/>
               <ErrorMessage
-                name="service"
-                component={() => <div className="error">{errors.service}</div>}
+                name="noteService"
+                component={() => <div className="error">{errors.noteService}</div>}
               ></ErrorMessage>
 
               <label className="form-label">
@@ -174,7 +160,7 @@ const FormAddService = () => {
               <div className="mt-4">
                 {values.phone1 &&
                 values.address &&
-                values.service &&
+                values.noteService &&
                 selectedOption &&
                 !errors.phone1 &&
                 !errors.address &&
@@ -200,12 +186,11 @@ const FormAddService = () => {
           )}
         </Formik>
       </div>
-      {/* <ButtonBarBoostrap /> */}
     </>
   );
 };
 
-export default FormAddService;
+export default FormEditService;
 
 // tengo este error al trabajar con actions y reducer en react ""Actions must be plain objects. Instead, the actual type was: 'function'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions"
 // ChatGPT
