@@ -2,13 +2,22 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { auth } from "../../hooks/configFirebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 interface User{
     user:string
 }
 
-function NavBarBoostrapLogin(user:User,sesion: () => void) {
-console.log(sesion,"---")
+function NavBarBoostrapLogin(user:User) {
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+    } catch (error) {
+      console.error("Error al cerrar sesion");
+    }
+  };
     return (
  
     <Navbar bg="light" expand="lg">
@@ -35,7 +44,7 @@ console.log(sesion,"---")
             </NavDropdown>
           </Nav>
               <NavDropdown title={user.user} id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={sesion}>Cerrar Sesion</NavDropdown.Item>
+                <NavDropdown.Item onClick={handleLogout}>Cerrar Sesion</NavDropdown.Item>
               </NavDropdown>
         
         </Navbar.Collapse>

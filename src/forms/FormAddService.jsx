@@ -5,11 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCompanyService, getUserLogin } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import NavBarBoostrap from "../components/NavBar/NavBarBoostrap";
+import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import LoginFirebase from "../pages/Home/LoginFirebase";
+
 import { useHistory } from 'react-router-dom';
 
 const FormAddService = () => {
@@ -22,7 +20,6 @@ const FormAddService = () => {
   const [user, setUser] = useState("null");
 
   var userFullName = useSelector((state) => state.userDataName);
-
   var userEmail = useSelector((state) => state.userDataEmail);
 
   const MySwal = withReactContent(Swal);
@@ -42,11 +39,12 @@ const FormAddService = () => {
 
   return (
     <>
-      {/* <NavBarBoostrap /> */}
+      <NavBarBoostrapLogin user={userFullName}/>
       <div className="containerGlobalWeb">
         <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
         <Formik
           initialValues={{
+            nameCompany:"",
             phone1: "",
             phone2: "",
             address: "",
@@ -54,6 +52,19 @@ const FormAddService = () => {
           }}
           validate={(values) => {
             const error = {};
+
+            //permite la leta ñ y letras con acentos
+            if (!values.nameCompany) {
+              error.nameCompany = "Por favor ingresa nombre de Empresa";
+            } else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{5,20}$/.test(
+                values.nameCompany
+              )
+            ) {
+              error.nameCompany =
+                "Nombre de Empresa sin caracteres especiales no permitidos. Mínimo 6, Máximo 20 caracteres.";
+            }
+
             if (!values.phone1) {
               error.phone1 = "por favor ingresa numero de telefono de contacto";
             } else if (!/^(\d{6,15})?$/.test(values.phone1)) {
@@ -94,7 +105,7 @@ const FormAddService = () => {
           onSubmit={async (values, { resetForm }) => {
             try {
               const addService = {
-                nameCompany: "Herreria WALTER",
+                nameCompany: values.nameCompany,
                 fullName: userFullName,
                 phone: values.phone1,
                 phone2: values.phone2,
@@ -134,7 +145,15 @@ const FormAddService = () => {
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
-              <label className="form-label">Cel de Contacto</label>
+             
+              <label className="form-label">Nombre de Empresa</label>
+              <Field type="text" name="nameCompany" className="form-control" />
+              <ErrorMessage
+                name="nameCompany"
+                component={() => <div className="error">{errors.nameCompany}</div>}
+              ></ErrorMessage>
+
+              <label className="form-label">Cel de Contacto</label> 
               <Field type="number" name="phone1" className="form-control" />
               <ErrorMessage
                 name="phone1"
@@ -172,10 +191,12 @@ const FormAddService = () => {
               />
 
               <div className="mt-4">
-                {values.phone1 &&
+                {values.nameCompany &&
+                values.phone1 &&
                 values.address &&
                 values.service &&
                 selectedOption &&
+                !errors.nameCompany &&
                 !errors.phone1 &&
                 !errors.address &&
                 !errors.service ? (
@@ -200,7 +221,7 @@ const FormAddService = () => {
           )}
         </Formik>
       </div>
-      {/* <ButtonBarBoostrap /> */}
+      <ButtonBarBoostrap />
     </>
   );
 };
