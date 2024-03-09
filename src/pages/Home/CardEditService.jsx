@@ -18,8 +18,8 @@ const CardEditService = (idServ) => {
 
   return (
     <>
-      <NavBarBoostrapLogin user={userFullName} />
-      <div className="containerCard">
+      {/* <NavBarBoostrapLogin user={userFullName} /> */}
+      <div>
         <button onClick={handleImageClick}>
           <img className="imgCard" src={editServ} alt="icon edit service" />
         </button>

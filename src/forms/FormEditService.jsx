@@ -40,6 +40,11 @@ const FormEditService = (props) => {
   //select's state (about Category)
   const [selectedOption, setSelectedOption] = useState(null);
   const history = useHistory();
+
+  function  handleDelete (idServ){
+    console.log(idServ)
+  }
+
   return (
     <>
       <NavBarBoostrapLogin user={userFullName} />
@@ -147,7 +152,7 @@ const FormEditService = (props) => {
             handleChange,
             handleBlur,
             handleSubmit,
-            isSubmitting,
+            isSubmitting
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
@@ -209,6 +214,7 @@ const FormEditService = (props) => {
                 !errors.phone1 &&
                 !errors.address &&
                 !errors.service ? (
+                  
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -216,6 +222,7 @@ const FormEditService = (props) => {
                   >
                     Adherir Servicio
                   </button>
+
                 ) : (
                   <button
                     type="submit"
@@ -229,6 +236,13 @@ const FormEditService = (props) => {
             </Form>
           )}
         </Formik>
+        <button
+                    type="submit"
+                    className="form-control btn btn-lg btn-danger mt-2"
+                    onClick={()=>handleDelete(idServ)}
+                  >
+                    Eliminar Servicio
+                  </button>
       </div>
       <ButtonBarBoostrap/>
     </>

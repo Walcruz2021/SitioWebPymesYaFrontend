@@ -39,7 +39,7 @@ const FormAddService = () => {
 
   return (
     <>
-      <NavBarBoostrapLogin user={userFullName}/>
+      {/* <NavBarBoostrapLogin user={userFullName}/> */}
       <div className="containerGlobalWeb">
         <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
         <Formik
@@ -221,7 +221,7 @@ const FormAddService = () => {
           )}
         </Formik>
       </div>
-      <ButtonBarBoostrap />
+      {/* <ButtonBarBoostrap /> */}
     </>
   );
 };

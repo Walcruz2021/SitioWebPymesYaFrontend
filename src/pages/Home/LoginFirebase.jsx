@@ -20,7 +20,9 @@ import CardEditService from "./CardEditService"
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useHistory } from 'react-router-dom';
-
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin"
+import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
+import "./ClassGeneralWeb.css"
 
 function LoginFirebase() {
   const history = useHistory();
@@ -29,9 +31,8 @@ function LoginFirebase() {
   const dispatch = useDispatch();
 
 
-  // const userCompany = {
-  //   username: "Walter Cruz", // Aquí deberías pasar los datos que el backend espera para validar el servicio
-  // };
+  const userLogin = useSelector((state) => state.userDataName);
+  
   useEffect(() => {
     const onsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -72,6 +73,7 @@ function LoginFirebase() {
       
         {userState ? (
           <>
+          <NavBarBoostrapLogin user={userLogin} />
             {validation.status === 200 && validation.data.search ? (
               // <FormEditService dataUser={userState.displayName}
               // email={userState.email}
@@ -89,8 +91,7 @@ function LoginFirebase() {
                 text: "Acabaste con tu Límite. Sólo puedes Editar los Servicios que tienes. Pódes elimnar y agregar un nuevo",
                 // footer: '<a href="#">Why do I have this issue?</a>'
               }),
-              <div> 
-              
+              <div className="containerCard"> 
                 {validation.data.search.map((serv) => (
                   <React.Fragment key={serv._id}>
                     <CardEditService idServ={serv._id} />
@@ -103,6 +104,7 @@ function LoginFirebase() {
                 email={userState.email}
               />
             )}
+            <ButtonBarBoostrap/>
           </>
         ) : (
           <>
