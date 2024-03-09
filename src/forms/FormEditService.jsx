@@ -1,17 +1,30 @@
 import { Formik, Field, ErrorMessage, Form } from "formik";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { editServiceUser,getCompanyByUser } from "../reducer/actions";
+import { editServiceUser, getCompanyByUser } from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
+import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin"
+import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 
 const FormEditService = (props) => {
-  const { serv } = props;
-  console.log(props)
-  const dispatch = useDispatch();
+
   
+  var userFullName = useSelector((state) => state.userDataName);
+  var userEmail = useSelector((state) => state.userDataEmail);
+  
+  const { idServ } = useParams(); // Obtener el ID de la ruta
+  const arrayServices = useSelector((state) => state.validation.data.search);
+
+  //service that match with parameters id in the url
+  const serviceFilter = arrayServices.find((farm) => farm._id === idServ);
+
+  // Ahora puedes usar el ID en tu lógica de componente
+  //console.log(idServ);
+  const dispatch = useDispatch();
   const MySwal = withReactContent(Swal);
   const options = [
     { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
@@ -26,20 +39,35 @@ const FormEditService = (props) => {
 
   //select's state (about Category)
   const [selectedOption, setSelectedOption] = useState(null);
-
+  const history = useHistory();
   return (
     <>
+      <NavBarBoostrapLogin user={userFullName} />
       <div className="containerGlobalWeb">
-        <h2>EDITE SU SERVICIOxx</h2>
+        <h2>EDITE SU SERVICIO</h2>
         <Formik
           initialValues={{
-            phone1:"edfds",
-            phone2:"edfds",
-            address:"edfds",
-            noteService:"edfds"
+            nameCompany: serviceFilter.nameCompany,
+            phone1: serviceFilter.phone,
+            phone2: serviceFilter.phone2,
+            address: serviceFilter.address,
+            noteService: serviceFilter.noteService,
           }}
           validate={(values) => {
             const error = {};
+
+            //permite la leta ñ y letras con acentos
+            if (!values.nameCompany) {
+              error.nameCompany = "Por favor ingresa nombre de Empresa";
+            } else if (
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{5,20}$/.test(
+                values.nameCompany
+              )
+            ) {
+              error.nameCompany =
+                "Nombre de Empresa sin caracteres especiales no permitidos. Mínimo 6, Máximo 20 caracteres.";
+            }
+
             if (!values.phone1) {
               error.phone1 = "por favor ingresa numero de telefono de contacto";
             } else if (!/^(\d{6,15})?$/.test(values.phone1)) {
@@ -66,7 +94,8 @@ const FormEditService = (props) => {
 
             //permite la leta ñ y letras con acentos
             if (!values.noteService) {
-              error.noteService = "Por favor ingresa el servicio de tu profesión";
+              error.noteService =
+                "Por favor ingresa el servicio de tu profesión";
             } else if (
               !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
                 values.noteService
@@ -78,21 +107,21 @@ const FormEditService = (props) => {
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
-            console.log(values)
+            console.log(values);
             try {
               const editService = {
-                fullName: serv.fullName,
-                nameCompany: "Herreria WALTER",
+                fullName: serviceFilter.fullName,
+                nameCompany: serviceFilter.nameCompany,
                 phone: values.phone1,
                 phone2: values.phone2,
                 address: values.address,
                 Category: selectedOption.value,
                 country: "Argentina",
                 cityName: "Salta",
-                email: serv.email,
-                noteService: values.noteService
+                email: serviceFilter.email,
+                noteService: values.noteService,
               };
-              dispatch(editServiceUser(serv._id,editService));
+              dispatch(editServiceUser(idServ, editService));
               MySwal.fire({
                 title: "¡Servicio Modificado Correctamente!",
                 icon: "success",
@@ -101,6 +130,9 @@ const FormEditService = (props) => {
               }).then((result) => {
                 if (result.isConfirmed) {
                   resetForm();
+                  history.push({
+                    pathname: "/login",
+                  });
                 }
               });
             } catch (error) {
@@ -117,35 +149,45 @@ const FormEditService = (props) => {
             handleSubmit,
             isSubmitting,
             /* and other goodies */
-            
           }) => (
             <Form onSubmit={handleSubmit}>
+              <label className="form-label">Nombre de Empresa</label>
+              <Field type="text" name="nameCompany" className="form-control" />
+              <ErrorMessage
+                name="nameCompany"
+                component={() => (
+                  <div className="error">{errors.nameCompany}</div>
+                )}
+              ></ErrorMessage>
+
               <label className="form-label">Cel de Contacto</label>
-              <Field type="number" name="phone1" className="form-control"/>
+              <Field type="number" name="phone1" className="form-control" />
               <ErrorMessage
                 name="phone1"
                 component={() => <div className="error">{errors.phone1}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Cel de Contacto Adicional</label>
-              <Field type="number" name="phone2" className="form-control"/>
+              <Field type="number" name="phone2" className="form-control" />
               <ErrorMessage
                 name="phone2"
                 component={() => <div className="error">{errors.phone2}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Domicilio</label>
-              <Field type="text" name="address" className="form-control"/>
+              <Field type="text" name="address" className="form-control" />
               <ErrorMessage
                 name="address"
                 component={() => <div className="error">{errors.address}</div>}
               ></ErrorMessage>
 
               <label className="form-label">Servicio</label>
-              <Field type="text" name="noteService" className="form-control"/>
+              <Field type="text" name="noteService" className="form-control" />
               <ErrorMessage
                 name="noteService"
-                component={() => <div className="error">{errors.noteService}</div>}
+                component={() => (
+                  <div className="error">{errors.noteService}</div>
+                )}
               ></ErrorMessage>
 
               <label className="form-label">
@@ -158,10 +200,12 @@ const FormEditService = (props) => {
               />
 
               <div className="mt-4">
-                {values.phone1 &&
+                {values.nameCompany &&
+                values.phone1 &&
                 values.address &&
                 values.noteService &&
                 selectedOption &&
+                !errors.nameCompany &&
                 !errors.phone1 &&
                 !errors.address &&
                 !errors.service ? (
@@ -186,6 +230,7 @@ const FormEditService = (props) => {
           )}
         </Formik>
       </div>
+      <ButtonBarBoostrap/>
     </>
   );
 };

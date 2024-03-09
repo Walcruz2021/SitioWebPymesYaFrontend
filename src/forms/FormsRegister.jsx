@@ -11,8 +11,12 @@ import {
 import {addUserService} from "../reducer/actions"
 import alertToastify from "../hooks/alertToastify";
 import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 
 function FormsRegister() {
+  const MySwal = withReactContent(Swal);
   const dispatch=useDispatch()
   //const notify = () => toast("Wow so easy!");
   return (
@@ -84,7 +88,17 @@ function FormsRegister() {
                 email:values.email
               }
               dispatch(addUserService(newUserService))
-              window.location.reload();
+              MySwal.fire({
+                title: "¡Usuario Creado Correctamente!",
+                icon: "success",
+                confirmButtonText: "Aceptar",
+                confirmButtonColor: "rgb(21, 151, 67)",
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  window.location.reload();
+                }
+              });
+              
             } catch (error) {
               console.error(error.code, error.message);
               if (error.code === "auth/weak-password") {
