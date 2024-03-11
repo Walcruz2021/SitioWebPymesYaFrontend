@@ -2,20 +2,18 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { editServiceUser, getCompanyByUser } from "../reducer/actions";
+import { editServiceUser, getCompanyByUser,deleteService} from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin"
+import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 
 const FormEditService = (props) => {
-
-  
   var userFullName = useSelector((state) => state.userDataName);
   var userEmail = useSelector((state) => state.userDataEmail);
-  
+
   const { idServ } = useParams(); // Obtener el ID de la ruta
   const arrayServices = useSelector((state) => state.validation.data.search);
 
@@ -41,8 +39,20 @@ const FormEditService = (props) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const history = useHistory();
 
-  function  handleDelete (idServ){
-    console.log(idServ)
+  function handleDelete(idServ) {
+    dispatch(deleteService(idServ))
+    MySwal.fire({
+      title: "¡Servicio Eliminado Correctamente!",
+      icon: "success",
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: "rgb(21, 151, 67)",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        history.push({
+          pathname: "/login",
+        });
+      }
+    });
   }
 
   return (
@@ -152,7 +162,7 @@ const FormEditService = (props) => {
             handleChange,
             handleBlur,
             handleSubmit,
-            isSubmitting
+            isSubmitting,
             /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit}>
@@ -214,7 +224,6 @@ const FormEditService = (props) => {
                 !errors.phone1 &&
                 !errors.address &&
                 !errors.service ? (
-                  
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -222,7 +231,6 @@ const FormEditService = (props) => {
                   >
                     Adherir Servicio
                   </button>
-
                 ) : (
                   <button
                     type="submit"
@@ -237,14 +245,14 @@ const FormEditService = (props) => {
           )}
         </Formik>
         <button
-                    type="submit"
-                    className="form-control btn btn-lg btn-danger mt-2"
-                    onClick={()=>handleDelete(idServ)}
-                  >
-                    Eliminar Servicio
-                  </button>
+          type="submit"
+          className="form-control btn btn-lg btn-danger mt-2"
+          onClick={() => handleDelete(idServ)}
+        >
+          Eliminar Servicio
+        </button>
       </div>
-      <ButtonBarBoostrap/>
+      <ButtonBarBoostrap />
     </>
   );
 };

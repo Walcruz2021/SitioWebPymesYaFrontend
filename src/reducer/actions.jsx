@@ -6,10 +6,29 @@ export const VALIDATION_ADDSERVICE = "VALIDATION_ADDSERVICE";
 export const EDIT_SERVICE = "EDIT_SERVICE";
 export const GET_USER = "GET_USER";
 export const GET_COMPANY_BYUSER = "GET_COMPANY_BYUSER";
-export const ADD_USER_SERVICE="ADD_USER_SERVICE"
+export const ADD_USER_SERVICE = "ADD_USER_SERVICE";
+export const DELETE_SERVICE = "DELETE_SERVICE";
+
+export function deleteService(idService) {
+  console.log(idService,"actions")
+  return async function (dispatch) {
+    try {
+      const response = await axios.put(
+        `${rutaBackend}/api/deleteService/${idService}`
+      );
+      const deleteServ = response; // Ajusta según la estructura de respuesta de tu servidor
+      dispatch({
+        type: DELETE_SERVICE,
+        payload: deleteServ,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
 
 export function addUserService(newUserService) {
-  console.log(newUserService)
+  console.log(newUserService);
   return async function (dispatch) {
     try {
       const newUserServ = axios.post(
@@ -17,9 +36,9 @@ export function addUserService(newUserService) {
         newUserService
       );
       dispatch({
-        type:ADD_USER_SERVICE,
-        payload:newUserServ.data
-      })
+        type: ADD_USER_SERVICE,
+        payload: newUserServ.data,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +46,7 @@ export function addUserService(newUserService) {
 }
 
 export function addCompanyService(newService) {
-  console.log(newService.email)
+  console.log(newService,"ACTIONS");
   return async function (dispatch) {
     try {
       const serviceAdd = await axios.post(
@@ -63,7 +82,6 @@ export function validationAddService(userCompany) {
 }
 
 export function editServiceUser(idService, editService) {
-  
   return async function (dispatch) {
     try {
       const response = await axios.put(

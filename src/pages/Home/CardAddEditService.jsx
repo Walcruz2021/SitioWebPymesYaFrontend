@@ -31,12 +31,13 @@ const CardAddEditService = () => {
           </button>
         </Link>
 
-      
+      {serviceUser?
         <Link to={`/editService/${serviceUser._id}`}>
           <button>
             <img className="imgCard" src={editServ} alt="icon edit service" />
           </button>
         </Link>
+      :null}
       </div>
 
       <ButtonBarBoostrap/>

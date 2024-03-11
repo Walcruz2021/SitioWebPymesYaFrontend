@@ -5,6 +5,7 @@ import {
   GET_USER,
   GET_COMPANY_BYUSER,
   ADD_USER_SERVICE,
+  DELETE_SERVICE
 } from "./actions";
 
 const initialState = {
@@ -28,7 +29,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
       };
-      
+
     case ADD_SERVICE:
       return {
         ...state,
@@ -40,6 +41,10 @@ function rootReducer(state = initialState, action) {
         validation: action.payload,
       };
     case EDIT_SERVICE:
+      return {
+        ...state,
+      };
+    case DELETE_SERVICE:
       return {
         ...state,
       };
