@@ -69,7 +69,7 @@ export function validationAddService(userCompany) {
       const response = await axios.get(
         `${rutaBackend}/api/verificationAddService/${userCompany}`
       );
-      console.log(response);
+      
       const validation = response; // Ajusta según la estructura de respuesta de tu servidor
       dispatch({
         type: VALIDATION_ADDSERVICE,
@@ -104,7 +104,7 @@ export function getUserLogin() {
     try {
       // Obteniendo el usuario actualmente autenticado
       const user = auth.currentUser;
-      console.log(user);
+      console.log(user,"USER LOGIN ACTIONS")
       // Despachando la acción para guardar el usuario en el estado
       dispatch({
         type: GET_USER,

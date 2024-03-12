@@ -3,19 +3,11 @@ import { useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBarBoostrap";
 import FormsRegister from "../../forms/FormsRegister";
 import FormsLogin from "../../forms/FormsLogin";
-import FormAddService from "../../forms/FormAddService";
-import FormEditService from "../../forms/FormEditService";
 import "./LoginFirebase.css";
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import { validationAddService, addCompanyService } from "../../reducer/actions";
 import { useDispatch, useSelector } from "react-redux";
-import iconAddNote from "../../icons/iconAddNote.png";
-import CardAddEditService from "./CardAddEditService";
 import CardEditService from "./CardEditService";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -71,7 +63,7 @@ function LoginFirebase() {
     <>
       {userState ? (
         <>
-          {/* <NavBarBoostrapLogin user={userLogin} /> */}
+          
           {/* 1 SERVICIO PERMITIDO */}
           {validation.status === 200 && validation.data.search
             ? // <FormEditService dataUser={userState.displayName}
@@ -84,7 +76,7 @@ function LoginFirebase() {
               // />
               history.push("/addEditService")
             : // NINGUN SERVICIO PERMITIDO
-            validation.status === 201
+            validation.status === 201 && validation.data.search
             ? (MySwal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -104,7 +96,8 @@ function LoginFirebase() {
                   <ButtonBarBoostrap />
                 </>
               ))
-            : history.push("/addService")}
+            : validation.status === 205 && validation.data.search?history.push("/addService"):null
+            }
         </>
       ) : (
         <>
