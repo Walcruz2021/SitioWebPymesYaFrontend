@@ -80,7 +80,7 @@ const Home = () => {
         <>
             <NavBarBoostrap />
             <div className="alert alert-primary">
-            <h3 className="titNewPapers">¡ Agregamos nuevo contenido en Inversión en Bolsa !</h3>
+            <h3 className="titNewPapers">¡Agregamos nuevo contenido en Inversión en Bolsa!</h3>
             </div>
 
             {/* LISTADO DE EMPRESAS */}
