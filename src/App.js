@@ -24,6 +24,7 @@ import CardAddEditService from "./pages/Home/CardAddEditService"
 import CrisisTequila from "./pages/Home/CrisisTequila"
 import FormEditService from "./forms/FormEditService"
 import FormAddService from "./forms/FormAddService"
+import CardEditServices from "./pages/Home/CardEditServices"
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
@@ -84,6 +85,7 @@ const App = () => {
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
         <Route path="/editService/:idServ"><FormEditService/></Route>
+        <Route path="/editServices"><CardEditServices/></Route>
         <Route path="/addService"><FormAddService/></Route>
         <Route path="/addEditService"><CardAddEditService/></Route>
         <Route path="/login"><LoginFirebase/></Route>

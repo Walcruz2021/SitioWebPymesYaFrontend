@@ -14,6 +14,7 @@ import withReactContent from "sweetalert2-react-content";
 import { useHistory } from "react-router-dom";
 import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
+import FormAddService from "../../forms/FormAddService"
 import "./ClassGeneralWeb.css";
 
 function LoginFirebase() {
@@ -23,6 +24,7 @@ function LoginFirebase() {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userDataName);
+  const validation = useSelector((state) => state.validation);
 
   useEffect(() => {
     const onsubscribe = onAuthStateChanged(auth, (user) => {
@@ -51,53 +53,41 @@ function LoginFirebase() {
     }
   };
 
-  const validation = useSelector((state) => state.validation);
 
   // const addNote = () => {
   //   return (
   //     <FormAddService user={userState.displayName} email={userState.email} />
   //   );
   // };
-
+  const CardAddEditService = () => {
+    console.log("click");
+    history.push("/addEditService");
+  };
   return (
     <>
       {userState ? (
         <>
-          
           {/* 1 SERVICIO PERMITIDO */}
-          {validation.status === 200 && validation.data.search
-            ? // <FormEditService dataUser={userState.displayName}
-              // email={userState.email}
-              // phone={validation.data.search[0].phone}
-              // phone2={validation.data.search[0].phone2}
-              // notesComp={validation.data.search[0].notesComp}
-              // address={validation.data.search[0].address}
-              // idCompany={validation.data.search[0]._id}
-              // />
-              history.push("/addEditService")
-            : // NINGUN SERVICIO PERMITIDO
-            validation.status === 201 && validation.data.search
-            ? (MySwal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: "Acabaste con tu Límite. Sólo puedes Editar los Servicios que tienes. Pódes elimnar y agregar un nuevo",
-                // footer: '<a href="#">Why do I have this issue?</a>'
-              }),
-              (
-                <>
-                  <NavBarBoostrapLogin user={userLogin} />
-                  <div className="containerCard">
-                    {validation.data.search.map((serv) => (
-                      <React.Fragment key={serv._id}>
-                        <CardEditService idServ={serv._id} />
-                      </React.Fragment>
-                    ))}
-                  </div>
-                  <ButtonBarBoostrap />
-                </>
-              ))
-            : validation.status === 205 && validation.data.search?history.push("/addService"):null
-            }
+          {validation.status === 200 && validation.data.search ? (
+            // <FormEditService dataUser={userState.displayName}
+            // email={userState.email}
+            // phone={validation.data.search[0].phone}
+            // phone2={validation.data.search[0].phone2}
+            // notesComp={validation.data.search[0].notesComp}
+            // address={validation.data.search[0].address}
+            // idCompany={validation.data.search[0]._id}
+            // />
+            history.push("/addEditService")
+            // <>
+            //   <NavBarBoostrapLogin user={userLogin} />
+            //   <h3>Solo puedes agregar 1 servicio mas y editar le otro</h3>
+            //   <button onClick={CardAddEditService}>addEditService</button>
+            //   <ButtonBarBoostrap />
+            // </>
+          ) : // NINGUN SERVICIO PERMITIDO
+          validation.status === 201 && validation.data.search ? history.push("/editServices") : validation.status === 205 && validation.data.search ? (
+            history.push("/addService")
+          ) : null}
         </>
       ) : (
         <>

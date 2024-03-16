@@ -2,7 +2,7 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { addCompanyService, getUserLogin } from "../reducer/actions";
+import { addCompanyService, getUserLogin,validationAddService} from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
@@ -13,14 +13,24 @@ import { useHistory } from 'react-router-dom';
 const FormAddService = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [refreshScreen, setRefreshScreen] = useState(false);
+  var userFullName = useSelector((state) => state.userDataName);
+  var userEmail = useSelector((state) => state.userDataEmail); 
+  const validation = useSelector((state) => state.validation);
+
   useEffect(() => {
     dispatch(getUserLogin());
+  }, [dispatch,refreshScreen]);
+
+  useEffect(() => {
+    if (userEmail) {
+      dispatch(validationAddService(userEmail));
+    }
   }, [dispatch]);
 
   const [user, setUser] = useState("null");
 
-  var userFullName = useSelector((state) => state.userDataName);
-  var userEmail = useSelector((state) => state.userDataEmail);
+  
 
   const MySwal = withReactContent(Swal);
   const options = [
@@ -57,12 +67,12 @@ const FormAddService = () => {
             if (!values.nameCompany) {
               error.nameCompany = "Por favor ingresa nombre de Empresa";
             } else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{5,20}$/.test(
+              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{5,25}$/.test(
                 values.nameCompany
               )
             ) {
               error.nameCompany =
-                "Nombre de Empresa sin caracteres especiales no permitidos. Mínimo 6, Máximo 20 caracteres.";
+                "Nombre de Empresa sin caracteres especiales no permitidos. Mínimo 6, Máximo 25 caracteres.";
             }
 
             if (!values.phone1) {
@@ -120,14 +130,26 @@ const FormAddService = () => {
               };
               dispatch(addCompanyService(addService));
               MySwal.fire({
-                title: "¡Servicio Agregado Correcta!",
+                title: "¡Servicio Agregado Correctamente!",
                 icon: "success",
                 confirmButtonText: "Aceptar",
                 confirmButtonColor: "rgb(21, 151, 67)",
               }).then((result) => {
                 if (result.isConfirmed) {
-                  history.push('/login');
+                  console.log("SE DEBERIA ENVIAR ---LOGIN")
+                  // history.push({
+                  //   pathname: "/login",
+                  // });
                   resetForm();
+                  if(validation.status === 201){
+                    console.log(validation.status,"-201---Z")
+                    history.push("/editServices");
+                  }else if(validation.status === 205){
+                    console.log(validation.status,"205----tenia dos ahora le queda uno")
+                    history.push("/addEditService");
+                  }else 
+                  console.log("es estatus 200 osea que ya no le quedan opciones")
+                  history.push("/editServices");
                 }
               });
             } catch (error) {

@@ -2,7 +2,11 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { editServiceUser, getCompanyByUser,deleteService} from "../reducer/actions";
+import {
+  editServiceUser,
+  getCompanyByUser,
+  deleteService,
+} from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";
@@ -12,8 +16,10 @@ import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 
 const FormEditService = (props) => {
   var userFullName = useSelector((state) => state.userDataName);
+  console.log(userFullName, "------->");
   var userEmail = useSelector((state) => state.userDataEmail);
-
+  const validation = useSelector((state) => state.validation);
+  console.log(validation.status, "walter");
   const { idServ } = useParams(); // Obtener el ID de la ruta
   const arrayServices = useSelector((state) => state.validation.data.search);
 
@@ -40,7 +46,7 @@ const FormEditService = (props) => {
   const history = useHistory();
 
   function handleDelete(idServ) {
-    dispatch(deleteService(idServ))
+    dispatch(deleteService(idServ));
     MySwal.fire({
       title: "¡Servicio Eliminado Correctamente!",
       icon: "success",
@@ -48,9 +54,16 @@ const FormEditService = (props) => {
       confirmButtonColor: "rgb(21, 151, 67)",
     }).then((result) => {
       if (result.isConfirmed) {
-        history.push({
-          pathname: "/login",
-        });
+        if(validation.status===200){
+          //if delete one card of two inserted
+          history.push({
+            pathname: "/addEditService",
+          });
+        }else{
+          history.push({
+            pathname: "/addService",
+          });
+        }
       }
     });
   }
@@ -126,7 +139,7 @@ const FormEditService = (props) => {
             try {
               const editService = {
                 fullName: serviceFilter.fullName,
-                nameCompany: serviceFilter.nameCompany,
+                nameCompany: values.nameCompany,
                 phone: values.phone1,
                 phone2: values.phone2,
                 address: values.address,
@@ -135,6 +148,7 @@ const FormEditService = (props) => {
                 cityName: "Salta",
                 email: serviceFilter.email,
                 noteService: values.noteService,
+                condition: true,
               };
               dispatch(editServiceUser(idServ, editService));
               MySwal.fire({
