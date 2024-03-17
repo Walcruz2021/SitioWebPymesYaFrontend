@@ -16,10 +16,10 @@ import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 
 const FormEditService = (props) => {
   var userFullName = useSelector((state) => state.userDataName);
-  console.log(userFullName, "------->");
+
   var userEmail = useSelector((state) => state.userDataEmail);
   const validation = useSelector((state) => state.validation);
-  console.log(validation.status, "walter");
+  console.log(validation, "walter");
   const { idServ } = useParams(); // Obtener el ID de la ruta
   const arrayServices = useSelector((state) => state.validation.data.search);
 
@@ -55,13 +55,16 @@ const FormEditService = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         if(validation.status===200){
+         
           //if delete one card of two inserted
-          history.push({
-            pathname: "/addEditService",
-          });
-        }else{
+          console.log(validation,"EDIT SERVICE 200")
           history.push({
             pathname: "/addService",
+          });
+        }else if(validation.status===201){
+          // console.log(validation,"EDIT SERVICE 201")
+          history.push({
+            pathname: "/addEditService",
           });
         }
       }

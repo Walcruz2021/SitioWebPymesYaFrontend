@@ -17,7 +17,7 @@ const FormAddService = () => {
   var userFullName = useSelector((state) => state.userDataName);
   var userEmail = useSelector((state) => state.userDataEmail); 
   const validation = useSelector((state) => state.validation);
-
+console.log(validation)
   useEffect(() => {
     dispatch(getUserLogin());
   }, [dispatch,refreshScreen]);
@@ -141,15 +141,20 @@ const FormAddService = () => {
                   //   pathname: "/login",
                   // });
                   resetForm();
-                  if(validation.status === 201){
-                    console.log(validation.status,"-201---Z")
+                  if(validation.status === 200){
+                    console.log(validation.status,"-200---no le quedaria mas opciones")
                     history.push("/editServices");
                   }else if(validation.status === 205){
                     console.log(validation.status,"205----tenia dos ahora le queda uno")
-                    history.push("/addEditService");
-                  }else 
-                  console.log("es estatus 200 osea que ya no le quedan opciones")
-                  history.push("/editServices");
+                         history.push({
+                    pathname: "/addEditService",
+                   });
+                  }
+                  // else 
+                  // console.log("es estatus 200 osea que ya no le quedan opciones")
+                  // history.push({
+                  //   pathname: "/editServices",
+                  //  });
                 }
               });
             } catch (error) {
