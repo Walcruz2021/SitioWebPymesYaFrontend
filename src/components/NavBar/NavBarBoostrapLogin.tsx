@@ -4,18 +4,24 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useHistory } from 'react-router-dom';
+
 
 interface User{
     user:string
 }
-
 function NavBarBoostrapLogin(user:User) {
-
+  
+  const history = useHistory();
   const handleLogout = async () => {
+    console.log(auth,"---->")
     try {
       await signOut(auth);
+      history.push({
+        pathname:"/"
+      })
     } catch (error) {
-      console.error("Error al cerrar sesion");
+      console.error("Error al cerrar sesion:", error);
     }
   };
     return (

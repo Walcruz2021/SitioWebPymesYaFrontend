@@ -7,6 +7,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   getAuth,
+  sendEmailVerification,
 } from "firebase/auth";
 import {addUserService} from "../reducer/actions"
 import alertToastify from "../hooks/alertToastify";
@@ -72,10 +73,14 @@ function FormsRegister() {
               );
               // Accede al usuario recién creado
               const user = userCredential.user;
-
+              sendEmailVerification(auth.currentUser).then(()=>{
+                alert("se ha enviado un correo de verificacion")
+              })
+              
               await updateProfile(user, {
                 displayName: `${values.firstName} ${values.lastName}`,
               });
+              
               
               const newUserService={
                 fullName:`${values.firstName} ${values.lastName}`,
