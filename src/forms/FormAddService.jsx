@@ -137,9 +137,9 @@ console.log(validation)
               }).then((result) => {
                 if (result.isConfirmed) {
                   console.log("SE DEBERIA ENVIAR ---LOGIN")
-                  // history.push({
-                  //   pathname: "/login",
-                  // });
+                  history.push({
+                    pathname: "/login",
+                  });
                   resetForm();
                   if(validation.status === 200){
                     console.log(validation.status,"-200---no le quedaria mas opciones")

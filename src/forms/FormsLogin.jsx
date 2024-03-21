@@ -8,11 +8,42 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { auth } from "../hooks/configFirebase";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
+import { useEffect, useState } from "react";
+import { initializeApp } from "firebase/app";
+import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { Link } from "react-router-dom";
+import ModalRestPassword from "../modals/ModalRestPassword"
 
-function FormsLogin() {
+function FormsLogin({ autUser }) {
+  const MySwal = withReactContent(Swal);
+  const history = useHistory();
+
+  useEffect(() => {
+    // const onsubscribe = onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     setUserState(user);
+    //     localStorage.setItem("user", JSON.stringify(user));
+    //   } else {
+    //     setUserState(null);
+    //     localStorage.removeItem("user");
+    //   }
+    // });
+    // return () => onsubscribe();
+    // auth.onAuthStateChanged((userCred) => {
+    //   if (userCred) {
+    //     const { email, emailVerified } = userCred;
+    //     setLoginUser({ email, emailVerified });
+    //   }
+    // });
+  }, []);
+
+  //logIn with email of gmail
   const loginGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const credentials = await signInWithPopup(auth, provider);
@@ -25,6 +56,37 @@ function FormsLogin() {
       console.log(error.message, error.code);
     }
   };
+
+  const linkPassword=async ()=> {
+   
+    // await sendPasswordResetEmail(auth,"kespipospe@gufum.com").then(function() {
+    //   // Email de restablecimiento enviado
+    //   // MySwal.fire({
+    //   //   title: "Link de Reestablecimento Enviado.¡Revisa tu Correo!",
+    //   //   icon: "success",
+    //   //   confirmButtonText: "Aceptar",
+    //   //   confirmButtonColor: "rgb(21, 151, 67)",
+    //   // }).then((result) => {
+    //   //   if (result.isConfirmed) {
+    //   //     // history.pushState({
+    //   //     //   pathname:"/login"
+    //   //     // })
+    //   //     window.location.reload();
+  
+    //   //   }
+    //   // });
+    //   <ModalRestPassword/>
+    //   alert("dded")
+    // }).catch(function(error) {
+    //   // Se produjo un error
+    //   console.error("Error al enviar el email de restablecimiento:", error);
+    // });
+    //console.log("fedsfsd")
+    // <>
+    // <ModalRestPassword/>
+    // </>
+ 
+  }
 
   return (
     <>
@@ -58,34 +120,41 @@ function FormsLogin() {
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
-        
-            // Inicia sesión con Firebase
-            firebase
-              .auth()
-              .signInWithEmailAndPassword(values.email, values.password)
-              .then((userCredential) => {
-                // Usuario autenticado correctamente
-                const user = userCredential.user;
-                if (user.emailVerified) {
-                  // El correo electrónico está verificado
-                  console.log(
-                    "Usuario autenticado y correo electrónico verificado:",
-                    user
-                  );
-                } else {
-                  // El correo electrónico no está verificado
-                  console.log(
-                    "Usuario autenticado pero el correo electrónico no está verificado."
-                  );
-                  // Puedes redirigir al usuario a una página donde puedan verificar su correo electrónico
-                }
-              })
-              .catch((error) => {
-                // Error al iniciar sesión
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.error("Error al iniciar sesión:", errorMessage);
-              });
+            try {
+              await signInWithEmailAndPassword(
+                auth,
+                values.email,
+                values.password
+              );
+              if (auth.currentUser.emailVerified) {
+                // Usuario logueado correctamente y correo electrónico verificado
+                MySwal.fire({
+                  title: "¡Usuario Logueado Correctamente!",
+                  icon: "success",
+                  confirmButtonText: "Aceptar",
+                  confirmButtonColor: "rgb(21, 151, 67)",
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    history.push({ pathname: "/addService" });
+                  }
+                });
+              } else {
+                MySwal.fire({
+                  title: "¡Correo electrónico no verificado!",
+                  text: "Por favor, verifica tu correo electrónico para continuar.",
+                  icon: "warning",
+                  confirmButtonText: "Aceptar",
+                  confirmButtonColor: "rgb(255, 140, 0)",
+                });
+                resetForm();
+              }
+            } catch (error) {
+              if (error.code === "auth/invalid-credential") {
+                alert("Usuario o contraseña incorecta");
+              } else {
+                console.log(error.message);
+              }
+            }
           }}
         >
           {({
@@ -125,6 +194,14 @@ function FormsLogin() {
                   )}
                 ></ErrorMessage>
               </div>
+
+              <a
+                style={{ textDecoration: "none", fontSize: "0.8rem" }}
+                onClick={linkPassword}
+              >
+                ¿Olvidaste la Contraseña?
+              </a>
+              <ModalRestPassword/>
 
               <div className="mt-4">
                 {values.email &&

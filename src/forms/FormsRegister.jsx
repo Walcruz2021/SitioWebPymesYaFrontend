@@ -9,35 +9,56 @@ import {
   getAuth,
   sendEmailVerification,
 } from "firebase/auth";
-import {addUserService} from "../reducer/actions"
+import { addUserService } from "../reducer/actions";
 import alertToastify from "../hooks/alertToastify";
 import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-
+import { useHistory } from "react-router-dom";
 
 function FormsRegister() {
+  const history = useHistory();
   const MySwal = withReactContent(Swal);
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
+  const [user, setUser] = useState(null);
+ 
   //const notify = () => toast("Wow so easy!");
+
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((userCred) => {
+  //     if(userCred){
+  //       const { email, emailVerified } = userCred;
+  //       setUser({ email, emailVerified });
+  //     }
+  //   });
+  // },[]);
+
   return (
     <>
       <div>
         <h2>FORMULARIO DE REGISTRO</h2>
         <Formik
-          initialValues={{ firstName: "", lastName:"" , email: "", password: "" }}
+          initialValues={{
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+          }}
           validate={(values) => {
             const error = {};
             if (!values.firstName) {
               error.firtsName = "por favor ingresa nombre";
             } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.firstName)) {
-              error.firstName = "el nombre sin espacios ni caracteres especiales";
+              error.firstName =
+                "el nombre sin espacios ni caracteres especiales";
             }
 
             if (!values.lastName) {
               error.lastName = "por favor ingresa apellido";
             } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.lastName)) {
-              error.lastName = "el apellido sin espacios ni caracteres especiales";
+              error.lastName =
+                "el apellido sin espacios ni caracteres especiales";
             }
 
             if (!values.email) {
@@ -66,33 +87,30 @@ function FormsRegister() {
           }}
           onSubmit={async (values, { resetForm }) => {
             try {
-              const userCredential = await createUserWithEmailAndPassword(
+              await createUserWithEmailAndPassword(
                 auth,
                 values.email,
                 values.password
-              );
-              // Accede al usuario recién creado
-              const user = userCredential.user;
-              sendEmailVerification(auth.currentUser).then(()=>{
-                alert("se ha enviado un correo de verificacion")
-              })
-              
-              await updateProfile(user, {
-                displayName: `${values.firstName} ${values.lastName}`,
+              ).then(async (userCred) => {
+                const user = userCred.user;
+                await sendEmailVerification(user);
+                await updateProfile(user, {
+                  displayName: `${values.firstName} ${values.lastName}`,
+                });
               });
-              
-              
-              const newUserService={
-                fullName:`${values.firstName} ${values.lastName}`,
+
+            
+              const newUserService = {
+                fullName: `${values.firstName} ${values.lastName}`,
                 // phone:values.phone,
                 // phone2:values.phone2,
-                country:"Argentina",
-                cityName:"Salta",
-                address:values.address,
-                status:true,
-                email:values.email
-              }
-              dispatch(addUserService(newUserService))
+                country: "Argentina",
+                cityName: "Salta",
+                address: values.address,
+                status: true,
+                email: values.email,
+              };
+              dispatch(addUserService(newUserService));
               MySwal.fire({
                 title: "¡Usuario Creado Correctamente!",
                 icon: "success",
@@ -100,10 +118,13 @@ function FormsRegister() {
                 confirmButtonColor: "rgb(21, 151, 67)",
               }).then((result) => {
                 if (result.isConfirmed) {
+                  // history.pushState({
+                  //   pathname:"/login"
+                  // })
                   window.location.reload();
+
                 }
               });
-              
             } catch (error) {
               console.error(error.code, error.message);
               if (error.code === "auth/weak-password") {
@@ -144,9 +165,7 @@ function FormsRegister() {
 
               <ErrorMessage
                 name="lastName"
-                component={() => (
-                  <div className="error">{errors.lastName}</div>
-                )}
+                component={() => <div className="error">{errors.lastName}</div>}
               ></ErrorMessage>
 
               <div className="mt-2">
@@ -181,10 +200,9 @@ function FormsRegister() {
                 values.password &&
                 !errors.password &&
                 values.firstName &&
-                !errors.firstName && 
+                !errors.firstName &&
                 values.lastName &&
-                !errors.lastName
-                ? (
+                !errors.lastName ? (
                   <button
                     type="submit"
                     disabled={isSubmitting}
