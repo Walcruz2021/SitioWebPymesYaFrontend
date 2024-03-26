@@ -5,7 +5,8 @@ import {
   GET_USER,
   GET_COMPANY_BYUSER,
   ADD_USER_SERVICE,
-  DELETE_SERVICE
+  DELETE_SERVICE,
+  SEARCH_USER
 } from "./actions";
 
 const initialState = {
@@ -13,10 +14,10 @@ const initialState = {
   userDataName: null,
   userDataEmail: null,
   companiesByUser: null,
+  userEmailSearch: null,
 };
 
 function rootReducer(state = initialState, action) {
-  
   switch (action.type) {
     case GET_USER:
       return {
@@ -25,6 +26,12 @@ function rootReducer(state = initialState, action) {
         userDataEmail: action.payload.email,
       };
 
+    case SEARCH_USER:
+      return {
+        ...state,
+        userEmailSearch: action.payload,
+      };
+      
     case ADD_USER_SERVICE:
       return {
         ...state,

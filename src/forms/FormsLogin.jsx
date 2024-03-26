@@ -195,12 +195,6 @@ function FormsLogin({ autUser }) {
                 ></ErrorMessage>
               </div>
 
-              <a
-                style={{ textDecoration: "none", fontSize: "0.8rem" }}
-                onClick={linkPassword}
-              >
-                ¿Olvidaste la Contraseña?
-              </a>
               <ModalRestPassword/>
 
               <div className="mt-4">

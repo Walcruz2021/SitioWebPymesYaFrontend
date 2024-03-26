@@ -8,9 +8,10 @@ export const GET_USER = "GET_USER";
 export const GET_COMPANY_BYUSER = "GET_COMPANY_BYUSER";
 export const ADD_USER_SERVICE = "ADD_USER_SERVICE";
 export const DELETE_SERVICE = "DELETE_SERVICE";
+export const SEARCH_USER = "SEARCH_USER";
 
 export function deleteService(idService) {
-  console.log(idService,"actions")
+  console.log(idService, "actions");
   return async function (dispatch) {
     try {
       const response = await axios.put(
@@ -46,7 +47,7 @@ export function addUserService(newUserService) {
 }
 
 export function addCompanyService(newService) {
-  console.log(newService,"ACTIONS");
+  console.log(newService, "ACTIONS");
   return async function (dispatch) {
     try {
       const serviceAdd = await axios.post(
@@ -69,7 +70,7 @@ export function validationAddService(userCompany) {
       const response = await axios.get(
         `${rutaBackend}/api/verificationAddService/${userCompany}`
       );
-      
+
       const validation = response; // Ajusta según la estructura de respuesta de tu servidor
       dispatch({
         type: VALIDATION_ADDSERVICE,
@@ -104,7 +105,7 @@ export function getUserLogin() {
     try {
       // Obteniendo el usuario actualmente autenticado
       const user = auth.currentUser;
-      console.log(user,"USER LOGIN ACTIONS")
+      console.log(user, "USER LOGIN ACTIONS");
       // Despachando la acción para guardar el usuario en el estado
       dispatch({
         type: GET_USER,
@@ -126,6 +127,23 @@ export function getCompanyByUser(email) {
       dispatch({
         type: GET_COMPANY_BYUSER,
         payload: response,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function searchUser(email) {
+  console.log(email, "ACTION");
+  return async function (dispatch) {
+    try {
+      const response = await axios.get(
+        `${rutaBackend}/api/searchUser/${email}`
+      );
+      dispatch({
+        payload: response,
+        type: SEARCH_USER,
       });
     } catch (error) {
       console.log(error);
