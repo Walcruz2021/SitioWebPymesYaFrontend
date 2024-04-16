@@ -1,5 +1,4 @@
-
-import "./CardWinner.css"
+import "./CardWinner.css";
 
 const CardWinner = ({
   titulo,
@@ -18,24 +17,26 @@ const CardWinner = ({
   siguiente,
   anterior,
   buttonBack,
-  buttonNext
+  buttonNext,
 }) => {
   return (
     <div className="containerGlobalWeb">
-      <h3>{titulo}</h3> {/*ANDREW CARNEGIE*/}
-      <p>{contenido1}</p> 
-      <p>{contenido2}</p> 
+      <div className="titGral">
+        <h3>{titulo}</h3> {/*ANDREW CARNEGIE*/}
+      </div>
+      <p>{contenido1}</p>
+      <p>{contenido2}</p>
       <img src={imagen1} alt={titulo} />
-      <p>{contenido3}</p> 
-      <p>{contenido4}</p> 
-      <p>{contenido5}</p> 
-      <p>{contenido6}</p> 
-      <p>{contenido7}</p> 
-      <p>{contenido8}</p> 
+      <p>{contenido3}</p>
+      <p>{contenido4}</p>
+      <p>{contenido5}</p>
+      <p>{contenido6}</p>
+      <p>{contenido7}</p>
+      <p>{contenido8}</p>
       <p>{contenido9}</p>
-      <img src={imagen2} alt={titulo} /> 
+      <img src={imagen2} alt={titulo} />
       <h5>{contenido10}</h5>
-     
+
       {buttonNext ? (
         <button className="buttonNote" onClick={siguiente}>
           Siguiente Historia

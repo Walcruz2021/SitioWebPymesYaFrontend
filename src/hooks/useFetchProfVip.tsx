@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import getProfesionalsVip from "../helpers/getProfesionalsVip"
-import { CompanyFetch } from "../types/typeApp"
+import { ServiceFetch } from "../types/typeApp"
 
 
 const useFetchVip = () => {
 
-    const [data, setData] = useState<CompanyFetch>({
+    const [data, setData] = useState<ServiceFetch>({
         companies: [],
         isLoading: true,
         isError: false

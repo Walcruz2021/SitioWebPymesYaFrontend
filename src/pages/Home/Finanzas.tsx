@@ -11,7 +11,7 @@ const Finanzas = () => {
     return (
         <>
             <NavBar />
-            <div className="classContainerFin">
+            <div className="containerGlobalWeb">
                 <ButtonDonacion />
                 <div className="containerLike">
                     <div
@@ -24,7 +24,10 @@ const Finanzas = () => {
                         data-share="true"
                     ></div>
                 </div>
-                <h1>¿QUE ES LA BOLSA DE VALORES?</h1>
+                <div className="titGral">
+                    <h1>¿QUE ES LA BOLSA DE VALORES?</h1>
+
+                </div>
                 <p>La primera opción que, quizás, pasa por tu cabeza cuando piensas en invertir parte de tus ahorros
                     sea la bolsa. La compra y venta de valores es la gran protagonista de los mercados financieros. Pero
                     ¿entiendes qué es y cómo funciona la bolsa? ¿Conoces a que se debe el aumento o baja de la misma?
@@ -39,7 +42,9 @@ const Finanzas = () => {
                     agentes intermediarios, llamados "corredores de bolsa" o brokers, en inglés. Estos actúan como
                     un puente que vincula a las personas con dinero disponible para invertir y las empresas que
                     tienen necesidad de capital para llevar adelante sus proyectos.</p>
-                <h2>¿Ahora por qué una empresa pondria en venta sus acciones?</h2>
+                <div className="titGral">
+                    <h2>¿Ahora por qué una empresa pondria en venta sus acciones?</h2>
+                </div>
                 <img src={panaderia} />
                 <p>Una empresa, de un tamaño considerable, para seguir proyectandose y expandiendose necesita vias de
                     financiacion, es decir, capital para seguir creciendo. Pondré de ejemplo a "la Panaderia Don Beto"
@@ -65,8 +70,9 @@ const Finanzas = () => {
                     empleado de que trabaje mejor de manera de que la accion suba
                     Por tanto las acciones motivan, incentivan y premian al trabajador.
                 </p>
-
-                <h2>Beneficios para el INVERSOR</h2>
+                <div className="titGral">
+                    <h2>Beneficios para el INVERSOR</h2>
+                </div>
                 <img src={pepe} />
                 <p>Pepe decidió dejar de seguir guardando su dinero en el colchón, y tomo la decisión de sacarle
                     el mejor rendimiento a sus ahorros y es por eso que decidió invertir su capital en la empresa "Panaderia
@@ -82,7 +88,7 @@ const Finanzas = () => {
                     para los inversores. Al invertir en empresas que pagan dividendos, puedes obtener un flujo de
                     ingresos adicional en lugar de simplemente ver crecer el valor de las acciones. </p>
 
-                    <ButtonDonacion />
+                <ButtonDonacion />
 
             </div >
 

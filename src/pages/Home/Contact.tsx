@@ -104,7 +104,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
             {/* <div className="containerForm">
                 
             </div> */}
-            <div className="titGlobal">
+            <div className="titGral">
                 <h3>MEDIOS DE CONTACTO</h3>
             </div>
             <div className="mediosContact">

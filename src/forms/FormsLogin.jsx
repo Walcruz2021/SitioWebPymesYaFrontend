@@ -8,7 +8,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { auth } from "../hooks/configFirebase";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
@@ -18,11 +18,14 @@ import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
-import ModalRestPassword from "../modals/ModalRestPassword"
+import ModalRestPassword from "../modals/ModalRestPassword";
+import { addUserService } from "../reducer/actions";
+import { useDispatch } from "react-redux";
 
 function FormsLogin({ autUser }) {
   const MySwal = withReactContent(Swal);
   const history = useHistory();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     // const onsubscribe = onAuthStateChanged(auth, (user) => {
@@ -47,7 +50,14 @@ function FormsLogin({ autUser }) {
   const loginGoogle = async () => {
     const provider = new GoogleAuthProvider();
     const credentials = await signInWithPopup(auth, provider);
-
+    const emailUserNew = credentials.user.email;
+    const fullNameUserNew = credentials.user.displayName;
+    const newUserService = {
+      fullName: fullNameUserNew,
+      status: true,
+      email: emailUserNew,
+    };
+    dispatch(addUserService(newUserService));
     try {
       onAuthStateChanged(auth, async (user) => {
         console.log(user);
@@ -57,8 +67,7 @@ function FormsLogin({ autUser }) {
     }
   };
 
-  const linkPassword=async ()=> {
-   
+  const linkPassword = async () => {
     // await sendPasswordResetEmail(auth,"kespipospe@gufum.com").then(function() {
     //   // Email de restablecimiento enviado
     //   // MySwal.fire({
@@ -72,7 +81,6 @@ function FormsLogin({ autUser }) {
     //   //     //   pathname:"/login"
     //   //     // })
     //   //     window.location.reload();
-  
     //   //   }
     //   // });
     //   <ModalRestPassword/>
@@ -85,13 +93,14 @@ function FormsLogin({ autUser }) {
     // <>
     // <ModalRestPassword/>
     // </>
- 
-  }
+  };
 
   return (
     <>
       <div>
-        <h2 className="mt-5">FORMULARIO DE INICIO DE SESION</h2>
+        <div className="titGral">
+          <h2 className="mt-5">FORMULARIO DE INICIO DE SESION</h2>
+        </div>
         <Formik
           initialValues={{ email: "", password: "" }}
           validate={(values) => {
@@ -110,12 +119,12 @@ function FormsLogin({ autUser }) {
             }
             // Letras, números, guion y guion_bajo-Mayúsculas SIN espacios
             else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,12}$/.test(
+              !/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,15}$/.test(
                 values.password
               )
             ) {
               error.password =
-                "Debe tener entre 6 y 12 caracteres. Sin espacios.";
+                "Debe tener entre 6 y 15 caracteres. Sin espacios.";
             }
             return error;
           }}
@@ -150,7 +159,13 @@ function FormsLogin({ autUser }) {
               }
             } catch (error) {
               if (error.code === "auth/invalid-credential") {
-                alert("Usuario o contraseña incorecta");
+                MySwal.fire({
+                  title: "Error Login",
+                  text: "Usuario o Contraseña Incorrecto",
+                  icon: "warning",
+                  confirmButtonText: "Aceptar",
+                  confirmButtonColor: "rgb(255, 140, 0)",
+                });
               } else {
                 console.log(error.message);
               }
@@ -195,7 +210,7 @@ function FormsLogin({ autUser }) {
                 ></ErrorMessage>
               </div>
 
-              <ModalRestPassword/>
+              <ModalRestPassword />
 
               <div className="mt-4">
                 {values.email &&
@@ -226,7 +241,7 @@ function FormsLogin({ autUser }) {
             onClick={loginGoogle}
             className="form-control btn btn-lg btn-secondary"
           >
-            Google E-mail
+            Login Gmail
           </button>
         </div>
       </div>

@@ -14,7 +14,10 @@ const VariacionesBolsa = () => {
             <NavBar />
             <div className="containerGlobalWeb">
                 <ButtonDonacion />
-                <h1>VARIACIONES DE LA BOLSA</h1>
+                <div className="titGral">
+                    <h1>VARIACIONES DE LA BOLSA</h1>
+
+                </div>
 
                 <div className="containerLike">
                     <div
@@ -61,7 +64,10 @@ const VariacionesBolsa = () => {
                     entre inversores y analistas, lo que contribuye a la naturaleza compleja e impredecible de los
                     movimientos de las bolsas de valores.</p>
 
-                <h2>CRISIS SUBPRIME</h2>
+                <div className="titGral">
+                    <h2>CRISIS SUBPRIME</h2>
+
+                </div>
 
                 <img src={subprime} />
 
@@ -117,7 +123,10 @@ const VariacionesBolsa = () => {
                     desconfianza y pánico inversionista, y una repentina caí­da de las bolsas de valores de todo el mundo,
                     debida, especialmente, a la falta de liquidez.</p>
 
-                <h2>CONSECUENCIAS</h2>
+                <div className="titGral">
+
+                    <h2>CONSECUENCIAS</h2>
+                </div>
 
                 <img src={subprime2} />
 

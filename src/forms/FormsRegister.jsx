@@ -8,6 +8,9 @@ import {
   updateProfile,
   getAuth,
   sendEmailVerification,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { addUserService } from "../reducer/actions";
 import alertToastify from "../hooks/alertToastify";
@@ -22,7 +25,7 @@ function FormsRegister() {
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
   const [user, setUser] = useState(null);
- 
+
   //const notify = () => toast("Wow so easy!");
 
   // useEffect(() => {
@@ -33,11 +36,33 @@ function FormsRegister() {
   //     }
   //   });
   // },[]);
+  const loginGoogle = async () => {
+    const provider = new GoogleAuthProvider();
+
+    const credentials = await signInWithPopup(auth, provider);
+    const emailUserNew = credentials.user.email;
+    const fullNameUserNew = credentials.user.displayName;
+    const newUserService = {
+      fullName: fullNameUserNew,
+      status: true,
+      email: emailUserNew,
+    };
+    dispatch(addUserService(newUserService));
+    try {
+      onAuthStateChanged(auth, async (user) => {
+        console.log(user);
+      });
+    } catch (error) {
+      console.log(error.message, error.code);
+    }
+  };
 
   return (
     <>
       <div>
-        <h2>FORMULARIO DE REGISTRO</h2>
+        <tit className="titGral">
+          <h2>FORMULARIO DE REGISTRO</h2>
+        </tit>
         <Formik
           initialValues={{
             firstName: "",
@@ -49,16 +74,20 @@ function FormsRegister() {
             const error = {};
             if (!values.firstName) {
               error.firtsName = "por favor ingresa nombre";
-            } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.firstName)) {
-              error.firstName =
-                "el nombre sin espacios ni caracteres especiales";
+              //acentos sin caracteres especiales con espacio al final
+            } else if (
+              !/^\s*[a-zA-ZÀ-ÿ](?:\s*[a-zA-ZÀ-ÿ]){3,15}\s*$/.test(
+                values.firstName
+              )
+            ) {
+              error.firstName = "Máximo 15 carácteres";
             }
 
             if (!values.lastName) {
               error.lastName = "por favor ingresa apellido";
             } else if (!/^[a-zA-ZÀ-ÿ]{1,40}$/.test(values.lastName)) {
               error.lastName =
-                "el apellido sin espacios ni caracteres especiales";
+                "el apellido sin espacios ni carácteres especiales";
             }
 
             if (!values.email) {
@@ -76,11 +105,11 @@ function FormsRegister() {
             }
             //Letras, numeros, guion y guion_bajo-Mayusculas SIN espacios
             else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,12}$/.test(
+              !/^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`]{6,15}$/.test(
                 values.password
               )
             ) {
-              error.password = "min 6 caracteres máximo 12. Sin espacios";
+              error.password = "min 6 caracteres máximo 15. Sin espacios";
             }
 
             return error;
@@ -99,20 +128,19 @@ function FormsRegister() {
                 });
               });
 
-            
               const newUserService = {
                 fullName: `${values.firstName} ${values.lastName}`,
                 // phone:values.phone,
                 // phone2:values.phone2,
-                country: "Argentina",
-                cityName: "Salta",
-                address: values.address,
+                //country: "Argentina",
+                //cityName: "Salta",
+                //address: values.address,
                 status: true,
                 email: values.email,
               };
               dispatch(addUserService(newUserService));
               MySwal.fire({
-                title: "¡Usuario Creado Correctamente!",
+                title: "¡Usuario Creado. Se envió un Link de Verificación!",
                 icon: "success",
                 confirmButtonText: "Aceptar",
                 confirmButtonColor: "rgb(21, 151, 67)",
@@ -122,7 +150,6 @@ function FormsRegister() {
                   //   pathname:"/login"
                   // })
                   window.location.reload();
-
                 }
               });
             } catch (error) {
@@ -131,7 +158,12 @@ function FormsRegister() {
                 //alertToastify();
                 alert("password has few characters");
               } else if (error.code === "auth/email-already-in-use") {
-                alert("email already exists");
+                Swal.fire({
+                  icon: "error",
+                  title: "Oops...",
+                  text: "El Email ya se encuentra Registrado",
+                  // footer: '<a href="#">Why do I have this issue?</a>'
+                });
               }
             }
             resetForm();
@@ -223,6 +255,14 @@ function FormsRegister() {
             </Form>
           )}
         </Formik>
+        <div className="mt-4">
+          <button
+            onClick={loginGoogle}
+            className="form-control btn btn-lg btn-secondary"
+          >
+            Registrarse con Gmail
+          </button>
+        </div>
       </div>
     </>
   );

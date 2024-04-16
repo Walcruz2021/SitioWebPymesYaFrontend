@@ -19,13 +19,15 @@ const ButtonBar = () => {
             <div className="barra">
                 <div className="containerInfo">
 
-            
-                    <h3>Sobre<span> Nosotros</span></h3>
+                    <div className="titGral">
+
+                        <h3>Sobre<span> Nosotros</span></h3>
+                    </div>
                     <p>Somos Desarrolladores apasionados por la innovacion y el impacto de las tecnologias en nuestra vida.
                         Participamos en varios proyectos y seguimos el camino infinito del aprendizaje</p>
                     <p>Algunas tecnologias con las que contamos de conocimientos y en las que tenemos experiencia para sacar adelante cualquier proyecto</p>
-                
-                    <div className="containerIcons">   
+
+                    <div className="containerIcons">
                         <img className="iconoTec" src={mongo}></img>
                         <img className="iconoTec" src={sql}></img>
                         <img className="iconoTec" src={postgress}></img>
@@ -35,12 +37,12 @@ const ButtonBar = () => {
                         <img className="iconoTec" src={lengC}></img>
                         <img className="iconoTec" src={express}></img>
                         <img className="iconoTec" src={node}></img>
-                    </div> 
+                    </div>
 
                 </div>
 
                 <nav className="navegacion">
-              
+
                     {/* <h3>Redes Sociales</h3> */}
                     <a href="https://www.instagram.com/PymesYaWeb/?hl=es" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
                     <a href="https://www.facebook.com/profile.php?id=100091303899830&sk=about" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>

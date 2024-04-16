@@ -37,7 +37,9 @@ const CrisisTequila = () => {
       <NavBarBoostrap />
       <div className="containerGlobalWeb">
         <ButtonDonacion />
-        <h1>CRISIS DE MEXICO: EFECTO TEQUILA</h1>
+        <div className="titGral">
+          <h1>CRISIS DE MEXICO: EFECTO TEQUILA</h1>
+        </div>
         <div className="containerLike">
           <div
             className="fb-like"
@@ -104,9 +106,12 @@ const CrisisTequila = () => {
           incluida la industria del tequila, y por eso se le dio ese nombre.
         </p>
 
+<div className="titGral">
         <h3>
           La Devaluación y el Error de Diciembre: Punto de Origen de la Crisis
         </h3>
+
+</div>
 
         <p>
           Como se habia mencionado, ésta crisis se presentó en el cambio de
@@ -140,7 +145,9 @@ const CrisisTequila = () => {
           expresidente Salinas de Gortari.
         </p>
 
-        <h3>Bonos de la Tesoreria: El controvertido TESOBONO</h3>
+        <div className="titGral">
+          <h3>Bonos de la Tesoreria: El controvertido TESOBONO</h3>
+        </div>
 
         <p>
           Los Tesobonos fueron un tipo específico de bonos del gobierno mexicano
@@ -201,7 +208,9 @@ const CrisisTequila = () => {
           muy bajos.
         </p>
 
-        <h3>FOBAPROA: Una deuda por décadas que las pagan los Probres</h3>
+        <div className="titGral">
+          <h3>FOBAPROA: Una deuda por décadas que las pagan los Probres</h3>
+        </div>
 
         <p>
           El Fondo Bancario de Protección al Ahorro (Fobaproa) fue una

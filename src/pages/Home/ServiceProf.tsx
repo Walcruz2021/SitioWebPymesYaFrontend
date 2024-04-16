@@ -1,7 +1,7 @@
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import IonIcon from '@reacticons/ionicons';
 import React, { useEffect, useState } from 'react'
-import { CompanyFetch } from '../../types/typeApp';
+import { ServiceFetch } from '../../types/typeApp';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import CompanyServ from '../../components/ListCompanies/Company/CompanyServ';
@@ -21,7 +21,7 @@ import ListProfessionalsVip from '../../components/ListCompanies/ListProfessiona
 
 const ServiceProf = () => {
     const [selectedOption, setSelectedOption] = useState<any>(null)
-    const [selectCompanies , setSelectCompanies] = useState<CompanyFetch>({
+    const [selectCompanies, setSelectCompanies] = useState<ServiceFetch>({
         companies: [],
         isLoading: true,
         isError: false
@@ -44,10 +44,10 @@ const ServiceProf = () => {
         });
 
         //const response = await axios(`https://backendtiendavirtual.onrender.com/api/listCompaniesByCategory/${value}`);
-        const response = await axios(`${rutaBackend}/api/listCompaniesByCategory/${value}`);
-        if (response.data.listCompanies.length > 0) {
+        const response = await axios(`${rutaBackend}/api/listServicesByCategory/${value}`);
+        if (response.data.listServices.length > 0) {
             setSelectCompanies({
-                companies: response.data.listCompanies,
+                companies: response.data.listServices,
                 isLoading: false,
                 isError: false
             });
@@ -56,8 +56,9 @@ const ServiceProf = () => {
     return (
         <>
             <NavBarBoostrap />
-            <h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
-
+            <div className="titGral">
+                <h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
+            </div>
 
             <ul className="containerButtons">
 
@@ -125,28 +126,35 @@ const ServiceProf = () => {
             <div className="ContainerListComp">
                 {selectCompanies.isLoading == false ?
 
-                        selectCompanies.companies.map(comp => (
+                    selectCompanies.companies.map(company => (
+                        console.log(company),
+                        <div className="ContainerCompany">
 
-                            <div className="ContainerCompany">
+                            <CompanyServ
+                                key={company._id}
+                                company={company}
+                            />
 
-                                <CompanyServ
-                                    key={comp._id}
-                                    company={comp}
-                                />
-
-                            </div>
-                        ))
-                :
-                <h1>cargando ....</h1>
+                        </div>
+                    ))
+                    :
+                    <div className="titGral">
+                        <h1>cargando ....</h1>
+                    </div>
                 }
             </div>
 
-            <h2>PROFESIONALES RECOMENDADOS</h2>
+            <div className="titGral">
+                <h2>PROFESIONALES RECOMENDADOS</h2>
+            </div>
             <div>
                 <ListProfessionalsVip />
             </div>
 
-            <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+            <div className="titGral">
+
+                <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+            </div>
             <div>
                 <ListCompaniesVip />
             </div>
@@ -154,7 +162,10 @@ const ServiceProf = () => {
             <div className="containerWeb">
                 <h4>¿Queres que tu servicio esté en esta página?</h4>
                 <Link style={{ textDecoration: 'none' }} to={`/contactPubli`}>
-                    <h3 className="buttonBanner">Clic Aqui</h3>
+                    <div className="titGral">
+
+                        <h3 className="buttonBanner">Clic Aqui</h3>
+                    </div>
 
                 </Link>
             </div>

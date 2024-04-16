@@ -24,11 +24,13 @@ const CardEditServices = () => {
     <>
       <NavBarBoostrapLogin user={userLogin} />
       <div className="containerCard">
+       
         {validation.data.search.map((serv) => (
           <React.Fragment key={serv._id}>
             <CardEditService idServ={serv._id} />
           </React.Fragment>
         ))}
+       
       </div>
 
       <ButtonBarBoostrap />

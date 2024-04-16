@@ -2,25 +2,29 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { addCompanyService, getUserLogin,validationAddService} from "../reducer/actions";
+import {
+  addCompanyService,
+  getUserLogin,
+  validationAddService,
+} from "../reducer/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
-
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import "../pages/Home/ClassGeneralWeb.css";
 
 const FormAddService = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [refreshScreen, setRefreshScreen] = useState(false);
   var userFullName = useSelector((state) => state.userDataName);
-  var userEmail = useSelector((state) => state.userDataEmail); 
+  var userEmail = useSelector((state) => state.userDataEmail);
   const validation = useSelector((state) => state.validation);
-console.log(validation)
+  console.log(validation);
   useEffect(() => {
     dispatch(getUserLogin());
-  }, [dispatch,refreshScreen]);
+  }, [dispatch, refreshScreen]);
 
   useEffect(() => {
     if (userEmail) {
@@ -29,8 +33,6 @@ console.log(validation)
   }, [dispatch]);
 
   const [user, setUser] = useState("null");
-
-  
 
   const MySwal = withReactContent(Swal);
   const options = [
@@ -49,12 +51,14 @@ console.log(validation)
 
   return (
     <>
-      <NavBarBoostrapLogin user={userFullName}/>
+      <NavBarBoostrapLogin user={userFullName} />
       <div className="containerGlobalWeb">
-        <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
+        <div className="titGral">
+          <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
+        </div>
         <Formik
           initialValues={{
-            nameCompany:"",
+            nameCompany: "",
             phone1: "",
             phone2: "",
             address: "",
@@ -91,19 +95,19 @@ console.log(validation)
             if (!values.address) {
               error.address = "Por favor ingresa domicilio";
             } else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{6,60}$/.test(
+              !/^[a-zA-ZñÑ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{6,60}$/.test(
                 values.address
               )
             ) {
               error.address =
-                "Domicilio sin caracteres especiales no permitidos. Mínimo 6, Máximo 60 caracteres.";
+                "Domicilio sin carácteres especiales. Mínimo 6, Máximo 60.";
             }
 
             //permite la leta ñ y letras con acentos
             if (!values.service) {
               error.service = "Por favor ingresa el servicio de tu profesión";
             } else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
+              !/^[a-zA-ZñÑ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
                 values.service
               )
             ) {
@@ -126,7 +130,7 @@ console.log(validation)
                 // status: true,
                 email: userEmail,
                 noteService: values.service,
-                condition:true
+                condition: true,
               };
               dispatch(addCompanyService(addService));
               MySwal.fire({
@@ -136,21 +140,27 @@ console.log(validation)
                 confirmButtonColor: "rgb(21, 151, 67)",
               }).then((result) => {
                 if (result.isConfirmed) {
-                  console.log("SE DEBERIA ENVIAR ---LOGIN")
+                  console.log("SE DEBERIA ENVIAR ---LOGIN");
                   history.push({
                     pathname: "/login",
                   });
                   resetForm();
-                  if(validation.status === 200){
-                    console.log(validation.status,"-200---no le quedaria mas opciones")
+                  if (validation.status === 200) {
+                    console.log(
+                      validation.status,
+                      "-200---no le quedaria mas opciones"
+                    );
                     history.push("/editServices");
-                  }else if(validation.status === 205){
-                    console.log(validation.status,"205----tenia dos ahora le queda uno")
-                         history.push({
-                    pathname: "/addEditService",
-                   });
+                  } else if (validation.status === 205) {
+                    console.log(
+                      validation.status,
+                      "205----tenia dos ahora le queda uno"
+                    );
+                    history.push({
+                      pathname: "/addEditService",
+                    });
                   }
-                  // else 
+                  // else
                   // console.log("es estatus 200 osea que ya no le quedan opciones")
                   // history.push({
                   //   pathname: "/editServices",
@@ -172,16 +182,17 @@ console.log(validation)
             isSubmitting,
             /* and other goodies */
           }) => (
-            <Form onSubmit={handleSubmit}>
-             
+            <Form onSubmit={handleSubmit} className="containerForm">
               <label className="form-label">Nombre de Empresa</label>
               <Field type="text" name="nameCompany" className="form-control" />
               <ErrorMessage
                 name="nameCompany"
-                component={() => <div className="error">{errors.nameCompany}</div>}
+                component={() => (
+                  <div className="error">{errors.nameCompany}</div>
+                )}
               ></ErrorMessage>
 
-              <label className="form-label">Cel de Contacto</label> 
+              <label className="form-label">Cel de Contacto</label>
               <Field type="number" name="phone1" className="form-control" />
               <ErrorMessage
                 name="phone1"
@@ -203,7 +214,7 @@ console.log(validation)
               ></ErrorMessage>
 
               <label className="form-label">Descripcion de Servicio</label>
-              <Field type="text" name="service" className="form-control" />
+              <Field as="textarea" name="service" className="form-control" />
               <ErrorMessage
                 name="service"
                 component={() => <div className="error">{errors.service}</div>}

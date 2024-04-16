@@ -16,7 +16,7 @@ const DetailsCompany = () => {
     const { id } = useParams<{ id: string }>();
     const [details, setDetails] = useState<CompanyItem>()
 
-console.log(details,"empresa")
+    console.log(details, "empresa")
     useEffect(() => {
         functionDetails()
     }, [])
@@ -24,7 +24,7 @@ console.log(details,"empresa")
     const functionDetails = async () => {
         //const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
         const data = await axios(`${rutaBackend}/api/detailsCompany/${id}`);
-        
+
         setDetails(data.data.search)
     }
 
@@ -47,7 +47,7 @@ console.log(details,"empresa")
                         <p>{details.phone}</p>
 
                         <IonIcon className="IconCss" name="desktop-sharp"></IonIcon>
-                        
+
                         <a
                             href={details.siteWeb}
                             target="_blank"
@@ -68,8 +68,10 @@ console.log(details,"empresa")
 
                 : <h1>Loading....</h1>
             }
+            <div className="titGral">
 
-            <h3>OTRAS SUGERENCIAS</h3>
+                <h3>OTRAS SUGERENCIAS</h3>
+            </div>
 
             <ButtonBar />
         </div>

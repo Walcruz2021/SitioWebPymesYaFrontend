@@ -46,8 +46,11 @@ const ConsejosSitioWeb = () => {
         <>
             <NavBar />
             <div className="containerGlobalWeb">
-                <ButtonDonacion/>
-                <h1>Consejos de un Sitio Web para tu Negocio</h1>
+                <ButtonDonacion />
+                <div className="titGral">
+                    <h1>Consejos de un Sitio Web para tu Negocio</h1>
+
+                </div>
 
                 <div className="containerLike">
                     <div className="fb-like" data-href="http://www.pymesya.com/tecnologias/sitioWeb" data-width="" data-layout="button_count" data-action="" data-size="large" data-share="true"></div>
@@ -74,7 +77,9 @@ const ConsejosSitioWeb = () => {
 
                 <p>Este proceso lo dividiré en 3 niveles y vos como lector y representante de tu negocio elegirás en que nivel estás según tus condiciones</p>
 
-                <h3>NIVEL 1</h3>
+                <div className="titGral">
+                    <h3>NIVEL 1</h3>
+                </div>
                 <p>Es muy probable que necesites un sitio web que funcione como una tarjeta de presentación para tu negocio. Este sitio web implicaría
                     un pequeño proyecto en el que mostrarías fotos de tu negocio, su ubicación, imágenes de tus proyectos o productos, una interacción mínima
                     con el cliente permitiendo que se pongan en contacto contigo a través de un formulario de
@@ -122,7 +127,10 @@ const ConsejosSitioWeb = () => {
                     contratar a alguien que pueda realizar dicho trabaj. Pero recuerda que justamente las funciones principales de estas plataformas es que dichas
                     páginas se puedan crear de manera rápida y de forma sencilla y con un producto final muy atractivo a la vista</p>
 
-                <h3>NIVEL 2</h3>
+                <div className="titGral">
+
+                    <h3>NIVEL 2</h3>
+                </div>
 
                 <p>Subiremos un poco los niveles, en donde tanto los niveles de expansión del sitio como los niveles de presupuesto y alcance de tu negocio
                     aumenten. Para esto el tiempo disponible tiene que ser mayor también.</p>
@@ -184,7 +192,10 @@ const ConsejosSitioWeb = () => {
 
                 <img src={wordPress}></img>
 
-                <h3>NIVEL 3</h3>
+                <div className="titGral">
+
+                    <h3>NIVEL 3</h3>
+                </div>
 
                 <p>Como última etapa, puede que la expansión de la página no sea muy elevado, pero el nivel de complejidad de la misma si lo sea.
                     Esto por consiguiente implica que tengas un nivel de presupuesto elevado y como obligatoriedad implique contratar a uno o varios programadores.</p>
@@ -199,7 +210,7 @@ const ConsejosSitioWeb = () => {
                     es la mejor alternativa para tu compañia, analizando siempre todos los PRO y CONTRAS, considerando tiempo, economia, ingresos al crear el
                     sitio, etc. </p>
 
-                    <ButtonDonacion/>
+                <ButtonDonacion />
                 {/* <div className="containerCompRedes">
       <h3>Comparte Nuestras Publicaciones</h3>
      <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>

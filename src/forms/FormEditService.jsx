@@ -54,14 +54,13 @@ const FormEditService = (props) => {
       confirmButtonColor: "rgb(21, 151, 67)",
     }).then((result) => {
       if (result.isConfirmed) {
-        if(validation.status===200){
-         
+        if (validation.status === 200) {
           //if delete one card of two inserted
-          console.log(validation,"EDIT SERVICE 200")
+          console.log(validation, "EDIT SERVICE 200");
           history.push({
             pathname: "/addService",
           });
-        }else if(validation.status===201){
+        } else if (validation.status === 201) {
           // console.log(validation,"EDIT SERVICE 201")
           history.push({
             pathname: "/addEditService",
@@ -115,7 +114,7 @@ const FormEditService = (props) => {
             if (!values.address) {
               error.address = "Por favor ingresa domicilio";
             } else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{6,60}$/.test(
+              !/^[a-zA-ZñÑ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{6,60}$/.test(
                 values.address
               )
             ) {
@@ -128,7 +127,7 @@ const FormEditService = (props) => {
               error.noteService =
                 "Por favor ingresa el servicio de tu profesión";
             } else if (
-              !/^[a-zA-Z0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
+              !/^[a-zA-ZñÑ0-9_\-.,!@#$%^&*()+=<>?/\\[\]{}|~`áéíóúüñÁÉÍÓÚÜ ]{10,300}$/.test(
                 values.noteService
               )
             ) {
@@ -182,7 +181,7 @@ const FormEditService = (props) => {
             isSubmitting,
             /* and other goodies */
           }) => (
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} className="containerForm">
               <label className="form-label">Nombre de Empresa</label>
               <Field type="text" name="nameCompany" className="form-control" />
               <ErrorMessage
@@ -214,7 +213,11 @@ const FormEditService = (props) => {
               ></ErrorMessage>
 
               <label className="form-label">Servicio</label>
-              <Field type="text" name="noteService" className="form-control" />
+              <Field
+                as="textarea"
+                name="noteService"
+                className="form-control"
+              />
               <ErrorMessage
                 name="noteService"
                 component={() => (
@@ -256,18 +259,18 @@ const FormEditService = (props) => {
                   >
                     Adherir Servicio
                   </button>
-                )}
+                )}{" "}
+                <button
+                  type="submit"
+                  className="form-control btn btn-lg btn-danger mt-2"
+                  onClick={() => handleDelete(idServ)}
+                >
+                  Eliminar Servicio
+                </button>
               </div>
             </Form>
           )}
         </Formik>
-        <button
-          type="submit"
-          className="form-control btn btn-lg btn-danger mt-2"
-          onClick={() => handleDelete(idServ)}
-        >
-          Eliminar Servicio
-        </button>
       </div>
       <ButtonBarBoostrap />
     </>

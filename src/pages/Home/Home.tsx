@@ -16,6 +16,7 @@ import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue"
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse"
+import "./ClassGeneralWeb.css"
 
 const Home = () => {
     const { categories } = useFetchCat();
@@ -56,7 +57,7 @@ const Home = () => {
 
     const buttonSelected = async (value: any) => {
 
-        //console.log(value, "categoria elegida en el menu")
+        console.log(value, "categoria elegida en el menu")
         setSelectedOption(value)
         setSelectCompanies({
             ...selectCompanies,
@@ -78,12 +79,17 @@ const Home = () => {
     return (
         <>
             <NavBarBoostrap />
-            <div className="alert alert-primary">
-            <h3 className="titNewPapers">¡ Agregamos nuevo contenido en Inversión en Bolsa !</h3>
+            <div className="alert alert-primary titGral">
+                <h3 className="titNewPapers">¡ Agregamos nuevo contenido en Inversión en Bolsa !</h3>
             </div>
 
             {/* LISTADO DE EMPRESAS */}
-            <h2>SELECCIONA UNA CATEGORIA</h2>
+            <div className="titGral">
+                <h2>SELECCIONA UNA CATEGORIA</h2>
+
+            </div>
+
+
 
             <ul className="containerButtons">
 
@@ -185,14 +191,16 @@ const Home = () => {
                             </div>
                         ))
                         :
-                    //en caso contrario imprime las empresas que pagaron por el aviso
+                        //en caso contrario imprime las empresas que pagaron por el aviso
                         <>
                             <ListCompaniesFilterTrue companies={selectCompanies.companies} />
 
                         </>
 
                     //queda cargando hasta que el LOADING este en FALSE
-                    : <h1>cargando...</h1>
+                    : <div className="titGral">
+                        <h1>cargando...</h1>
+                    </div>
                 }
 
             </div>
@@ -200,25 +208,33 @@ const Home = () => {
             {/* imprime las empresas que no pagaron por el servicio */}
             {
                 selectedOption ?
-                <>
-                <h3 className="classSubt">OTRAS QUE TE PUEDAN INTERESAR</h3>
-                <ListCompaniesFilterFalse companies={selectCompanies.companies} />
-                </>
+                    <>
+                        <div className="titGral">
+                            <h3 className="classSubt">OTRAS QUE TE PUEDAN INTERESAR</h3>
+                        </div>
+                        <ListCompaniesFilterFalse companies={selectCompanies.companies} />
+                    </>
 
-                : null
+                    : null
 
             }
 
-            <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+            <div className="titGral">
+
+                <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
+            </div>
 
             <div>
-                <ListCompaniesVip/>
+                <ListCompaniesVip />
             </div>
 
             <div className="containerWeb">
                 <h4>¿Queres que tu empresa este en esta pagina?</h4>
                 <Link style={{ textDecoration: 'none' }} to={`/login`}>
-                    <h3 className="buttonBanner">Clic Aqui</h3>
+                    <div className="titGral">
+                        <h3 className="buttonBanner">Clic Aqui</h3>
+
+                    </div>
                 </Link>
             </div>
 

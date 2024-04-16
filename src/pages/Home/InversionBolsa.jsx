@@ -38,7 +38,11 @@ const InversionBolsa = () => {
       <NavBarBoostrap />
       <div className="containerGlobalWeb">
         <ButtonDonacion />
-        <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
+
+        <div className="titGral">
+          <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
+        </div>
+
         <div className="containerLike">
           <div
             className="fb-like"
@@ -50,6 +54,7 @@ const InversionBolsa = () => {
             data-share="true"
           ></div>
         </div>
+        
         <Link to="/inversionBolsaP2">Click Aquí para más Consejos</Link>
         <p>
           Para tener éxito, a la hora de invertir en la bolsa, es importante

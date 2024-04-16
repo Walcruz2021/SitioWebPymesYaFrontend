@@ -34,8 +34,11 @@ const Leliqs = () => {
             </Helmet> */}
             <NavBarBoostrap />
             <div className="containerGlobalWeb">
-                <ButtonDonacion/>
-                <h1>LELIQS: Concepto a tener en cuenta</h1>
+                <ButtonDonacion />
+
+                <div className="titGral">
+                    <h1>LELIQS: Concepto a tener en cuenta</h1>
+                </div>
                 <div className="containerLike">
                     <div
                         className="fb-like"
@@ -72,7 +75,10 @@ const Leliqs = () => {
                     esta teoría no funcionó).
                 </p>
 
-                <h3>¿De que manera influyen en nuestra vida cotidiana?</h3>
+                <div className="titGral">
+
+                    <h3>¿De que manera influyen en nuestra vida cotidiana?</h3>
+                </div>
 
                 <p>
                     Las LELIQs y su influencia en la economía pueden impactar a personas de distintos estratos
@@ -92,15 +98,21 @@ const Leliqs = () => {
                     economía, podrían limitar el crecimiento y afectar la generación de empleo, lo que podría impactar
                     a los más pobres, que a menudo dependen más de empleos informales o vulnerables.</p>
 
-                <h3>
-                    ¿Quienes pueden acceder a las Leliqs?
-                </h3>
+                <div className="titGral">
+                    <h3>
+                        ¿Quienes pueden acceder a las Leliqs?
+                    </h3>
+
+                </div>
                 <p>
                     Ninguna persona fisica o juridica (EXCEPTO LOS BANCOS) pueden acceder a las mismas
 
                 </p>
 
-                <h3>Origen y Porcentaje</h3>
+                <div className="titGral">
+                    <h3>Origen y Porcentaje</h3>
+
+                </div>
 
                 <p>
                     Fueron creadas en enero de 2018, durante la presidencia de Federico Sturzenegger al frente del
@@ -117,7 +129,10 @@ const Leliqs = () => {
 
                 <img src={imgLeliq} />
 
-                <h3>¿Por qué es tan dificil desarmar la Leliqs?</h3>
+                <div className="titGral">
+
+                    <h3>¿Por qué es tan dificil desarmar la Leliqs?</h3>
+                </div>
                 <p>
                     La dificultad para desarmar las LELIQs radica en equilibrar la reducción de estos instrumentos con
                     la estabilidad financiera, evitando impactos negativos en las tasas de interés, la inflación y
@@ -179,14 +194,14 @@ const Leliqs = () => {
                 </p>
 
                 <span>
-                    En última instancia, el tiempo es el juez supremo que revelará el desenlace final, otorgándonos la 
-                    oportunidad de formar juicios personales basados en los resultados obtenidos. Es a través de la 
-                    cadencia del tiempo que los eventos se desenvuelven y los procesos se materializan, 
+                    En última instancia, el tiempo es el juez supremo que revelará el desenlace final, otorgándonos la
+                    oportunidad de formar juicios personales basados en los resultados obtenidos. Es a través de la
+                    cadencia del tiempo que los eventos se desenvuelven y los procesos se materializan,
                     permitiéndonos presenciar la culminación de nuestras acciones y decisiones.
                 </span>
 
-                <ButtonDonacion/>
-                
+                <ButtonDonacion />
+
                 <ComentaryFace />
 
             </div>

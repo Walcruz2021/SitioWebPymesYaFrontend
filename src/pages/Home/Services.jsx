@@ -11,7 +11,7 @@ const Services = () => {
   return (
     <div>
       <NavBar />
-      <div className="titGlobal">
+      <div className="titGral">
         <h1>NUESTROS SERVICIOS</h1>
       </div>
 
@@ -136,9 +136,11 @@ const Services = () => {
         <div className="servSitioWeb CardCont">
           <div className="servicio">
             <IonIcon className="IconService" name="globe-outline"></IonIcon>
-            <div className="titGlobal">
+          <div>
+
               <h3>SITIO WEB</h3>
-            </div>
+          </div>
+            
           </div>
           <p>
             Con un sitio Web podrás posicionar

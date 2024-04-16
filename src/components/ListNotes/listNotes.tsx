@@ -15,7 +15,7 @@ const ListNotes = (codigo: any) => {
     const [buttonBack, setButtonBack] = useState(false)
     const [buttonNext, setButtonNext] = useState(true)
 
-    if (isLoading) return <h1>Cargando....</h1>
+    if (isLoading) return <div className="titGral"><h1>Cargando....</h1></div>
 
     function mergeCamps(notes: any): string[] {
         //console.log(notes[0])
