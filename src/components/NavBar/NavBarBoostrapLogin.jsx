@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
-
+import React, { useState,useEffect } from "react";
 /**
  *  @description 
  * this component container User Login. Must first verified if user exists (user loged). Then is passed as a 
@@ -32,20 +32,43 @@ import { useHistory } from "react-router-dom";
 */
 
 
-function NavBarBoostrapLogin(user) {
+function NavBarBoostrapLogin(userProp) {
   const history = useHistory();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   const handleLogout = async () => {
-    console.log(auth, "---->");
     try {
       await signOut(auth);
+      setUser(null); // Actualiza el estado del usuario después del cierre de sesión
+
       history.push({
-        pathname: "/",
+        pathname: "/login",
       });
     } catch (error) {
-      console.error("Error al cerrar sesion:", error);
+      console.error("Error al cerrar sesión:", error);
     }
   };
+
+  // const handleLogout = async () => {
+  //   console.log(auth, "---->");
+  //   try {
+  //     await signOut(auth);
+ 
+  //     history.push({
+  //       pathname: "/",
+  //     });
+  //   } catch (error) {
+  //     console.error("Error al cerrar sesion:", error);
+  //   }
+  // };
 
   const handleServices = () => {
     history.push({
@@ -84,7 +107,7 @@ function NavBarBoostrapLogin(user) {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <NavDropdown title={user.user} id="basic-nav-dropdown">
+          <NavDropdown title={userProp.user} id="basic-nav-dropdown">
             <NavDropdown.Item onClick={handleLogout}>
               Cerrar Sesion
             </NavDropdown.Item>
