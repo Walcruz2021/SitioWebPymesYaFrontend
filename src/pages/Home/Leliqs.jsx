@@ -2,11 +2,16 @@ import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import imgLeliq from "../Home/imagenes/leliqsInformeImg.png";
-import { Helmet } from "react-helmet";
+//import { Helmet } from "react-helmet";
 import imgCaputo from "../Home/imagenes/luisCaputo.webp"
 import "./Leliqs.css"
 import ComentaryFace from "../../components/ListNotes/ComentaryFaceHistory";
 import ButtonDonacion from "./ButtonDonacion";
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
+import { getUserLogin } from "../../reducer/actions";
+import { auth } from "../../hooks/configFirebase";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 
 // import { useShare } from 'react-facebook';
 const Leliqs = () => {
@@ -23,19 +28,42 @@ const Leliqs = () => {
     const imagen = "URL-de-la-imagen-del-producto";
     const url = "www.pymesya.com/leliqs";
 
+    const [loginUser, setLoginUser] = useState();
+  const dispatch = useDispatch();
+  const userFullName = useSelector((state) => state.userDataName);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userCred) => {
+      if (userCred) {
+        const { email, emailVerified, displayName } = userCred;
+        setLoginUser({ email, emailVerified, displayName });
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (loginUser && loginUser.emailVerified) {
+      dispatch(getUserLogin());
+    }
+  }, [dispatch, loginUser]);
+  
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <title>{titulo}</title>
                 <meta property="og:title" content={titulo} />
                 <meta property="og:description" content={descripcion} />
                 <meta property="og:image" content={imagen} />
                 <meta property="og:url" content={url} />
-            </Helmet>
-            <NavBarBoostrap />
-            <div className="classContainerSitio">
-                <ButtonDonacion/>
-                <h1>LELIQS: Concepto a tener en cuenta</h1>
+            </Helmet> */}
+            {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
+
+            <div className="containerGlobalWeb">
+                <ButtonDonacion />
+
+                <div className="titGral">
+                    <h1>LELIQS: Concepto a tener en cuenta</h1>
+                </div>
                 <div className="containerLike">
                     <div
                         className="fb-like"
@@ -72,7 +100,10 @@ const Leliqs = () => {
                     esta teoría no funcionó).
                 </p>
 
-                <h3>¿De que manera influyen en nuestra vida cotidiana?</h3>
+                <div className="titGral">
+
+                    <h3>¿De que manera influyen en nuestra vida cotidiana?</h3>
+                </div>
 
                 <p>
                     Las LELIQs y su influencia en la economía pueden impactar a personas de distintos estratos
@@ -92,15 +123,21 @@ const Leliqs = () => {
                     economía, podrían limitar el crecimiento y afectar la generación de empleo, lo que podría impactar
                     a los más pobres, que a menudo dependen más de empleos informales o vulnerables.</p>
 
-                <h3>
-                    ¿Quienes pueden acceder a las Leliqs?
-                </h3>
+                <div className="titGral">
+                    <h3>
+                        ¿Quienes pueden acceder a las Leliqs?
+                    </h3>
+
+                </div>
                 <p>
                     Ninguna persona fisica o juridica (EXCEPTO LOS BANCOS) pueden acceder a las mismas
 
                 </p>
 
-                <h3>Origen y Porcentaje</h3>
+                <div className="titGral">
+                    <h3>Origen y Porcentaje</h3>
+
+                </div>
 
                 <p>
                     Fueron creadas en enero de 2018, durante la presidencia de Federico Sturzenegger al frente del
@@ -117,7 +154,10 @@ const Leliqs = () => {
 
                 <img src={imgLeliq} />
 
-                <h3>¿Por qué es tan dificil desarmar la Leliqs?</h3>
+                <div className="titGral">
+
+                    <h3>¿Por qué es tan dificil desarmar la Leliqs?</h3>
+                </div>
                 <p>
                     La dificultad para desarmar las LELIQs radica en equilibrar la reducción de estos instrumentos con
                     la estabilidad financiera, evitando impactos negativos en las tasas de interés, la inflación y
@@ -179,14 +219,14 @@ const Leliqs = () => {
                 </p>
 
                 <span>
-                    En última instancia, el tiempo es el juez supremo que revelará el desenlace final, otorgándonos la 
-                    oportunidad de formar juicios personales basados en los resultados obtenidos. Es a través de la 
-                    cadencia del tiempo que los eventos se desenvuelven y los procesos se materializan, 
+                    En última instancia, el tiempo es el juez supremo que revelará el desenlace final, otorgándonos la
+                    oportunidad de formar juicios personales basados en los resultados obtenidos. Es a través de la
+                    cadencia del tiempo que los eventos se desenvuelven y los procesos se materializan,
                     permitiéndonos presenciar la culminación de nuestras acciones y decisiones.
                 </span>
 
-                <ButtonDonacion/>
-                
+                <ButtonDonacion />
+
                 <ComentaryFace />
 
             </div>

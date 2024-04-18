@@ -5,7 +5,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom'; // Importar Link desde React Router
 
 
-function NavBarBoostrap() {
+
+function NavBarBoostrap(prop) {
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -29,8 +31,8 @@ function NavBarBoostrap() {
             <NavDropdown title="TECNOLOGIAS" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/tecnologias/sitioWeb">Consejos Sitio Web</NavDropdown.Item>
             </NavDropdown>
-         
           </Nav>
+            <Nav.Link href="/login">LOGIN</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar >

@@ -20,7 +20,6 @@ import ListEmpleosVip from '../../components/ListCompanies/ListEmpleosVip'
 import ListEmpleos from '../../components/ListCompanies/ListEmpleos'
 const EmpleosProf = () => {
 
-
     return (
         <>
             <NavBarBoostrap />

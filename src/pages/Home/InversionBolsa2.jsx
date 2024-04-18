@@ -35,9 +35,11 @@ const InversionBolsa2 = () => {
         <meta property="og:url" content={url} />
       </Helmet>
       <NavBarBoostrap />
-      <div className="classContainerSitio">
+      <div className="containerGlobalWeb">
         <ButtonDonacion />
-        <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
+        <div className="titGral">
+          <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
+        </div>
         <div className="containerLike">
           <div
             className="fb-like"
@@ -61,8 +63,9 @@ const InversionBolsa2 = () => {
           este caso es MSFT.
         </p>
         <img src={finviz} />
-
-        <h3>RETURN ON ASSETS (ROA)</h3>
+        <div className="titGral">
+          <h3>RETURN ON ASSETS (ROA)</h3>
+        </div>
         <p>
           Es un indicador financiero que mide la eficiencia con la que una
           empresa utiliza sus activos para generar ganancias. Se calcula
@@ -85,8 +88,9 @@ const InversionBolsa2 = () => {
           cual dicho valor puede ser más bajo debido a la naturaleza de su
           negocio.
         </p>
-
-        <h3>ROE (Return On Equity)</h3>
+        <div className="titGral">
+          <h3>ROE (Return On Equity)</h3>
+        </div>
         <p>
           En español, Retorno sobre el Patrimonio Net. Es importante porque
           proporciona una visión de la eficiencia con la que una empresa está
@@ -104,7 +108,9 @@ const InversionBolsa2 = () => {
           agresiva de resultados.
         </p>
 
-        <h3>ROIC (Return on Invested Capital)</h3>
+        <div className="titGral">
+          <h3>ROIC (Return on Invested Capital)</h3>
+        </div>
         <p>
           En español, el Retorno sobre el Capital Invertido es importante porque
           proporciona una medida de la rentabilidad de una empresa en relación
@@ -115,7 +121,9 @@ const InversionBolsa2 = () => {
           empresa está generando un rendimiento sólido en comparación con la
           inversión de capital, lo que puede ser atractivo para los inversores.
         </p>
-        <p className="blackP">roic = BENEFICIO OPERATIVO(despúes de Impuestos)/CAPITAL INVERTIDO</p>
+        <p className="blackP">
+          roic = BENEFICIO OPERATIVO(despúes de Impuestos)/CAPITAL INVERTIDO
+        </p>
         <p>
           Sin embargo, al igual que con cualquier medida financiera, es
           importante considerar el ROIC en el contexto de otros factores. Por
@@ -127,7 +135,9 @@ const InversionBolsa2 = () => {
 
         <img src={RoaRoe} />
 
-        <h3>NIVEL DE DEUDA: Quick Ratio y Debt-to-Equity Ratio</h3>
+        <div className="titGral">
+          <h3>NIVEL DE DEUDA: Quick Ratio y Debt-to-Equity Ratio</h3>
+        </div>
         <p>
           El "Quick Ratio", también conocido como "Ratio de Liquidez Inmediata",
           es un indicador financiero que se utiliza para evaluar la capacidad de

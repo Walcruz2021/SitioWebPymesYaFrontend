@@ -11,12 +11,12 @@ const ListEmpleosVip = () => {
 
     const { companies, isLoading } = useFetchEmpVip();
 
-    if (isLoading) return <h1>Cargando...</h1>
+    if (isLoading) return <div className="titGral"><h1>Cargando...</h1></div>
 
     return (
         <>
         <div className="ContainerListComp">
-            {
+            {/* {
                 companies && companies.map(company => (
                     <div className="ContainerCompany">
                             <CompanyServ
@@ -27,7 +27,7 @@ const ListEmpleosVip = () => {
 
 
                 ))
-            }
+            } */}
 
         </div> 
 

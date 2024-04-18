@@ -1,6 +1,7 @@
 .ContainerListComp{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    margin: 0;
 }
 .ContainerCompany{
     display: grid;

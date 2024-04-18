@@ -34,6 +34,12 @@ export type CompanyFetch = {
   isError: boolean;
 };
 
+export type ServiceFetch = {
+  companies: ServiceItem[];
+  isLoading: boolean;
+  isError: boolean;
+};
+
 export type CategoryFetch = {
   categories: CategoryItem[];
   isLoading: boolean;
@@ -53,10 +59,31 @@ export type CompanyItem = {
   _id: number;
   avatar: any;
   nameCompany: String;
+  userCompany:String;
   identifier: number;
   phone: string;
+  phone2:string;
   address: string;
   notesComp: string;
+  country: string;
+  cityName: string;
+  level: number;
+  Category: string;
+  siteWeb: string;
+  typeCategory: string;
+  levelPay: string;
+};
+
+export type ServiceItem = {
+  _id: number;
+  avatar: any;
+  nameCompany: String;
+  fullName:String;
+  identifier: number;
+  phone: string;
+  phone2:string;
+  address: string;
+  noteService: string;
   country: string;
   cityName: string;
   level: number;

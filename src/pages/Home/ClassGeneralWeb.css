@@ -1,0 +1,94 @@
+.containerGlobalWeb {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 2rem;
+  text-align: justify;
+  width: 100%;
+  line-height: 2rem;
+  color: rgb(139, 139, 137);
+}
+
+.containerGlobalWeb img {
+  display: block;
+  margin: auto;
+  padding: 0.7rem;
+  width: 99%;
+}
+
+.titGral {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+/* PANTALLA ESCRITORIO */
+
+@media (min-device-width: 1068px) {
+  .containerGlobalWeb {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    text-align: justify;
+    width: 100%;
+    line-height: 2rem;
+    color: rgb(139, 139, 137);
+  }
+  .containerGlobalWeb img {
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    width: 90%;
+    height: 40rem;
+  }
+  .containerForm {
+    padding: 1rem;
+    border: 0;
+  }
+}
+
+.containerCard {
+  display: flex;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 1.5 rem;
+  margin-top: 1.5 rem;
+  padding: 1.5 rem;
+}
+
+.containerCard > * {
+  margin: 0 10px; /* Ajusta el espaciado entre los botones según sea necesario */
+}
+
+.containerForm {
+  border: 0cap;
+}
+
+.imgCard {
+  height: 20rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .cardEditAddService {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+
+    /* sirve para centrar los elementos cuando el contenedor tiene el display:grid
+    como en este caso */
+    place-items: center;
+  }
+
+  .containerCard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+
+    /* sirve para centrar los elementos cuando el contenedor tiene el display:grid
+    como en este caso */
+    place-items: center;
+  }
+}

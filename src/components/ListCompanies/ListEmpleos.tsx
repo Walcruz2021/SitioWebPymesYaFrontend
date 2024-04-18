@@ -9,7 +9,7 @@ const ListEmpleos = (codigo:any) => {
 
     const { companies, isLoading } = useFetchEmpleos();
 
-    if (isLoading) return <h1>Cargando...</h1>
+    if (isLoading) return <div className="titGral"><h1>Cargando...</h1></div>
 
     return (
         <>
