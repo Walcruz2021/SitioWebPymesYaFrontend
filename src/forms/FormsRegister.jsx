@@ -60,9 +60,9 @@ function FormsRegister() {
   return (
     <>
       <div>
-        <tit className="titGral">
+        <div className="titGral">
           <h2>FORMULARIO DE REGISTRO</h2>
-        </tit>
+        </div>
         <Formik
           initialValues={{
             firstName: "",

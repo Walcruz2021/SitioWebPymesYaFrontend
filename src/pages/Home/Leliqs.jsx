@@ -7,6 +7,11 @@ import imgCaputo from "../Home/imagenes/luisCaputo.webp"
 import "./Leliqs.css"
 import ComentaryFace from "../../components/ListNotes/ComentaryFaceHistory";
 import ButtonDonacion from "./ButtonDonacion";
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
+import { getUserLogin } from "../../reducer/actions";
+import { auth } from "../../hooks/configFirebase";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 
 // import { useShare } from 'react-facebook';
 const Leliqs = () => {
@@ -23,6 +28,25 @@ const Leliqs = () => {
     const imagen = "URL-de-la-imagen-del-producto";
     const url = "www.pymesya.com/leliqs";
 
+    const [loginUser, setLoginUser] = useState();
+  const dispatch = useDispatch();
+  const userFullName = useSelector((state) => state.userDataName);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userCred) => {
+      if (userCred) {
+        const { email, emailVerified, displayName } = userCred;
+        setLoginUser({ email, emailVerified, displayName });
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (loginUser && loginUser.emailVerified) {
+      dispatch(getUserLogin());
+    }
+  }, [dispatch, loginUser]);
+  
     return (
         <>
             {/* <Helmet>
@@ -32,7 +56,8 @@ const Leliqs = () => {
                 <meta property="og:image" content={imagen} />
                 <meta property="og:url" content={url} />
             </Helmet> */}
-            <NavBarBoostrap />
+            {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
+
             <div className="containerGlobalWeb">
                 <ButtonDonacion />
 

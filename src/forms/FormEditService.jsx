@@ -31,14 +31,12 @@ const FormEditService = (props) => {
   const dispatch = useDispatch();
   const MySwal = withReactContent(Swal);
   const options = [
-    { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
     { value: "6435bcb66b3be033805c6f09", label: "Herreria" },
-    { value: "6435bcbe6b3be033805c6f0b", label: "Durlock" },
     { value: "6435bcc56b3be033805c6f0d", label: "Fletes" },
-    { value: "6435bcce6b3be033805c6f0f", label: "Albañileria" },
     { value: "6435bf606b3be033805c6f13", label: "Plomeria" },
+    { value: "6435bcce6b3be033805c6f0f", label: "Albañileria" },
     { value: "6435c24c6b3be033805c6f19", label: "Electricidad" },
-    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" },
+    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" }
   ];
 
   //select's state (about Category)
@@ -74,7 +72,9 @@ const FormEditService = (props) => {
     <>
       <NavBarBoostrapLogin user={userFullName} />
       <div className="containerGlobalWeb">
-        <h2>EDITE SU SERVICIO</h2>
+        <div className="titGral">
+          <h2>EDITE SU SERVICIO</h2>
+        </div>
         <Formik
           initialValues={{
             nameCompany: serviceFilter.nameCompany,

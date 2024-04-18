@@ -11,6 +11,11 @@ import { FacebookProvider, Like, ShareButton } from "react-facebook";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import ButtonDonacion from "./ButtonDonacion";
 import { Link } from "react-router-dom";
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
+import { getUserLogin } from "../../reducer/actions";
+import { auth } from "../../hooks/configFirebase";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 // import { useShare } from 'react-facebook';
 const InversionBolsa = () => {
   // const { share, isLoading, error } = useShare();
@@ -20,6 +25,24 @@ const InversionBolsa = () => {
   //     href: 'http://www.facebook.com',
   //   });
   // }
+  const [loginUser, setLoginUser] = useState();
+  const dispatch = useDispatch();
+  const userFullName = useSelector((state) => state.userDataName);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userCred) => {
+      if (userCred) {
+        const { email, emailVerified, displayName } = userCred;
+        setLoginUser({ email, emailVerified, displayName });
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (loginUser && loginUser.emailVerified) {
+      dispatch(getUserLogin());
+    }
+  }, [dispatch, loginUser]);
 
   const titulo = "Inversion en Bolsa";
   const descripcion = "Consejos a la hora de Invertir";
@@ -35,7 +58,9 @@ const InversionBolsa = () => {
         <meta property="og:image" content={imagen} />
         <meta property="og:url" content={url} />
       </Helmet>
-      <NavBarBoostrap />
+
+      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
+
       <div className="containerGlobalWeb">
         <ButtonDonacion />
 
@@ -54,7 +79,7 @@ const InversionBolsa = () => {
             data-share="true"
           ></div>
         </div>
-        
+
         <Link to="/inversionBolsaP2">Click Aquí para más Consejos</Link>
         <p>
           Para tener éxito, a la hora de invertir en la bolsa, es importante

@@ -9,6 +9,7 @@ export const GET_COMPANY_BYUSER = "GET_COMPANY_BYUSER";
 export const ADD_USER_SERVICE = "ADD_USER_SERVICE";
 export const DELETE_SERVICE = "DELETE_SERVICE";
 export const SEARCH_USER = "SEARCH_USER";
+export const GET_LIST_CATEGORIES = "GET_LIST_CATEGORIES";
 
 export function deleteService(idService) {
   console.log(idService, "actions");
@@ -105,7 +106,7 @@ export function getUserLogin() {
     try {
       // Obteniendo el usuario actualmente autenticado
       const user = auth.currentUser;
-      console.log(user, "USER LOGIN ACTIONS");
+      //console.log(user, "USER LOGIN ACTIONS");
       // Despachando la acción para guardar el usuario en el estado
       dispatch({
         type: GET_USER,
@@ -149,4 +150,20 @@ export function searchUser(email) {
       console.log(error);
     }
   };
+}
+
+export function getListCategories() {
+  // return async function (dispatch) {
+  //   try {
+  //     const response=await axios.get(
+  //       `${rutaBackend}/api/listCategories`
+  //     )
+  //     return dispatch({
+  //       type:GET_LIST_CATEGORIES,
+  //       payload:response
+  //     })
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 }

@@ -6,22 +6,51 @@ import sitioWeb from "./imagenes/sitioweb.jpg";
 import software from "./imagenes/softwareEmp.png";
 import IonIcon from "@reacticons/ionicons";
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
+import { getUserLogin } from "../../reducer/actions";
+import { auth } from "../../hooks/configFirebase";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 
 const Services = () => {
+  const [loginUser, setLoginUser] = useState();
+  const dispatch = useDispatch();
+  const userFullName = useSelector((state) => state.userDataName);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userCred) => {
+      if (userCred) {
+        const { email, emailVerified, displayName } = userCred;
+        setLoginUser({ email, emailVerified, displayName });
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (loginUser && loginUser.emailVerified) {
+      dispatch(getUserLogin());
+    }
+  }, [dispatch, loginUser]);
   return (
     <div>
-      <NavBar />
+      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
+
       <div className="titGral">
         <h1>NUESTROS SERVICIOS</h1>
       </div>
 
       <div className="containerOurServ">
         <p>
-        Necesitas ver la adopcion de la Tecnologia como una herramienta indispensable para seguir siendo competitivo en el mundo actual.
-                    Los consumidores buscan opciones de consumo, segun se adapten a sus necesidades, brindándoles comodidad, eficencia y mayor tranquilidad sobre la seguridad personal.
-                    Necesitas alinearte a esta tendencia, y buscar las alternativas digitales para atender a tus clientes
-                    PymesYa no solo te ofrece esta herramienta, ademas te asesora y tiene como objetivo principal que adoptes la tecnologia para tu negocio de manera que establezcas
-                    ventajas competitivas con los cuales podras posicionarte en el mercado
+          Necesitas ver la adopcion de la Tecnologia como una herramienta
+          indispensable para seguir siendo competitivo en el mundo actual. Los
+          consumidores buscan opciones de consumo, segun se adapten a sus
+          necesidades, brindándoles comodidad, eficencia y mayor tranquilidad
+          sobre la seguridad personal. Necesitas alinearte a esta tendencia, y
+          buscar las alternativas digitales para atender a tus clientes PymesYa
+          no solo te ofrece esta herramienta, ademas te asesora y tiene como
+          objetivo principal que adoptes la tecnologia para tu negocio de manera
+          que establezcas ventajas competitivas con los cuales podras
+          posicionarte en el mercado
         </p>
       </div>
 
@@ -34,9 +63,9 @@ const Services = () => {
           {/* <div className="servicio">
             <IonIcon className="IconService" name="card"></IonIcon>
           </div> */}
-            <div className="titGlobal">
-              <h4>ECOMMERCE</h4>
-            </div>
+          <div className="titGlobal">
+            <h4>ECOMMERCE</h4>
+          </div>
           <div className="CardCont">
             <img src={eccomerce}></img>
 
@@ -93,8 +122,6 @@ const Services = () => {
                 </div>
               </div>
             </div>
-
-           
           </div>
         </div>
 
@@ -102,9 +129,9 @@ const Services = () => {
           {/* <div className="servicio">
             <IonIcon className="IconService" name="desktop-sharp"></IonIcon>
           </div> */}
-            <div className="titGlobal">
-              <h4>SOFTWARE DE GESTION WEB</h4>
-            </div>
+          <div className="titGlobal">
+            <h4>SOFTWARE DE GESTION WEB</h4>
+          </div>
           <div className="CardCont">
             <img src={software}></img>
             <p>
@@ -113,8 +140,7 @@ const Services = () => {
               manuales. Podras llevar la contabilidad, control inventario,
               personalizar documentos, sacar el máximo partido a los datos
               gracias a las estadisticas, etc. Te permitirá agilizar y optimizar
-              la operatoria diaria de tu empresa o negocio. 
-              
+              la operatoria diaria de tu empresa o negocio.
               {/* Puedes ver un ejemplo
               de un Gestion de Turno para una Peluqueria Canina en el siguiente{" "}
               <a
@@ -136,19 +162,17 @@ const Services = () => {
         <div className="servSitioWeb CardCont">
           <div className="servicio">
             <IonIcon className="IconService" name="globe-outline"></IonIcon>
-          <div>
-
+            <div>
               <h3>SITIO WEB</h3>
-          </div>
-            
+            </div>
           </div>
           <p>
-            Con un sitio Web podrás posicionar
-            tu marca y tener un reconocimiento tanto a nivel Local como Nacional.
-            Al estar diseñadas para verse desde cualquier parte del mundo,
-            tendrás la posibilidad de abrir fronteras y de que los clientes que
-            no puedan ir a tu negocio fisico, lo puedan hacer de forma virtual
-            informandose de los servicios que prestas
+            Con un sitio Web podrás posicionar tu marca y tener un
+            reconocimiento tanto a nivel Local como Nacional. Al estar diseñadas
+            para verse desde cualquier parte del mundo, tendrás la posibilidad
+            de abrir fronteras y de que los clientes que no puedan ir a tu
+            negocio fisico, lo puedan hacer de forma virtual informandose de los
+            servicios que prestas
           </p>
           {/* <IonIcon className="IconService" name="rocket-outline"></IonIcon>
                     <IonIcon className="IconService" name="timer-outline"></IonIcon>

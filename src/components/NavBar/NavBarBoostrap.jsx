@@ -29,8 +29,8 @@ function NavBarBoostrap(prop) {
             <NavDropdown title="TECNOLOGIAS" id="basic-nav-dropdown">
               <NavDropdown.Item href="/tecnologias/sitioWeb">Consejos Sitio Web</NavDropdown.Item>
             </NavDropdown>
-         
           </Nav>
+            <Nav.Link href="/login">LOGIN</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar >

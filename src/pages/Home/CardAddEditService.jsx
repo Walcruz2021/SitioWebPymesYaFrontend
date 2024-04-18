@@ -10,7 +10,9 @@ import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./ClassGeneralWeb.css";
 import { auth } from "../../hooks/configFirebase";
 
+
 const CardAddEditService = () => {
+<NavBarBoostrapLogin/>
   const [loginUser, setLoginUser] = useState(null);
   const userLogin = useSelector((state) => state.userDataName);
   console.log(userLogin);

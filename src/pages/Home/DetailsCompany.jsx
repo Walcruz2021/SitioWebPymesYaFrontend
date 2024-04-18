@@ -9,12 +9,35 @@ import "./DetailsCompany.css"
 import IonIcon from '@reacticons/ionicons';
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import rutaBackend from '../../helpers/rutaBackend';
+import { useDispatch, useSelector } from "react-redux";
+import { auth } from "../../hooks/configFirebase";
+import {getUserLogin } from "../../reducer/actions";
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin"
+
 
 const DetailsCompany = () => {
-
+    const [loginUser, setLoginUser] = useState();
+    const dispatch=useDispatch()
+    const userFullName = useSelector((state) => state.userDataName);
+    
+    useEffect(() => {
+        auth.onAuthStateChanged((userCred) => {
+          if (userCred) {
+            const { email, emailVerified,displayName } = userCred;
+            setLoginUser({ email, emailVerified,displayName });
+          }
+        });
+      }, []);
+    
+      useEffect(() => {
+        if (loginUser && loginUser.emailVerified) {
+          dispatch(getUserLogin())
+        }
+      }, [dispatch, loginUser]);
+      
     console.log(useParams(), "efds")
-    const { id } = useParams<{ id: string }>();
-    const [details, setDetails] = useState<CompanyItem>()
+    const { id } = useParams();
+    const [details, setDetails] = useState()
 
     console.log(details, "empresa")
     useEffect(() => {
@@ -30,7 +53,7 @@ const DetailsCompany = () => {
 
     return (
         <div>
-            <NavBar />
+            {userFullName ? <NavBarBoostrapLogin user={userFullName}/>:<NavBar/>}
             {details ?
                 <div className="containerDetails">
                     <br></br>

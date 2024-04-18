@@ -83,7 +83,7 @@ const App = () => {
         <Route path="/leliqs"><Leliqs/></Route>
         <Route path="/crisisMexico"><CrisisTequila/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
-        <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
+        {/* <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route> */}
         <Route path="/editService/:idServ"><FormEditService/></Route>
         <Route path="/editServices"><CardEditServices/></Route>
         <Route path="/addService"><FormAddService/></Route>

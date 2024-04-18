@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from "react-redux";
 import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'
 import useFetchCat from '../../hooks/useFetchCat';
 import './styles.css';
-import { CompanyFetch } from '../../types/typeApp';
+// import { CompanyFetch } from '../../types/typeApp.js';
 import axios from 'axios'
 import CompanyOtros from '../../components/ListCompanies/Company/CompanyOtros';
 import "./Home.css"
@@ -13,12 +14,40 @@ import IonIcon from '@reacticons/ionicons';
 import rutaBackend from '../../helpers/rutaBackend';
 // import {exportImg} from "./imagenes/icons/hospital.png"
 import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
+import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin"
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue"
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse"
 import "./ClassGeneralWeb.css"
+import {getUserLogin } from "../../reducer/actions";
+import { auth } from "../../hooks/configFirebase";
 
 const Home = () => {
+    const [loginUser, setLoginUser] = useState();
+    const dispatch=useDispatch()
+    const userFullName = useSelector((state) => state.userDataName);
+    
+    useEffect(() => {
+        auth.onAuthStateChanged((userCred) => {
+          if (userCred) {
+            const { email, emailVerified,displayName } = userCred;
+            setLoginUser({ email, emailVerified,displayName });
+          }
+        });
+      }, []);
+    
+      useEffect(() => {
+        if (loginUser && loginUser.emailVerified) {
+          dispatch(getUserLogin())
+        }
+      }, [dispatch, loginUser]);
+
+    //   useEffect(() => {
+       
+    //       dispatch(getUserLogin())
+        
+    //   }, [dispatch]);
+
     const { categories } = useFetchCat();
     //console.log(categories)
     const arrayOptions = []
@@ -38,16 +67,15 @@ const Home = () => {
             arrayOptions.push(option)
         }
     }
-    const [loading, setLoading] = useState<Boolean>(false)
-    const [selectedOption, setSelectedOption] = useState<any>(null)
+    const [loading, setLoading] = useState(false)
+    const [selectedOption, setSelectedOption] = useState(null)
 
 
-    const [selectCompanies, setSelectCompanies] = useState<CompanyFetch>({
+    const [selectCompanies, setSelectCompanies] = useState({
         companies: [],
         isLoading: true,
         isError: false
     })
-
 
     useEffect(() => {
         setSelectCompanies({
@@ -55,7 +83,7 @@ const Home = () => {
         })
     }, [])
 
-    const buttonSelected = async (value: any) => {
+    const buttonSelected = async (value) => {
 
         console.log(value, "categoria elegida en el menu")
         setSelectedOption(value)
@@ -78,7 +106,7 @@ const Home = () => {
 
     return (
         <>
-            <NavBarBoostrap />
+            {userFullName?<NavBarBoostrapLogin user={userFullName}/>:<NavBarBoostrap />}
             <div className="alert alert-primary titGral">
                 <h3 className="titNewPapers">¡ Agregamos nuevo contenido en Inversión en Bolsa !</h3>
             </div>
@@ -88,8 +116,6 @@ const Home = () => {
                 <h2>SELECCIONA UNA CATEGORIA</h2>
 
             </div>
-
-
 
             <ul className="containerButtons">
 
@@ -230,11 +256,12 @@ const Home = () => {
 
             <div className="containerWeb">
                 <h4>¿Queres que tu empresa este en esta pagina?</h4>
-                <Link style={{ textDecoration: 'none' }} to={`/login`}>
+                <Link style={{ textDecoration: 'none' }} to={`/contact`}>
                     <div className="titGral">
-                        <h3 className="buttonBanner">Clic Aqui</h3>
 
+                        <h3 className="buttonBanner">Clic Aqui</h3>
                     </div>
+
                 </Link>
             </div>
 

@@ -27,24 +27,6 @@ function FormsLogin({ autUser }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    // const onsubscribe = onAuthStateChanged(auth, (user) => {
-    //   if (user) {
-    //     setUserState(user);
-    //     localStorage.setItem("user", JSON.stringify(user));
-    //   } else {
-    //     setUserState(null);
-    //     localStorage.removeItem("user");
-    //   }
-    // });
-    // return () => onsubscribe();
-    // auth.onAuthStateChanged((userCred) => {
-    //   if (userCred) {
-    //     const { email, emailVerified } = userCred;
-    //     setLoginUser({ email, emailVerified });
-    //   }
-    // });
-  }, []);
 
   //logIn with email of gmail
   const loginGoogle = async () => {
@@ -67,33 +49,6 @@ function FormsLogin({ autUser }) {
     }
   };
 
-  const linkPassword = async () => {
-    // await sendPasswordResetEmail(auth,"kespipospe@gufum.com").then(function() {
-    //   // Email de restablecimiento enviado
-    //   // MySwal.fire({
-    //   //   title: "Link de Reestablecimento Enviado.¡Revisa tu Correo!",
-    //   //   icon: "success",
-    //   //   confirmButtonText: "Aceptar",
-    //   //   confirmButtonColor: "rgb(21, 151, 67)",
-    //   // }).then((result) => {
-    //   //   if (result.isConfirmed) {
-    //   //     // history.pushState({
-    //   //     //   pathname:"/login"
-    //   //     // })
-    //   //     window.location.reload();
-    //   //   }
-    //   // });
-    //   <ModalRestPassword/>
-    //   alert("dded")
-    // }).catch(function(error) {
-    //   // Se produjo un error
-    //   console.error("Error al enviar el email de restablecimiento:", error);
-    // });
-    //console.log("fedsfsd")
-    // <>
-    // <ModalRestPassword/>
-    // </>
-  };
 
   return (
     <>
