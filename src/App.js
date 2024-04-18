@@ -66,9 +66,12 @@ const App = () => {
 
  <Router>
    <Switch >
+        <Route exact path="/"><Home/></Route>
         <Route path="/contact"><Contact /></Route>
         <Route path="/ourCompany"><OurCompany /></Route>
         <Route path="/services"><Services /></Route>
+        <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
+        <Route path="/contactPubli"><ContactPubli /></Route>
         <Route path="/servicios"><ServiceProf/></Route>
         {/* <Route path="/empleos"><EmpleosProf/></Route> */}
         <Route path="/histories"><ListNotes/></Route>
@@ -81,10 +84,12 @@ const App = () => {
         <Route path="/crisisMexico"><CrisisTequila/></Route>
         <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route>
         {/* <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route> */}
-        
-        <Route exact path="/"><Home/></Route>
-        <Route path="/contactPubli"><ContactPubli /></Route>
-        <Route path="/detailsCompany/:id"><DetailsCompany /></Route>
+        <Route path="/editService/:idServ"><FormEditService/></Route>
+        <Route path="/editServices"><CardEditServices/></Route>
+        <Route path="/addService"><FormAddService/></Route>
+        <Route path="/addEditService"><CardAddEditService/></Route>
+        <Route path="/login"><LoginFirebase/></Route>
+        {/* <Route path="/formServices"><FormServices/></Route> */}
     </Switch>
  </Router>
     </>
