@@ -9,11 +9,11 @@ import CardEditService from "./CardEditService";
 const CardEditServices = () => {
   const userLogin = useSelector((state) => state.userDataName);
   const emailLogin = useSelector((state) => state.userDataEmail);
-  const serviceUser = useSelector((state) => state.validation.data.search[0]);
+  const serviceUser = useSelector((state) => state.validation.data.search);
 
   const dispatch = useDispatch();
   const validation = useSelector((state) => state.validation);
-  console.log(validation);
+  console.log(validation,"----->CAR EDIT SERVICE");
   useEffect(() => {
     if (emailLogin) {
       dispatch(validationAddService(emailLogin));
@@ -25,11 +25,11 @@ const CardEditServices = () => {
       <NavBarBoostrapLogin user={userLogin} />
       <div className="containerCard">
        
-        {validation.data.search.map((serv) => (
+        {serviceUser?serviceUser.map((serv) => (
           <React.Fragment key={serv._id}>
             <CardEditService idServ={serv._id} />
           </React.Fragment>
-        ))}
+        )):null}
        
       </div>
 

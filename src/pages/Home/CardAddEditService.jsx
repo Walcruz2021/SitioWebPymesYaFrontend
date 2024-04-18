@@ -10,14 +10,13 @@ import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./ClassGeneralWeb.css";
 import { auth } from "../../hooks/configFirebase";
 
-
 const CardAddEditService = () => {
-<NavBarBoostrapLogin/>
+  <NavBarBoostrapLogin />;
   const [loginUser, setLoginUser] = useState(null);
   const userLogin = useSelector((state) => state.userDataName);
-  console.log(userLogin);
+
   const emailLogin = useSelector((state) => state.userDataEmail);
-  const serviceUser = useSelector((state) => state.validation.data.search[0]);
+  const serviceUser = useSelector((state) => state.validation.data.search);
 
   const dispatch = useDispatch();
 
@@ -31,25 +30,26 @@ const CardAddEditService = () => {
     <>
       <NavBarBoostrapLogin user={userLogin} />
       <div className="containerCard">
-        
-          <Link to="/addService">
-            <button>
-              <img className="imgCard" src={addServ} alt="icon add service" />
-            </button>
-          </Link>
+       
+        <Link to="/addService">
+          <button>
+            <img className="imgCard" src={addServ} alt="icon add service" />
+          </button>
+        </Link>
 
-          {serviceUser ? (
-            <Link to={`/editService/${serviceUser._id}`}>
-              <button>
-                <img
-                  className="imgCard"
-                  src={editServ}
-                  alt="icon edit service"
-                />
-              </button>
-            </Link>
-          ) : null}
-        
+        {serviceUser
+          ? serviceUser.map((serv) => (
+              <Link to={`/editService/${serv._id}`}>
+                <button>
+                  <img
+                    className="imgCard"
+                    src={editServ}
+                    alt="icon edit service"
+                  />
+                </button>
+              </Link>
+            ))
+          : null}
       </div>
 
       <ButtonBarBoostrap />

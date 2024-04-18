@@ -106,7 +106,7 @@ const Home = () => {
 
   return (
     <>
-      <NavBarBoostrap />
+      {userFullName ? <NavBarBoostrapLogin user={userFullName} />:<NavBarBoostrap />}
       <div className="alert alert-primary">
         <div className="titGral">
         <h3 className="titNewPapers">

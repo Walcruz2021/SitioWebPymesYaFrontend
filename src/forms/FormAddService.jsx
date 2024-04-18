@@ -14,6 +14,10 @@ import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 import { useHistory } from "react-router-dom";
 import "../pages/Home/ClassGeneralWeb.css";
 
+/**this component if the validation 205 (all services alloned) at the end it will redirect to /addEditService
+ * if validation 200 (one allowed service) at the end it will redirect to /editServices
+*/
+
 const FormAddService = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -152,6 +156,7 @@ const FormAddService = () => {
                       "-200---no le quedaria mas opciones"
                     );
                     history.push("/editServices");
+
                   } else if (validation.status === 205) {
                     console.log(
                       validation.status,
@@ -160,6 +165,7 @@ const FormAddService = () => {
                     history.push({
                       pathname: "/addEditService",
                     });
+                   
                   }
                   // else
                   // console.log("es estatus 200 osea que ya no le quedan opciones")
