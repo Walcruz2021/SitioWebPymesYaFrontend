@@ -6,6 +6,8 @@ import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 import React, { useState,useEffect } from "react";
+import { Link } from 'react-router-dom'; // Importar Link desde React Router
+
 /**
  *  @description 
  * this component container User Login. Must first verified if user exists (user loged). Then is passed as a 
