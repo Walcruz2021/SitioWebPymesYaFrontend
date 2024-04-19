@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router,Route,Routes,Link,HashRouter,Switch} from "react-router-dom";
+import { BrowserRouter as Router,Route,Routes,Link,HashRouter,Switch,Redirect } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
 import ContactPubli from "./pages/Home/ContactPubli";
@@ -53,17 +53,7 @@ const App = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-    {/* <HashRouter>
-   <nav>
-        <Link to="/"><Home/></Link>
-        <Link to="/contact"><Contact /></Link>
-        <Link to="/ourCompany"><OurCompany /></Link>
-        <Link to="/services"><Services /></Link>
-        <Link to="/detailsCompany/:id"><DetailsCompany /></Link>
-        <Link to="/contactPubli"><ContactPubli /></Link>
-    </nav>
- </HashRouter> */}
-
+  
  <Router>
    <Switch >
         <Route exact path="/"><Home/></Route>
@@ -89,6 +79,7 @@ const App = () => {
         <Route path="/addService"><FormAddService/></Route>
         <Route path="/addEditService"><CardAddEditService/></Route>
         <Route path="/login"><LoginFirebase/></Route>
+        <Redirect to="/" />
         {/* <Route path="/formServices"><FormServices/></Route> */}
     </Switch>
  </Router>

@@ -32,7 +32,7 @@ function NavBarBoostrap(prop) {
               <NavDropdown.Item as={Link} to="/tecnologias/sitioWeb">Consejos Sitio Web</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-            <Nav.Link href="/login">LOGIN</Nav.Link>
+            <Nav.Link as={Link} to="/login">LOGIN</Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar >
