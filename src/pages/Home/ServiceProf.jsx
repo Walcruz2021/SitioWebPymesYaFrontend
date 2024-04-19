@@ -182,10 +182,13 @@ const ServiceProf = () => {
       </div>
 
       <div className="containerWeb">
-        <h4>¿Queres que tu servicio esté en esta página?</h4>
+        <div className="titGral">
+        <h4 className="playfair-display">¿Querés que tu servicio se encuentre en ésta página?</h4>
+
+        </div>
         <Link style={{ textDecoration: "none" }} to={`/login`}>
           <div className="titGral">
-            <h3 className="buttonBanner">Clic Aqui</h3>
+            <h3 className="buttonBanner playfair-display">Clic Aqui</h3>
           </div>
         </Link>
       </div>

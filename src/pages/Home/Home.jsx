@@ -244,10 +244,12 @@ const Home = () => {
       </div>
 
       <div className="containerWeb">
-        <h4>¿Queres que tu empresa este en esta pagina?</h4>
+        <div className="titGral">
+        <h4 className="playfair-display">¿Querés que tu empresa se encuentre en ésta página?</h4>
+        </div>
         <Link style={{ textDecoration: "none" }} to={`/contact`}>
           <div className="titGral">
-            <h3 className="buttonBanner">Clic Aqui</h3>
+            <h3 className="buttonBanner playfair-display">Clic Aqui</h3>
           </div>
         </Link>
       </div>
