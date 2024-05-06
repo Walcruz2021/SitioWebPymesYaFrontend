@@ -202,7 +202,7 @@ const Home = () => {
           //pregunta si las empresas elegidas correspondena la opcion OTROS del MENU
           selectedOption === "6408e10042e6881a681f6955" ? (
             selectCompanies.companies.map((comp) => (
-              <div className="ContainerCompany">
+              <div>
                 <Link
                   style={{ textDecoration: "none" }}
                   to={`/detailsCompany/${comp._id}`}
@@ -239,9 +239,9 @@ const Home = () => {
         <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
       </div>
 
-      <div>
-        <ListCompaniesVip />
-      </div>
+      
+      <ListCompaniesVip />
+      
 
       <div className="containerWeb">
         <div className="titGral">

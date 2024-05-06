@@ -23,9 +23,9 @@
       padding: 0.5rem;
       /* justify-content: space-between; se comenta esta linea debido a que al estar en modo mobile no tiene margen a la derecha*/
       justify-content: space-between;
+      
     }
   }
-  
   
     .containerButtons li {
       list-style: none;

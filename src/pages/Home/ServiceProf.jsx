@@ -21,6 +21,10 @@ import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
+import { FaBuffer } from "react-icons/fa";
+import { FaCarCrash } from "react-icons/fa";
+import { BsFillKeyFill } from "react-icons/bs";
+import { MdOutlineStopScreenShare } from "react-icons/md";
 
 const ServiceProf = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -90,20 +94,43 @@ const ServiceProf = () => {
       </div>
 
       <ul className="containerButtons">
-        {/* <li>
-    <button onClick={() => buttonSelected("6435bc9d6b3be033805c6f07")}>
-        <IonIcon name="business-outline"></IonIcon>
-
-    </button>
-    <h6 className="titButton">Carpinteria</h6>
-</li> */}
+    
         <li>
           <button onClick={() => buttonSelected("6435bcb66b3be033805c6f09")}>
             <IonIcon name="train-outline"></IonIcon>
           </button>
           <h6 className="titButton">Herreria</h6>
         </li>
+        
+        <li>
+          <button onClick={() => buttonSelected("6435bcbe6b3be033805c6f0b")}>
+            <FaBuffer size={38}/>
+          </button>
+          <h6 className="titButton">Durlock</h6>
+        </li>
 
+        <li>
+          <button onClick={() => buttonSelected("663572d5d3a8037e13e75119")}>
+            < FaCarCrash size={38}/>
+          </button>
+          <h6 className="titButton">Mecánicos</h6>
+        </li>
+
+        {/* <li>
+          <button onClick={() => buttonSelected("6435bcbe6b3be033805c6f0b")}>
+            < MdOutlineStopScreenShare size={38}/>
+          </button>
+          <h6 className="titButton">TécnicosTV-Phone-Pc</h6>
+        </li> */}
+
+        
+        <li>
+          <button onClick={() => buttonSelected("6636c5d7588a55f048b057c8")}>
+            < BsFillKeyFill size={40}/>
+          </button>
+          <h6 className="titButton">Cerrajeros</h6>
+        </li>
+      
         <li>
           <button onClick={() => buttonSelected("6435bcc56b3be033805c6f0d")}>
             {/* <FontAwesomeIcon icon={faTruck} style={{color:"#e0e6f0"}} /> */}
@@ -112,6 +139,7 @@ const ServiceProf = () => {
           <h6 className="titButton">Fletes</h6>
         </li>
 
+   
         {/* <li>
     <button onClick={() => buttonSelected("6435bcbe6b3be033805c6f0b")}>
         <IonIcon name="fitness-outline"></IonIcon>
@@ -177,9 +205,9 @@ const ServiceProf = () => {
       <div className="titGral">
         <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
       </div>
-      <div>
+      
         <ListCompaniesVip />
-      </div>
+      
 
       <div className="containerWeb">
         <div className="titGral">

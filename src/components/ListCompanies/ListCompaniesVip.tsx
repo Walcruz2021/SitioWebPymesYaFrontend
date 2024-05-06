@@ -17,17 +17,14 @@ const ListCompanies = (codigo:any) => {
         <div className="ContainerListComp">
             {
                 companies && companies.map(company => (
-                    <div className="ContainerCompany">
+                    <div>
                         <Link style={{ textDecoration: 'none'}}  to={`/detailsCompany/${company._id}`}>
                             <Company
                                 key={company._id}
                                 company={company}
                             />
                         </Link>
-                        
                     </div>
-
-
                 ))
             }
 

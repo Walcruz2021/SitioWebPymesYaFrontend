@@ -1,24 +1,21 @@
 
 .CardCompany{
-    padding: 10px;
-background-color: white;
+    
+    background-color: white;
     /* para que todo elemento que este fuera del contenedor card se oculte y no aparezca afuera*/
     overflow: hidden;
     transition:all 400ms ease;
-    
     margin-top: 10px;
     border: 1.19px solid rgba(224, 224, 224, 1);
     margin-left: 10px;
     margin-right: 10px;
-    padding: 20px;
+    padding: 10px;
 
     /* estilo a las imagenes */
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
 }
-
-
 
 
 .CardCompany img{
