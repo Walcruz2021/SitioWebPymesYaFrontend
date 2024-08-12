@@ -107,6 +107,9 @@ function NavBarBoostrapLogin(userProp) {
               <NavDropdown.Item as={Link} to="/tecnologias/sitioWeb">
                 Consejos Sitio Web
               </NavDropdown.Item>
+              <NavDropdown.Item href="https://frontend-app-peluqueria.vercel.app" target="_blank">
+                Sist. Gestion de Turnos
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <NavDropdown title={userProp.user} id="basic-nav-dropdown">
