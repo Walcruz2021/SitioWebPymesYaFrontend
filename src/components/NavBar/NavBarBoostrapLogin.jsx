@@ -108,7 +108,7 @@ function NavBarBoostrapLogin(userProp) {
                 Consejos Sitio Web
               </NavDropdown.Item>
               <NavDropdown.Item href="https://frontend-app-peluqueria.vercel.app" target="_blank">
-                Sist. Gestion de Turnos
+                Sistema Gestion de Turnos
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
