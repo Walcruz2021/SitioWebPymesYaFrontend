@@ -5,8 +5,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
-import React, { useState,useEffect } from "react";
-import { Link } from 'react-router-dom'; // Importar Link desde React Router
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Importar Link desde React Router
 
 /**
  *  @description 
@@ -32,7 +32,6 @@ import { Link } from 'react-router-dom'; // Importar Link desde React Router
   }, [dispatch, loginUser]); 
  * at the time of invoking <NavBarBoostrapLogin user={userFullName} />
 */
-
 
 function NavBarBoostrapLogin(userProp) {
   const history = useHistory();
@@ -63,7 +62,7 @@ function NavBarBoostrapLogin(userProp) {
   //   console.log(auth, "---->");
   //   try {
   //     await signOut(auth);
- 
+
   //     history.push({
   //       pathname: "/",
   //     });
@@ -80,14 +79,22 @@ function NavBarBoostrapLogin(userProp) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">PymesYa</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          PymesYa
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
+            <Nav.Link as={Link} to="/contact">
+              Contacto
+            </Nav.Link>
             {/* <Nav.Link href="/empleos">EMPLEOS</Nav.Link> */}
-            <Nav.Link as={Link} to="/servicios">SERVICIOS</Nav.Link>
-            <Nav.Link as={Link} to="/histories">HISTORIAS</Nav.Link>
+            <Nav.Link as={Link} to="/servicios">
+              SERVICIOS
+            </Nav.Link>
+            <Nav.Link as={Link} to="/histories">
+              HISTORIAS
+            </Nav.Link>
 
             <NavDropdown title="FINANZAS" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/finanzas/bolsaValores">
@@ -101,13 +108,21 @@ function NavBarBoostrapLogin(userProp) {
               <NavDropdown.Item as={Link} to="/inversionBolsa">
                 Inversion en Bolsa
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/leliqs">Lelics</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/leliqs">
+                Lelics
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="TECNOLOGIAS" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/tecnologias/sitioWeb">
                 Consejos Sitio Web
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://frontend-app-peluqueria.vercel.app" target="_blank">
+              {/* <NavDropdown.Item href="https://frontend-app-peluqueria.vercel.app" target="_blank">
+                Sistema Gestion de Turnos
+              </NavDropdown.Item> */}
+              <NavDropdown.Item
+                as={Link}
+                to="/tecnologias/sistemaGestionTurnos"
+              >
                 Sistema Gestion de Turnos
               </NavDropdown.Item>
             </NavDropdown>
