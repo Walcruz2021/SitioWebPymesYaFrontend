@@ -156,11 +156,15 @@ const SistemaGestionTurnos = () => {
         <div className="titGral pt-2">
           <h2>¿COMO FUNCIONA?</h2>
         </div>
-        <div className="container">
-          <p className="px-4 mx-4">
+
+        <div>
+          <p>
             Descubre lo fácil que es utilizar nuestro sistema viendo el video
             tutorial que te guiará paso a paso para sacar el máximo provecho de
-            esta herramienta.
+            esta herramienta. A continuacion te presentamos dos videos. En el
+            primero se explica los pasos a pasos y en el segundo unos tips que
+            te ayudaran a dejarlo como acceso directo en tu computadora de
+            escritorio o dispositivo movil
           </p>
         </div>
 

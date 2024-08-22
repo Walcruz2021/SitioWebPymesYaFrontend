@@ -78,7 +78,9 @@ h4 {
   border: 1.5px solid #ebe9e9;
 }
 
-/* PANTALLA GRANDE */
+
+
+/* PANTALLA MOBILE */
 
 @media (min-width: 900px) {
   .carousel {
