@@ -6,3 +6,11 @@
 }
 
 
+@media (max-width: 768px) {
+
+  .containerVideo iframe{
+    width: 100% !important;
+    height: 250px !important;
+  }
+
+}
