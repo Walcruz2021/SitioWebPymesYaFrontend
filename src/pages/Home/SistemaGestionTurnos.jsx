@@ -159,15 +159,14 @@ const SistemaGestionTurnos = () => {
 
         <div>
           <p>
-            Descubre lo fácil que es utilizar nuestro sistema viendo el video
-            tutorial que te guiará paso a paso para sacar el máximo provecho de
-            esta herramienta. A continuacion te presentamos dos videos. En el
-            primero se explica los pasos a pasos y en el segundo unos tips que
-            te ayudaran a dejarlo como acceso directo en tu computadora de
-            escritorio o dispositivo movil
+            "Aprende a utilizar nuestro sistema de forma sencilla con nuestro
+            video tutorial. Te guiamos paso a paso para que puedas aprovechar al
+            máximo todas las funciones de esta herramienta. A continuación, te
+            mostramos dos videos: el primero te enseña el proceso completo, y el
+            segundo te ofrece consejos útiles para crear un acceso directo en tu
+            computadora de escritorio o dispositivo móvil."
           </p>
         </div>
-
         <div className="containerVideo">
           <iframe
             width="100%"
@@ -177,6 +176,17 @@ const SistemaGestionTurnos = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             title="Video Tutorial"
+          ></iframe>
+        </div>
+        <div className="containerVideo">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://player.vimeo.com/video/1001972160?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="instalacion SistPY"
           ></iframe>
         </div>
       </div>
