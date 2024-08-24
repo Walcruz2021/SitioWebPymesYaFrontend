@@ -48,8 +48,8 @@ function NavBarBoostrap(prop) {
                 Consejos Sitio Web
               </NavDropdown.Item>
               <NavDropdown.Item
-                href="https://frontend-app-peluqueria.vercel.app"
-                target="_blank"
+                as={Link}
+                to="/tecnologias/sistemaGestionTurnos"
               >
                 Sist. Gestion de Turnos
               </NavDropdown.Item>
