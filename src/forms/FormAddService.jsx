@@ -12,7 +12,7 @@ import withReactContent from "sweetalert2-react-content";
 import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 import { useHistory } from "react-router-dom";
-import "../pages/Home/ClassGeneralWeb.css";
+import "../css/ClassGeneralWeb.css";
 
 /**this component if the validation 205 (all services alloned) at the end it will redirect to /addEditService
  * if validation 200 (one allowed service) at the end it will redirect to /editServices

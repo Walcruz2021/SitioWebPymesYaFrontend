@@ -35,8 +35,8 @@ const InversionBolsa2 = () => {
         <meta property="og:url" content={url} />
       </Helmet>
       <NavBarBoostrap />
+      <ButtonDonacion />
       <div className="containerGlobalWeb">
-        <ButtonDonacion />
         <div className="titGral">
           <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
         </div>
@@ -208,9 +208,8 @@ const InversionBolsa2 = () => {
           endeudamiento con terceros es poco.
         </p>
         <img src={quickRatio} />
-
-        <ButtonDonacion />
       </div>
+      <ButtonDonacion />
 
       <ButtonBarBoostrap />
     </>

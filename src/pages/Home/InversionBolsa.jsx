@@ -61,8 +61,8 @@ const InversionBolsa = () => {
 
       {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
 
-      <div className="containerGlobalWeb">
         <ButtonDonacion />
+      <div className="containerGlobalWeb">
 
         <div className="titGral">
           <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>

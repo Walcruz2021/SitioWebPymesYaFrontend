@@ -7,7 +7,7 @@ import editServ from "../../icons/editService.png";
 import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { validationAddService } from "../../reducer/actions";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
-import "./ClassGeneralWeb.css";
+import "../../css/ClassGeneralWeb.css";
 import { auth } from "../../hooks/configFirebase";
 
 const CardAddEditService = () => {

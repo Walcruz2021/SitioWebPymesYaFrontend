@@ -35,8 +35,8 @@ const VariacionesBolsa = () => {
   return (
     <>
       {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
+      <ButtonDonacion />
       <div className="containerGlobalWeb">
-        <ButtonDonacion />
         <div className="titGral">
           <h1>VARIACIONES DE LA BOLSA</h1>
         </div>
@@ -259,8 +259,8 @@ const VariacionesBolsa = () => {
         <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
         <br></br>
         <br></br>
-        <ButtonDonacion />
       </div>
+      <ButtonDonacion />
       <ButtonBarBoostrap />
     </>
   );

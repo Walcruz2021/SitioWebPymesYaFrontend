@@ -31,13 +31,13 @@ const Finanzas = () => {
       dispatch(getUserLogin());
     }
   }, [dispatch, loginUser]);
-  
+
   return (
     <>
       {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
 
+      <ButtonDonacion />
       <div className="containerGlobalWeb">
-        <ButtonDonacion />
         <div className="containerLike">
           <div
             className="fb-like"
@@ -132,9 +132,8 @@ const Finanzas = () => {
           ingresos adicional en lugar de simplemente ver crecer el valor de las
           acciones.{" "}
         </p>
-
-        <ButtonDonacion />
       </div>
+      <ButtonDonacion />
 
       <ButtonBarBoostrap />
     </>

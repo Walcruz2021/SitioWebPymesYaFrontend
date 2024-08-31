@@ -3,6 +3,14 @@ import { ServiceItem } from '../../../types/typeApp';
 import ModalComp from "./ModalComp"
 import './CompanyServ.css'
 import Swal from "sweetalert2";
+import Card from "react-bootstrap/Card";
+import { IoPersonAdd } from "react-icons/io5";
+import ListGroup from "react-bootstrap/ListGroup";
+import { MdOutlinePhonelinkLock } from "react-icons/md";
+//import { RiStickyNoteAddFill } from "react-icons/ri";
+import { MdHomeRepairService } from "react-icons/md";
+import { FaMapSigns } from "react-icons/fa";
+import infoCompany from "../../../icons/clientInfo.png"
 
 type Props = {
     company: ServiceItem;
@@ -31,30 +39,64 @@ const CompanyServ = ({ company }: Props) => {
 
     return (
         <>
+    
             <div className="CardCompany">
-                <div className="Contenido">
-                    <h4>Empresa</h4> {company.nameCompany ? <p>{company.nameCompany}</p> : <p>Sin Dato</p>}
-                    <h4>Prestador Servicio</h4> {company.fullName ? <p>{company.fullName}</p> : <p>Sin Dato</p>}
+                <Card className="w-100">
+                    <div className="d-flex justify-content-center p-2">
+                        <Card.Img
+                            className="p-3"
+                            style={{ width: "auto", justifyContent: "center" }}
+                            variant="top"
+                            src={infoCompany}
+                        />
+                    </div>
+                    <Card.Body className="bg-success p-2 text-dark bg-opacity-10">
+                        <Card.Title style={{ color: '#e8e8e8' }} className="text-center fs-5">
+                            Informacion Cliente
+                        </Card.Title>
+                    </Card.Body>
+                    <ListGroup>
+                        <ListGroup.Item style={{ color: "#424242" }}>
+                            <MdHomeRepairService style={{ marginRight: "10px", fontSize: "24px" }} />
+                            {company.nameCompany ? company.nameCompany : "Sin Dato"}
+                        </ListGroup.Item>
+                        <ListGroup.Item style={{ color: "#424242" }}>
+                            <IoPersonAdd style={{ marginRight: "10px", fontSize: "24px" }} />
+                            {company.fullName ? company.fullName : "Sin Dato"}
+                        </ListGroup.Item>
+                        <ListGroup.Item style={{ color: "#424242" }}>
+                            <MdOutlinePhonelinkLock style={{ marginRight: "10px", fontSize: "24px" }} />
+                            {company.phone}
+                        </ListGroup.Item>
 
-                    <h4>Contacto 1</h4>
-                    <p>{company.phone}</p>
+                        <ListGroup.Item style={{ color: "#424242" }}>
+                            <MdOutlinePhonelinkLock style={{ marginRight: "10px", fontSize: "24px" }} />
+                            {company.phone2 ? company.phone2 : "Sin Dato"}
+                        </ListGroup.Item>
 
-                    <h4>Contacto 2</h4> {company.phone2 ? <p>{company.phone2}</p> : <p>Sin Dato</p>}
-                    <p>
-                        {company.cityName}-{company.country}
-                    </p>
 
-                </div>
+                        <ListGroup.Item style={{ color: "#424242" }}>
+                            <FaMapSigns style={{ marginRight: "10px", fontSize: "24px" }} />
+                            {company.cityName}-{company.country}
+                        </ListGroup.Item>
 
-                {/* <img>{company.avatar}</img> */}
-                {/* <Button variant="primary" onClick={() => handleAddToCart(product)}>Agregar al carrito</Button> */}
-                <button className="buttonCardServ" onClick={() => functionDetails()}>Ver Servicios</button>
-
-                {/* {stateModal === true ?
-                <ModalComp company={company} state={stateModal} setState={setVisualModal} /> : null
-            } */}
+                    </ListGroup>
+                    <Card.Body>
+                        <div className="d-flex justify-content-center p-1">
+                            <button
+                                onClick={() => functionDetails()}
+                                type="button"
+                                className="btn btn-outline-secondary w-100"
+                            >
+                                Ver Servicios
+                            </button>
+                        </div>
+                        {/* <Card.Link href="#">Another Link</Card.Link> */}
+                    </Card.Body>
+                </Card>
 
             </div>
+
 
         </>
     )
