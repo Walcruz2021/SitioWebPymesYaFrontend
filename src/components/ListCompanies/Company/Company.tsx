@@ -7,7 +7,7 @@ type Props = {
     company: CompanyItem;
    
 }
-// ESTE COMPONENTE ES EL QUE SE IMPRIME AL CARGAR LA PAGINA PRINCIPAL
+// ESTE COMPONENTE ES EL QUE SE IMPRIME AL CARGAR LA PAGINA PRINCIPAL xx
 
 const Company = ({company}: Props) => {
     //console.log(company,"--->")
