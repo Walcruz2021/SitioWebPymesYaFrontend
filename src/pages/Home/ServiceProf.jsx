@@ -27,6 +27,7 @@ import { FaCarCrash } from "react-icons/fa";
 import { BsFillKeyFill } from "react-icons/bs";
 import { MdOutlineStopScreenShare } from "react-icons/md";
 import "../../css/ClassGeneralWeb.css";
+import "./ServiceProf.css"
 
 const ServiceProf = () => {
   const [selectedOption, setSelectedOption] = useState(null);

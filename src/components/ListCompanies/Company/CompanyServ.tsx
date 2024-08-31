@@ -39,9 +39,9 @@ const CompanyServ = ({ company }: Props) => {
 
     return (
         <>
-    
+
             <div className="CardCompany">
-                <Card className="w-100">
+                <Card className="">
                     <div className="d-flex justify-content-center p-2">
                         <Card.Img
                             className="p-3"
