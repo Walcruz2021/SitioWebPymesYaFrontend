@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CompanyServ from "../../components/ListCompanies/Company/CompanyServ";
+// import Company from "../../components/ListCompanies/Company/Company"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import rutaBackend from "../../helpers/rutaBackend";
 import {
@@ -25,6 +26,7 @@ import { FaBuffer } from "react-icons/fa";
 import { FaCarCrash } from "react-icons/fa";
 import { BsFillKeyFill } from "react-icons/bs";
 import { MdOutlineStopScreenShare } from "react-icons/md";
+import "../../css/ClassGeneralWeb.css";
 
 const ServiceProf = () => {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -94,24 +96,23 @@ const ServiceProf = () => {
       </div>
 
       <ul className="containerButtons">
-    
         <li>
           <button onClick={() => buttonSelected("6435bcb66b3be033805c6f09")}>
             <IonIcon name="train-outline"></IonIcon>
           </button>
           <h6 className="titButton">Herreria</h6>
         </li>
-        
+
         <li>
           <button onClick={() => buttonSelected("6435bcbe6b3be033805c6f0b")}>
-            <FaBuffer size={38}/>
+            <FaBuffer size={38} />
           </button>
           <h6 className="titButton">Durlock</h6>
         </li>
 
         <li>
           <button onClick={() => buttonSelected("663572d5d3a8037e13e75119")}>
-            < FaCarCrash size={38}/>
+            <FaCarCrash size={38} />
           </button>
           <h6 className="titButton">Mecánicos</h6>
         </li>
@@ -123,14 +124,13 @@ const ServiceProf = () => {
           <h6 className="titButton">TécnicosTV-Phone-Pc</h6>
         </li> */}
 
-        
         <li>
           <button onClick={() => buttonSelected("6636c5d7588a55f048b057c8")}>
-            < BsFillKeyFill size={40}/>
+            <BsFillKeyFill size={40} />
           </button>
           <h6 className="titButton">Cerrajeros</h6>
         </li>
-      
+
         <li>
           <button onClick={() => buttonSelected("6435bcc56b3be033805c6f0d")}>
             {/* <FontAwesomeIcon icon={faTruck} style={{color:"#e0e6f0"}} /> */}
@@ -139,7 +139,6 @@ const ServiceProf = () => {
           <h6 className="titButton">Fletes</h6>
         </li>
 
-   
         {/* <li>
     <button onClick={() => buttonSelected("6435bcbe6b3be033805c6f0b")}>
         <IonIcon name="fitness-outline"></IonIcon>
@@ -176,16 +175,37 @@ const ServiceProf = () => {
         </li>
       </ul>
 
-      <div className="ContainerListComp">
+      <div className="ContainerListComp py-3">
+        <div className="row justify-content-center">
+          {selectCompanies.isLoading == false ? (
+            selectCompanies.companies.map(
+              (company) => (
+                console.log(company),
+                (
+                  <div className="col-12 col-md-4 d-flex justify-content-center mb-1">
+                    <div className="fixed-width-card">
+                      <div className="card-body">
+                        <CompanyServ key={company._id} company={company} />
+                      </div>
+                    </div>
+                  </div>
+                )
+              )
+            )
+          ) : (
+            <div className="titGral">
+              <h1>cargando ....</h1>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* <div className="ContainerListComp">
         {selectCompanies.isLoading == false ? (
           selectCompanies.companies.map(
             (company) => (
               console.log(company),
-              (
-                <div className="ContainerCompany">
-                  <CompanyServ key={company._id} company={company} />
-                </div>
-              )
+              (<CompanyServ key={company._id} company={company} />)
             )
           )
         ) : (
@@ -193,7 +213,7 @@ const ServiceProf = () => {
             <h1>cargando ....</h1>
           </div>
         )}
-      </div>
+      </div> */}
 
       <div className="titGral">
         <h2>PROFESIONALES RECOMENDADOS</h2>
@@ -205,14 +225,14 @@ const ServiceProf = () => {
       <div className="titGral">
         <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
       </div>
-      
-        <ListCompaniesVip />
-      
+
+      <ListCompaniesVip />
 
       <div className="containerWeb">
         <div className="titGral">
-        <h4 className="playfair-display">¿Querés que tu servicio se encuentre en ésta página?</h4>
-
+          <h4 className="playfair-display">
+            ¿Querés que tu servicio se encuentre en ésta página?
+          </h4>
         </div>
         <Link style={{ textDecoration: "none" }} to={`/login`}>
           <div className="titGral">

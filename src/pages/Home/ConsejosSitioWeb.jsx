@@ -7,11 +7,11 @@ import wordPress from "../Home/imagenes/consejosWeb/wordPress.png";
 import mShops from "../Home/imagenes/consejosWeb/mShops.png";
 import shopify from "../Home/imagenes/consejosWeb/shopify2.png";
 //import { Helmet } from 'react-helmet';
-import "./ConsejosSitioWeb.css";
+
 import Swal from "sweetalert2";
 import IonIcon from "@reacticons/ionicons";
 import ButtonDonacion from "./ButtonDonacion";
-import "./ClassGeneralWeb.css";
+
 import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
@@ -68,8 +68,9 @@ const ConsejosSitioWeb = () => {
   return (
     <>
       {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
+
+      <ButtonDonacion />
       <div className="containerGlobalWeb">
-        <ButtonDonacion />
         <div className="titGral">
           <h1>Consejos de un Sitio Web para tu Negocio</h1>
         </div>
@@ -431,13 +432,13 @@ const ConsejosSitioWeb = () => {
           tiempo, economia, ingresos al crear el sitio, etc.{" "}
         </p>
 
-        <ButtonDonacion />
         {/* <div className="containerCompRedes">
       <h3>Comparte Nuestras Publicaciones</h3>
      <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
      <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
      </div> */}
       </div>
+      <ButtonDonacion />
       <ButtonBarBoostrap />
     </>
   );

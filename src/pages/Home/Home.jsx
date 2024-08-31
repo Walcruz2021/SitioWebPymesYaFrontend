@@ -18,7 +18,7 @@ import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue";
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse";
-import "./ClassGeneralWeb.css";
+import "../../css/ClassGeneralWeb.css";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 

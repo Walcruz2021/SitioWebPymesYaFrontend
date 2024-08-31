@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useHistory } from "react-router-dom";
 import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
-import "./ClassGeneralWeb.css";
+import "../../css/ClassGeneralWeb.css";
 
 function LoginFirebase() {
   const history = useHistory();
