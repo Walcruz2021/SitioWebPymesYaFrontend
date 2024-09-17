@@ -1,5 +1,3 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import finviz from "../Home/imagenes/bolsaValores/imgFinViz.png";
 import rsi from "../Home/imagenes/bolsaValores/RSI.png";
@@ -34,7 +32,7 @@ const InversionBolsa2 = () => {
         <meta property="og:image" content={imagen} />
         <meta property="og:url" content={url} />
       </Helmet>
-      <NavBarBoostrap />
+ 
       <ButtonDonacion />
       <div className="containerGlobalWeb">
         <div className="titGral">
@@ -211,7 +209,6 @@ const InversionBolsa2 = () => {
       </div>
       <ButtonDonacion />
 
-      <ButtonBarBoostrap />
     </>
   );
 };

@@ -26,7 +26,10 @@ const CardWinner = ({
       </div>
       <p>{contenido1}</p>
       <p>{contenido2}</p>
+      <div className="imgGral">
       <img src={imagen1} alt={titulo} />
+
+      </div>
       <p>{contenido3}</p>
       <p>{contenido4}</p>
       <p>{contenido5}</p>
@@ -34,7 +37,10 @@ const CardWinner = ({
       <p>{contenido7}</p>
       <p>{contenido8}</p>
       <p>{contenido9}</p>
+      <div className="imgGral">
       <img src={imagen2} alt={titulo} />
+
+      </div>
       <h5>{contenido10}</h5>
 
       {buttonNext ? (

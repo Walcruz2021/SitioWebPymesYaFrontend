@@ -1,9 +1,6 @@
 import "./Finanzas.css";
-import NavBar from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import IonIcon from "@reacticons/ionicons";
 import ButtonDonacion from "./ButtonDonacion";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,8 +31,6 @@ const Finanzas = () => {
 
   return (
     <>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
-
       <ButtonDonacion />
       <div className="containerGlobalWeb">
         <div className="containerLike">
@@ -78,7 +73,11 @@ const Finanzas = () => {
         <div className="titGral">
           <h2>¿Ahora por qué una empresa pondria en venta sus acciones?</h2>
         </div>
-        <img src={panaderia} />
+
+        <div className="imgGral">
+          <img src={panaderia} />
+        </div>
+
         <p>
           Una empresa, de un tamaño considerable, para seguir proyectandose y
           expandiendose necesita vias de financiacion, es decir, capital para
@@ -89,7 +88,9 @@ const Finanzas = () => {
           "Panaderia Don Beto" contará con el capital necesario para seguir
           creciendo.
         </p>
-        <img src={panaderia2} />
+        <div className="imgGral2">
+          <img src={panaderia2}/>
+        </div>
         <p>
           Ademas el cotizar en bolsa implica tener cierto beneficios, como estar
           diariamente en la noticias de índole económicas, ya sea en tv, diario,
@@ -112,7 +113,9 @@ const Finanzas = () => {
         <div className="titGral">
           <h2>Beneficios para el INVERSOR</h2>
         </div>
-        <img src={pepe} />
+        <div className="imgGral2">
+          <img src={pepe}/>
+        </div>
         <p>
           Pepe decidió dejar de seguir guardando su dinero en el colchón, y tomo
           la decisión de sacarle el mejor rendimiento a sus ahorros y es por eso
@@ -135,7 +138,7 @@ const Finanzas = () => {
       </div>
       <ButtonDonacion />
 
-      <ButtonBarBoostrap />
+
     </>
   );
 };

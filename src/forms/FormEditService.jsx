@@ -10,24 +10,21 @@ import {
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
-import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
+import { useNavigate } from "react-router-dom";
+import FormAddService from "../forms/FormAddService";
 
 const FormEditService = (props) => {
-  var userFullName = useSelector((state) => state.userDataName);
-
-  var userEmail = useSelector((state) => state.userDataEmail);
   const validation = useSelector((state) => state.validation);
-  console.log(validation, "walter");
+  //console.log(validation);
   const { idServ } = useParams(); // Obtener el ID de la ruta
-  const arrayServices = useSelector((state) => state.validation.data.search);
 
-  //service that match with parameters id in the url
-  const serviceFilter = arrayServices.find((farm) => farm._id === idServ);
+  const services = useSelector((state) => state.validation.data.search);
 
-  // Ahora puedes usar el ID en tu lógica de componente
-  //console.log(idServ);
+  // //service that match with parameters id in the url
+  const serviceFiltered = services.find((farm) => farm._id === idServ);
+
+  // // Ahora puedes usar el ID en tu lógica de componente
+  // //console.log(idServ);
   const dispatch = useDispatch();
   const MySwal = withReactContent(Swal);
   const options = [
@@ -36,12 +33,12 @@ const FormEditService = (props) => {
     { value: "6435bf606b3be033805c6f13", label: "Plomeria" },
     { value: "6435bcce6b3be033805c6f0f", label: "Albañileria" },
     { value: "6435c24c6b3be033805c6f19", label: "Electricidad" },
-    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" }
+    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" },
   ];
 
-  //select's state (about Category)
+  // //select's state (about Category)
   const [selectedOption, setSelectedOption] = useState(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function handleDelete(idServ) {
     dispatch(deleteService(idServ));
@@ -53,35 +50,44 @@ const FormEditService = (props) => {
     }).then((result) => {
       if (result.isConfirmed) {
         if (validation.status === 200) {
-          //if delete one card of two inserted
-          console.log(validation, "EDIT SERVICE 200");
-          history.push({
-            pathname: "/addService",
-          });
-        } else if (validation.status === 201) {
-          // console.log(validation,"EDIT SERVICE 201")
-          history.push({
-            pathname: "/addEditService",
-          });
+          navigate("/addService");
+          // <FormAddService />
+        } else {
+          navigate("/addEditService");
         }
       }
     });
   }
 
+  const retroBack = () => {
+    if (validation.status === 201) {
+      navigate("/editService");
+    } else {
+      navigate("/addEditService");
+    }
+  };
+
   return (
     <>
-      <NavBarBoostrapLogin user={userFullName} />
       <div className="containerGlobalWeb">
+        <div className="container">
+          <button
+            className="btn btn-outline-secondary"
+            onClick={() => retroBack()}
+          >
+            Volver
+          </button>
+        </div>
         <div className="titGral">
           <h2>EDITE SU SERVICIO</h2>
         </div>
         <Formik
           initialValues={{
-            nameCompany: serviceFilter.nameCompany,
-            phone1: serviceFilter.phone,
-            phone2: serviceFilter.phone2,
-            address: serviceFilter.address,
-            noteService: serviceFilter.noteService,
+            nameCompany: serviceFiltered.nameCompany,
+            phone1: serviceFiltered.phone,
+            phone2: serviceFiltered.phone2,
+            address: serviceFiltered.address,
+            noteService: serviceFiltered.noteService,
           }}
           validate={(values) => {
             const error = {};
@@ -137,10 +143,10 @@ const FormEditService = (props) => {
             return error;
           }}
           onSubmit={async (values, { resetForm }) => {
-            console.log(values);
+            //console.log(values);
             try {
               const editService = {
-                fullName: serviceFilter.fullName,
+                fullName: serviceFiltered.fullName,
                 nameCompany: values.nameCompany,
                 phone: values.phone1,
                 phone2: values.phone2,
@@ -148,7 +154,8 @@ const FormEditService = (props) => {
                 Category: selectedOption.value,
                 country: "Argentina",
                 cityName: "Salta",
-                email: serviceFilter.email,
+
+                email: serviceFiltered.email,
                 noteService: values.noteService,
                 condition: true,
               };
@@ -161,9 +168,12 @@ const FormEditService = (props) => {
               }).then((result) => {
                 if (result.isConfirmed) {
                   resetForm();
-                  history.push({
-                    pathname: "/login",
-                  });
+
+                  if (validation.status === 200) {
+                    navigate("/addEditService");
+                  } else {
+                    navigate("/editService");
+                  }
                 }
               });
             } catch (error) {
@@ -179,7 +189,6 @@ const FormEditService = (props) => {
             handleBlur,
             handleSubmit,
             isSubmitting,
-            /* and other goodies */
           }) => (
             <Form onSubmit={handleSubmit} className="containerForm">
               <label className="form-label">Nombre de Empresa</label>
@@ -272,7 +281,6 @@ const FormEditService = (props) => {
           )}
         </Formik>
       </div>
-      <ButtonBarBoostrap />
     </>
   );
 };

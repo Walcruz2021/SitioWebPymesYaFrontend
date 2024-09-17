@@ -1,4 +1,3 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
 import "./OurCompany.css";
 import desarrollo from "./imagenes/desarrollo.png";
 import diseño from "./imagenes/diseño.png";
@@ -7,16 +6,14 @@ import presupuesto from "./imagenes/presupuesto.png";
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import React, { useEffect, useState } from "react";
 import { auth } from "../../hooks/configFirebase";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin"
 import { useDispatch, useSelector } from "react-redux";
-import {getUserLogin } from "../../reducer/actions";
-
+import { getUserLogin } from "../../reducer/actions";
 
 const OurCompany = () => {
   const [loginUser, setLoginUser] = useState();
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
-  var userFullName = useSelector((state) => state.userDataName)
+  var userFullName = useSelector((state) => state.userDataName);
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
       if (userCred) {
@@ -32,8 +29,6 @@ const OurCompany = () => {
   }, [dispatch, loginUser]);
   return (
     <>
-    {userFullName?<NavBarBoostrapLogin user={userFullName}/>:<NavBar />}
-      
       <div className="containerGlobalWeb">
         <div className="titGral">
           <h1>NUESTRA EMPRESA</h1>
@@ -46,17 +41,21 @@ const OurCompany = () => {
             tu marca y sepan llegar a ella.
           </p>
           <p>
-            Quienes Somos?. Somos un grupo de desarrolladores que tienen como
-            funciones 2 cosas:
+            <h3 className="titGral">Quienes Somos?.</h3>
+
             <p>
-              1) Que las personas que visiten esta página encuentren tu marca,
-              tu negocio, tu bien mas preciado, como una opcion a visitar y
-              conocer
+              Somos un grupo de desarrolladores que tienen como funciones 2
+              cosas:
             </p>
             <p>
-              2) Que adoptes la tecnologia en tu negocio y le saques el máximo
+              1) Que las personas que visiten ésta página encuentren tu marca,
+              tu negocio, tu bien más preciado, como una opción a visitar y
+              conocer.
+            </p>
+            <p>
+              2) Que adoptes la tecnología en tu negocio y le saques el máximo
               provecho ya que te aportará beneficios, no solo económicos, sino
-              una mejora en la imagen de tu empresa
+              una mejora en la imagen de tu empresa.
             </p>
           </p>
 
@@ -88,7 +87,9 @@ const OurCompany = () => {
                 <div className="titGral">
                   <h3>DESARROLLO</h3>
                 </div>
-                <img src={desarrollo}></img>
+                <div className="imgGral2">
+                  <img src={desarrollo}></img>
+                </div>
                 <p>
                   Trabajamos contigo para diseñar una solución pensada en ti y
                   tus usuarios. Desarrollo especializado en soluciones
@@ -113,7 +114,9 @@ const OurCompany = () => {
               </div>
               <div className="carousel-item">
                 <h3>DISEÑOS</h3>
-                <img src={diseño}></img>
+                <div className="imgGral2">
+                  <img src={diseño}></img>
+                </div>
                 <p>
                   El diseño no es solo lo que parece y se siente. El diseño es
                   como funciona ("Steve Jobs")
@@ -128,7 +131,9 @@ const OurCompany = () => {
               </div>
               <div className="carousel-item">
                 <h3>PRESUPUESTO</h3>
-                <img src={presupuesto}></img>
+                <div className="imgGral2">
+                  <img src={presupuesto}></img>
+                </div>
                 {/* <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
                 <p>
                   Tenemos el Conocimiento y la Preocupacion por satisfacer las
@@ -178,8 +183,6 @@ const OurCompany = () => {
           </div>
         </div>
       </div>
-
-      <ButtonBar />
     </>
   );
 };

@@ -1,12 +1,10 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
 import "./Services.css";
 import eccomerce from "./imagenes/ecomerce.jpg";
 import monedero from "./imagenes/monedero.png";
 import sitioWeb from "./imagenes/sitioweb.jpg";
 import software from "./imagenes/softwareEmp.png";
 import IonIcon from "@reacticons/ionicons";
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
+
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,8 +31,6 @@ const Services = () => {
   }, [dispatch, loginUser]);
   return (
     <div>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
-
       <div className="titGral">
         <h1>NUESTROS SERVICIOS</h1>
       </div>
@@ -180,7 +176,6 @@ const Services = () => {
         </div>
       </div>
 
-      <ButtonBar />
     </div>
   );
 };

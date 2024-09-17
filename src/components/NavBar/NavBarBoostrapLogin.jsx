@@ -4,9 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { auth } from "../../hooks/configFirebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSelector,useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Importar Link desde React Router
+import {resetUser} from "../../reducer/actions";
 
 /**
  *  @description 
@@ -34,12 +36,14 @@ import { Link } from "react-router-dom"; // Importar Link desde React Router
 */
 
 function NavBarBoostrapLogin(userProp) {
-  const history = useHistory();
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const dispatch=useDispatch()
+  const userLogedName = useSelector((state) => state.userDataName);
+  const userLogedEmail = useSelector((state) => state.userDataEmail);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+      //setUser(currentUser);
     });
 
     return () => unsubscribe();
@@ -48,34 +52,17 @@ function NavBarBoostrapLogin(userProp) {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      setUser(null); // Actualiza el estado del usuario después del cierre de sesión
-
-      history.push({
-        pathname: "/login",
-      });
+      dispatch(resetUser()) // Actualiza el estado del usuario después del cierre de sesión
+      navigate("/login");
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
     }
   };
 
-  // const handleLogout = async () => {
-  //   console.log(auth, "---->");
-  //   try {
-  //     await signOut(auth);
-
-  //     history.push({
-  //       pathname: "/",
-  //     });
-  //   } catch (error) {
-  //     console.error("Error al cerrar sesion:", error);
-  //   }
-  // };
-
   const handleServices = () => {
-    history.push({
-      pathname: "/login",
-    });
+    navigate("/addService");
   };
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -127,14 +114,23 @@ function NavBarBoostrapLogin(userProp) {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <NavDropdown title={userProp.user} id="basic-nav-dropdown">
-            <NavDropdown.Item onClick={handleLogout}>
-              Cerrar Sesion
-            </NavDropdown.Item>
-            <NavDropdown.Item onClick={handleServices}>
-              Mis Servicios
-            </NavDropdown.Item>
-          </NavDropdown>
+          {userLogedEmail ? (
+            <NavDropdown
+              title={userLogedName ? userLogedName : null}
+              id="basic-nav-dropdown"
+            >
+              <NavDropdown.Item onClick={handleLogout}>
+                Cerrar Sesion
+              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleServices}>
+                Mis Servicios
+              </NavDropdown.Item>
+            </NavDropdown>
+          ) : (
+            <Nav.Link as={Link} to="/login">
+              LOGIN
+            </Nav.Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

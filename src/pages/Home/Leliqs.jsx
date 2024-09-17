@@ -1,5 +1,3 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import imgLeliq from "../Home/imagenes/leliqsInformeImg.png";
 //import { Helmet } from "react-helmet";
@@ -7,7 +5,6 @@ import imgCaputo from "../Home/imagenes/luisCaputo.webp";
 import "./Leliqs.css";
 import ComentaryFace from "../../components/ListNotes/ComentaryFaceHistory";
 import ButtonDonacion from "./ButtonDonacion";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,11 +53,6 @@ const Leliqs = () => {
                 <meta property="og:image" content={imagen} />
                 <meta property="og:url" content={url} />
             </Helmet> */}
-      {userFullName ? (
-        <NavBarBoostrapLogin user={userFullName} />
-      ) : (
-        <NavBarBoostrap />
-      )}
 
       <ButtonDonacion />
       <div className="containerGlobalWeb">
@@ -210,7 +202,9 @@ const Leliqs = () => {
           específicas. Casi como un bombero o un troubleshooter.
         </p>
 
-        <img src={imgCaputo} />
+        <div className="imgGral">
+          <img src={imgCaputo} />
+        </div>
         <p>
           La principal tarea de Caputo consistiría en una operación de
           ingeniería financiera para bajar el stock de las Leliq en poder de los
@@ -258,8 +252,7 @@ const Leliqs = () => {
         <ComentaryFace />
       </div>
 
-        <ButtonDonacion />
-      <ButtonBarBoostrap />
+      <ButtonDonacion />
     </>
   );
 };

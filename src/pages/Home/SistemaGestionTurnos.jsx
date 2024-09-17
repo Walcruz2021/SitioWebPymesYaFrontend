@@ -1,4 +1,3 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
 import "./Services.css";
 import responsiveIcon from "../../icons/responsiveIcon.png";
 import designSample from "../../icons/desingSample.png";
@@ -10,8 +9,6 @@ import informes from "../../icons/informes.png";
 import analisis from "../../icons/analisis.png";
 import checkTurns from "../../icons/checkTurns.png";
 import imgSist from "../../icons/appSist.jpeg";
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import "./SistemaGestionTurnos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { SiSimpleanalytics } from "react-icons/si";
@@ -22,8 +19,6 @@ const SistemaGestionTurnos = () => {
 
   return (
     <div>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
-
       <div className="titGral">
         <h1>GESTION DE TURNOS PYMESYA</h1>
       </div>
@@ -190,7 +185,7 @@ const SistemaGestionTurnos = () => {
           ></iframe>
         </div>
       </div>
-      <ButtonBar />
+  
     </div>
   );
 };

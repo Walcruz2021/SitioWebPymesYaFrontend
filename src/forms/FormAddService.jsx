@@ -11,25 +11,24 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../css/ClassGeneralWeb.css";
 
-/**this component if the validation 205 (all services alloned) at the end it will redirect to /addEditService
- * if validation 200 (one allowed service) at the end it will redirect to /editServices
-*/
+
 
 const FormAddService = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [refreshScreen, setRefreshScreen] = useState(false);
   var userFullName = useSelector((state) => state.userDataName);
-  var userEmail = useSelector((state) => state.userDataEmail);
+  const userEmail = useSelector((state) => state.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
   const validation = useSelector((state) => state.validation);
-  const listCategories=useSelector((state)=>state.listCategories)
+  
+  const listCategories = useSelector((state) => state.listCategories);
 
-  useEffect(() => {
-    dispatch(getUserLogin());
-  }, [dispatch, refreshScreen]);
+  // useEffect(() => {
+  //   dispatch(getUserLogin());
+  // }, [dispatch, refreshScreen]);
 
   useEffect(() => {
     if (userEmail) {
@@ -46,7 +45,7 @@ const FormAddService = () => {
     { value: "6435bf606b3be033805c6f13", label: "Plomeria" },
     { value: "6435bcce6b3be033805c6f0f", label: "Albañileria" },
     { value: "6435c24c6b3be033805c6f19", label: "Electricidad" },
-    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" }
+    { value: "6435c93b6b3be033805c6f21", label: "Pintureria" },
     // { value: "6435bc9d6b3be033805c6f07", label: "Carpinteria" },
     // { value: "6435bcbe6b3be033805c6f0b", label: "Durlock" },
   ];
@@ -56,8 +55,7 @@ const FormAddService = () => {
 
   return (
     <>
-      <NavBarBoostrapLogin user={userFullName} />
-      <div className="containerGlobalWeb">
+      <div className="containerGlobalWeb pb-3">
         <div className="titGral">
           <h2>FORMULARIO DE PRESTACION DE SERVICIO</h2>
         </div>
@@ -145,33 +143,14 @@ const FormAddService = () => {
                 confirmButtonColor: "rgb(21, 151, 67)",
               }).then((result) => {
                 if (result.isConfirmed) {
-                  console.log("SE DEBERIA ENVIAR ---LOGIN");
-                  history.push({
-                    pathname: "/login",
-                  });
+                  //console.log("SE DEBERIA ENVIAR ---LOGIN");
+                  //navigate("/login");
                   resetForm();
-                  if (validation.status === 200) {
-                    console.log(
-                      validation.status,
-                      "-200---no le quedaria mas opciones"
-                    );
-                    history.push("/editServices");
-
-                  } else if (validation.status === 205) {
-                    console.log(
-                      validation.status,
-                      "205----tenia dos ahora le queda uno"
-                    );
-                    history.push({
-                      pathname: "/addEditService",
-                    });
-                   
+                  if (validation.status === 200) { //de 200 a 201 (ya no le quedaria opcion) 
+                    navigate("/editService");
+                  } else {//de 205 a 200 le quedaria una opcion
+                    navigate("/addEditService");
                   }
-                  // else
-                  // console.log("es estatus 200 osea que ya no le quedan opciones")
-                  // history.push({
-                  //   pathname: "/editServices",
-                  //  });
                 }
               });
             } catch (error) {
@@ -267,11 +246,10 @@ const FormAddService = () => {
           )}
         </Formik>
       </div>
-      <ButtonBarBoostrap />
     </>
   );
 };
-
+//<ButtonBarBoostrap />)
 export default FormAddService;
 
 // tengo este error al trabajar con actions y reducer en react ""Actions must be plain objects. Instead, the actual type was: 'function'. You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions"

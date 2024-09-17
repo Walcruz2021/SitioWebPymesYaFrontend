@@ -1,5 +1,3 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import finviz from "../Home/imagenes/bolsaValores/imgFinViz.png";
 import rsi from "../Home/imagenes/bolsaValores/RSI.png";
@@ -11,7 +9,6 @@ import { FacebookProvider, Like, ShareButton } from "react-facebook";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import ButtonDonacion from "./ButtonDonacion";
 import { Link } from "react-router-dom";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -59,11 +56,9 @@ const InversionBolsa = () => {
         <meta property="og:url" content={url} />
       </Helmet>
 
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
+      <ButtonDonacion />
 
-        <ButtonDonacion />
       <div className="containerGlobalWeb">
-
         <div className="titGral">
           <h1>INVERSION EN BOLSA: Conceptos a tener en cuenta</h1>
         </div>
@@ -116,6 +111,7 @@ const InversionBolsa = () => {
           superficialmente. Sólo debes buscar a la compañía en el buscador de la
           página por medio de su etiqueta, en este caso es MSFT.
         </p>
+
         <img src={finviz} />
 
         <h3>SHORT FLOAT</h3>
@@ -152,7 +148,9 @@ const InversionBolsa = () => {
           puede ser una señal de riesgo potencial, pero no debe ser el único
           factor en su análisis de inversión.
         </p>
-        <img src={sFloat} />
+        <div className="imgGral">
+          <img src={sFloat} />
+        </div>
 
         <h3>RSI</h3>
         <p>
@@ -179,7 +177,9 @@ const InversionBolsa = () => {
           NOTA: Generalmente se usa en periodos de índices pero tambien puede
           adaptarse a periodos más cortos o más largos
         </p>
-        <img src={rsi} />
+        <div className="imgGral">
+          <img src={rsi} />
+        </div>
 
         <h3>TARGET PRICE</h3>
         <p>
@@ -218,7 +218,10 @@ const InversionBolsa = () => {
           puede dificultar la compra y venta de acciones en grandes cantidades
           sin afectar el precio
         </p>
-        <img src={avgVolume} />
+
+        <div className="imgGral">
+          <img src={avgVolume} />
+        </div>
 
         <h3>OVERSOLD</h3>
         <p>
@@ -270,7 +273,8 @@ const InversionBolsa = () => {
         <Link to="/inversionBolsaP2">Click Aquí para más Consejos</Link>
       </div>
 
-      <ButtonBarBoostrap />
+      <ButtonDonacion />
+
     </>
   );
 };

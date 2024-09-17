@@ -1,23 +1,26 @@
 import "./CardAddEditService.css";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import addServ from "../../icons/iconAddNote.png";
 import editServ from "../../icons/editService.png";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { validationAddService } from "../../reducer/actions";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "../../css/ClassGeneralWeb.css";
-import { auth } from "../../hooks/configFirebase";
+import FormAddService from "../../forms/FormAddService";
+import CardEditService from "./CardEditService";
+import { useNavigate } from "react-router-dom";
 
 const CardAddEditService = () => {
-  <NavBarBoostrapLogin />;
-  const [loginUser, setLoginUser] = useState(null);
-  const userLogin = useSelector((state) => state.userDataName);
-
+  const navigate = useNavigate();
+  const [buttonActived, seButtonActived] = useState(true);
+  const [formAddServiceActived, seFormAddActived] = useState(false);
+  const [formEditServiceActived, setFormEditServiceActived] = useState(false);
+  const [stateButtonback, setStateButtonBack] = useState(false);
   const emailLogin = useSelector((state) => state.userDataEmail);
+  //const serviceUser = useSelector((state) => state.validation.data.search);
   const serviceUser = useSelector((state) => state.validation.data.search);
-
+  //console.log(serviceUser)
+  const validation = useSelector((state) => state.validation);
+  console.log(validation);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,35 +29,87 @@ const CardAddEditService = () => {
     }
   }, [dispatch]);
 
+  const changeStateAdd = () => {
+    seButtonActived(false);
+    seFormAddActived(true);
+    setStateButtonBack(true);
+    setFormEditServiceActived(false);
+  };
+
+  const changeStateEdit = () => {
+    seButtonActived(false);
+    setFormEditServiceActived(true);
+    setStateButtonBack(true);
+    seFormAddActived(false);
+    navigate(`/editService/${serviceUser[0]._id}`);
+  };
+
+  const changeBack = () => {
+    seButtonActived(true);
+    setStateButtonBack(false);
+    setFormEditServiceActived(false);
+    seFormAddActived(false);
+  };
   return (
     <>
-      <NavBarBoostrapLogin user={userLogin} />
-      <div className="containerCard">
-       
-        <Link to="/addService">
-          <button>
-            <img className="imgCard" src={addServ} alt="icon add service" />
-          </button>
-        </Link>
+      {buttonActived ? (
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <div className="containerCard">
+            <button>
+              <img
+                className="imgCard"
+                src={addServ}
+                alt="icon add service"
+                onClick={() => changeStateAdd()}
+              />
+            </button>
 
-        {serviceUser
-          ? serviceUser.map((serv) => (
-              <Link to={`/editService/${serv._id}`}>
-                <button>
-                  <img
-                    className="imgCard"
-                    src={editServ}
-                    alt="icon edit service"
-                  />
-                </button>
-              </Link>
-            ))
-          : null}
-      </div>
-
-      <ButtonBarBoostrap />
+            <button>
+              <img
+                className="imgCard"
+                src={editServ}
+                alt="icon add service"
+                onClick={() => changeStateEdit()}
+              />
+            </button>
+          </div>
+        </div>
+      ) : formAddServiceActived ? (
+        <>
+          <div className="containerGlobalWeb">
+            <div className="container">
+              <button
+                className="btn btn-outline-secondary"
+                onClick={() => changeBack()}
+              >
+                Volver
+              </button>
+            </div>
+          </div>
+          <FormAddService />
+        </>
+      ) : (
+        <>
+          <button onClick={() => changeBack()}>BACK</button>
+        </>
+      )}
     </>
   );
 };
 
 export default CardAddEditService;
+
+{
+  /* {serviceUser? serviceUser.map((serv) => (
+           <Link to={`/editService/${serv._id}`}>
+             <button>
+               <img
+                 className="imgCard"
+                 src={editServ}
+                 alt="icon edit service"
+               />
+             </button>
+           </Link>
+         ))
+       : null} */
+}

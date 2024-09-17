@@ -1,5 +1,3 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import wixPage from "../Home/imagenes/consejosWeb/wix.png";
 import donWeb from "../Home/imagenes/consejosWeb/donWeb.png";
 import tiendaNube from "../Home/imagenes/consejosWeb/tiendaNube.png";
@@ -12,7 +10,6 @@ import Swal from "sweetalert2";
 import IonIcon from "@reacticons/ionicons";
 import ButtonDonacion from "./ButtonDonacion";
 
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,7 +64,6 @@ const ConsejosSitioWeb = () => {
 
   return (
     <>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
 
       <ButtonDonacion />
       <div className="containerGlobalWeb">
@@ -439,7 +435,6 @@ const ConsejosSitioWeb = () => {
      </div> */}
       </div>
       <ButtonDonacion />
-      <ButtonBarBoostrap />
     </>
   );
 };

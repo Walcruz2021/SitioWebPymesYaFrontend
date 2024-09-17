@@ -1,4 +1,3 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import IonIcon from "@reacticons/ionicons";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -15,10 +14,8 @@ import {
   faHammer,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Servicios.css";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import ListCompaniesVip from "../../components/ListCompanies/ListCompaniesVip";
 import ListProfessionalsVip from "../../components/ListCompanies/ListProfessionalsVip";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
@@ -86,11 +83,7 @@ const ServiceProf = () => {
   };
   return (
     <>
-      {userFullName ? (
-        <NavBarBoostrapLogin user={userFullName} />
-      ) : (
-        <NavBarBoostrap />
-      )}
+     
 
       <div className="titGral">
         <h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
@@ -201,20 +194,6 @@ const ServiceProf = () => {
         </div>
       </div>
 
-      {/* <div className="ContainerListComp">
-        {selectCompanies.isLoading == false ? (
-          selectCompanies.companies.map(
-            (company) => (
-              console.log(company),
-              (<CompanyServ key={company._id} company={company} />)
-            )
-          )
-        ) : (
-          <div className="titGral">
-            <h1>cargando ....</h1>
-          </div>
-        )}
-      </div> */}
 
       <div className="titGral">
         <h2>PROFESIONALES RECOMENDADOS</h2>
@@ -235,14 +214,13 @@ const ServiceProf = () => {
             ¿Querés que tu servicio se encuentre en ésta página?
           </h4>
         </div>
-        <Link style={{ textDecoration: "none" }} to={`/login`}>
+        <Link style={{ textDecoration: "none" }} to={`/addService`}>
           <div className="titGral">
             <h3 className="buttonBanner playfair-display">Clic Aqui</h3>
           </div>
         </Link>
       </div>
 
-      <ButtonBarBoostrap />
     </>
   );
 };

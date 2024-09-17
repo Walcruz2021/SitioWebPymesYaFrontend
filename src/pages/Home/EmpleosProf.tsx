@@ -1,11 +1,6 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
 import IonIcon from '@reacticons/ionicons';
-import React, { useEffect, useState } from 'react'
-import { CompanyFetch } from '../../types/typeApp';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import CompanyEmpleo from '../../components/ListCompanies/Company/CompanyEmpleo';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faTruck,
     faBrush,
@@ -22,7 +17,7 @@ const EmpleosProf = () => {
 
     return (
         <>
-            <NavBarBoostrap />
+           
             
             <div className="ContainerListComp">
             

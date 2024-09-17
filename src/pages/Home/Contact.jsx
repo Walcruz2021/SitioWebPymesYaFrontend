@@ -8,7 +8,6 @@ import {
   Field,
   ErrorMessage,
 } from "formik";
-import NavBar from "../../components/NavBar/NavBarBoostrap";
 import emailjs from "@emailjs/browser";
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import "./Contact.css";
@@ -18,10 +17,9 @@ import { IconBase } from "react-icons/lib";
 import IonIcon from "@reacticons/ionicons";
 import Swal from "sweetalert2";
 import { auth } from "../../hooks/configFirebase";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserLogin } from "../../reducer/actions";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 
 import { useState } from "react";
 
@@ -68,7 +66,7 @@ const InnerForm = () => {
   }, [dispatch, loginUser]);
 
   // const { touched, errors, isSubmitting, message } = props;
-  let history = useHistory();
+  let navigate = useNavigate();
   // useEffect(() => {
   //    setStateInput("false")
   //   }, []);
@@ -95,7 +93,7 @@ const InnerForm = () => {
         message: "",
       });
       //   setTimeout(function(){
-      //    history.push('/')
+      //    navigate.push('/')
       //   },2000)
     } else {
       console.log("mensaje no enviado");
@@ -116,7 +114,7 @@ const InnerForm = () => {
   }
   return (
     <>
-      {userFullName?<NavBarBoostrapLogin user={userFullName}/>:<NavBar />}
+   
       {/* <div className="containerForm">
                 
             </div> */}
@@ -218,7 +216,7 @@ const MyForm = withFormik({
 
     //           resetForm()
     //         //   setTimeout(function(){
-    //         //    history.push('/')
+    //         //    navigate.push('/')
     //         //   },2000)
     // }else{
     //     console.log("mensaje no enviado")

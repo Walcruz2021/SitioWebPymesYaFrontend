@@ -1,5 +1,3 @@
-import NavBar from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import michaelBurry from "../Home/imagenes/bolsaValores/MichaelBurry.jpg";
 import subprime from "../Home/imagenes/bolsaValores/crisisSubprime1.jpg";
 import subprime2 from "../Home/imagenes/bolsaValores/crisisSubprime2.jpg";
@@ -7,7 +5,6 @@ import { Link } from "react-router-dom";
 import IonIcon from "@reacticons/ionicons";
 import "./VariacionesBolsa.css";
 import ButtonDonacion from "./ButtonDonacion";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -34,7 +31,6 @@ const VariacionesBolsa = () => {
   }, [dispatch, loginUser]);
   return (
     <>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBar />}
       <ButtonDonacion />
       <div className="containerGlobalWeb">
         <div className="titGral">
@@ -116,7 +112,9 @@ const VariacionesBolsa = () => {
           <h2>CRISIS SUBPRIME</h2>
         </div>
 
-        <img src={subprime} />
+        <div className="imgGral">
+          <img src={subprime} />
+        </div>
 
         <p>
           La crisis subprime fue una crisis financiera que sucudió la economi­a
@@ -201,7 +199,9 @@ const VariacionesBolsa = () => {
           <h2>CONSECUENCIAS</h2>
         </div>
 
-        <img src={subprime2} />
+        <div className="imgGral">
+          <img src={subprime2} />
+        </div>
 
         <p>
           Aunque la crisis comenzó en los Estados Unidos, rápidamente se propagó
@@ -261,7 +261,7 @@ const VariacionesBolsa = () => {
         <br></br>
       </div>
       <ButtonDonacion />
-      <ButtonBarBoostrap />
+  
     </>
   );
 };

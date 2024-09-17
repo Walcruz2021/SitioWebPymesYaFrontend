@@ -13,9 +13,6 @@ import { Link } from "react-router-dom";
 import IonIcon from "@reacticons/ionicons";
 import rutaBackend from "../../helpers/rutaBackend";
 // import {exportImg} from "./imagenes/icons/hospital.png"
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue";
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse";
 import "../../css/ClassGeneralWeb.css";
@@ -106,7 +103,7 @@ const Home = () => {
 
   return (
     <>
-      {userFullName ? <NavBarBoostrapLogin user={userFullName} />:<NavBarBoostrap />}
+      
       <div className="alert alert-primary">
         <div className="titGral">
         <h3 className="titNewPapers">
@@ -254,7 +251,7 @@ const Home = () => {
         </Link>
       </div>
 
-      <ButtonBarBoostrap />
+    
     </>
   );
 };

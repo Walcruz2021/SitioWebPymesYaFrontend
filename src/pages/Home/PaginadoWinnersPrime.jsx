@@ -1,12 +1,9 @@
 
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap"
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap"
 import CardWinner from "./CardWinner"
 import michaelBurry from "../Home/imagenes/bolsaValores/MichaelBurry.jpg";
 import stevenEisman from "../Home/imagenes/bolsaValores/stevenEisman.jpg";
 import steveCarrel from "../Home/imagenes/bolsaValores/steveCarrel.jpg"
 import cristianBale from "../Home/imagenes/bolsaValores/cristianBale.jpg"
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
@@ -140,7 +137,6 @@ const PaginadoWinnersPrime = () => {
 
     return (
         <>
-            {userFullName ? <NavBarBoostrapLogin user={userFullName} /> : <NavBarBoostrap />}
 
             <div className="containerHistory">
                 <CardWinner
@@ -163,7 +159,7 @@ const PaginadoWinnersPrime = () => {
                     buttonNext={buttonNext}
                 />
             </div>
-            <ButtonBarBoostrap />
+        
         </>
     );
 }

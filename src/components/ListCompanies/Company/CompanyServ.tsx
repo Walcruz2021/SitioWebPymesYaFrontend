@@ -39,7 +39,6 @@ const CompanyServ = ({ company }: Props) => {
 
     return (
         <>
-
             <div className="CardCompany">
                 <Card className="">
                     <div className="d-flex justify-content-center p-2">
@@ -52,13 +51,13 @@ const CompanyServ = ({ company }: Props) => {
                     </div>
                     <Card.Body className="bg-success p-2 text-dark bg-opacity-10">
                         <Card.Title style={{ color: '#e8e8e8' }} className="text-center fs-5">
-                            Informacion Cliente
+                        {company.nameCompany ? company.nameCompany : "Sin Dato"}
                         </Card.Title>
                     </Card.Body>
                     <ListGroup>
                         <ListGroup.Item style={{ color: "#424242" }}>
                             <MdHomeRepairService style={{ marginRight: "10px", fontSize: "24px" }} />
-                            {company.nameCompany ? company.nameCompany : "Sin Dato"}
+                           DESCRIPCIONES
                         </ListGroup.Item>
                         <ListGroup.Item style={{ color: "#424242" }}>
                             <IoPersonAdd style={{ marginRight: "10px", fontSize: "24px" }} />

@@ -1,7 +1,5 @@
 import Note from "./Note/Note";
 import useFetchNote from "../../hooks/useFetchNote";
-import NavBarBoostrap from "../NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../ButtonBar/ButtonBarBoostrap";
 import "./listNotes.css";
 import ComentaryFace from "./ComentaryFaceHistory";
 import ButtonDonacion from "../../pages/Home/ButtonDonacion";
@@ -9,8 +7,6 @@ import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { getUserLogin } from "../../reducer/actions";
-import NavBarBoostrapLogin from "../../components/NavBar/NavBarBoostrapLogin";
-
 
 const ListNotes = (codigo) => {
   const [loginUser, setLoginUser] = useState();
@@ -32,7 +28,7 @@ const ListNotes = (codigo) => {
     }
   }, [dispatch, loginUser]);
   const { notes, isLoading } = useFetchNote();
-  console.log(notes);
+
   const [historiaActual, setHistoriaActual] = useState(0);
   const [buttonBack, setButtonBack] = useState(false);
   const [buttonNext, setButtonNext] = useState(true);
@@ -92,8 +88,6 @@ const ListNotes = (codigo) => {
 
   return (
     <>
-    {userFullName ? <NavBarBoostrapLogin user={userFullName}/>:<NavBarBoostrap />}
-      
       <div className="containerListNotes">
         <div className="contenedorTitulos">
           {notes
@@ -103,7 +97,7 @@ const ListNotes = (codigo) => {
                 </div>
               ))
             : null}
-        </div>
+        </div>  
 
         <Note
           note={notes[historiaActual]}
@@ -113,7 +107,7 @@ const ListNotes = (codigo) => {
           buttonNext={buttonNext}
         />
       </div>
-      <ButtonBarBoostrap />
+
     </>
   );
 };

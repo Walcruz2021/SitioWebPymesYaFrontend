@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import * as Yup from 'yup';
 import { withFormik, FormikProps, FormikErrors, Form, Field, ErrorMessage } from 'formik';
-import NavBar from "../../components/NavBar/NavBarBoostrap"
 import emailjs from "@emailjs/browser"
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import "./ContactPubli.css"
@@ -11,7 +10,7 @@ import { IconBase } from 'react-icons/lib';
 import IonIcon from '@reacticons/ionicons';
 import Swal from 'sweetalert2'
 
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useState } from "react";
 
@@ -45,7 +44,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
 
 
     const { touched, errors, isSubmitting, message } = props;
-    let history = useHistory()
+    let history = useNavigate()
     // useEffect(() => {
     //    setStateInput("false")
     //   }, []);
@@ -99,7 +98,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
     }
     return (
         <>
-            <NavBar />
+           
             {/* <div className="containerForm">
                 
             </div> */}

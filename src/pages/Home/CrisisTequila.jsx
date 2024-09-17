@@ -1,5 +1,3 @@
-import NavBarBoostrap from "../../components/NavBar/NavBarBoostrap";
-import ButtonBarBoostrap from "../../components/ButtonBar/ButtonBarBoostrap";
 import "./InversionBolsa.css";
 import imgCrisis from "../Home/imagenes/crisisMexico/crisisTequila.jpg";
 import imgPresidente from "../Home/imagenes/crisisMexico/CambioMando.jpg";
@@ -34,9 +32,9 @@ const CrisisTequila = () => {
         <meta property="og:image" content={imagen} />
         <meta property="og:url" content={url} />
       </Helmet>
-      <NavBarBoostrap />
+
+      <ButtonDonacion />
       <div className="containerGlobalWeb">
-        <ButtonDonacion />
         <div className="titGral">
           <h1>CRISIS DE MEXICO: EFECTO TEQUILA</h1>
         </div>
@@ -106,12 +104,11 @@ const CrisisTequila = () => {
           incluida la industria del tequila, y por eso se le dio ese nombre.
         </p>
 
-<div className="titGral">
-        <h3>
-          La Devaluación y el Error de Diciembre: Punto de Origen de la Crisis
-        </h3>
-
-</div>
+        <div className="titGral">
+          <h3>
+            La Devaluación y el Error de Diciembre: Punto de Origen de la Crisis
+          </h3>
+        </div>
 
         <p>
           Como se habia mencionado, ésta crisis se presentó en el cambio de
@@ -303,12 +300,11 @@ const CrisisTequila = () => {
           alcanzaría solo para cubrir los intereses generados.
         </p>
 
-        <ButtonDonacion />
-
         <ComentaryFaceTequila />
       </div>
 
-      <ButtonBarBoostrap />
+      <ButtonDonacion />
+
     </>
   );
 };
