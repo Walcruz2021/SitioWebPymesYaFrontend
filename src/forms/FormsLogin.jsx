@@ -157,10 +157,10 @@ function FormsLogin({ autUser }) {
           <div className="logoForm text-center">
             <img src={logoNew} style={{ width: "185px" }} alt="logo" />
 
-            <h4 className="titGral mt-1 mb-3 pb-1">Gestion de Turnos PY</h4>
+            <h4 className="titGral mt-1 mb-3 pb-1">LOGIN AL SISTEMA</h4>
           </div>
 
-          <p className="text-center">LOGIN AL SISTEMA</p>
+   
           <div className="login-form">
             <div className="group">
               <label className="form-label pt-3 pb-1">

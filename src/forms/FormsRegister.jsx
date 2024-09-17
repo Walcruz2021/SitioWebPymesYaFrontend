@@ -224,10 +224,9 @@ function FormRegister({ autUser }) {
             <div className="logoForm text-center">
               <img src={logoNew} style={{ width: "185px" }} alt="logo" />
 
-              <h4 className="titGral mt-1 mb-3 pb-1">Gestion de Turnos PY</h4>
+              <h4 className="titGral mt-1 mb-3 pb-1">REGISTRO AL SISTEMA</h4>
             </div>
 
-            <p className="text-center">REGISTRO AL SISTEMA</p>
             <label className="form-label">Nombre *</label>
 
             <MDBInput
