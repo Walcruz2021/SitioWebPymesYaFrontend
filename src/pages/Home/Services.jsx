@@ -30,7 +30,7 @@ const Services = () => {
     }
   }, [dispatch, loginUser]);
   return (
-    <div>
+    <div className="container">
       <div className="titGral">
         <h1>NUESTROS SERVICIOS</h1>
       </div>
@@ -63,7 +63,10 @@ const Services = () => {
             <h4>ECOMMERCE</h4>
           </div>
           <div className="CardCont">
+            <div className="imgGral">
             <img src={eccomerce}></img>
+
+            </div>
 
             <p>
               eCommerce o Comercio Electronico es la practica de comprar y
@@ -151,7 +154,7 @@ const Services = () => {
       </div>
 
       <div className="Card3">
-        <div className="ImgClass">
+        <div className="ImgClass imgGral">
           <img src={sitioWeb}></img>
         </div>
 

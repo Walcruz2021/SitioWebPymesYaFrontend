@@ -57,7 +57,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                     clasifiedTitle(key) ? <h1>{note[key]}</h1> : clasifiedParagraph(key) ? <p>{note[key]}</p> : clasifiedImg(key) ? <img src={note[key]} alt="MDN" /> : null
                 ))} */}
                 {noteKeys.map((key, index) => (
-                    clasifiedTitle(key) ? <div className="titGral"><h1 key={index}>{note[key]}</h1></div> : clasifiedParagraph(key) ? <p key={index}>{note[key]}</p> : clasifiedImg(key) ? <div className="imgGral"><img className="w-50"key={index} src={note[key]} alt="MDN" /></div> : null
+                    clasifiedTitle(key) ? <div className="titGral"><h1 key={index}>{note[key]}</h1></div> : clasifiedParagraph(key) ? <p key={index}>{note[key]}</p> : clasifiedImg(key) ? <div className="imgGral"><img  key={index} src={note[key]} alt="MDN" /></div> : null
                 ))}
                 {buttonNext ? (
                     <button className="buttonNote" onClick={siguiente}>
