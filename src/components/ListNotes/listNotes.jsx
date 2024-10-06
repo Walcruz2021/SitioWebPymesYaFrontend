@@ -29,6 +29,7 @@ const ListNotes = (codigo) => {
   }, [dispatch, loginUser]);
   const { notes, isLoading } = useFetchNote();
 
+
   const [historiaActual, setHistoriaActual] = useState(0);
   const [buttonBack, setButtonBack] = useState(false);
   const [buttonNext, setButtonNext] = useState(true);

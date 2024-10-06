@@ -5,7 +5,7 @@ import useFetchVip from '../../hooks/useFetchVip';
 import { ProductItem } from '../../types/typeApp';
 import Company from './Company/Company';
 import "./ListCompanies.css"
-
+import {Spin } from 'react-swift-reveal';
 const ListCompanies = (codigo:any) => {
 
     const { companies, isLoading } = useFetchVip();
@@ -19,10 +19,13 @@ const ListCompanies = (codigo:any) => {
                 companies && companies.map(company => (
                     <div>
                         <Link style={{ textDecoration: 'none'}}  to={`/detailsCompany/${company._id}`}>
+                            <Spin duration={1500} delay={900} distance="30px">
                             <Company
                                 key={company._id}
                                 company={company}
                             />
+
+                            </Spin>
                         </Link>
                     </div>
                 ))
