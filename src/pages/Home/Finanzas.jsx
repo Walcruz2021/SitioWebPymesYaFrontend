@@ -5,8 +5,8 @@ import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
-const panaderia = require("./imagenes/panaderiaBeto.png");
-const panaderia2 = require("./imagenes/panaderiaBeto2.png");
+const vtaAcciones = require("./imagenes/vtaAcciones.jpg");
+const panaderia2 = require("./imagenes/panaderiaBeto2.jpg");
 const pepe = require("./imagenes/Pepe.png");
 
 const Finanzas = () => {
@@ -71,19 +71,19 @@ const Finanzas = () => {
           tienen necesidad de capital para llevar adelante sus proyectos.
         </p>
         <div className="titGral">
-          <h2>¿Ahora por qué una empresa pondria en venta sus acciones?</h2>
+          <h2>¿Ahora por qué una empresa pondría en venta sus acciones?</h2>
         </div>
 
         <div className="imgGral">
-          <img src={panaderia} />
+          <img src={vtaAcciones} />
         </div>
 
         <p>
-          Una empresa, de un tamaño considerable, para seguir proyectandose y
-          expandiendose necesita vias de financiacion, es decir, capital para
+          Una empresa, de un tamaño considerable, para seguir proyectándose y
+          expandiendose necesita vías de financiacion, es decir, capital para
           seguir creciendo. Pondré de ejemplo a "la Panaderia Don Beto" Al
           cotizar en la bolsa, permite que un abuelito, un policia o cualquier
-          otra persona sin distinguir religion, ocupacion, nivel social, etc
+          otra persona sin distinguir religión, ocupación, nivel social, etc
           pueda invertir sus ahorros en esta empresa. De esta manera la
           "Panaderia Don Beto" contará con el capital necesario para seguir
           creciendo.
@@ -92,7 +92,7 @@ const Finanzas = () => {
           <img src={panaderia2}/>
         </div>
         <p>
-          Ademas el cotizar en bolsa implica tener cierto beneficios, como estar
+          Además el cotizar en bolsa, implica tener cierto beneficios, como estar
           diariamente en la noticias de índole económicas, ya sea en tv, diario,
           revistas etc. Y eso produce publicidad, ya sea positiva o negativa
           dependiendo del caso. Por otro lado para cotizar en bolsa, la empresa
@@ -101,11 +101,11 @@ const Finanzas = () => {
           saber la situación financiera de las compañi­as. Las bolsas de valores
           son reguladas, supervisadas y controladas por los Estados Nacionales,
           esto implica que obligadamente sus contabilidades sean transparentes y
-          ordenadas, sometiendose continuamente a auditorias que reflejen su
+          ordenadas, sometiéndose continuamente a auditorias que reflejen su
           imagen.
         </p>
         <p>
-          Como la accion de una empresa equivale a dinero, a muchos de los
+          Como la acción de una empresa equivale a dinero, a muchos de los
           empleados se les paga con acciones y eso provoca un incentivo al
           empleado de que trabaje mejor de manera de que la accion suba Por
           tanto las acciones motivan, incentivan y premian al trabajador.
@@ -117,7 +117,7 @@ const Finanzas = () => {
           <img src={pepe}/>
         </div>
         <p>
-          Pepe decidió dejar de seguir guardando su dinero en el colchón, y tomo
+          Pepe decidió dejar de seguir guardando su dinero en el colchón, y tomó
           la decisión de sacarle el mejor rendimiento a sus ahorros y es por eso
           que decidió invertir su capital en la empresa "Panaderia Don Beto". La
           acción que compró Pepe, equivale a una pequeña parte de esa panaderia

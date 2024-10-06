@@ -18,12 +18,16 @@ import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompa
 import "../../css/ClassGeneralWeb.css";
 import { getUserLogin } from "../../reducer/actions";
 import { auth } from "../../hooks/configFirebase";
+import { Fade } from "react-swift-reveal";
+import { Bounce } from "react-swift-reveal";
+import { Flip } from 'react-swift-reveal';
+import {Jump} from 'react-swift-reveal';
+ 
 
 const Home = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
   const userFullName = useSelector((state) => state.userDataName);
-
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
       if (userCred) {
@@ -103,12 +107,11 @@ const Home = () => {
 
   return (
     <>
-      
       <div className="alert alert-primary">
         <div className="titGral">
-        <h3 className="titNewPapers">
-          ¡Agregamos nuevo contenido en Inversión en Bolsa!
-        </h3>
+          <h3 className="titNewPapers">
+            Sistema de Gestión de Turnos en la opción Tecnologías
+          </h3>
         </div>
       </div>
 
@@ -117,7 +120,7 @@ const Home = () => {
         <h2>SELECCIONA UNA CATEGORIA</h2>
       </div>
 
-      <ul className="containerButtons">
+      <ul className="containerButtons imgFondo">
         <li>
           <button onClick={() => buttonSelected("63c87cc2a40ae240e81e0e13")}>
             <IonIcon name="business-outline"></IonIcon>
@@ -236,22 +239,23 @@ const Home = () => {
         <h2>LAS MEJORES EMPRESAS A TU DISPOSICION</h2>
       </div>
 
-      
-      <ListCompaniesVip />
-      
+        <ListCompaniesVip />
+ 
 
-      <div className="containerWeb">
-        <div className="titGral">
-        <h4 className="playfair-display">¿Querés que tu empresa se encuentre en ésta página?</h4>
-        </div>
-        <Link style={{ textDecoration: "none" }} to={`/contact`}>
+      <Flip duration={1000} delay={900} distance="30px">
+        <div className="containerWeb imgFondo">
           <div className="titGral">
-            <h3 className="buttonBanner playfair-display">Clic Aqui</h3>
+            <h4 className="playfair-display">
+              ¿Querés que tu empresa se encuentre en ésta página?
+            </h4>
           </div>
-        </Link>
-      </div>
-
-    
+          <Link style={{ textDecoration: "none" }} to={`/contact`}>
+            <div className="titGral">
+              <h3 className="buttonBanner playfair-display">Clic Aqui</h3>
+            </div>
+          </Link>
+        </div>
+      </Flip>
     </>
   );
 };

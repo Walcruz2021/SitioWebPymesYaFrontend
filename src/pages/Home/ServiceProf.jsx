@@ -89,7 +89,7 @@ const ServiceProf = () => {
         <h2>SELECCIONE UNA CATEGORIA DE SERVICIO</h2>
       </div>
 
-      <ul className="containerButtons">
+      <ul className="containerButtons imgFondo">
         <li>
           <button onClick={() => buttonSelected("6435bcb66b3be033805c6f09")}>
             <IonIcon name="train-outline"></IonIcon>
@@ -208,7 +208,7 @@ const ServiceProf = () => {
 
       <ListCompaniesVip />
 
-      <div className="containerWeb">
+      <div className="containerWeb imgFondo">
         <div className="titGral">
           <h4 className="playfair-display">
             ¿Querés que tu servicio se encuentre en ésta página?
