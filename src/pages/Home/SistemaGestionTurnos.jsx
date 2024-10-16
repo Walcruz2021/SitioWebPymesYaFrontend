@@ -13,6 +13,9 @@ import "./SistemaGestionTurnos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { SiSimpleanalytics } from "react-icons/si";
 import { RiExchangeDollarFill } from "react-icons/ri";
+import { Bounce   } from 'react-swift-reveal';
+import { LightSpeed  } from 'react-swift-reveal';
+import { Flip } from 'react-swift-reveal';
 
 const SistemaGestionTurnos = () => {
   const userFullName = useSelector((state) => state.userDataName);
@@ -38,24 +41,31 @@ const SistemaGestionTurnos = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-4 d-flex justify-content-center mb-1">
               <div className="text-center">
+              <Bounce   duration={500} delay={900} distance="30px">
                 <div className="card-body">
                   <img src={responsiveIcon} />
                 </div>
                 <p>Accesible de cualquier dispositivo</p>
+                </Bounce  >
               </div>
             </div>
 
             <div className="col-12 col-md-4 d-flex justify-content-center mb-1">
               <div className="text-center">
-                <div className="card-body">
+              <Bounce   duration={500} delay={900} distance="30px">
+              <div className="card-body">
                   <img src={designSample} />
                 </div>
                 <p>Interfaz Sencilla y Amigable</p>
+              </Bounce>
+                
               </div>
             </div>
 
             <div className="col-12 col-md-4 d-flex justify-content-center mb-1">
               <div className="text-center">
+              <Bounce   duration={500} delay={900} distance="30px">
+
                 <div className="card-body">
                   <img src={installSample} />
                 </div>
@@ -63,6 +73,8 @@ const SistemaGestionTurnos = () => {
                   No requiere instalación. Accedé desde cualquier punto con
                   internet o datos moviles
                 </p>
+
+              </Bounce>
               </div>
             </div>
           </div>
@@ -76,7 +88,8 @@ const SistemaGestionTurnos = () => {
           <div className="">
             <div className="row justify-content-center">
               <div className="col-12 col-md-5 d-flex justify-content-center">
-                <div className="card-body">
+              <LightSpeed   duration={500} delay={900} distance="30px">
+              <div className="card-body">
                   <h5>
                     <IoAnalyticsSharp size={50} className="m-2" />
                     Acceso de Información
@@ -135,14 +148,22 @@ const SistemaGestionTurnos = () => {
                     Accedé al Sistema
                   </a>
                 </div>
+
+              </LightSpeed>
+
+               
               </div>
 
               <div className="col-12 col-md-4 d-flex justify-content-center">
+              <Flip duration={1000} delay={3000} distance="30px">
+
                 <div className="card-body">
                   <div className="imgSist">
                     <img src={imgSist} />
                   </div>
                 </div>
+              </Flip>
+
               </div>
             </div>
           </div>
