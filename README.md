@@ -32,7 +32,7 @@ PymesYa es una plataforma diseñada para optimizar la búsqueda de negocios y pr
 - ✅ Gestión de Búsquedas: Incluye un sistema avanzado de filtros para que los visitantes puedan encontrar fácilmente negocios o prestadores de servicios específicos.
 - ✅ Consejos: Proporciona información valiosa sobre inversiones en bolsa, tecnologías para aplicar en negocios y estrategias para mejorar la competitividad empresarial.
 - ✅ Historias Inspiradoras: Publica historias de los mejores empresarios del mundo, mostrando cómo fundaron sus empresas y el camino que recorrieron para alcanzar el éxito. Estas historias buscan inspirar y motivar a los emprendedores.
-🚀 Impacto: Promueve el crecimiento de las pequeñas y medianas empresas, brindándoles herramientas y conocimiento para competir en un entorno global.
+- 🚀 Impacto: Promueve el crecimiento de las pequeñas y medianas empresas, brindándoles herramientas y conocimiento para competir en un entorno global.
 
 # 📝 Características del Frontend
 
