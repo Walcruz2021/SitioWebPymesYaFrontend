@@ -1,7 +1,7 @@
 ### Build a MERN (MongoDB | Express | ReactJS | Nodejs)
 
 <p align="center">
-  <a href="https://www.pymesya.com/tecnologias/sistemaGestionTurnos/" target="blank"><img src="../BackendAppOmar/LogoNew.png" width="200" alt="SISTEMA DE GESTION DE TURNO PY" /></a>
+  <a href="https://www.pymesya.com" target="blank"><img src="../FontendTiendaVirtual/LogoNew.png" width="200" alt="SITIO OFICIAL PYMESYA" /></a>
 </p>
 
 # Ejecutar en desarrollo
