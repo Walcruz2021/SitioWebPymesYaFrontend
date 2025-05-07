@@ -4,7 +4,7 @@ import michaelBurry from "../Home/imagenes/bolsaValores/MichaelBurry.jpg";
 import stevenEisman from "../Home/imagenes/bolsaValores/stevenEisman.jpg";
 import steveCarrel from "../Home/imagenes/bolsaValores/steveCarrel.jpg"
 import cristianBale from "../Home/imagenes/bolsaValores/cristianBale.jpg"
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";

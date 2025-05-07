@@ -5,7 +5,7 @@ import imgCaputo from "../Home/imagenes/luisCaputo.webp";
 import "./Leliqs.css";
 import ComentaryFace from "../../components/ListNotes/ComentaryFaceHistory";
 import ButtonDonacion from "./ButtonDonacion";
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";

@@ -17,7 +17,7 @@ import "./Servicios.css";
 import ListCompaniesVip from "../../components/ListCompanies/ListCompaniesVip";
 import ListProfessionalsVip from "../../components/ListCompanies/ListProfessionalsVip";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 import { auth } from "../../hooks/configFirebase";
 import { FaBuffer } from "react-icons/fa";
 import { FaCarCrash } from "react-icons/fa";

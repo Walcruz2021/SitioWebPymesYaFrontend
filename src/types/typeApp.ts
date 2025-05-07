@@ -74,6 +74,13 @@ export type CompanyItem = {
   levelPay: string;
 };
 
+export type NewPaperItem={
+  _id: number,
+  img1:string,
+  title1:string
+  paragraph1:string
+}
+
 export type ServiceItem = {
   _id: number;
   avatar: any;

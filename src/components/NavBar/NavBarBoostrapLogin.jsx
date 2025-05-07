@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Importar Link desde React Router
-import {resetUser} from "../../reducer/actions";
+import {resetUser} from "../../store/actions/actions";
 
 /**
  *  @description 
@@ -79,6 +79,12 @@ function NavBarBoostrapLogin(userProp) {
             <Nav.Link as={Link} to="/servicios">
               SERVICIOS
             </Nav.Link>
+
+            <Nav.Link as={Link} to="/negocios">
+              NEGOCIOS
+            </Nav.Link>
+
+
             <Nav.Link as={Link} to="/histories">
               HISTORIAS
             </Nav.Link>

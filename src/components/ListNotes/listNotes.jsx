@@ -6,7 +6,7 @@ import ButtonDonacion from "../../pages/Home/ButtonDonacion";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 
 const ListNotes = (codigo) => {
   const [loginUser, setLoginUser] = useState();

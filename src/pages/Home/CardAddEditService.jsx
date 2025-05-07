@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useState, useEffect } from "react";
 import addServ from "../../icons/iconAddNote.png";
 import editServ from "../../icons/editService.png";
-import { validationAddService } from "../../reducer/actions";
+import { validationAddService } from "../../store/actions/actions";
 import "../../css/ClassGeneralWeb.css";
 import FormAddService from "../../forms/FormAddService";
 import CardEditService from "./CardEditService";
