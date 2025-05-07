@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/",
+        "has": [{ "type": "host", "value": "pymesya.com.ar" }],
+        "destination": "https://www.pymesya.com.ar",
+        "permanent": true
+      }
+    ]
+  }
