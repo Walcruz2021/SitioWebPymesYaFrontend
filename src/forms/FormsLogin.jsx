@@ -16,7 +16,7 @@ import {
   addUser,
   verificationCompaniesExist,
   listenToAuthChanges,
-} from "../../src/reducer/actions";
+} from "../store/actions/actions";
 import ModalRestPassword from "../modals/ModalRestPassword";
 import "./FormsLoginAndRegister.css";
 import { RiLockPasswordFill } from "react-icons/ri";

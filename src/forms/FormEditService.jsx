@@ -6,7 +6,7 @@ import {
   editServiceUser,
   getCompanyByUser,
   deleteService,
-} from "../reducer/actions";
+} from "../store/actions/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";

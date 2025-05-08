@@ -1,0 +1,34 @@
+
+
+.containerAds{
+    background-color: black;
+    background-image: url('../Home/imagenes/cartelPUBLICIDAD.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* La imagen cubrirá todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 90%;
+    text-align: center;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 1rem; /* Añade un poco de espacio interno */
+}
+
+.containerAds h1,h3{
+    color: white;
+    text-align: center;
+}
+
+
+.iconoInstagram{
+    width: 20px;
+    height: 20px;
+    margin: 0 10px; /* Espacio entre los iconos */
+}
+
+.containerAds2 h3{
+    font-size: 1rem;
+}
+.containerAds2{
+    display: flex; /* Aplica flexbox para alinear los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+}

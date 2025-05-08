@@ -1,0 +1,26 @@
+.CardNewPaper {
+    background-color: white;
+    overflow: hidden;
+    transition: all 400ms ease;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* importante para que todas usen el mismo alto de celda */
+}
+
+.imgContainerNewPaper {
+    height: 200px; /* altura fija */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgCardNewPaper {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* hace que la imagen rellene sin deformarse */
+    display: block;
+}

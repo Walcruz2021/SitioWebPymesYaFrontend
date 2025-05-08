@@ -49,15 +49,6 @@ body{
     cursor: pointer;
 }
 
-/* .containerWeb{
-    padding: 1rem;
-    background-image: url(../Home/imagenes/sitioweb2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    margin-top: 15px;
-} */
 
 .containerWeb{
   background: black;

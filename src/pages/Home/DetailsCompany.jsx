@@ -14,7 +14,7 @@ import IonIcon from "@reacticons/ionicons";
 import rutaBackend from "../../helpers/rutaBackend";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../hooks/configFirebase";
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 
 const DetailsCompany = () => {
   const [loginUser, setLoginUser] = useState();

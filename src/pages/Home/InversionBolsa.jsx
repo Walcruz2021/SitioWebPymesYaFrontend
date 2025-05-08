@@ -9,7 +9,7 @@ import { FacebookProvider, Like, ShareButton } from "react-facebook";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 import ButtonDonacion from "./ButtonDonacion";
 import { Link } from "react-router-dom";
-import { getUserLogin } from "../../reducer/actions";
+import { getUserLogin } from "../../store/actions/actions";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";

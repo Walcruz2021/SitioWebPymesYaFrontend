@@ -6,7 +6,7 @@ import {
   addCompanyService,
   getUserLogin,
   validationAddService,
-} from "../reducer/actions";
+} from "../store/actions/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";

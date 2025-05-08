@@ -11,7 +11,8 @@ import {
   ADD_USER,
   VERIFICATION_COMPANY_EXISTS,
   RESET_USER
-} from "./actions";
+} from "../actions/actions";
+
 
 const initialState = {
   validation: [],
@@ -20,6 +21,7 @@ const initialState = {
   companiesByUser: null,
   userEmailSearch: null,
   listCategories: [],
+  listNewsPaper: [],
 };
 
 function rootReducer(state = initialState, action) {

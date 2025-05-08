@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
 import ContactPubli from "./pages/Home/ContactPubli";
 import DetailsCompany from "./pages/Home/DetailsCompany";
+import DetailsNewPaper from "./components/ListNewsPaper/NewPaper/DetailsNewPaper"
 import OurCompany from "./pages/Home/OurCompany";
 import Services from "./pages/Home/Services";
 import ServiceProf from "./pages/Home/ServiceProf";
@@ -31,8 +32,11 @@ import SistemaGestionTurnos from "./pages/Home/SistemaGestionTurnos";
 import FormsRegister from "../src/forms/FormsRegister";
 import NavBarBoostrapLogin from "./components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "./components/ButtonBar/ButtonBarBoostrap";
-import { getUserLogin } from "../src/reducer/actions";
+import { getUserLogin } from "./store/actions/actions";
 import CardAddService from "./pages/Home/CardAddService";
+import Negocios from "./pages/Home/Negocios";
+import News from "./components/Notes/News";
+import "./App.css";
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
@@ -76,13 +80,15 @@ const App = () => {
     <BrowserRouter>
       <NavBarBoostrapLogin />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<News/>} />
+        <Route path="/negocios" element={<Negocios />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ourCompany" element={<OurCompany />} />
 
         <Route path="/services" element={<Services />} />
 
         <Route path="/detailsCompany/:id" element={<DetailsCompany />} />
+        <Route path="/detailSNewPaper/:id" element={<DetailsNewPaper />} />
 
         <Route path="/contactPubli" element={<ContactPubli />} />
 
@@ -123,13 +129,6 @@ const App = () => {
         <Route path="/addService" element={<FormAddService />} />
         <Route path="/login" element={<LoginFirebase />} /> */}
 
-        {/* Redirecciona a login si intentan acceder a rutas protegidas sin autenticación */}
-
-        <Route
-          path="*"
-          element={<Navigate to={isAuthenticated ? "/" : "/login"} />}
-        />
-
         <Route path="/addEditService" element={<CardAddEditService />} />
 
         <Route
@@ -140,6 +139,12 @@ const App = () => {
         <Route path="*" element={<Error404 />} /> */}
 
         <Route path="/register" element={<FormsRegister />} />
+        
+        {/* Redirecciona a login si intentan acceder a rutas protegidas sin autenticación */}
+        <Route
+          path="*"
+          element={<Navigate to={isAuthenticated ? "/" : "/login"} />}
+        />
       </Routes>
       <ButtonBarBoostrap/>
     </BrowserRouter>

@@ -1,0 +1,40 @@
+.containerDetailNewPaper{
+    padding:2rem;
+}
+
+.summary{
+    font-size:1rem;
+    color: #5d6d7e;
+    margin: 0;
+}
+
+.paragraph{
+    font-size: 1.2rem;
+    color: #5d6d7e;
+    margin-top: 1rem;
+}
+
+.imgContainerDetailsNewPaper {
+    height: 500px; /* Aumenta la altura para que sea más cuadrada */
+    width: 700px; /* Ajusta el ancho para que coincida con la altura */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    display: flex; /* Flexbox para centrar la imagen */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .imgContainerDetailsNewPaper {
+        height: 70vw; /* Ajusta la altura para pantallas pequeñas */
+        width: 80vw; /* Ajusta el ancho para pantallas pequeñas */
+    }
+}
+
+.separator {
+    border: none; /* Elimina el borde predeterminado */
+    border-top: 2px solid #d3d3d3; /* Línea gris */
+    width: 100%; /* Abarca toda la pantalla */
+    margin-bottom: 0.5rem 0; /* Espaciado superior e inferior */
+  }

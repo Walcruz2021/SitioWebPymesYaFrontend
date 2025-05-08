@@ -1,0 +1,21 @@
+
+/*repeat(auto-fit, minmax(220px, 1fr)): crea tantas columnas como entren, con un ancho mínimo de 220px cada una, y máximo 1fr (fracción del espacio disponible).
+Se adapta automáticamente en celulares, tablets, etc.*/
+
+.ContainerListNewPaper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 5px;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 1500px; /* opcional: limitar ancho máximo */
+    margin: 0 auto; /* centrar el grid en pantallas grandes */
+    box-sizing: border-box;
+   
+}   
+
+@media (max-width: 600px) {
+    .ContainerListNewPaper {
+        grid-template-columns: 1fr;
+    }
+}
