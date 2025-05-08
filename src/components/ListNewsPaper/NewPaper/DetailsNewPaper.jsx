@@ -64,6 +64,24 @@ const DetailsCompany = () => {
                     {value}
                   </p>
                 );
+              case "paragraph3":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
+              case "paragraph4":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
+              case "paragraph5":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
               case "list":
                 return (
                   <li className="paragraph instrument-serif-regular" key={key}>
