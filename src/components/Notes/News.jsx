@@ -2,7 +2,6 @@ import "./New.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getNewsPaper } from "../../store/actions/actionsNewsPaper";
 import React, { useEffect, useState } from "react";
-import { NewsPaperCards } from "./NewsPaperCards";
 import ListNewsPaper from "../ListNewsPaper/ListNewsPaper";
 import Ads from "../../pages/Home/Ads";
 
@@ -19,12 +18,10 @@ const News = () => {
   }, []);
 
   return (
-    
-      <>
-        <Ads/>
-        <ListNewsPaper />
-      </>
- 
+    <>
+      <Ads />
+      <ListNewsPaper />
+    </>
   );
 };
 

@@ -8,7 +8,7 @@ import rutaBackend from "../../../helpers/rutaBackend";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import "./DetailsNewPaper.css";
-import Ads from "../../../pages/Home/Ads";  
+import Ads from "../../../pages/Home/Ads";
 
 const DetailsCompany = () => {
   const location = useLocation();
@@ -18,49 +18,82 @@ const DetailsCompany = () => {
   const { id } = useParams();
 
   return (
-    <div className="containerDetailNewPaper">
-      <Ads/>
-      {newpaper &&
-        Object.entries(newpaper).map(([key, value]) => {
-          const tag = key.slice(0, -1); // Saca el último caracter
+    <div>
+      <Ads />
 
-          switch (tag) {
-            case "title":
-              return (
-                <h1 className="titleGralh1 instrument-serif-regular" key={key}>
-                  {value}
-                </h1>
-              );
+      <div className="containerDetailNewPaper">
+        {newpaper &&
+          Object.entries(newpaper).map(([key, value]) => {
+            const tag = key.slice(0, -1); // Saca el último caracter
 
-            case "summary":
-              return (
-                <p className="summary" key={key}>
-                  {value}
-                </p>
-              );
-            case "paragraph":
-              return (
-                <p className="paragraph instrument-serif-regular" key={key}>
-                  {value}
-                </p>
-              );
-            case "paragraph1":
-              return (
-                <p className="paragraph instrument-serif-regular" key={key}>
-                  {value}
-                </p>
-              );
-            case "paragraph2":
-              return (
-                <p className="paragraph instrument-serif-regular" key={key}>
-                  {value}
-                </p>
-              );
+            switch (tag) {
+              case "title":
+                return (
+                  <h1
+                    className="titleGralh1 instrument-serif-regular"
+                    key={key}
+                  >
+                    {value}
+                  </h1>
+                );
 
-            case "img":
-              return <img className="imgPortada2" key={key} src={value} />;
-          }
-        })}
+              case "summary":
+                return (
+                  <div key={key}>
+                    <p className="summary instrument-serif-regular" key={key}>
+                      {value}
+                    </p>
+                    <hr className="separator" />
+                  </div>
+                );
+              case "paragraph":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
+              case "paragraph1":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
+              case "paragraph2":
+                return (
+                  <p className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </p>
+                );
+              case "list":
+                return (
+                  <li className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </li>
+                );
+              case "list1":
+                return (
+                  <li className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </li>
+                );
+              case "list2":
+                return (
+                  <li className="paragraph instrument-serif-regular" key={key}>
+                    {value}
+                  </li>
+                );
+
+              case "img":
+                return (
+                  <img
+                    className="imgContainerDetailsNewPaper"
+                    key={key}
+                    src={value}
+                  />
+                );
+            }
+          })}
+      </div>
     </div>
   );
 };

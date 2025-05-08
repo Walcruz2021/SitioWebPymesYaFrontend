@@ -11,6 +11,7 @@ Se adapta automáticamente en celulares, tablets, etc.*/
     max-width: 1500px; /* opcional: limitar ancho máximo */
     margin: 0 auto; /* centrar el grid en pantallas grandes */
     box-sizing: border-box;
+   
 }   
 
 @media (max-width: 600px) {

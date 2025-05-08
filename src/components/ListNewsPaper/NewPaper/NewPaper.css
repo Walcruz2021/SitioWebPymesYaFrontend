@@ -7,8 +7,6 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%; /* importante para que todas usen el mismo alto de celda */
-
-   
 }
 
 .imgContainerNewPaper {
