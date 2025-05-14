@@ -17,8 +17,8 @@ const CardAddEditService = () => {
   const [stateButtonback, setStateButtonBack] = useState(false);
   const emailLogin = useSelector((state) => state.reducerUser.userDataEmail);
   //const serviceUser = useSelector((state) => state.validation.data.search);
-  const serviceUser = useSelector((state) => state.reducer.validation.data);
-  //console.log(serviceUser)
+  const serviceUser = useSelector((state) => state.reducer.validation.data.search);
+
   const validation = useSelector((state) => state.reducer.validation);
 
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const CardAddEditService = () => {
     setFormEditServiceActived(true);
     setStateButtonBack(true);
     seFormAddActived(false);
-    navigate(`/editServices/${serviceUser[0]._id}`);
+    navigate(`/editService/${serviceUser[0]._id}`);
   };
 
   const changeBack = () => {
@@ -49,7 +49,7 @@ const CardAddEditService = () => {
     setStateButtonBack(false);
     setFormEditServiceActived(false);
     seFormAddActived(false);
-  }; d
+  }; 
   return (
     <>
       {buttonActived ? (

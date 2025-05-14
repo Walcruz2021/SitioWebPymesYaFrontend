@@ -19,7 +19,7 @@ import FormAddService from "../forms/FormAddService";
 
 const FormEditService = (props) => {
   const validation = useSelector((state) => state.reducer.validation);
-console.log(validation)
+
   const { idServ } = useParams(); // Obtener el ID de la ruta
 
   const services = useSelector((state) => state.reducer.validation.data.search);
