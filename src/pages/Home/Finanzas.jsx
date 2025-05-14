@@ -1,7 +1,7 @@
 import "./Finanzas.css";
 import IonIcon from "@reacticons/ionicons";
 import ButtonDonacion from "./ButtonDonacion";
-import { getUserLogin } from "../../store/actions/actions";
+import { getUserLogin } from "../../store/actions/actionUser";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";

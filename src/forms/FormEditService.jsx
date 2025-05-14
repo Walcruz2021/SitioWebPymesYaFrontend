@@ -3,10 +3,14 @@ import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  editServiceUser,
-  getCompanyByUser,
   deleteService,
 } from "../store/actions/actions";
+
+import {
+  editServiceUser,
+  getCompanyByUser
+} from "../store/actions/actionUser";
+
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";
@@ -14,17 +18,19 @@ import { useNavigate } from "react-router-dom";
 import FormAddService from "../forms/FormAddService";
 
 const FormEditService = (props) => {
-  const validation = useSelector((state) => state.validation);
-  //console.log(validation);
+  const validation = useSelector((state) => state.reducer.validation);
+console.log(validation)
   const { idServ } = useParams(); // Obtener el ID de la ruta
 
-  const services = useSelector((state) => state.validation.data.search);
+  const services = useSelector((state) => state.reducer.validation.data.search);
 
   // //service that match with parameters id in the url
   const serviceFiltered = services.find((farm) => farm._id === idServ);
 
   // // Ahora puedes usar el ID en tu lógica de componente
   // //console.log(idServ);
+
+  
   const dispatch = useDispatch();
   const MySwal = withReactContent(Swal);
   const options = [

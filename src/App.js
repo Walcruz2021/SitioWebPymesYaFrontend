@@ -32,7 +32,7 @@ import SistemaGestionTurnos from "./pages/Home/SistemaGestionTurnos";
 import FormsRegister from "../src/forms/FormsRegister";
 import NavBarBoostrapLogin from "./components/NavBar/NavBarBoostrapLogin";
 import ButtonBarBoostrap from "./components/ButtonBar/ButtonBarBoostrap";
-import { getUserLogin } from "./store/actions/actions";
+import { getUserLogin } from "./store/actions/actionUser";
 import CardAddService from "./pages/Home/CardAddService";
 import Negocios from "./pages/Home/Negocios";
 import News from "./components/Notes/News";
@@ -115,7 +115,7 @@ const App = () => {
 
         {/* <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route> */}
         <Route path="/editService/:idServ" element={<FormEditService />} />
-        <Route path="/editService" element={<CardEditServices />} />
+        <Route path="/editServices" element={<CardEditServices />} />
         
         {/* Rutas protegidas solo accesibles si estás autenticado */}
         {isAuthenticated ? (

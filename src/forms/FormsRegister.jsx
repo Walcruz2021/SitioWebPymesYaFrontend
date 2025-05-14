@@ -12,7 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { addUser } from "../store/actions/actions";
+import { addUser } from "../store/actions/actionUser";
 // import "../../css/cssGeneral.css";
 import "./FormsLoginAndRegister.css";
 import { MDBInput } from "mdb-react-ui-kit";

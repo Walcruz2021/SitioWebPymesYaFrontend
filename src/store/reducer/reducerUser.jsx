@@ -10,9 +10,8 @@ import {
   GET_LIST_CATEGORIES,
   ADD_USER,
   VERIFICATION_COMPANY_EXISTS,
-  RESET_USER
+  RESET_USER,
 } from "../actions/actions";
-
 
 const initialState = {
   validation: [],
@@ -24,43 +23,40 @@ const initialState = {
   listNewsPaper: [],
 };
 
-function rootReducer(state = initialState, action) {
+const reducerUser = (state = initialState, action) => {
   switch (action.type) {
-
-    case ADD_SERVICE:
+    case GET_USER:
       return {
         ...state,
+        userDataName: action.payload.displayName,
+        userDataEmail: action.payload.email,
+      };
+    case SEARCH_USER:
+      return {
+        ...state,
+        userEmailSearch: action.payload,
       };
 
-    case VALIDATION_ADDSERVICE:
-
-      return {
-        ...state,
-        validation: action.payload,
-      };
-    case EDIT_SERVICE:
+    case ADD_USER_SERVICE:
       return {
         ...state,
       };
-    case DELETE_SERVICE:
+    case GET_COMPANY_BYUSER:
       return {
         ...state,
-      };
-  
-    case GET_LIST_CATEGORIES:
-      return {
-        ...state,
-        listCategories: action.payload,
+        companiesByUser: action.payload,
       };
 
-    case VERIFICATION_COMPANY_EXISTS:
+    case RESET_USER:
       return {
         ...state,
-        arrayCompanies: action.payload,
+        userDataName: null,
+        userDataEmail: null,
       };
+
     default:
       return state;
   }
-}
+};
 
-export default rootReducer;
+export default reducerUser;

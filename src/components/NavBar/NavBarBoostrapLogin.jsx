@@ -38,8 +38,9 @@ import {resetUser} from "../../store/actions/actions";
 function NavBarBoostrapLogin(userProp) {
   const navigate = useNavigate();
   const dispatch=useDispatch()
-  const userLogedName = useSelector((state) => state.userDataName);
-  const userLogedEmail = useSelector((state) => state.userDataEmail);
+  const userLogedName = useSelector((state) => state.reducerUser.userDataName);
+
+  const userLogedEmail = useSelector((state) => state.reducerUser.userDataEmail);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

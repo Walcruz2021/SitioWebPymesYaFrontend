@@ -19,7 +19,7 @@ import Swal from "sweetalert2";
 import { auth } from "../../hooks/configFirebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserLogin } from "../../store/actions/actions";
+import { getUserLogin } from "../../store/actions/actionUser";
 
 import { useState } from "react";
 

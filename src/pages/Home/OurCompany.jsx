@@ -7,7 +7,7 @@ import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import React, { useEffect, useState } from "react";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserLogin } from "../../store/actions/actions";
+import { getUserLogin } from "../../store/actions/actionUser";
 
 const OurCompany = () => {
   const [loginUser, setLoginUser] = useState();

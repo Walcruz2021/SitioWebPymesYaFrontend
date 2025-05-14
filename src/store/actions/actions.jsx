@@ -15,7 +15,7 @@ export const VERIFICATION_COMPANY_EXISTS = "VERIFICATION_COMPANY_EXISTS";
 export const RESET_USER = "RESET_USER";
 
 export function deleteService(idService) {
-  console.log(idService, "actions");
+
   return async function (dispatch) {
     try {
       const response = await axios.put(
@@ -32,26 +32,8 @@ export function deleteService(idService) {
   };
 }
 
-export function addUserService(newUserService) {
-  console.log(newUserService);
-  return async function (dispatch) {
-    try {
-      const newUserServ = axios.post(
-        `${rutaBackend}/api/addUserService`,
-        newUserService
-      );
-      dispatch({
-        type: ADD_USER_SERVICE,
-        payload: newUserServ.data,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
 export function addCompanyService(newService) {
-  console.log(newService, "ACTIONS");
+
   return async function (dispatch) {
     try {
       const serviceAdd = await axios.post(
@@ -69,6 +51,7 @@ export function addCompanyService(newService) {
 }
 
 export function validationAddService(userCompany) {
+  
   return async function (dispatch) {
     try {
       const response = await axios.get(
@@ -76,61 +59,10 @@ export function validationAddService(userCompany) {
       );
 
       const validation = response; // Ajusta según la estructura de respuesta de tu servidor
+
       dispatch({
         type: VALIDATION_ADDSERVICE,
         payload: validation,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
-export function editServiceUser(idService, editService) {
-  return async function (dispatch) {
-    try {
-      const response = await axios.put(
-        `${rutaBackend}/api/editService/${idService}`,
-        editService
-      );
-      const validation = response; // Ajusta según la estructura de respuesta de tu servidor
-      dispatch({
-        type: EDIT_SERVICE,
-        payload: validation,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
-export function getUserLogin() {
-  return function (dispatch) {
-    try {
-      // Obteniendo el usuario actualmente autenticado
-      const user = auth.currentUser;
-      //console.log(user, "USER LOGIN ACTIONS");
-      // Despachando la acción para guardar el usuario en el estado
-      dispatch({
-        type: GET_USER,
-        payload: user,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-}
-
-export function getCompanyByUser(email) {
-  return async function (dispatch) {
-    try {
-      const response = await axios.get(
-        `${rutaBackend}/api/getCompanyByUser`,
-        email
-      );
-      dispatch({
-        type: GET_COMPANY_BYUSER,
-        payload: response,
       });
     } catch (error) {
       console.log(error);
@@ -169,36 +101,6 @@ export function getListCategories() {
   //     console.log(error);
   //   }
   // };
-}
-
-export const listenToAuthChanges = () => (dispatch) => {
-  auth.onAuthStateChanged((userCred) => {
-    if (userCred) {
-      const { email, emailVerified, displayName } = userCred;
-      dispatch(setUser({ email, emailVerified, displayName }));
-    } else {
-      dispatch(setUser(null));
-    }
-  });
-};
-
-export const setUser = (user) => ({
-  type: GET_USER,
-  payload: user,
-});
-
-export function addUser(payload) {
-  return async function (dispatch) {
-    try {
-      const newUser = await axios.post(
-        //`http://localhost:3002/api/addPerro/${idClient}`,
-        `${rutaBackend}/api/addUser`,
-        payload
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
 }
 
 export function verificationCompaniesExist(email) {

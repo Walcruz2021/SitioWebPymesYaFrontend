@@ -20,11 +20,11 @@ const FormAddService = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [refreshScreen, setRefreshScreen] = useState(false);
-  var userFullName = useSelector((state) => state.userDataName);
-  const userEmail = useSelector((state) => state.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
-  const validation = useSelector((state) => state.validation);
-  
-  const listCategories = useSelector((state) => state.listCategories);
+  var userFullName = useSelector((state) => state.reducerUser.userDataName);
+  const userEmail = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
+  const validation = useSelector((state) => state.reducer.validation);
+  console.log(validation)
+  const listCategories = useSelector((state) => state.reducer.listCategories);
 
   // useEffect(() => {
   //   dispatch(getUserLogin());
@@ -147,7 +147,7 @@ const FormAddService = () => {
                   //navigate("/login");
                   resetForm();
                   if (validation.status === 200) { //de 200 a 201 (ya no le quedaria opcion) 
-                    navigate("/editService");
+                    navigate("/editServices");
                   } else {//de 205 a 200 le quedaria una opcion
                     navigate("/addEditService");
                   }
