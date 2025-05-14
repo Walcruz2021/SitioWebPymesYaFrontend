@@ -41,7 +41,7 @@ const CardAddEditService = () => {
     setFormEditServiceActived(true);
     setStateButtonBack(true);
     seFormAddActived(false);
-    navigate(`/editService/${serviceUser[0]._id}`);
+    navigate(`/editServices/${serviceUser[0]._id}`);
   };
 
   const changeBack = () => {
@@ -49,7 +49,7 @@ const CardAddEditService = () => {
     setStateButtonBack(false);
     setFormEditServiceActived(false);
     seFormAddActived(false);
-  };
+  }; d
   return (
     <>
       {buttonActived ? (

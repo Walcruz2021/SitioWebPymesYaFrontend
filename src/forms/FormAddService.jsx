@@ -23,7 +23,6 @@ const FormAddService = () => {
   var userFullName = useSelector((state) => state.reducerUser.userDataName);
   const userEmail = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
   const validation = useSelector((state) => state.reducer.validation);
-  console.log(validation)
   const listCategories = useSelector((state) => state.reducer.listCategories);
 
   // useEffect(() => {
