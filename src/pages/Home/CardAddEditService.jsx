@@ -15,12 +15,12 @@ const CardAddEditService = () => {
   const [formAddServiceActived, seFormAddActived] = useState(false);
   const [formEditServiceActived, setFormEditServiceActived] = useState(false);
   const [stateButtonback, setStateButtonBack] = useState(false);
-  const emailLogin = useSelector((state) => state.userDataEmail);
+  const emailLogin = useSelector((state) => state.reducerUser.userDataEmail);
   //const serviceUser = useSelector((state) => state.validation.data.search);
-  const serviceUser = useSelector((state) => state.validation.data.search);
+  const serviceUser = useSelector((state) => state.reducer.validation.data);
   //console.log(serviceUser)
-  const validation = useSelector((state) => state.validation);
-  console.log(validation);
+  const validation = useSelector((state) => state.reducer.validation);
+
   const dispatch = useDispatch();
 
   useEffect(() => {

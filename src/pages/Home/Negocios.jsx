@@ -16,7 +16,7 @@ import rutaBackend from "../../helpers/rutaBackend";
 import ListCompaniesFilterTrue from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterTrue";
 import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompanies/ListCompaniesFilterFalse";
 import "../../css/ClassGeneralWeb.css";
-import { getUserLogin } from "../../store/actions/actions";
+import { getUserLogin } from "../../store/actions/actionUser";
 import { auth } from "../../hooks/configFirebase";
 import { Fade } from "react-swift-reveal";
 import { Bounce } from "react-swift-reveal";

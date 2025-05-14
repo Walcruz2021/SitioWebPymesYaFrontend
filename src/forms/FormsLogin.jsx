@@ -12,11 +12,10 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBInput } from "mdb-react-ui-kit";
-import {
-  addUser,
-  verificationCompaniesExist,
-  listenToAuthChanges,
-} from "../store/actions/actions";
+import { verificationCompaniesExist } from "../store/actions/actions";
+
+import { addUser, listenToAuthChanges } from "../store/actions/actionUser";
+
 import ModalRestPassword from "../modals/ModalRestPassword";
 import "./FormsLoginAndRegister.css";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -102,7 +101,7 @@ function FormsLogin({ autUser }) {
               );
               // if (resVerification.payload.status === 200) {
               //   navigate("/addService");
-              // } 
+              // }
             }
           });
         } else {
@@ -160,7 +159,6 @@ function FormsLogin({ autUser }) {
             <h4 className="titGral mt-1 mb-3 pb-1">LOGIN AL SISTEMA</h4>
           </div>
 
-   
           <div className="login-form">
             <div className="group">
               <label className="form-label pt-3 pb-1">

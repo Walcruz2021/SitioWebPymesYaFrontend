@@ -66,19 +66,19 @@ const DetailsCompany = () => {
                 );
               case "list":
                 return (
-                  <li className="paragraph instrument-serif-regular" key={key}>
+                  <li className="list instrument-serif-regular" key={key}>
                     {value}
                   </li>
                 );
               case "list1":
                 return (
-                  <li className="paragraph instrument-serif-regular" key={key}>
+                  <li className="list instrument-serif-regular" key={key}>
                     {value}
                   </li>
                 );
               case "list2":
                 return (
-                  <li className="paragraph instrument-serif-regular" key={key}>
+                  <li className="list instrument-serif-regular" key={key}>
                     {value}
                   </li>
                 );
