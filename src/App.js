@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
 import ContactPubli from "./pages/Home/ContactPubli";
 import DetailsCompany from "./pages/Home/DetailsCompany";
-import DetailsNewPaper from "./components/ListNewsPaper/NewPaper/DetailsNewPaper"
+import DetailsNewPaper from "./components/ListNewsPaper/NewPaper/DetailsNewPaper";
 import OurCompany from "./pages/Home/OurCompany";
 import Services from "./pages/Home/Services";
 import ServiceProf from "./pages/Home/ServiceProf";
@@ -36,6 +36,9 @@ import { getUserLogin } from "./store/actions/actionUser";
 import CardAddService from "./pages/Home/CardAddService";
 import Negocios from "./pages/Home/Negocios";
 import News from "./components/Notes/News";
+import FormsLogin from "././forms/FormsLogin";
+import ListServices from "././pages/Home/ListServices";
+import {validationAddService} from "../src/store/actions/actions"
 import "./App.css";
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
@@ -53,8 +56,8 @@ import "./App.css";
 const App = () => {
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector((state) => state.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
-  //console.log(isAuthenticated, "---->");
+  const isAuthenticated = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -71,6 +74,12 @@ const App = () => {
     checkAuth();
   }, []);
 
+  useEffect(()=>{
+    if(isAuthenticated){
+      dispatch(validationAddService(isAuthenticated));
+    }
+  })
+
   if (loading) {
     // Muestra un spinner o mensaje de "Cargando..." mientras verificas la autenticación
     return <div>Loading...</div>;
@@ -80,7 +89,7 @@ const App = () => {
     <BrowserRouter>
       <NavBarBoostrapLogin />
       <Routes>
-        <Route exact path="/" element={<News/>} />
+        <Route exact path="/" element={<News />} />
         <Route path="/negocios" element={<Negocios />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/ourCompany" element={<OurCompany />} />
@@ -116,15 +125,18 @@ const App = () => {
         {/* <Route path="/tecnologias/sitioWeb"><ConsejosSitioWeb/></Route> */}
         <Route path="/editService/:idServ" element={<FormEditService />} />
         <Route path="/editServices" element={<CardEditServices />} />
-        
+
         {/* Rutas protegidas solo accesibles si estás autenticado */}
+        {!isAuthenticated ? (
+          <Route path="/login" element={<FormsLogin />} />
+        ) : null}
+
         {isAuthenticated ? (
-          <Route path="/addService" element={<CardAddService />} />
-          
-        ) : (
-          <Route path="/login" element={<LoginFirebase />} />
-        )}
-        
+          <Route path="/listServices" element={<ListServices />} />
+        ) : null}
+
+        <Route path="/addService" element={<CardAddService />} />
+
         {/* 
         <Route path="/addService" element={<FormAddService />} />
         <Route path="/login" element={<LoginFirebase />} /> */}
@@ -139,14 +151,14 @@ const App = () => {
         <Route path="*" element={<Error404 />} /> */}
 
         <Route path="/register" element={<FormsRegister />} />
-        
+
         {/* Redirecciona a login si intentan acceder a rutas protegidas sin autenticación */}
         <Route
           path="*"
           element={<Navigate to={isAuthenticated ? "/" : "/login"} />}
         />
       </Routes>
-      <ButtonBarBoostrap/>
+      <ButtonBarBoostrap />
     </BrowserRouter>
   );
 };

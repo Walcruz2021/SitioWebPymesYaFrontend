@@ -10,9 +10,8 @@ import {
   GET_LIST_CATEGORIES,
   ADD_USER,
   VERIFICATION_COMPANY_EXISTS,
-  RESET_USER
+  RESET_VALIDATION,
 } from "../actions/actions";
-
 
 const initialState = {
   validation: [],
@@ -26,14 +25,12 @@ const initialState = {
 
 function rootReducer(state = initialState, action) {
   switch (action.type) {
-
     case ADD_SERVICE:
       return {
         ...state,
       };
 
     case VALIDATION_ADDSERVICE:
-
       return {
         ...state,
         validation: action.payload,
@@ -46,7 +43,7 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
       };
-  
+
     case GET_LIST_CATEGORIES:
       return {
         ...state,
@@ -57,6 +54,12 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         arrayCompanies: action.payload,
+      };
+
+    case RESET_VALIDATION:
+      return {
+        ...state,
+        validation: null,
       };
     default:
       return state;

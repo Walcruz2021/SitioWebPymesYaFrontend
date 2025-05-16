@@ -2,14 +2,9 @@ import { Formik, Field, ErrorMessage, Form } from "formik";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  deleteService,
-} from "../store/actions/actions";
+import { deleteService, validationAddService } from "../store/actions/actions";
 
-import {
-  editServiceUser,
-  getCompanyByUser
-} from "../store/actions/actionUser";
+import { editServiceUser, getCompanyByUser } from "../store/actions/actionUser";
 
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -21,6 +16,7 @@ const FormEditService = (props) => {
   const validation = useSelector((state) => state.reducer.validation);
 
   const { idServ } = useParams(); // Obtener el ID de la ruta
+  const emailLogued = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
 
   const services = useSelector((state) => state.reducer.validation.data.search);
 
@@ -30,7 +26,6 @@ const FormEditService = (props) => {
   // // Ahora puedes usar el ID en tu lógica de componente
   // //console.log(idServ);
 
-  
   const dispatch = useDispatch();
   const MySwal = withReactContent(Swal);
   const options = [
@@ -55,22 +50,14 @@ const FormEditService = (props) => {
       confirmButtonColor: "rgb(21, 151, 67)",
     }).then((result) => {
       if (result.isConfirmed) {
-        if (validation.status === 200) {
-          navigate("/addService");
-          // <FormAddService />
-        } else {
-          navigate("/addEditService");
-        }
+        dispatch(validationAddService(emailLogued));
+        navigate("/listServices");
       }
     });
   }
 
   const retroBack = () => {
-    if (validation.status === 201) {
-      navigate("/editService");
-    } else {
-      navigate("/addEditService");
-    }
+    navigate("/listServices");
   };
 
   return (
@@ -174,12 +161,8 @@ const FormEditService = (props) => {
               }).then((result) => {
                 if (result.isConfirmed) {
                   resetForm();
-
-                  if (validation.status === 200) {
-                    navigate("/addEditService");
-                  } else {
-                    navigate("/editService");
-                  }
+                  dispatch(validationAddService(emailLogued));
+                  navigate("/listServices");
                 }
               });
             } catch (error) {

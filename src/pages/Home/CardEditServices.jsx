@@ -8,37 +8,31 @@ import { useDispatch, useSelector } from "react-redux";
 import CardEditService from "./CardEditService";
 import { getUserLogin } from "../../store/actions/actionUser";
 
-const CardEditServices = () => {
+const CardEditServices = ({data}) => {
+
   const emailLogin = useSelector((state) => state.reducerUser.userDataEmail);
 
-  const serviceUser = useSelector((state) => state.reducer.validation.data);
+  const validation = useSelector((state) => state.reducer.validation)
 
-  const dispatch = useDispatch();
-  const validation = useSelector((state) => state.reducer.validation);
 
   const [listServices, setListServices] = useState([]);
 
-  useEffect(() => {
-    dispatch(getUserLogin());
-  }, [dispatch]);
 
   useEffect(() => {
-    if (emailLogin) {
-      dispatch(validationAddService(emailLogin));
-    }
-  }, [dispatch, emailLogin]);
-
-  useEffect(() => {
-    if (serviceUser && serviceUser.search) {
-      setListServices(serviceUser.search);
+    if (validation && validation.data && validation.data.search) {
+      setListServices(validation.data.search);
     }
   }, [listServices]);
 
+   if (!validation) {
+    return <div>Cargando...</div>; // O un spinner
+  }
+  
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <div className="containerCard">
-        {serviceUser && serviceUser.search
-          ? serviceUser.search.map((serv) => (
+        {listServices ?
+           listServices.map((serv) => (
               <React.Fragment key={serv._id}>
                 <CardEditService idServ={serv._id} />
               </React.Fragment>

@@ -13,9 +13,9 @@ export const GET_LIST_CATEGORIES = "GET_LIST_CATEGORIES";
 export const ADD_USER = "ADD_USER";
 export const VERIFICATION_COMPANY_EXISTS = "VERIFICATION_COMPANY_EXISTS";
 export const RESET_USER = "RESET_USER";
+export const RESET_VALIDATION = "RESET_VALIDATION";
 
 export function deleteService(idService) {
-
   return async function (dispatch) {
     try {
       const response = await axios.put(
@@ -33,7 +33,6 @@ export function deleteService(idService) {
 }
 
 export function addCompanyService(newService) {
-
   return async function (dispatch) {
     try {
       const serviceAdd = await axios.post(
@@ -51,7 +50,6 @@ export function addCompanyService(newService) {
 }
 
 export function validationAddService(userCompany) {
-  
   return async function (dispatch) {
     try {
       const response = await axios.get(
@@ -103,19 +101,6 @@ export function getListCategories() {
   // };
 }
 
-export function verificationCompaniesExist(email) {
-  return async function (dispatch) {
-    const arrayCompanies = await axios.get(
-      `${rutaBackend}/api/validationCompanyExist/${email}`
-    );
-
-    return dispatch({
-      type: VERIFICATION_COMPANY_EXISTS,
-      payload: arrayCompanies,
-    });
-  };
-}
-
-export const resetUser = () => ({
-  type: RESET_USER,
+export const resetValidation = () => ({
+  type: RESET_VALIDATION,
 });

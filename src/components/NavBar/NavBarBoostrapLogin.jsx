@@ -8,38 +8,14 @@ import { useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Importar Link desde React Router
-import {resetUser} from "../../store/actions/actions";
+import {resetUser} from "../../store/actions/actionUser";
+import {resetValidation} from "../../store/actions/actions"
 
-/**
- *  @description 
- * this component container User Login. Must first verified if user exists (user loged). Then is passed as a 
- * parameter to this user. 
- * First must be accessed var userFullName = useSelector((state) => state.userDataName) stateGlobal (REDUCER);
- * so that userFullName has some data, You must first call theonAuthStateChanged and  getUserLogin() in two 
- * useEffect through dispatch
- * 
- * const [loginUser, setLoginUser] = useState();
- *useEffect(() => {
-        auth.onAuthStateChanged((userCred) => {
-          if (userCred) {
-            const { email, emailVerified,displayName } = userCred;
-            setLoginUser({ email, emailVerified,displayName });
-          }
-        });
-      }, []); 
-* useEffect(() => {
-    if (loginUser && loginUser.emailVerified) {
-      dispatch(getUserLogin())
-    }
-  }, [dispatch, loginUser]); 
- * at the time of invoking <NavBarBoostrapLogin user={userFullName} />
-*/
 
 function NavBarBoostrapLogin(userProp) {
   const navigate = useNavigate();
   const dispatch=useDispatch()
   const userLogedName = useSelector((state) => state.reducerUser.userDataName);
-
   const userLogedEmail = useSelector((state) => state.reducerUser.userDataEmail);
 
   useEffect(() => {
@@ -53,15 +29,16 @@ function NavBarBoostrapLogin(userProp) {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      dispatch(resetUser()) // Actualiza el estado del usuario después del cierre de sesión
       navigate("/login");
+      dispatch(resetUser()) // Actualiza el estado del usuario después del cierre de sesión
+      dispatch(resetValidation())
     } catch (error) {
       console.error("Error al cerrar sesión:", error);
     }
   };
 
   const handleServices = () => {
-    navigate("/addService");
+    navigate("/listServices");
   };
   
   return (

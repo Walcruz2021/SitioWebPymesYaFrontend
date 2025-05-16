@@ -15,7 +15,7 @@ export const VERIFICATION_COMPANY_EXISTS = "VERIFICATION_COMPANY_EXISTS";
 export const RESET_USER = "RESET_USER";
 
 export function addUserService(newUserService) {
-  console.log(newUserService);
+
   return async function (dispatch) {
     try {
       const newUserServ = axios.post(
@@ -109,3 +109,7 @@ export function addUser(payload) {
     }
   };
 }
+
+export const resetUser = () => ({
+  type: RESET_USER,
+});

@@ -18,34 +18,23 @@ import "../../css/ClassGeneralWeb.css";
 function LoginFirebase() {
   const navigate = useNavigate();
 
-  const [loginUser, setLoginUser] = useState(null);
-
-  const [autUser, setAuthUser] = useState(false);
-
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
 
   const validation = useSelector((state) => state.reducer.validation);
 
-  useEffect(() => {
-    auth.onAuthStateChanged((userCred) => {
-      if (userCred) {
-        const { email, emailVerified, displayName } = userCred;
-        setLoginUser({ email, emailVerified, displayName });
-      }
-    });
-  }, []);
+  const emailLogued = useSelector((state) => state.reducerUser.userDataEmail);
+
+  const userLogued = useSelector((state) => state.reducerUser.userDataName);
+
+  // useEffect(() => {
+  //   if (!validation && emailLogued) {
+  //     dispatch(validationAddService(emailLogued));
+  //   }
+  // }, [dispatch, emailLogued, validation]);
 
   useEffect(() => {
-    if (loginUser && loginUser.emailVerified) {
-      dispatch(validationAddService(loginUser.email));
-      //dispatch(getUserLogin());
-    }
-  }, [dispatch, loginUser]);
-
-  useEffect(() => {
-    if (loginUser && loginUser.emailVerified && validation) {
-
+    if (validation) {
       if (validation.status === 205) {
         navigate("/addService");
       } else if (validation.status === 201 && validation.data?.search) {
@@ -54,7 +43,7 @@ function LoginFirebase() {
         navigate("/addEditService");
       }
     }
-  }, [validation, loginUser, navigate]);
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -66,14 +55,16 @@ function LoginFirebase() {
 
   return (
     <>
-      {(!loginUser || !loginUser.emailVerified) && <FormsLogin />}
-
+      
+        <div className="p-3">
+          <FormsLogin />
+        </div>
+      
     </>
   );
 }
 export default LoginFirebase;
 //https://www.youtube.com/watch?v=Djh_eVj0D2w&t=2610s&ab_channel=Fazt
-
 
 //  {loginUser && loginUser.emailVerified ? (
 //         //user logged in and email verified
@@ -91,7 +82,7 @@ export default LoginFirebase;
 //       ) : (
 //         //user NOT email verified or NOT logger id
 //         <>
-     
+
 //           <div className="p-3">
 //             {/* <FormsRegister /> */}
 //             <FormsLogin />

@@ -19,15 +19,6 @@ const CardAddEditService = () => {
   //const serviceUser = useSelector((state) => state.validation.data.search);
   const serviceUser = useSelector((state) => state.reducer.validation.data.search);
 
-  const validation = useSelector((state) => state.reducer.validation);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (emailLogin) {
-      dispatch(validationAddService(emailLogin));
-    }
-  }, [dispatch]);
 
   const changeStateAdd = () => {
     seButtonActived(false);

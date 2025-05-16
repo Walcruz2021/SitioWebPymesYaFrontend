@@ -19,15 +19,15 @@ import CardEditService from "./CardEditService";
 const CardAddService = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  var userEmail = useSelector((state) => state.userDataEmail);
-  const validation = useSelector((state) => state.validation);
-console.log(validation)
+  var userEmail = useSelector((state) => state.reducerUser.userDataEmail);
+  const validation = useSelector((state) => state.reducer.validation);
 
-  useEffect(() => {
-    if (userEmail) {
-      dispatch(validationAddService(userEmail));
-    }
-  }, [dispatch]);
+
+  // useEffect(() => {
+  //   if (userEmail) {
+  //     dispatch(validationAddService(userEmail));
+  //   }
+  // }, [dispatch]);
 
   // useEffect(() => {
   //   if (validation.status === 205) {
@@ -41,13 +41,13 @@ console.log(validation)
 
   return (
     <>
-      {validation.status === 205 ? (
+      {/* {validation.status === 205 ? (
         <FormAddService />
       ) : validation.status === 200 ? (
         navigate("/addEditService")
       ) : (
         navigate("/editService") //status 201
-      )}
+      )} */}
     </>
   );
 };

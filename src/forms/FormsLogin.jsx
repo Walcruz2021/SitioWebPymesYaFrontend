@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { Link } from "react-router-dom";
 import { MDBContainer, MDBInput } from "mdb-react-ui-kit";
-import { verificationCompaniesExist } from "../store/actions/actions";
+import { validationAddService } from "../store/actions/actions";
 
 import { addUser, listenToAuthChanges } from "../store/actions/actionUser";
 
@@ -24,7 +24,6 @@ import { FaGoogle } from "react-icons/fa";
 import logoNew from "../../src/icons/LogoNew.png";
 
 function FormsLogin({ autUser }) {
-  const loginUser = useSelector((state) => state.user);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
   const dispatch = useDispatch();
@@ -66,11 +65,6 @@ function FormsLogin({ autUser }) {
     setShow(!show);
   };
 
-  const verificationCompanies = async (email) => {
-    const response = dispatch(verificationCompaniesExist(email));
-    return response;
-  };
-
   const handleSumbit = async (e) => {
     if (stateValue.email.trim() === "" || stateValue.password.trim() === "") {
       MySwal.fire({
@@ -95,13 +89,9 @@ function FormsLogin({ autUser }) {
             confirmButtonColor: "rgb(21, 151, 67)",
           }).then(async (result) => {
             if (result.isConfirmed) {
+              dispatch(validationAddService(stateValue.email));
               dispatch(listenToAuthChanges());
-              const resVerification = await verificationCompanies(
-                auth.currentUser.email
-              );
-              // if (resVerification.payload.status === 200) {
-              //   navigate("/addService");
-              // }
+              navigate("/listServices")
             }
           });
         } else {

@@ -14,8 +14,6 @@ import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 import { useNavigate } from "react-router-dom";
 import "../css/ClassGeneralWeb.css";
 
-
-
 const FormAddService = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -29,11 +27,11 @@ const FormAddService = () => {
   //   dispatch(getUserLogin());
   // }, [dispatch, refreshScreen]);
 
-  useEffect(() => {
-    if (userEmail) {
-      dispatch(validationAddService(userEmail));
-    }
-  }, [dispatch]);
+  // useEffect(() => {
+  //   if (userEmail) {
+  //     dispatch(validationAddService(userEmail));
+  //   }
+  // }, [dispatch]);
 
   const [user, setUser] = useState("null");
 
@@ -145,11 +143,13 @@ const FormAddService = () => {
                   //console.log("SE DEBERIA ENVIAR ---LOGIN");
                   //navigate("/login");
                   resetForm();
-                  if (validation.status === 200) { //de 200 a 201 (ya no le quedaria opcion) 
-                    navigate("/editServices");
-                  } else {//de 205 a 200 le quedaria una opcion
-                    navigate("/addEditService");
-                  }
+                  dispatch(validationAddService(userEmail));
+                  navigate("/listServices");
+                  // if (validation.status === 200) { //de 200 a 201 (ya no le quedaria opcion)
+                  //   navigate("/editServices");
+                  // } else {//de 205 a 200 le quedaria una opcion
+                  //   navigate("/addEditService");
+                  // }
                 }
               });
             } catch (error) {
