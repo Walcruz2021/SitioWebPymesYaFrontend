@@ -5,10 +5,16 @@ const Ads = () => {
     <div className="containerAds">
       <h3>Snea Salta</h3>
       <h1>SNEAKERS</h1>
-      <div className="containerAds2">
-        <img className="iconoInstagram" src={instagram} />
+      <a
+        className="containerAds2"
+        href="https://www.instagram.com/sneaSalta"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: "none", color: "inherit" }}
+      >
+        <img className="iconoInstagram" src={instagram} alt="Instagram" />
         <h3>@sneaSalta</h3>
-      </div>
+      </a>
     </div>
   );
 };

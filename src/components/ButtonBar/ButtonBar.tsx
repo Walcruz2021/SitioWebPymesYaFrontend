@@ -44,8 +44,8 @@ const ButtonBar = () => {
                 <nav className="navegacion">
 
                     {/* <h3>Redes Sociales</h3> */}
-                    <a href="https://www.instagram.com/PymesYaWeb/?hl=es" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
-                    <a href="https://www.facebook.com/profile.php?id=100091303899830&sk=about" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a>
+                    <a href="https://www.instagram.com/pymesyasalta/" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
+                    {/* <a href="https://www.facebook.com/profile.php?id=100091303899830&sk=about" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a> */}
 
                 </nav>
             </div>
