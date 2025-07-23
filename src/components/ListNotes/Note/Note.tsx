@@ -48,6 +48,18 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
         }
     }
 
+      function clasifiedList(value: string) {
+        value = value.slice(0, -1)
+        if (value === "list") {
+            return true
+        } else {
+            value = value.slice(0, -1)
+            if (value === "list") {
+                return true
+            } else return false
+        }
+    }
+
 
     function clasifiedImg(value: string) {
         value = value.slice(0, -1)
@@ -73,6 +85,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                     clasifiedTitle(key) ? 
                     <div className="titGral"><h1 key={index}>{note[key]}</h1></div> : 
                     clasifiedParagraph(key) ? <p key={index}>{note[key]}</p> : 
+                    clasifiedList(key) ? <li style={{ fontWeight: "bold" }} key={index}>{note[key]}</li> : 
                     clasifiedImg(key) ? <div className="imgGral"><img key={index} src={note[key]} alt="MDN" /></div> : 
                     null
                 ))}

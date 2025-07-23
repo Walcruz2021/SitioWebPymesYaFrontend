@@ -21,7 +21,7 @@ const ListNewsPaper = (codigo: any) => {
       <div className="ContainerListNewPaper">
         {listNewsPaper &&
           listNewsPaper.map((newpaper) => (
-            <div>
+            <div >
               <Link
                 style={{ textDecoration: "none",color: "#707b7c" }}
                 to={`/detailsNewPaper/${newpaper._id}`}
