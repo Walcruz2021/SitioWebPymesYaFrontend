@@ -82,6 +82,9 @@ function NavBarBoostrapLogin(userProp) {
               <NavDropdown.Item as={Link} to="/leliqs">
                 Lelics
               </NavDropdown.Item>
+                 <NavDropdown.Item as={Link} to="/crisisMexico">
+                Crisis del Tequila
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="TECNOLOGIAS" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/tecnologias/sitioWeb">
