@@ -6,17 +6,14 @@ const NewHistory = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/histories");
+    navigate("/");
   };
 
   return (
-    <div className="containerNewHistory" onClick={handleClick}>
-      <h3 >
-        ¡Nuevo Artículo Disponible!
-      </h3>
-      <p >
-        WARREN EDWARD BUFFETT - El Oráculo de Omaha
-      </p>
+    // <div className="containerNewHistory" onClick={handleClick}>
+    <div className="containerNewHistory">
+      <h3>¡Nuevo Artículo Disponible!</h3>
+      <p>Crisis Financiera Burbuja.com</p>
     </div>
   );
 };

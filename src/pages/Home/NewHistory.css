@@ -1,6 +1,8 @@
 .containerNewHistory {
   padding-top: 1rem;
-  cursor: pointer; /* cursor activo al pasar */
+  /* cursor: pointer;  */
+  /* cursor activo al pasar */
+
   background: #fff;
   color: #d32f2f;
   text-align: center;
