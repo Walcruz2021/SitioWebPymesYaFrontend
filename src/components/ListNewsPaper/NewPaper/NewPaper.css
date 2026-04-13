@@ -9,6 +9,12 @@
     height: 100%; /* importante para que todas usen el mismo alto de celda */
 }
 
+.CardNewPaper p{
+    font-family: "Instrument Serif", serif;
+    font-size: 1.2rem;
+
+}
+
 .imgContainerNewPaper {
     height: 200px; /* altura fija */
     width: 100%;

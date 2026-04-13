@@ -76,7 +76,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
     return (
         <>
 
-            <div className="classNote">
+            <div className="containerGlobalWeb">
 
                 {/* {noteKeys.map((key) => (
                     clasifiedTitle(key) ? <h1>{note[key]}</h1> : clasifiedParagraph(key) ? <p>{note[key]}</p> : clasifiedImg(key) ? <img src={note[key]} alt="MDN" /> : null

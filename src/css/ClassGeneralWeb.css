@@ -19,6 +19,12 @@
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
+  font-family: "Instrument Serif", serif;
+}
+
+.containerGlobalWeb p{
+ font-family: "Instrument Serif", serif;
+ font-size: 1.2rem;
 }
 /* PANTALLA ESCRITORIO */
 
