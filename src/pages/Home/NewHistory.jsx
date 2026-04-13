@@ -1,6 +1,6 @@
 import "./NewHistory.css";
 import { useNavigate } from "react-router-dom";
-import instagram from "../Home/imagenes/instagram.png";
+
 
 const NewHistory = () => {
   const navigate = useNavigate();

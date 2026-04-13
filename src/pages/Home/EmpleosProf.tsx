@@ -1,13 +1,7 @@
 import IonIcon from '@reacticons/ionicons';
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import {
-    faTruck,
-    faBrush,
-    faPlug,
-    faToilet,
-    faHammer
-} from "@fortawesome/free-solid-svg-icons";
+
 import "./Servicios.css"
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import ListCompaniesVip from '../../components/ListCompanies/ListCompaniesVip'

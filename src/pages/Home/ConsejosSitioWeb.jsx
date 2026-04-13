@@ -7,7 +7,7 @@ import shopify from "../Home/imagenes/consejosWeb/shopify2.png";
 //import { Helmet } from 'react-helmet';
 
 import Swal from "sweetalert2";
-import IonIcon from "@reacticons/ionicons";
+
 import ButtonDonacion from "./ButtonDonacion";
 
 import { getUserLogin } from "../../store/actions/actionUser";

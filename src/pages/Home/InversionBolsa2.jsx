@@ -1,12 +1,11 @@
 import "./InversionBolsa.css";
 import finviz from "../Home/imagenes/bolsaValores/imgFinViz.png";
-import rsi from "../Home/imagenes/bolsaValores/RSI.png";
+
 import RoaRoe from "../Home/imagenes/bolsaValores/RoaRoe.png";
 import quickRatio from "../Home/imagenes/bolsaValores/QuickRatio.png";
-import IonIcon from "@reacticons/ionicons";
+
 import { Helmet } from "react-helmet";
-import { FacebookProvider, Like, ShareButton } from "react-facebook";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+
 import ButtonDonacion from "./ButtonDonacion";
 // import { useShare } from 'react-facebook';
 const InversionBolsa2 = () => {

@@ -1,20 +1,13 @@
 import React, { useEffect } from "react";
 import * as Yup from "yup";
 import {
-  withFormik,
-  FormikProps,
-  FormikErrors,
-  Form,
-  Field,
-  ErrorMessage,
+  withFormik
 } from "formik";
-import emailjs from "@emailjs/browser";
+
 import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import "./Contact.css";
 import phone from "./imagenes/phone.png";
 import gmail from "./imagenes/gmail.png";
-import { IconBase } from "react-icons/lib";
-import IonIcon from "@reacticons/ionicons";
 import Swal from "sweetalert2";
 import { auth } from "../../hooks/configFirebase";
 import { useNavigate } from "react-router-dom";

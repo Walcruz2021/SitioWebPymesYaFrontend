@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import FormsRegister from "../../forms/FormsRegister";
+
 import FormsLogin from "../../forms/FormsLogin";
 import "./LoginFirebase.css";
 import { auth } from "../../hooks/configFirebase";
 import { signOut } from "firebase/auth";
-import {
-  validationAddService,
-  getUserLogin,
-} from "../../store/actions/actions";
+
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";

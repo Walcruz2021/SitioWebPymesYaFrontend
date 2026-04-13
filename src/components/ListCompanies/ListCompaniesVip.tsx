@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useFetchVip from '../../hooks/useFetchVip';
-import { ProductItem } from '../../types/typeApp';
 import Company from './Company/Company';
 import "./ListCompanies.css"
 import {Spin } from 'react-swift-reveal';

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { CompanyItem } from '../../../types/typeApp';
-import ModalComp from "./ModalComp"
 import './CompanyEmpleo.css'
 import Swal from "sweetalert2";
 

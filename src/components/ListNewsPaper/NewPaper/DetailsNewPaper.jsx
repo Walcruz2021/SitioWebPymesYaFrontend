@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import axios from "axios";
 import "./DetailsNewPaper.css";
-import IonIcon from "@reacticons/ionicons";
-import rutaBackend from "../../../helpers/rutaBackend";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import "./DetailsNewPaper.css";

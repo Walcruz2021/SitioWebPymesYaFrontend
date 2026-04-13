@@ -1,8 +1,6 @@
 import Note from "./Note/Note";
 import useFetchNote from "../../hooks/useFetchNote";
 import "./listNotes.css";
-import ComentaryFace from "./ComentaryFaceHistory";
-import ButtonDonacion from "../../pages/Home/ButtonDonacion";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";

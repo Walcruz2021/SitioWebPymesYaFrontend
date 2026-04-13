@@ -22,7 +22,7 @@ import { auth } from "../../hooks/configFirebase";
 import { FaBuffer } from "react-icons/fa";
 import { FaCarCrash } from "react-icons/fa";
 import { BsFillKeyFill } from "react-icons/bs";
-import { MdOutlineStopScreenShare } from "react-icons/md";
+
 import "../../css/ClassGeneralWeb.css";
 import "./ServiceProf.css"
 

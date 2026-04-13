@@ -1,13 +1,9 @@
-import FormAddService from "../../forms/FormAddService";
-import { Formik, Field, ErrorMessage, Form } from "formik";
-import { useState, useEffect } from "react";
+
+
 import { useDispatch, useSelector } from "react-redux";
-import { validationAddService } from "../../store/actions/actions";
-import Swal from "sweetalert2";
+
 import { useNavigate } from "react-router-dom";
 
-import CardAddEditService from "./CardAddEditService";
-import CardEditService from "./CardEditService";
 
 /**
  * status 200 one service allow

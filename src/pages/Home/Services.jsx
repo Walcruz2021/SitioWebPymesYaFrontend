@@ -1,6 +1,6 @@
 import "./Services.css";
 import eccomerce from "./imagenes/ecomerce.jpg";
-import monedero from "./imagenes/monedero.png";
+
 import sitioWeb from "./imagenes/sitioweb.jpg";
 import software from "./imagenes/softwareEmp.png";
 import IonIcon from "@reacticons/ionicons";

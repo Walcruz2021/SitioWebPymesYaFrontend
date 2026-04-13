@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ServiceItem } from '../../../types/typeApp';
-import ModalComp from "./ModalComp"
+
 import './CompanyServ.css'
 import Swal from "sweetalert2";
 import Card from "react-bootstrap/Card";

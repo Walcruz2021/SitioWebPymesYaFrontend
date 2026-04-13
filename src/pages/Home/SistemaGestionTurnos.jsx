@@ -5,9 +5,7 @@ import installSample from "../../icons/installSample.png";
 import { BsSmartwatch } from "react-icons/bs";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { IoAnalyticsSharp } from "react-icons/io5";
-import informes from "../../icons/informes.png";
-import analisis from "../../icons/analisis.png";
-import checkTurns from "../../icons/checkTurns.png";
+
 import imgSist from "../../icons/appSist.png";
 import "./SistemaGestionTurnos.css";
 import { useDispatch, useSelector } from "react-redux";

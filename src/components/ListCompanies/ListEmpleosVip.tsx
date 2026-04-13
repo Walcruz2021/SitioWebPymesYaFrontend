@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+
 import useFetchEmpVip from '../../hooks/useFetchEmpVip';
-import { ProductItem } from '../../types/typeApp';
-import CompanyServ from './Company/CompanyServ';
 import "./ListCompanies.css"
 
 const ListEmpleosVip = () => {

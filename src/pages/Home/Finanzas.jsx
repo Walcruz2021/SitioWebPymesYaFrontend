@@ -1,5 +1,4 @@
 import "./Finanzas.css";
-import IonIcon from "@reacticons/ionicons";
 import ButtonDonacion from "./ButtonDonacion";
 import { getUserLogin } from "../../store/actions/actionUser";
 import { auth } from "../../hooks/configFirebase";

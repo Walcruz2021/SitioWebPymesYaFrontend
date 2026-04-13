@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+
 import useFetchProfVip from '../../hooks/useFetchProfVip';
-import { ProductItem } from '../../types/typeApp';
 import CompanyServ from './Company/CompanyServ';
 
 

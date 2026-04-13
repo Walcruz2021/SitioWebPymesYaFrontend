@@ -4,13 +4,10 @@ import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addCompanyService,
-  getUserLogin,
   validationAddService,
 } from "../store/actions/actions";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import NavBarBoostrapLogin from "../components/NavBar/NavBarBoostrapLogin";
-import ButtonBarBoostrap from "../components/ButtonBar/ButtonBarBoostrap";
 import { useNavigate } from "react-router-dom";
 import "../css/ClassGeneralWeb.css";
 

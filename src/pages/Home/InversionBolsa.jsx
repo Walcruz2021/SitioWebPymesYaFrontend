@@ -3,10 +3,9 @@ import finviz from "../Home/imagenes/bolsaValores/imgFinViz.png";
 import rsi from "../Home/imagenes/bolsaValores/RSI.png";
 import sFloat from "../Home/imagenes/bolsaValores/shortFloat.png";
 import avgVolume from "../Home/imagenes/bolsaValores/avgVolume.png";
-import IonIcon from "@reacticons/ionicons";
+
 import { Helmet } from "react-helmet";
-import { FacebookProvider, Like, ShareButton } from "react-facebook";
-import { FacebookShareButton, TwitterShareButton } from "react-share";
+
 import ButtonDonacion from "./ButtonDonacion";
 import { Link } from "react-router-dom";
 import { getUserLogin } from "../../store/actions/actionUser";

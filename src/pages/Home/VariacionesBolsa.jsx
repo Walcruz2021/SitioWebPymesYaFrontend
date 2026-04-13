@@ -1,8 +1,8 @@
-import michaelBurry from "../Home/imagenes/bolsaValores/MichaelBurry.jpg";
+
 import subprime from "../Home/imagenes/bolsaValores/crisisSubprime1.jpg";
 import subprime2 from "../Home/imagenes/bolsaValores/crisisSubprime2.jpg";
 import { Link } from "react-router-dom";
-import IonIcon from "@reacticons/ionicons";
+
 import "./VariacionesBolsa.css";
 import ButtonDonacion from "./ButtonDonacion";
 import { getUserLogin } from "../../store/actions/actionUser";

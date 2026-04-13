@@ -16,7 +16,6 @@ import { addUser } from "../store/actions/actionUser";
 // import "../../css/cssGeneral.css";
 import "./FormsLoginAndRegister.css";
 import { MDBInput } from "mdb-react-ui-kit";
-import { FaGoogle } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 import logoNew from "../../src/icons/LogoNew.png";
 import { FaUser } from "react-icons/fa";

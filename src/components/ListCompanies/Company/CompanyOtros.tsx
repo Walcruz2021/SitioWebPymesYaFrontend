@@ -1,6 +1,4 @@
-import { Button, Card } from 'react-bootstrap';
 import { CompanyItem } from '../../../types/typeApp';
-import IonIcon from '@reacticons/ionicons';
 import './Company.css'
 
 type Props = {

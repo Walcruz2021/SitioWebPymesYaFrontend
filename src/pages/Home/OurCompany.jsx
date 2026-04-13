@@ -1,9 +1,9 @@
 import "./OurCompany.css";
 import desarrollo from "./imagenes/desarrollo.png";
 import diseño from "./imagenes/diseño.png";
-import software from "./imagenes/softwareEmp.png";
+
 import presupuesto from "./imagenes/presupuesto.png";
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
+
 import React, { useEffect, useState } from "react";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import {
-  validationAddService,
-  addCompanyService,
-} from "../../store/actions/actions";
-import { useDispatch, useSelector } from "react-redux";
+
+
 import CardEditService from "./CardEditService";
-import { getUserLogin } from "../../store/actions/actionUser";
+
 
 const CardEditServices = ({data}) => {
 

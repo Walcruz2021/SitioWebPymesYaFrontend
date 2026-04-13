@@ -2,7 +2,7 @@ import "./CardAddEditService.css";
 import { useNavigate } from "react-router-dom";
 import editServ from "../../icons/editService.png";
 
-import { useSelector } from "react-redux";
+
 
 const CardEditService = (idServ) => {
 
