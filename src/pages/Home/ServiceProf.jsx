@@ -171,7 +171,7 @@ const ServiceProf = () => {
 
       <div className="ContainerListComp py-3">
         <div className="row justify-content-center">
-          {selectCompanies.isLoading == false ? (
+          {selectCompanies.isLoading === false ? (
             selectCompanies.companies.map(
               (company) => (
                 console.log(company),

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import ListCompaniesVip from "../../components/ListCompanies/ListCompaniesVip";
 import useFetchCat from "../../hooks/useFetchCat";
@@ -8,7 +7,6 @@ import "./styles.css";
 import axios from "axios";
 import CompanyOtros from "../../components/ListCompanies/Company/CompanyOtros";
 import "./Home.css";
-import ButtonBar from "../../components/ButtonBar/ButtonBar";
 import { Link } from "react-router-dom";
 import IonIcon from "@reacticons/ionicons";
 import rutaBackend from "../../helpers/rutaBackend";
@@ -18,16 +16,14 @@ import ListCompaniesFilterFalse from "../../components/ListCompanies/filterCompa
 import "../../css/ClassGeneralWeb.css";
 import { getUserLogin } from "../../store/actions/actionUser";
 import { auth } from "../../hooks/configFirebase";
-import { Fade } from "react-swift-reveal";
-import { Bounce } from "react-swift-reveal";
 import { Flip } from 'react-swift-reveal';
-import {Jump} from 'react-swift-reveal';
+
  
 
 const Negocios = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
       if (userCred) {
@@ -52,12 +48,12 @@ const Negocios = () => {
   const { categories } = useFetchCat();
   //console.log(categories)
   const arrayOptions = [];
-  var compOtros = [];
 
-  const a = "construct-outline";
+
+
   if (categories.length > 0) {
     for (let i = 0; i < categories.length; i++) {
-      const icono = categories[i].logo;
+  
       const option = {
         value: categories[i]._id,
         label: categories[i].name,
