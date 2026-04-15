@@ -12,11 +12,11 @@ const News = () => {
     (state) => state.reducerNewsPaper.listNewsPaper
   );
 
-  let listFiltered = listNewsPaper.slice(0, 8);
+
 
   useEffect(() => {
     dispatch(getNewsPaper());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>

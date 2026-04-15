@@ -25,7 +25,7 @@ function ModalRestPassword({ show, setShow }) {
   const [alertTemp, setAlertTemp] = useState(false);
   const [validationEmail, setValidationEmail] = useState(false);
   const MySwal = withReactContent(Swal);
-  const userEmailSearch = useSelector((state) => state.userEmailSearch);
+
 
   const handleChange = (event) => {
     const newEmail = event.target.value;

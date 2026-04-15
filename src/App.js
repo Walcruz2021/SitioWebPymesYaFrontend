@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Home from "./pages/Home/Home";
 import Contact from "./pages/Home/Contact";
 import ContactPubli from "./pages/Home/ContactPubli";
 import DetailsCompany from "./pages/Home/DetailsCompany";
@@ -13,21 +12,18 @@ import ServiceProf from "./pages/Home/ServiceProf";
 import ListNotes from "./components/ListNotes/listNotes";
 import Finanzas from "./pages/Home/Finanzas";
 import VariacionesBolsa from "./pages/Home/VariacionesBolsa";
-import WinnerPrime from "./pages/Home/CardWinner";
 import PaginadoWinnersPrime from "./pages/Home/PaginadoWinnersPrime";
 import InversionBolsa from "./pages/Home/InversionBolsa";
 import InversionBolsa2 from "./pages/Home/InversionBolsa2";
 import ConsejosSitioWeb from "./pages/Home/ConsejosSitioWeb";
 import Leliqs from "./pages/Home/Leliqs";
-import LoginFirebase from "./pages/Home/LoginFirebase";
-//import LoginGoogle from "./pages/Home/LoginGoogle";
+
 import CardAddEditService from "./pages/Home/CardAddEditService";
-// import FormServices from "./pages/Home/FormServices";
 import CrisisTequila from "./pages/Home/CrisisTequila";
 import FormEditService from "./forms/FormEditService";
-import FormAddService from "./forms/FormAddService";
+
 import CardEditServices from "./pages/Home/CardEditServices";
-import Error404 from "./pages/Home/Error404";
+
 import SistemaGestionTurnos from "./pages/Home/SistemaGestionTurnos";
 import FormsRegister from "../src/forms/FormsRegister";
 import NavBarBoostrapLogin from "./components/NavBar/NavBarBoostrapLogin";
@@ -54,7 +50,7 @@ import "./App.css";
 //Componente <Link></Link>, que nos permite navegar entre rutas sin salirnos de la SPA.
 
 const App = () => {
-  const [show, setShow] = useState(false);
+
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
 

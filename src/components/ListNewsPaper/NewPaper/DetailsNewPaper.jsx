@@ -12,7 +12,7 @@ const DetailsCompany = () => {
   const newpaper = location.state?.newpaper;
 
   const dispatch = useDispatch();
-  const { id } = useParams();
+
 
   return (
     <div>
@@ -104,8 +104,11 @@ const DetailsCompany = () => {
                     className="imgContainerDetailsNewPaper"
                     key={key}
                     src={value}
+                    alt="null"
                   />
                 );
+              default:
+                return null;
             }
           })}
       </div>

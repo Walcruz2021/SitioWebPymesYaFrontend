@@ -9,7 +9,7 @@ import { getUserLogin } from "../../store/actions/actionUser";
 const ListNotes = (codigo) => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
@@ -44,7 +44,7 @@ const ListNotes = (codigo) => {
     const arrayCamps = [];
 
     for (let camp in notes) {
-      const noteKeys = Object.keys(camp);
+
       //console.log(noteKeys)
       //arrayCamps.push(noteKeys)
     }
@@ -53,17 +53,7 @@ const ListNotes = (codigo) => {
   if (notes) {
     console.log(mergeCamps(notes));
   }
-  function clasifiedParagraph(value) {
-    value = value.slice(0, -1);
-    if (value === "paragraph") {
-      return true;
-    } else {
-      value = value.slice(0, -2);
-      if (value === "paragraph") {
-        return true;
-      } else return false;
-    }
-  }
+
 
   const siguienteHistoria = () => {
     setHistoriaActual(historiaActual + 1);

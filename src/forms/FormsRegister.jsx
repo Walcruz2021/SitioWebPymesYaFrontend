@@ -41,39 +41,39 @@ function FormRegister({ autUser }) {
   const [isInputFocusedLastName, setIsInputFocusedLastName] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const loginGoogle = async () => {
-    if (isPopupOpen) return;
-    setIsPopupOpen(true);
-    const provider = new GoogleAuthProvider();
-    try {
-      const credentials = await signInWithPopup(auth, provider);
-      const emailUserNew = credentials.user.email;
-      const fullNameUserNew = credentials.user.displayName;
-      const newUserService = {
-        fullName: fullNameUserNew,
-        status: true,
-        email: emailUserNew,
-      };
-      dispatch(addUser(newUserService));
-      onAuthStateChanged(auth, async (user) => {
-        if (user) {
-          // navigate("/");
-        }
-      });
-    } catch (error) {
-      console.error("Authentication error:", error);
-    } finally {
-      setIsPopupOpen(false);
-    }
-  };
+  // const loginGoogle = async () => {
+  //   if (isPopupOpen) return;
+  //   setIsPopupOpen(true);
+  //   const provider = new GoogleAuthProvider();
+  //   try {
+  //     const credentials = await signInWithPopup(auth, provider);
+  //     const emailUserNew = credentials.user.email;
+  //     const fullNameUserNew = credentials.user.displayName;
+  //     const newUserService = {
+  //       fullName: fullNameUserNew,
+  //       status: true,
+  //       email: emailUserNew,
+  //     };
+  //     dispatch(addUser(newUserService));
+  //     onAuthStateChanged(auth, async (user) => {
+  //       if (user) {
+  //         // navigate("/");
+  //       }
+  //     });
+  //   } catch (error) {
+  //     console.error("Authentication error:", error);
+  //   } finally {
+  //     setIsPopupOpen(false);
+  //   }
+  // };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setStateValue((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setStateValue((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   const resetForm = () => {
     setStateValue({

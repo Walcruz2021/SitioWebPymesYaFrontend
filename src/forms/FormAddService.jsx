@@ -14,11 +14,10 @@ import "../css/ClassGeneralWeb.css";
 const FormAddService = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [refreshScreen, setRefreshScreen] = useState(false);
+
   var userFullName = useSelector((state) => state.reducerUser.userDataName);
   const userEmail = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
-  const validation = useSelector((state) => state.reducer.validation);
-  const listCategories = useSelector((state) => state.reducer.listCategories);
+
 
   // useEffect(() => {
   //   dispatch(getUserLogin());
@@ -30,7 +29,7 @@ const FormAddService = () => {
   //   }
   // }, [dispatch]);
 
-  const [user, setUser] = useState("null");
+
 
   const MySwal = withReactContent(Swal);
   const options = [

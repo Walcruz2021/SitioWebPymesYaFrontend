@@ -20,7 +20,7 @@ type Props = {
 
 const CompanyServ = ({ company }: Props) => {
 
-    const [stateModal, setVisualModal] = useState(false)
+    
 
     const functionDetails = () => {
 

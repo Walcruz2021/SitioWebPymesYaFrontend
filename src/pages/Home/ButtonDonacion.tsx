@@ -3,7 +3,7 @@ import "./ButtonDonacion.css"
 import paypal from "../../icons/paypalIcon.png"
 import MPago from "../../icons/MPago.png"
 import "../../css/ClassGeneralWeb.css"
-import IonIcon from '@reacticons/ionicons';
+
 import "../../components/ButtonBar/ButtonBar"
 function ButtonDonacion() {
 
@@ -16,8 +16,9 @@ function ButtonDonacion() {
               <a
                 href="https://link.mercadopago.com.ar/pymeya"
                 target="_blank"
+           
               >
-                <img src={MPago} />
+                <img src={MPago} alt="MercadoPago"/>
               </a>
             </div>
           </div>
@@ -30,7 +31,7 @@ function ButtonDonacion() {
                 className="btnDon2 primaryDon2"
                 target="_blank"
               >
-                <img src={paypal} />
+                <img src={paypal} alt="PayPal"/>
               </a>
             </div>
 

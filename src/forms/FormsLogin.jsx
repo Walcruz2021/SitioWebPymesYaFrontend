@@ -10,8 +10,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { Link } from "react-router-dom";
-import { MDBContainer, MDBInput } from "mdb-react-ui-kit";
+
+
 import { validationAddService } from "../store/actions/actions";
 
 import { addUser, listenToAuthChanges } from "../store/actions/actionUser";
@@ -20,7 +20,7 @@ import ModalRestPassword from "../modals/ModalRestPassword";
 import "./FormsLoginAndRegister.css";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
+import { MDBInput } from "mdb-react-ui-kit";
 import logoNew from "../../src/icons/LogoNew.png";
 
 function FormsLogin({ autUser }) {
@@ -33,25 +33,25 @@ function FormsLogin({ autUser }) {
   });
   const [show, setShow] = useState(false);
 
-  const loginGoogle = async () => {
-    const provider = new GoogleAuthProvider();
-    const credentials = await signInWithPopup(auth, provider);
-    const emailUserNew = credentials.user.email;
-    const fullNameUserNew = credentials.user.displayName;
-    const newUserService = {
-      fullName: fullNameUserNew,
-      status: true,
-      email: emailUserNew,
-    };
-    dispatch(addUser(newUserService));
-    try {
-      onAuthStateChanged(auth, async (user) => {
-        console.log(user);
-      });
-    } catch (error) {
-      console.log(error.message, error.code);
-    }
-  };
+  // const loginGoogle = async () => {
+  //   const provider = new GoogleAuthProvider();
+  //   const credentials = await signInWithPopup(auth, provider);
+  //   const emailUserNew = credentials.user.email;
+  //   const fullNameUserNew = credentials.user.displayName;
+  //   const newUserService = {
+  //     fullName: fullNameUserNew,
+  //     status: true,
+  //     email: emailUserNew,
+  //   };
+  //   dispatch(addUser(newUserService));
+  //   try {
+  //     onAuthStateChanged(auth, async (user) => {
+  //       console.log(user);
+  //     });
+  //   } catch (error) {
+  //     console.log(error.message, error.code);
+  //   }
+  // };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,9 +61,9 @@ function FormsLogin({ autUser }) {
     }));
   };
 
-  const handleShow = () => {
-    setShow(!show);
-  };
+  // const handleShow = () => {
+  //   setShow(!show);
+  // };
 
   const handleSumbit = async (e) => {
     if (stateValue.email.trim() === "" || stateValue.password.trim() === "") {

@@ -10,10 +10,10 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import FormAddService from "../forms/FormAddService";
+
 
 const FormEditService = (props) => {
-  const validation = useSelector((state) => state.reducer.validation);
+
 
   const { idServ } = useParams(); // Obtener el ID de la ruta
   const emailLogued = useSelector((state) => state.reducerUser.userDataEmail); // Esto depende de cómo manejes la autenticación en Redux
