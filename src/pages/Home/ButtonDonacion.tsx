@@ -16,9 +16,9 @@ function ButtonDonacion() {
               <a
                 href="https://link.mercadopago.com.ar/pymeya"
                 target="_blank"
-           
+                rel="noreferrer"
               >
-                <img src={MPago} alt="MercadoPago"/>
+                <img src={MPago} alt="MercadoPago" />
               </a>
             </div>
           </div>
@@ -30,8 +30,9 @@ function ButtonDonacion() {
                 href="https://www.paypal.com/donate/?hosted_button_id=48HZX2ZGSWKRQ"
                 className="btnDon2 primaryDon2"
                 target="_blank"
+                rel="noreferrer"
               >
-                <img src={paypal} alt="PayPal"/>
+                <img src={paypal} alt="PayPal" />
               </a>
             </div>
 

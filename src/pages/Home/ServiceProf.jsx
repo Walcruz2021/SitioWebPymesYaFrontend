@@ -44,7 +44,7 @@ const ServiceProf = () => {
 
   const [loginUser, setLoginUser] = useState();
 
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
@@ -53,7 +53,7 @@ const ServiceProf = () => {
         setLoginUser({ email, emailVerified, displayName });
       }
     });
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     if (loginUser && loginUser.emailVerified) {

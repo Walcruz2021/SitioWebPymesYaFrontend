@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../src/hooks/configFirebase";
 import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  onAuthStateChanged,
   updateProfile,
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -39,7 +36,7 @@ function FormRegister({ autUser }) {
   const [validationLastName, setValidationLastName] = useState(false);
   const [isInputFocusedName, setIsInputFocusedName] = useState(false);
   const [isInputFocusedLastName, setIsInputFocusedLastName] = useState(false);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
 
   // const loginGoogle = async () => {
   //   if (isPopupOpen) return;

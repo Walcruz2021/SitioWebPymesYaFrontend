@@ -17,7 +17,7 @@ import { Flip } from 'react-swift-reveal';
 import sistemaBanner from "../../icons/sistemaBanner.jpg";
 
 const SistemaGestionTurnos = () => {
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   return (
     <div>

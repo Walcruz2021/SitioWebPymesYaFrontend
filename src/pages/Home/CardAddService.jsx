@@ -13,10 +13,7 @@ import { useNavigate } from "react-router-dom";
  */
 
 const CardAddService = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  var userEmail = useSelector((state) => state.reducerUser.userDataEmail);
-  const validation = useSelector((state) => state.reducer.validation);
+
 
 
   // useEffect(() => {

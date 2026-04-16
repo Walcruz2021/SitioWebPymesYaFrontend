@@ -43,7 +43,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
     })
 
 
-    const { touched, errors, isSubmitting, message } = props;
+
     let history = useNavigate()
     // useEffect(() => {
     //    setStateInput("false")

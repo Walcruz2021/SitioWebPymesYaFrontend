@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import * as Yup from "yup";
+
 import {
   withFormik
 } from "formik";
@@ -36,7 +36,7 @@ import { useState } from "react";
 // Aside: You may see InjectedFormikProps<OtherProps, FormValues> instead of what comes below in older code.. InjectedFormikProps was artifact of when Formik only exported a HoC. It is also less flexible as it MUST wrap all props (it passes them through).
 const InnerForm = () => {
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
   const [stateInput, setStateInput] = useState({
     email: "",
     name: "",
@@ -59,52 +59,52 @@ const InnerForm = () => {
   }, [dispatch, loginUser]);
 
   // const { touched, errors, isSubmitting, message } = props;
-  let navigate = useNavigate();
+
   // useEffect(() => {
   //    setStateInput("false")
   //   }, []);
 
-  function submitForm(e) {
-    e.preventDefault();
+  // function submitForm(e) {
+  //   e.preventDefault();
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
+  //   const name = e.target.name.value;
+  //   const email = e.target.email.value;
+  //   const message = e.target.message.value;
 
-    //console.log(e.target)
-    if (name.length > 0 && email.length > 0 && message.length > 0) {
-      console.log("mensaje enviado");
+  //   //console.log(e.target)
+  //   if (name.length > 0 && email.length > 0 && message.length > 0) {
+  //     console.log("mensaje enviado");
 
-      // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
-      //     .then(response => console.log(response))
-      //     .catch(error => console.log(error))
+  //     // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
+  //     //     .then(response => console.log(response))
+  //     //     .catch(error => console.log(error))
 
-      Swal.fire("Mensaje Enviado!", "You clicked the button!", "success");
-      setStateInput({
-        name: "",
-        email: "",
-        message: "",
-      });
-      //   setTimeout(function(){
-      //    navigate.push('/')
-      //   },2000)
-    } else {
-      console.log("mensaje no enviado");
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-        footer: '<a href="">Why do I have this issue?</a>',
-      });
-    }
-  }
+  //     Swal.fire("Mensaje Enviado!", "You clicked the button!", "success");
+  //     setStateInput({
+  //       name: "",
+  //       email: "",
+  //       message: "",
+  //     });
+  //     //   setTimeout(function(){
+  //     //    navigate.push('/')
+  //     //   },2000)
+  //   } else {
+  //     console.log("mensaje no enviado");
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Oops...",
+  //       text: "Something went wrong!",
+  //       footer: '<a href="">Why do I have this issue?</a>',
+  //     });
+  //   }
+  // }
 
-  function onChange1(e) {
-    setStateInput({
-      ...stateInput,
-      [e.target.name]: e.target.value,
-    });
-  }
+  // function onChange1(e) {
+  //   setStateInput({
+  //     ...stateInput,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // }
   return (
     <>
    
@@ -179,7 +179,7 @@ const MyForm = withFormik({
     if (!values.message) {
       errors.message = "* por favor ingrese mensaje";
       //console.log(values)
-    } else if (!/^[a-zA-Z0-9\_\-\s]{4,100}$/.test(values.message)) {
+    } else if (!/^[a-zA-Z0-9_\s-]{4,100}$/.test(values.message)) {
       errors.message = " * el mensaje con solo letras y espacios";
     }
     return errors;

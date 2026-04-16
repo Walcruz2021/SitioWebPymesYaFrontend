@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import getCategories from "../helpers/getCategories";
-import { CompanyFetch, CategoryFetch } from "../types/typeApp";
+import { CategoryFetch } from "../types/typeApp";
 
 const useFetchCat = () => {
 

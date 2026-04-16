@@ -37,15 +37,17 @@ const DetailsCompany = () => {
 
 
   useEffect(() => {
+    const functionDetails = async () => {
+      try {
+        const data = await axios(`${rutaBackend}/api/detailsCompany/${id}`);
+        setDetails(data.data.search);
+      } catch (error) {
+        console.error("Error al obtener detalles:", error);
+      }
+    };
+
     functionDetails();
-  }, [dispatch]);
-
-  const functionDetails = async () => {
-    //const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
-    const data = await axios(`${rutaBackend}/api/detailsCompany/${id}`);
-
-    setDetails(data.data.search);
-  };
+  }, [id, rutaBackend]);
 
   return (
     <div>
@@ -66,7 +68,7 @@ const DetailsCompany = () => {
 
             <IonIcon className="IconCss" name="desktop-sharp"></IonIcon>
 
-            <a href={details.siteWeb} target="_blank"  rel="noopener noreferrer">
+            <a href={details.siteWeb} target="_blank" rel="noopener noreferrer">
               Link de Sitio Web
             </a>
 

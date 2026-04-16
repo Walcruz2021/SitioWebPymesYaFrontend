@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../src/hooks/configFirebase";
 import {
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
+  signInWithEmailAndPassword
 } from "@firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -14,7 +11,7 @@ import withReactContent from "sweetalert2-react-content";
 
 import { validationAddService } from "../store/actions/actions";
 
-import { addUser, listenToAuthChanges } from "../store/actions/actionUser";
+import { listenToAuthChanges } from "../store/actions/actionUser";
 
 import ModalRestPassword from "../modals/ModalRestPassword";
 import "./FormsLoginAndRegister.css";

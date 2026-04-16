@@ -13,7 +13,7 @@ const CardAddEditService = () => {
   const [formAddServiceActived, seFormAddActived] = useState(false);
   const [formEditServiceActived, setFormEditServiceActived] = useState(false);
   const [stateButtonback, setStateButtonBack] = useState(false);
-  const emailLogin = useSelector((state) => state.reducerUser.userDataEmail);
+
   //const serviceUser = useSelector((state) => state.validation.data.search);
   const serviceUser = useSelector((state) => state.reducer.validation.data.search);
 
@@ -88,17 +88,4 @@ const CardAddEditService = () => {
 
 export default CardAddEditService;
 
-{
-  /* {serviceUser? serviceUser.map((serv) => (
-           <Link to={`/editService/${serv._id}`}>
-             <button>
-               <img
-                 className="imgCard"
-                 src={editServ}
-                 alt="icon edit service"
-               />
-             </button>
-           </Link>
-         ))
-       : null} */
-}
+

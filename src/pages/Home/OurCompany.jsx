@@ -13,7 +13,7 @@ const OurCompany = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
 
-  var userFullName = useSelector((state) => state.userDataName);
+
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
       if (userCred) {

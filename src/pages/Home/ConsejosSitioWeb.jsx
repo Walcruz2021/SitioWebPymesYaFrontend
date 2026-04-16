@@ -18,7 +18,7 @@ import React, { useEffect, useState } from "react";
 const ConsejosSitioWeb = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {

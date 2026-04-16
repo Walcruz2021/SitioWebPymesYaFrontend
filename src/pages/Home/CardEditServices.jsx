@@ -8,7 +8,7 @@ import CardEditService from "./CardEditService";
 
 const CardEditServices = ({data}) => {
 
-  const emailLogin = useSelector((state) => state.reducerUser.userDataEmail);
+
 
   const validation = useSelector((state) => state.reducer.validation)
 
@@ -20,7 +20,7 @@ const CardEditServices = ({data}) => {
     if (validation && validation.data && validation.data.search) {
       setListServices(validation.data.search);
     }
-  }, [listServices]);
+  }, [validation]);
 
    if (!validation) {
     return <div>Cargando...</div>; // O un spinner

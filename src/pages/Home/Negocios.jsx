@@ -77,7 +77,7 @@ const Negocios = () => {
       ...selectCompanies,
       isLoading: false,
     });
-  }, [dispatch]);
+  }, []);
 
   const buttonSelected = async (value) => {
     console.log(value, "categoria elegida en el menu");

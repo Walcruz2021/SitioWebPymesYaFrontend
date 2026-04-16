@@ -4,7 +4,7 @@ import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteService, validationAddService } from "../store/actions/actions";
 
-import { editServiceUser, getCompanyByUser } from "../store/actions/actionUser";
+import { editServiceUser} from "../store/actions/actionUser";
 
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
