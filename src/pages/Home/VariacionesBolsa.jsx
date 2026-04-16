@@ -113,7 +113,7 @@ const VariacionesBolsa = () => {
         </div>
 
         <div className="imgGral">
-          <img src={subprime} />
+          <img src={subprime} alt="Crisis Subprime" />
         </div>
 
         <p>
@@ -200,7 +200,7 @@ const VariacionesBolsa = () => {
         </div>
 
         <div className="imgGral">
-          <img src={subprime2} />
+          <img src={subprime2} alt="Crisis Subprime" />
         </div>
 
         <p>

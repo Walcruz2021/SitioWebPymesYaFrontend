@@ -186,7 +186,7 @@ const ConsejosSitioWeb = () => {
           de tu negocio.
         </p>
 
-        <img src={wixPage}></img>
+        <img src={wixPage} alt="WIX Page"></img>
         <p>
           De esta manera te vas a olvidar de necesitar de un hosting, de un
           dominio, y las horas de pagos que implica contratar a un personal
@@ -296,7 +296,7 @@ const ConsejosSitioWeb = () => {
           en Mercado Libre o en ambos canales disminuyendo así tu carga
           operacional.
         </p>
-        <img src={mShops}></img>
+        <img src={mShops} alt="Mercado Shops"></img>
         <p>
           Se integra con todas las redes sociales y es completamente
           personalizable, con distintas tipologias a elegir de manera de
@@ -315,7 +315,7 @@ const ConsejosSitioWeb = () => {
           mantenimiento mensual, sin embargo y según la necesidad de tu negocio
           deberás contratar algun tipo de plan premium.
         </p>
-        <img src={tiendaNube}></img>
+        <img src={tiendaNube} alt="Tienda Nube"></img>
 
         <h5>* DON WEB</h5>
 
@@ -331,7 +331,7 @@ const ConsejosSitioWeb = () => {
           mas elevado. De todas maneras todos los valores como precios de sus
           servicios son bastante moderados.
         </p>
-        <img src={donWeb}></img>
+        <img src={donWeb} alt="Don Web"></img>
 
         <h5>* SHOPIFY</h5>
         <p>
@@ -343,7 +343,7 @@ const ConsejosSitioWeb = () => {
           ecommerce, desde un generador de nombres comerciales y logos gratuito
           hasta fotos de stock y soluciones de punto de venta.
         </p>
-        <img src={shopify}></img>
+        <img src={shopify} alt="Shopify"></img>
         <p>
           Por último, cabe destacar que Shopify te permite crear tu propia
           tienda sin necesidad de tener un inventario de productos mediante
@@ -390,7 +390,7 @@ const ConsejosSitioWeb = () => {
           búsqueda.
         </p>
 
-        <img src={wordPress}></img>
+        <img src={wordPress} alt="WordPress"></img>
 
         <div className="titGral">
           <h3>NIVEL 3</h3>

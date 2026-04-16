@@ -59,7 +59,7 @@ const InversionBolsa2 = () => {
           buscar a la empresa por medio de su etIqueta de identificación, en
           este caso es MSFT.
         </p>
-        <img src={finviz} />
+        <img src={finviz} alt="FinViz" />
         <div className="titGral">
           <h3>RETURN ON ASSETS (ROA)</h3>
         </div>
@@ -130,7 +130,7 @@ const InversionBolsa2 = () => {
           a largo plazo.
         </p>
 
-        <img src={RoaRoe} />
+        <img src={RoaRoe} alt="ROA y ROE" />
 
         <div className="titGral">
           <h3>NIVEL DE DEUDA: Quick Ratio y Debt-to-Equity Ratio</h3>
@@ -204,7 +204,7 @@ const InversionBolsa2 = () => {
           Mientras que si el valor es más bajo significa que los niveles de
           endeudamiento con terceros es poco.
         </p>
-        <img src={quickRatio} />
+        <img src={quickRatio} alt="Quick Ratio" />
       </div>
       <ButtonDonacion />
 

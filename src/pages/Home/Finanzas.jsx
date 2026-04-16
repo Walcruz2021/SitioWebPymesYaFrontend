@@ -74,7 +74,7 @@ const Finanzas = () => {
         </div>
 
         <div className="imgGral">
-          <img src={vtaAcciones} />
+          <img src={vtaAcciones} alt="Venta de Acciones"/>
         </div>
 
         <p>
@@ -88,7 +88,7 @@ const Finanzas = () => {
           creciendo.
         </p>
         <div className="imgGral2">
-          <img src={panaderia2}/>
+          <img src={panaderia2} alt="Panaderia Don Beto" />
         </div>
         <p>
           Además el cotizar en bolsa, implica tener cierto beneficios, como estar
@@ -113,7 +113,7 @@ const Finanzas = () => {
           <h2>Beneficios para el INVERSOR</h2>
         </div>
         <div className="imgGral2">
-          <img src={pepe}/>
+          <img src={pepe} alt="Pepe" />
         </div>
         <p>
           Pepe decidió dejar de seguir guardando su dinero en el colchón, y tomó

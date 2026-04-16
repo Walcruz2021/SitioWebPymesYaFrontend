@@ -44,7 +44,7 @@ const SistemaGestionTurnos = () => {
             <div className="col-12 col-md-4">
               <Bounce duration={500} delay={200}>
                 <div className="feature-card text-center">
-                  <img src={responsiveIcon} className="feature-icon" />
+                  <img src={responsiveIcon} className="feature-icon" alt="Multiplataforma" />
                   <h5>Multiplataforma</h5>
                   <p>Accedé desde cualquier dispositivo, en cualquier momento.</p>
                 </div>
@@ -54,7 +54,7 @@ const SistemaGestionTurnos = () => {
             <div className="col-12 col-md-4">
               <Bounce duration={500} delay={300}>
                 <div className="feature-card text-center">
-                  <img src={designSample} className="feature-icon" />
+                  <img src={designSample} className="feature-icon" alt="Fácil de usar" />
                   <h5>Fácil de usar</h5>
                   <p>Interfaz intuitiva diseñada para que trabajes sin complicaciones.</p>
                 </div>
@@ -64,7 +64,7 @@ const SistemaGestionTurnos = () => {
             <div className="col-12 col-md-4">
               <Bounce duration={500} delay={400}>
                 <div className="feature-card text-center">
-                  <img src={installSample} className="feature-icon" />
+                  <img src={installSample} className="feature-icon" alt="Sin instalación" />
                   <h5>Sin instalación</h5>
                   <p>No necesitás descargar nada. Usalo directamente desde internet.</p>
                 </div>
@@ -175,7 +175,7 @@ const SistemaGestionTurnos = () => {
 
                   <div className="card-body">
                     <div className="imgSist">
-                      <img src={imgSist} />
+                      <img src={imgSist} alt="Sistema de Gestión de Turnos" />
                     </div>
                   </div>
                 </Flip>

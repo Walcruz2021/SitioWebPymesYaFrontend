@@ -28,15 +28,15 @@ const ButtonBar = () => {
                     <p>Algunas tecnologias con las que contamos de conocimientos y en las que tenemos experiencia para sacar adelante cualquier proyecto</p>
 
                     <div className="containerIcons">
-                        <img className="iconoTec" src={mongo}></img>
-                        <img className="iconoTec" src={sql}></img>
-                        <img className="iconoTec" src={postgress}></img>
-                        <img className="iconoTec" src={java}></img>
-                        <img className="iconoTec" src={react}></img>
-                        <img className="iconoTec" src={javaS}></img>
-                        <img className="iconoTec" src={lengC}></img>
-                        <img className="iconoTec" src={express}></img>
-                        <img className="iconoTec" src={node}></img>
+                        <img className="iconoTec" src={mongo} alt="MongoDB"></img>
+                        <img className="iconoTec" src={sql} alt="SQL"></img>
+                        <img className="iconoTec" src={postgress} alt="PostgreSQL"></img>
+                        <img className="iconoTec" src={java} alt="Java"></img>
+                        <img className="iconoTec" src={react} alt="React"></img>
+                        <img className="iconoTec" src={javaS} alt="JavaScript"></img>
+                        <img className="iconoTec" src={lengC} alt="C Language"></img>
+                        <img className="iconoTec" src={express} alt="Express"></img>
+                        <img className="iconoTec" src={node} alt="Node.js"></img>
                     </div>
 
                 </div>
@@ -44,8 +44,8 @@ const ButtonBar = () => {
                 <nav className="navegacion">
 
                     {/* <h3>Redes Sociales</h3> */}
-                    <a href="https://www.instagram.com/pymesyasalta/" target="_blank"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
-                    {/* <a href="https://www.facebook.com/profile.php?id=100091303899830&sk=about" target="_blank"><IonIcon className="IconRedes" name={'logo-facebook'} /></a> */}
+                    <a href="https://www.instagram.com/pymesyasalta/" target="_blank" rel="noreferrer"><IonIcon className="IconRedes" name={'logo-instagram'} /></a>
+                    {/* <a href="https://www.facebook.com/profile.php?id=100091303899830&sk=about" target="_blank" rel="noreferrer"><IonIcon className="IconRedes" name={'logo-facebook'} /></a> */}
 
                 </nav>
             </div>

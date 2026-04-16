@@ -13,7 +13,7 @@ const Company = ({company}: Props) => {
     return (
     
             <div className="CardCompany">
-                <img src={company.avatar} />
+                <img src={company.avatar} alt="company avatar"/>
                 <div className="Contenido">
                 <h4>{company.nameCompany}</h4>  
                 <p>

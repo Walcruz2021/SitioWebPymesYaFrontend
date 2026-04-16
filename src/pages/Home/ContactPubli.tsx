@@ -8,9 +8,6 @@ import phone from "./imagenes/phone.png"
 import gmail from "./imagenes/gmail.png"
 
 
-import Swal from 'sweetalert2'
-
-import { useNavigate } from 'react-router-dom';
 
 import { useState } from "react";
 
@@ -44,50 +41,50 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
 
 
 
-    let history = useNavigate()
+    //let history = useNavigate()
     // useEffect(() => {
     //    setStateInput("false")
     //   }, []);
 
-    function submitForm(e: any) {
+    // function submitForm(e: any) {
 
-        e.preventDefault()
+    //     e.preventDefault()
 
-        const name = e.target.name.value
-        const email = e.target.email.value
-        const message = e.target.message.value
+    //     const name = e.target.name.value
+    //     const email = e.target.email.value
+    //     const message = e.target.message.value
 
-        //console.log(e.target)
-        if (name.length > 0 && email.length > 0 && message.length > 0) {
-            console.log("mensaje enviado")
+    //     //console.log(e.target)
+    //     if (name.length > 0 && email.length > 0 && message.length > 0) {
+    //         console.log("mensaje enviado")
 
-            // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
-            //     .then(response => console.log(response))
-            //     .catch(error => console.log(error))
+    //         // emailjs.sendForm('service_vfvnhsc', 'template_mihhwsa', e.target, '6wRJW_4Y-H_LANUgQ')
+    //         //     .then(response => console.log(response))
+    //         //     .catch(error => console.log(error))
 
-            Swal.fire(
-                'Mensaje Enviado!',
-                'You clicked the button!',
-                'success'
-            );
-            setStateInput({
-                name: "",
-                email: "",
-                message: ""
-            })
-            //   setTimeout(function(){
-            //    history.push('/')
-            //   },2000)
-        } else {
-            console.log("mensaje no enviado")
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href="">Why do I have this issue?</a>'
-            })
-        }
-    }
+    //         Swal.fire(
+    //             'Mensaje Enviado!',
+    //             'You clicked the button!',
+    //             'success'
+    //         );
+    //         setStateInput({
+    //             name: "",
+    //             email: "",
+    //             message: ""
+    //         })
+    //         //   setTimeout(function(){
+    //         //    history.push('/')
+    //         //   },2000)
+    //     } else {
+    //         console.log("mensaje no enviado")
+    //         Swal.fire({
+    //             icon: 'error',
+    //             title: 'Oops...',
+    //             text: 'Something went wrong!',
+    //             footer: '<a href="">Why do I have this issue?</a>'
+    //         })
+    //     }
+    // }
 
 
     return (

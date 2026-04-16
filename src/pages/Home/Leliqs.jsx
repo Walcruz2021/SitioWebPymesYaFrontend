@@ -156,7 +156,7 @@ const Leliqs = () => {
           prácticamente al infinito
         </p>
 
-        <img src={imgLeliq} />
+        <img src={imgLeliq} alt="Leliqs"  />
 
         <div className="titGral">
           <h3>¿Por qué es tan dificil desarmar la Leliqs?</h3>
@@ -200,7 +200,7 @@ const Leliqs = () => {
         </p>
 
         <div className="imgGral">
-          <img src={imgCaputo} />
+          <img src={imgCaputo} alt="Luis Caputo" />
         </div>
         <p>
           La principal tarea de Caputo consistiría en una operación de

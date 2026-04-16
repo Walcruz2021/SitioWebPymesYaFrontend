@@ -111,7 +111,7 @@ const InversionBolsa = () => {
           página por medio de su etiqueta, en este caso es MSFT.
         </p>
 
-        <img src={finviz} />
+        <img src={finviz} alt="FinViz" />
 
         <h3>SHORT FLOAT</h3>
         <p>
@@ -148,7 +148,7 @@ const InversionBolsa = () => {
           factor en su análisis de inversión.
         </p>
         <div className="imgGral">
-          <img src={sFloat} />
+          <img src={sFloat} alt="Short Float" />
         </div>
 
         <h3>RSI</h3>
@@ -177,7 +177,7 @@ const InversionBolsa = () => {
           adaptarse a periodos más cortos o más largos
         </p>
         <div className="imgGral">
-          <img src={rsi} />
+          <img src={rsi} alt="RSI" />
         </div>
 
         <h3>TARGET PRICE</h3>
@@ -219,7 +219,7 @@ const InversionBolsa = () => {
         </p>
 
         <div className="imgGral">
-          <img src={avgVolume} />
+          <img src={avgVolume} alt="Average Volume" />
         </div>
 
         <h3>OVERSOLD</h3>

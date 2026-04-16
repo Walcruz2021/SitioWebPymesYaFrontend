@@ -88,7 +88,7 @@ const OurCompany = () => {
                   <h3>DESARROLLO</h3>
                 </div>
                 <div className="imgGral2">
-                  <img src={desarrollo}></img>
+                  <img src={desarrollo} alt="Desarrollo" />
                 </div>
                 <p>
                   Trabajamos contigo para diseñar una solución pensada en ti y
@@ -115,7 +115,7 @@ const OurCompany = () => {
               <div className="carousel-item">
                 <h3>DISEÑOS</h3>
                 <div className="imgGral2">
-                  <img src={diseño}></img>
+                  <img src={diseño} alt="Diseño" />
                 </div>
                 <p>
                   El diseño no es solo lo que parece y se siente. El diseño es
@@ -132,7 +132,7 @@ const OurCompany = () => {
               <div className="carousel-item">
                 <h3>PRESUPUESTO</h3>
                 <div className="imgGral2">
-                  <img src={presupuesto}></img>
+                  <img src={presupuesto} alt="Presupuesto" />
                 </div>
                 {/* <p>Integramos API's, soluciones de terceros y propias a los desarrollos ofreciendo una mejor experiencia.</p> */}
                 <p>

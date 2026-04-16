@@ -40,7 +40,7 @@ const ServiceProf = () => {
       ...selectCompanies,
       isLoading: false,
     });
-  }, [dispatch]);
+  }, []);
 
   const [loginUser, setLoginUser] = useState();
 

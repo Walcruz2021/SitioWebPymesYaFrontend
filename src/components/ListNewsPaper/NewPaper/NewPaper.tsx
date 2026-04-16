@@ -10,7 +10,7 @@ const NewPaper = ({ newpaper }: Props) => {
     <div>
       <div className="CardNewPaper">
         <div className="imgContainerNewPaper">
-          <img className="imgCardNewPaper" src={newpaper.img1}></img>
+          <img className="imgCardNewPaper" src={newpaper.img1} alt={newpaper.title1}></img>
         </div>
         <h1 className="titleGralh1 instrument-serif-regular">
           {newpaper.title1}

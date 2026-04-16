@@ -57,7 +57,7 @@ const DetailsCompany = () => {
           <h1>{details.nameCompany}</h1>
           <br></br>
           <div className="containerImg">
-            <img src={details.avatar} />
+            <img src={details.avatar} alt={details.nameCompany} />
           </div>
           <div className="containerDetailsInt">
             <IonIcon className="IconCss" name="bookmarks-outline"></IonIcon>

@@ -43,11 +43,11 @@ const ListNotes = (codigo) => {
     //console.log(notes[0])
     const arrayCamps = [];
 
-    for (let camp in notes) {
+    // for (let camp in notes) {
 
-      //console.log(noteKeys)
-      //arrayCamps.push(noteKeys)
-    }
+    //   //console.log(noteKeys)
+    //   //arrayCamps.push(noteKeys)
+    // }
     return arrayCamps;
   }
   if (notes) {

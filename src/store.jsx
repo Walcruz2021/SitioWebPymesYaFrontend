@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+import { createStore, applyMiddleware} from 'redux'
 
 // redux thuink sirve para trabajar con lñas llamadas asincronas
 import thunk from 'redux-thunk'
