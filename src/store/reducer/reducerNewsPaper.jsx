@@ -1,4 +1,4 @@
-import { GET_NEWS_PAPER, ADD_NEWS_PAPER } from "../actions/actionsNewsPaper";
+import { GET_NEWS_PAPER } from "../actions/actionsNewsPaper";
 
 const initialState = {
   listNewsPaper: [],

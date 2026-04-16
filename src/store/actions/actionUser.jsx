@@ -99,7 +99,7 @@ export const setUser = (user) => ({
 export function addUser(payload) {
   return async function (dispatch) {
     try {
-      const newUser = await axios.post(
+      await axios.post(
         //`http://localhost:3002/api/addPerro/${idClient}`,
         `${rutaBackend}/api/addService`,
         payload

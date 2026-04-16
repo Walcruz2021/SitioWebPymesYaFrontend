@@ -11,7 +11,7 @@ const pepe = require("./imagenes/Pepe.png");
 const Finanzas = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {

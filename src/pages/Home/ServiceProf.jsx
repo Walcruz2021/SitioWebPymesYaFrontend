@@ -33,16 +33,17 @@ const ServiceProf = () => {
     isLoading: true,
     isError: false,
   });
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setSelectCompanies({
       ...selectCompanies,
       isLoading: false,
     });
-  }, []);
+  }, [dispatch]);
 
   const [loginUser, setLoginUser] = useState();
-  const dispatch = useDispatch();
+
   const userFullName = useSelector((state) => state.userDataName);
 
   useEffect(() => {
@@ -52,7 +53,7 @@ const ServiceProf = () => {
         setLoginUser({ email, emailVerified, displayName });
       }
     });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (loginUser && loginUser.emailVerified) {
@@ -174,7 +175,7 @@ const ServiceProf = () => {
           {selectCompanies.isLoading === false ? (
             selectCompanies.companies.map(
               (company) => (
-                console.log(company),
+                console.log(company)
                 (
                   <div className="col-12 col-md-4 d-flex justify-content-center mb-1">
                     <div className="fixed-width-card">

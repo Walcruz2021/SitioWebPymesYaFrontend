@@ -5,7 +5,7 @@ import FormAddService from "../../forms/FormAddService"
 import CardAddEditService from "../Home/CardAddEditService"
 import CardEditServices from "../Home/CardEditServices"
 const ListServices = () => {
-  const navigate = useNavigate();
+
   const validation = useSelector((state) => state.reducer.validation);
 
 

@@ -63,7 +63,7 @@ const Negocios = () => {
       arrayOptions.push(option);
     }
   }
-  const [loading, setLoading] = useState(false);
+
   const [selectedOption, setSelectedOption] = useState(null);
 
   const [selectCompanies, setSelectCompanies] = useState({
@@ -77,7 +77,7 @@ const Negocios = () => {
       ...selectCompanies,
       isLoading: false,
     });
-  }, []);
+  }, [dispatch]);
 
   const buttonSelected = async (value) => {
     console.log(value, "categoria elegida en el menu");
@@ -194,7 +194,7 @@ const Negocios = () => {
       </ul>
 
       <div className="ContainerListComp">
-        {selectCompanies.isLoading == false ? (
+        {selectCompanies.isLoading === false ? (
           //pregunta si las empresas elegidas correspondena la opcion OTROS del MENU
           selectedOption === "6408e10042e6881a681f6955" ? (
             selectCompanies.companies.map((comp) => (

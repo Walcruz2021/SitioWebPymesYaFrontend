@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 const NewHistory = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/");
-  };
+
 
   return (
     // <div className="containerNewHistory" onClick={handleClick}>

@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CompanyItem } from "../../types/typeApp";
-import {
-  faShoppingCart,
-  faBars,
-  faMobile,
-  faAddressCard,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
 import axios from "axios";
 import "./DetailsCompany.css";
 import IonIcon from "@reacticons/ionicons";
@@ -19,7 +14,7 @@ import { getUserLogin } from "../../store/actions/actionUser";
 const DetailsCompany = () => {
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {
@@ -40,10 +35,10 @@ const DetailsCompany = () => {
   const { id } = useParams();
   const [details, setDetails] = useState();
 
-  console.log(details, "empresa");
+
   useEffect(() => {
     functionDetails();
-  }, []);
+  }, [dispatch]);
 
   const functionDetails = async () => {
     //const data = await axios(`https://backendtiendavirtual.onrender.com/api/detailsCompany/${id}`);
@@ -71,7 +66,7 @@ const DetailsCompany = () => {
 
             <IonIcon className="IconCss" name="desktop-sharp"></IonIcon>
 
-            <a href={details.siteWeb} target="_blank">
+            <a href={details.siteWeb} target="_blank"  rel="noopener noreferrer">
               Link de Sitio Web
             </a>
 

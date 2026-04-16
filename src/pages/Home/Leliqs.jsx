@@ -20,14 +20,11 @@ const Leliqs = () => {
   //   });
   // }
 
-  const titulo = "Leliqs";
-  const descripcion = "Informacion de Leliqs";
-  const imagen = "URL-de-la-imagen-del-producto";
-  const url = "www.pymesya.com/leliqs";
+
 
   const [loginUser, setLoginUser] = useState();
   const dispatch = useDispatch();
-  const userFullName = useSelector((state) => state.userDataName);
+
 
   useEffect(() => {
     auth.onAuthStateChanged((userCred) => {

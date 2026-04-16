@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import * as Yup from 'yup';
-import { withFormik, FormikProps, FormikErrors, Form, Field, ErrorMessage } from 'formik';
+
+import { withFormik, FormikProps, FormikErrors } from 'formik';
 
 import ButtonBar from '../../components/ButtonBar/ButtonBar';
 import "./ContactPubli.css"
@@ -89,16 +89,10 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
         }
     }
 
-    function onChange1(e: any) {
-        setStateInput({
-            ...stateInput,
-            [e.target.name]: e.target.value,
-        });
 
-    }
     return (
         <>
-           
+
             {/* <div className="containerForm">
                 
             </div> */}
@@ -106,7 +100,7 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
                 <h3>MEDIOS DE CONTACTO</h3>
             </div>
 
-        
+
             <div className="containerText">
                 <p>Hoy en día, dar a conocer una marca puede resultar más fácil que hace algunos años gracias al internet. Algunas tecnologías se han convertido en fuertes aliados de los emprendedores para llegar a más personas y aumentar sus ventas.</p>
                 <p>Internet es un amplio mercado que está creciendo exponencialmente, por lo que contar con las últimas tendencias de marketing digital es sumamente esencial para potenciar una marca. Tanto en términos rentables como en optimización en general. Allí, la publicidad online nace como una alternativa eficaz para anunciar la filosofía, productos y/o servicios de una determinada empresa a su público objetivo. Más que todo, a través de impactos interactivos que atrapen su atención, es decir, banners, anuncios, impresiones en video, etc.</p>
@@ -181,10 +175,9 @@ const MyForm = withFormik<MyFormProps, FormValues>({
         }
 
         if (!values.message) {
-            errors.message = ("* por favor ingrese mensaje");
-            //console.log(values)
-        } else if (!/^[a-zA-Z0-9\_\-\s]{4,100}$/.test(values.message)) {
-            errors.message = (" * el mensaje con solo letras y espacios")
+            errors.message = "* por favor ingrese mensaje";
+        } else if (!/^[a-zA-Z0-9_\s-]{4,100}$/.test(values.message)) {
+            errors.message = "* el mensaje solo letras, números y espacios";
         }
         return errors;
     },

@@ -1,6 +1,5 @@
 import axios from "axios";
 import rutaBackend from "../../helpers/rutaBackend";
-import { auth } from "../../hooks/configFirebase";
 export const ADD_SERVICE = "ADD_SERVICE";
 export const VALIDATION_ADDSERVICE = "VALIDATION_ADDSERVICE";
 export const EDIT_SERVICE = "EDIT_SERVICE";
