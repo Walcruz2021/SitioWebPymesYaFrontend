@@ -79,7 +79,7 @@ const SistemaGestionTurnos = () => {
       <div className="hero">
         <div className="hero-overlay"></div>
 
-        <img src={sistemaBanner} className="hero-bg" />
+        <img src={sistemaBanner} className="hero-bg" alt="Sistema de Gestión de Turnos" />
 
         <div className="hero-content">
           <h1>Gestioná tu negocio sin caos</h1>

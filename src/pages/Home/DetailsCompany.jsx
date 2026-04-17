@@ -47,7 +47,7 @@ const DetailsCompany = () => {
     };
 
     functionDetails();
-  }, [id, rutaBackend]);
+  }, [id]);
 
   return (
     <div>

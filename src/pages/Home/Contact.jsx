@@ -37,11 +37,7 @@ import { useState } from "react";
 const InnerForm = () => {
   const dispatch = useDispatch();
 
-  const [stateInput, setStateInput] = useState({
-    email: "",
-    name: "",
-    message: "",
-  });
+
 
   const [loginUser, setLoginUser] = useState();
   useEffect(() => {

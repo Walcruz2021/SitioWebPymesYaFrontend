@@ -64,7 +64,7 @@ const Services = () => {
           </div>
           <div className="CardCont">
             <div className="imgGral">
-            <img src={eccomerce}></img>
+            <img src={eccomerce} alt="Ecommerce"></img>
 
             </div>
 
@@ -132,7 +132,7 @@ const Services = () => {
             <h4>SOFTWARE DE GESTION WEB</h4>
           </div>
           <div className="CardCont">
-            <img src={software}></img>
+            <img src={software} alt="Software de Gestión Web"></img>
             <p>
               Podrás realizar distintas tareas de forma mucho mas fácil y rápida
               que recurriendo a sistemas tradicionales basados en anotaciones
@@ -155,7 +155,7 @@ const Services = () => {
 
       <div className="Card3">
         <div className="ImgClass imgGral">
-          <img src={sitioWeb}></img>
+          <img src={sitioWeb} alt="Sitio Web"></img>
         </div>
 
         <div className="servSitioWeb CardCont">

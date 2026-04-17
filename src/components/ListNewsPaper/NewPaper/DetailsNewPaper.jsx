@@ -11,7 +11,7 @@ const DetailsCompany = () => {
   const location = useLocation();
   const newpaper = location.state?.newpaper;
 
-  const dispatch = useDispatch();
+
 
 
   return (
