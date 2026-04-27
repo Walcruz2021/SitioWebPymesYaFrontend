@@ -17,13 +17,10 @@ import InversionBolsa from "./pages/Home/InversionBolsa";
 import InversionBolsa2 from "./pages/Home/InversionBolsa2";
 import ConsejosSitioWeb from "./pages/Home/ConsejosSitioWeb";
 import Leliqs from "./pages/Home/Leliqs";
-
 import CardAddEditService from "./pages/Home/CardAddEditService";
 import CrisisTequila from "./pages/Home/CrisisTequila";
 import FormEditService from "./forms/FormEditService";
-
 import CardEditServices from "./pages/Home/CardEditServices";
-
 import SistemaGestionTurnos from "./pages/Home/SistemaGestionTurnos";
 import FormsRegister from "../src/forms/FormsRegister";
 import NavBarBoostrapLogin from "./components/NavBar/NavBarBoostrapLogin";
