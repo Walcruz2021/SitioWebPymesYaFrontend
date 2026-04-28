@@ -151,7 +151,7 @@ const App = () => {
           element={<Navigate to={isAuthenticated ? "/" : "/login"} />}
         />
       </Routes>
-      <ButtonBarBoostrap />
+      {/* <ButtonBarBoostrap /> */}
     </BrowserRouter>
   );
 };
