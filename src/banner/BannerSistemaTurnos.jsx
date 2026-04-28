@@ -32,7 +32,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
         <img
           src={BG_IMAGE}
           alt="background"
-          className="w-full h-full object-cover object-center scale-105"
+          className="w-full h-full object-cover object-center scale-80"
           style={{ filter: "brightness(0.35) saturate(0.8)" }}
         />
         {/* Warm gradient overlays */}
@@ -72,7 +72,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 mb-8 backdrop-blur-sm"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 mb-8 backdrop-blur-sm mt-5"
         >
           <Star className="w-3 h-3 text-gray-400 fill-gray-400" />
           <span className="text-gray-400/90 text-[10px] tracking-[0.3em] uppercase font-medium">
@@ -152,6 +152,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
               href="https://frontend-app-peluqueria.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
+               className="no-underline text-inherit"
             >
               <span className="relative text-white font-semibold text-sm sm:text-base tracking-[0.1em] uppercase">
                 Accedé al sistema
