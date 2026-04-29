@@ -19,7 +19,7 @@ const problems = [
 
 export default function ServicesSection() {
   return (
-    <section className="bg-white py-20 sm:py-28 px-6 sm:px-10">
+    <section className="bg-white py-20 sm:py-22 px-6 sm:px-10">
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
 
         {/* Services */}
@@ -105,7 +105,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-10 p-6 border border-gray-100 bg-gray-50 rounded-sm"
           >
-            <p className="text-gray-500 text-sm leading-relaxed font-light italic">
+            <p className="text-gray-500 text-base leading-relaxed font-light italic">
               "Somos desarrolladores especializados en crear soluciones digitales que ayudan a negocios reales a crecer. No solo hacemos páginas web: construimos herramientas que automatizan procesos, mejoran la experiencia del cliente y aumentan las ventas."
             </p>
           </motion.div>

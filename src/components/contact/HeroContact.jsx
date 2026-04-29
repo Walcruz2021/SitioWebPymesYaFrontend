@@ -15,12 +15,12 @@ export default function HeroContact({ onPresupuesto }) {
       {/* Gradient bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 py-24 sm:py-36">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 py-23 sm:py-24 mt-3">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-gray-400 text-xs tracking-[0.4em] uppercase mb-6"
+          className="text-gray-400 text-xs tracking-[0.4em] uppercase mb-12"
         >
           Soluciones digitales · Resultados reales
         </motion.p>
@@ -29,7 +29,7 @@ export default function HeroContact({ onPresupuesto }) {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-6xl md:text-7xl font-black leading-[0.9] tracking-tight mb-8"
+          className="text-4xl sm:text-6xl md:text-7xl font-black leading-[0.9] tracking-tight mb-20"
         >
           No importa si estás<br />
           <span className="text-gray-400 font-light italic">empezando</span> o querés<br />

@@ -102,10 +102,10 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
                   </div>
                   {/* Text */}
                   <div>
-                    <h3 className="text-stone-800 font-semibold text-m mb-0.5 tracking-tight">
+                    <h3 className="text-stone-800 font-semibold text-lg mb-0.5 tracking-tight">
                       {f.title}
                     </h3>
-                    <p className="text-stone-500 text-xl leading-relaxed font-light">
+                    <p className="text-stone-600 text-base leading-relaxed font-light">
                       {f.description}
                     </p>
                   </div>
@@ -159,7 +159,7 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
               <div className="w-2.5 h-2.5 rounded-full bg-stone-300" />
               <div className="w-2.5 h-2.5 rounded-full bg-stone-300" />
               <div className="flex-1 ml-3 h-5 rounded bg-white border border-stone-200 flex items-center px-2">
-                <span className="text-stone-400 text-[12px] tracking-wide">www.pymesya.com.ar</span>
+                <span className="text-stone-500 text-[12px] tracking-wide">www.pymesya.com.ar</span>
               </div>
             </div>
 
@@ -187,7 +187,7 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
             </div>
             <div>
               <p className="text-stone-800 text-m font-semibold m-0">100% Gratuito</p>
-              <p className="text-stone-400 text-[15px]">Sin tarjeta requerida</p>
+              <p className="text-stone-500 text-[15px]">Sin tarjeta requerida</p>
             </div>
           </motion.div>
 
@@ -207,7 +207,7 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
               <p className="text-stone-800 text-sm font-semibold m-1">
                 Reportes en tiempo real
               </p>
-              <p className="text-stone-400 text-xs">
+              <p className="text-stone-500 text-sm">
                 Tu Dashboard siempre actualizado y listo
               </p>
             </div>

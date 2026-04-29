@@ -10,7 +10,7 @@ const reasons = [
 
 export default function WhyUsSection() {
   return (
-    <section className="bg-white py-20 sm:py-28 px-6 sm:px-10">
+    <section className="bg-white py-20 sm:py-15 px-6 sm:px-10">
       <div className="max-w-5xl mx-auto">
 
         <motion.div
@@ -41,7 +41,7 @@ export default function WhyUsSection() {
             >
               <div className="w-6 h-0.5 bg-gray-200 group-hover:bg-black transition-colors duration-300 mb-5" />
               <h3 className="text-gray-900 font-bold text-base mb-2 tracking-tight">{r.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed font-light">{r.desc}</p>
+              <p className="text-gray-600 text-sm leading-relaxed font-light">{r.desc}</p>
             </motion.div>
           ))}
 

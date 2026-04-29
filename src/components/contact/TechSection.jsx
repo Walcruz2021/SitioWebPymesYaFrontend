@@ -33,12 +33,12 @@ export default function TechSection() {
               <span className="text-gray-500 font-light italic">modernas</span>
             </h2>
           </div>
-          <p className="text-gray-400 text-sm max-w-xs leading-relaxed font-light">
+          <p className="text-gray-400 text-base max-w-xs leading-relaxed font-light">
             Elegimos la tecnología adecuada según cada proyecto, no al revés.
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {techs.map((t, i) => (
             <motion.div
               key={i}

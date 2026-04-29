@@ -3,7 +3,7 @@ import { Phone, Mail, Clock, ArrowRight } from "lucide-react";
 
 export default function ContactSection({ onPresupuesto }) {
   return (
-    <section className="bg-gray-50 py-20 sm:py-28 px-6 sm:px-10">
+    <section className="bg-gray-50 py-19 sm:py-22 px-6 sm:px-10">
       <div className="max-w-5xl mx-auto">
 
         <motion.div
@@ -39,7 +39,7 @@ export default function ContactSection({ onPresupuesto }) {
               </div>
               <h3 className="text-gray-900 font-bold text-base tracking-tight">Atención telefónica</h3>
             </div>
-            <p className="text-gray-500 text-sm mb-4 font-light leading-relaxed">
+            <p className="text-gray-600 text-sm mb-4 font-light leading-relaxed">
               Hablá directamente con nosotros y resolvé tus dudas al instante.
             </p>
             <a
@@ -48,7 +48,7 @@ export default function ContactSection({ onPresupuesto }) {
             >
               387 615 3799
             </a>
-            <div className="flex items-center gap-2 text-gray-400 text-xs">
+            <div className="flex items-center gap-2 text-gray-500 text-xs">
               <Clock className="w-3 h-3" strokeWidth={1.5} />
               <span>Lunes a Sábados · 9:00 a 21:00 hs</span>
             </div>
@@ -68,7 +68,7 @@ export default function ContactSection({ onPresupuesto }) {
               </div>
               <h3 className="text-gray-900 font-bold text-base tracking-tight">Correo electrónico</h3>
             </div>
-            <p className="text-gray-500 text-sm mb-4 font-light leading-relaxed">
+            <p className="text-gray-600 text-sm mb-4 font-light leading-relaxed">
               Envianos tu consulta y te respondemos en menos de 24 horas.
             </p>
             <a
@@ -77,7 +77,7 @@ export default function ContactSection({ onPresupuesto }) {
             >
               pymestiendavirtual@gmail.com
             </a>
-            <div className="flex items-center gap-2 text-gray-400 text-xs">
+            <div className="flex items-center gap-2 text-gray-500 text-xs">
               <Clock className="w-3 h-3" strokeWidth={1.5} />
               <span>Lunes a Sábados · 9:00 a 21:00 hs</span>
             </div>
@@ -102,7 +102,7 @@ export default function ContactSection({ onPresupuesto }) {
             Agendá una consulta sin costo
             <ArrowRight className="w-4 h-4" />
           </motion.button>
-          <p className="text-gray-400 text-xs mt-4 tracking-wide">Sin compromiso · Respuesta en menos de 24hs</p>
+          <p className="text-gray-500 text-sm mt-4 tracking-wide">Sin compromiso · Respuesta en menos de 24hs</p>
         </motion.div>
 
       </div>
