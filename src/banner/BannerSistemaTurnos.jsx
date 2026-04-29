@@ -72,7 +72,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 mb-8 backdrop-blur-sm mt-5"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 mb-8 backdrop-blur-sm mt-3"
         >
           <Star className="w-3 h-3 text-gray-400 fill-gray-400" />
           <span className="text-gray-400/90 text-[10px] tracking-[0.3em] uppercase font-medium">
@@ -86,17 +86,17 @@ export default function BannerSistemaTurnos({ onAccess }) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-[-0.02em] leading-[0.9] text-white mb-6"
+          className="text-1xl md:text-7xl lg:text-7xl font-black uppercase tracking-[-0.02em] leading-[0.9] text-white mb-6"
         >
           Gestioná tu
           <br />
           <span className="relative">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-stone-300">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-200 to-stone-300 text-7xl">
               negocio
             </span>
           </span>
           <br />
-          <span className="text-stone-300 font-light italic">sin caos</span>
+          <span className="text-stone-300 font-light italic text-7xl">sin caos</span>
         </motion.h1>
 
         {/* Divider line */}
@@ -112,7 +112,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-stone-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-4"
+          className="text-stone-300 text-xsmd:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-4"
         >
           Turnos, ventas y gastos en un solo lugar.
         </motion.p>
@@ -136,7 +136,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             onClick={onAccess}
-            className="group relative inline-flex items-center gap-3 px-8 py-1 rounded-sm overflow-hidden"
+            className="group relative inline-flex items-center gap-3 px-8 rounded-sm overflow-hidden"
             style={{
               background: "linear-gradient(135deg, #c0bdbd, #646363, #2b2a2a)",
               boxShadow: "0 0 30px rgba(235, 232, 228, 0.3), 0 4px 20px rgba(0,0,0,0.4)"
@@ -154,7 +154,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
               rel="noopener noreferrer"
                className="no-underline text-inherit"
             >
-              <span className="relative text-white font-semibold text-sm sm:text-base tracking-[0.1em] uppercase">
+              <span className="relative text-white font-semibold text-xs  tracking-[0.1em] uppercase">
                 Accedé al sistema
               </span>
             </a>
@@ -163,7 +163,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-4 h-3 text-white" />
             </motion.div>
           </motion.button>
 
@@ -180,7 +180,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="mt-16 flex items-center justify-center gap-8 sm:gap-12"
+          className="mt-11 flex items-center justify-center gap-8 sm:gap-12"
         >
           {[
             { value: "100%", label: "Online" },
@@ -188,8 +188,8 @@ export default function BannerSistemaTurnos({ onAccess }) {
             { value: "Fácil", label: "de usar" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-gray-200/80 text-lg sm:text-xl font-bold tracking-tight">{stat.value}</div>
-              <div className="text-stone-300 text-[13px] tracking-[0.2em] uppercase mt-0.5">{stat.label}</div>
+              <div className="text-gray-200/70 text-lg sm:text-base font-bold tracking-tight">{stat.value}</div>
+              <div className="text-gray-200 text-[11px] tracking-[0.2em] uppercase mt-0.5">{stat.label}</div>
             </div>
           ))}
         </motion.div>

@@ -10,14 +10,14 @@ export default function CardsSection({ cards }) {
 
   return (
     <>
-      <section className="relative px-6 sm:px-10 lg:px-20 py-20 sm:py-10">
+      <section className="relative px-6 sm:px-10 lg:px-20 py-20 sm:py-2">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="mb-16 sm:mb-24"
+          className="mb-14 sm:mb-16"
         >
           <p className="text-muted-foreground/40 text-[12px] tracking-[0.5em] uppercase mb-4">
             NUESTROS BENEFICIOS

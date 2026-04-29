@@ -43,7 +43,7 @@ const itemVariants = {
 
 export default function BannerSistemaTurnosOptions({ onAccess }) {
   return (
-    <section className="relative w-full min-h-screen bg-white flex items-center overflow-hidden">
+    <section className="relative w-full min-h-screen bg-white flex items-center overflow-hidden mt-0">
 
       {/* Subtle background pattern */}
       <div
@@ -57,7 +57,7 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
       {/* Warm top accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
 
-      <div className="relative z-10 w-full  px-6 sm:px-10 lg:px-16 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <div className="relative z-10 w-full  px-6 sm:px-10 lg:px-16 py-10 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
 
         {/* LEFT — Features list */}
         <div>
@@ -67,9 +67,9 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mb-12"
+            className="mb-9"
           >
-            <span className="inline-block text-amber-600 text-[10px] font-semibold tracking-[0.35em] uppercase mb-3">
+            <span className="inline-block text-amber-600 text-[10px] font-semibold tracking-[0.35em] uppercase mb-3 mt-0">
               ¿Por qué elegirnos?
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 leading-tight tracking-tight">

@@ -21,7 +21,7 @@ export default function HeroSection() {
           Experiencia · Diseño · Excelencia
         </motion.p>
 
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black uppercase tracking-[-0.04em] leading-[0.85] text-foreground">
+        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-black uppercase tracking-[-0.04em] leading-[0.85] text-foreground">
           Los Tres
           <br />
           <span className="text-muted-foreground">Pilares que transforman tu Negocio</span>
@@ -33,6 +33,8 @@ export default function HeroSection() {
           transition={{ delay: 0.8, duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="w-16 h-px bg-muted-foreground/40 mx-auto mt-10 mb-8 origin-left"
         />
+
+
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -46,11 +48,12 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div
+
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 py-5"
       >
         <span className="text-muted-foreground/40 text-[10px] tracking-[0.4em] uppercase">
           Scroll
@@ -60,7 +63,8 @@ export default function HeroSection() {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="w-px h-8 bg-gradient-to-b from-muted-foreground/40 to-transparent"
         />
-      </motion.div>
+      </motion.div> */}
+
     </section>
   );
 }

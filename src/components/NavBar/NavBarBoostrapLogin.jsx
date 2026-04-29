@@ -42,7 +42,7 @@ function NavBarBoostrapLogin(userProp) {
   };
   
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="text-sm">
       <Container>
         <Navbar.Brand as={Link} to="/">
           PymesYa
