@@ -54,13 +54,15 @@ function NavBarBoostrapLogin(userProp) {
               Contacto
             </Nav.Link>
             {/* <Nav.Link href="/empleos">EMPLEOS</Nav.Link> */}
-            <Nav.Link as={Link} to="/servicios">
+
+
+            {/* <Nav.Link as={Link} to="/servicios">
               SERVICIOS
             </Nav.Link>
 
             <Nav.Link as={Link} to="/negocios">
               NEGOCIOS
-            </Nav.Link>
+            </Nav.Link> */}
 
 
             <Nav.Link as={Link} to="/histories">
