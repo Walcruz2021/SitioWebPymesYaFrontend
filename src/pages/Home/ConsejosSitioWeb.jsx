@@ -5,15 +5,20 @@ import wordPress from "../Home/imagenes/consejosWeb/wordPress.png";
 import mShops from "../Home/imagenes/consejosWeb/mShops.png";
 import shopify from "../Home/imagenes/consejosWeb/shopify2.png";
 //import { Helmet } from 'react-helmet';
-
 import Swal from "sweetalert2";
-
 import ButtonDonacion from "./ButtonDonacion";
-
 import { getUserLogin } from "../../store/actions/actionUser";
 import { auth } from "../../hooks/configFirebase";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const WIX_IMG = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Wix.com_website_logo.svg/2560px-Wix.com_website_logo.svg.png";
+const MSHOPS_IMG = "https://http2.mlstatic.com/frontend-assets/homes-palpatine/assets/mercado-shops.png";
+const TIENDANUBE_IMG = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tienda_Nube_logo.svg/2560px-Tienda_Nube_logo.svg.png";
+const DONWEB_IMG = "https://www.donweb.com/wp-content/uploads/2021/03/DonWeb-Logo.png";
+const SHOPIFY_IMG = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/2560px-Shopify_logo_2018.svg.png";
+const WORDPRESS_IMG = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/1200px-WordPress_blue_logo.svg.png";
 
 const ConsejosSitioWeb = () => {
   const [loginUser, setLoginUser] = useState();
@@ -65,376 +70,366 @@ const ConsejosSitioWeb = () => {
   return (
     <>
 
-      <ButtonDonacion />
-      <div className="containerGlobalWeb">
-        <div className="titGral">
-          <h1>Consejos de un Sitio Web para tu Negocio</h1>
-        </div>
+      {/* <ButtonDonacion /> */}
+      <div className="min-h-screen bg-white text-gray-900 font-inter">
 
-        <div className="containerLike">
-          <div
-            className="fb-like"
-            data-href="http://www.pymesya.com/tecnologias/sitioWeb"
-            data-width=""
-            data-layout="button_count"
-            data-action=""
-            data-size="large"
-            data-share="true"
-          ></div>
-        </div>
+      {/* ── HERO ── */}
+      <section className="relative bg-black text-white overflow-hidden min-h-[60vh] flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black" />
+        {/* Grid decorativo */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-        <p>
-          Este breve artículo tiene como objetivo orientar a los propietarios de
-          empresas, ya sean pequeñas, medianas o grandes, esos emprendedores que
-          luchan día a día por hacer prosperar los frutos de sus esfuerzos.
-          Quiero transmitir la idea de que tener un sitio web que represente a
-          su empresa no es una tarea difícil ni un proyecto inalcanzable que
-          requiera una gran inversión de tiempo o dinero. Desde mi perspectiva,
-          considero que cualquier empresa, sin importar su tamaño o alcance,
-          debería contar con un sitio web, ya que éste constituye, el medio
-          mediante el cual personas de todo el mundo pueden acceder y conocer a
-          su compañía. Y a pesar de que hoy en dia existen múltiples
-          facilidades, el número de personas que escapan de este camino en
-          relacionarse a estos avances tecnológicos sigue siendo alto por
-          diferentes razones, ya sea tiempo, creencia que es un gasto
-          innecesario, dificultades económicas, etc
-        </p>
-        <p>
-          Lo primero que debes tener en cuenta al considerar la creación de un
-          sitio web para tu empresa es su costo
-        </p>
-        <p>Básicamente son 3 puntos claves:</p>
-        <p>
-          1) el costo del{" "}
-          <span
-            onMouseEnter={alertHosting}
-            style={{
-              fontWeight: "bold",
-              cursor: "pointer",
-              textDecoration: "underline black",
-            }}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 pb-16 pt-32"
+        >
+          <p className="text-gray-400 text-[12px] tracking-[0.5em] uppercase mb-4">
+            Tecnología · Negocios · Web
+          </p>
+          <h1 className="text-5xl sm:text-8xl font-black tracking-[-0.04em] leading-[0.85] mb-6">
+            TU SITIO<br />WEB
+          </h1>
+          <div className="w-16 h-px bg-gray-500 mb-6" />
+          <p className="text-gray-300 text-lg sm:text-xl font-light max-w-xl leading-relaxed">
+            Una guía práctica para llevar tu negocio a internet
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ── INTRODUCCIÓN ── */}
+      <section className="py-20 sm:py-28 px-6 sm:px-12 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            Hosting
-          </span>
-        </p>
-        <p>
-          2) el costo de la{" "}
-          <span
-            onMouseEnter={alertDireccion}
-            style={{
-              fontWeight: "bold",
-              cursor: "pointer",
-              textDecoration: "underline black",
-            }}
+            <p className="text-[10px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">Introducción</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+              Tu empresa,<br />
+              <span className="text-gray-300 font-light italic">en internet</span>
+            </h2>
+            <div className="w-10 h-0.5 bg-black mb-8" />
+            <p className="text-gray-600 text-base leading-relaxed font-light text-justify">
+              Cualquier empresa, sin importar su tamaño, debería contar con un sitio web. Es el medio mediante el cual personas de todo el mundo pueden acceder y conocer tu compañía. Tener presencia online no es difícil ni requiere grandes inversiones.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6 pt-2"
           >
-            direccion o nombre de dominio
-          </span>{" "}
-          de tu sitio
-        </p>
-        <p>
-          3) y por último, pero no menos importante, el costo de poder realizar
-          el mismo
-        </p>
-        <p>
-          Hoy en dia existen muchas opciones a las que puedes acudir y que, de
-          acuerdo a tus condiciones, ya sea a) Nivel de Presupuesto b) Nivel de
-          expansion del Sitio c) Nivel de Complejidad, puedes elegir el camino
-          correcto o por lo menos tener una pequeña guia para no perder tiempo,
-          dinero, o fracasar en el camino.
-        </p>
-        <p className="blackP">
-          ¡¡¡ Muy bien, luego de esta pequeña introducción seguramente ya te
-          habrás asustado, sin embargo, son sólo palabras técnicas que no
-          deberian generar miedo!!!
-        </p>
-
-        <p>
-          Este proceso lo dividiré en 3 niveles y vos como lector y
-          representante de tu negocio elegirás en que nivel estás según tus
-          condiciones
-        </p>
-
-        <div className="titGral">
-          <h3>NIVEL 1</h3>
+            {[
+              { num: "01", label: "Hosting", desc: "El espacio donde se guardará tu sitio web. Garantiza que esté disponible las 24hs, seguro y protegido." },
+              { num: "02", label: "Dominio", desc: "El nombre único que identifica tu sitio, como www.tumarca.com. Fácil de recordar para tus clientes." },
+              { num: "03", label: "Desarrollo", desc: "El costo de construir el sitio. Hoy existen opciones gratuitas que no requieren programación." },
+            ].map(({ num, label, desc }) => (
+              <div key={num} className="flex gap-5 group">
+                <span className="text-4xl font-black text-gray-300 shrink-0 leading-none">{num}</span>
+                <div>
+                  <p className="font-black text-gray-900 tracking-tight text-justify">{label}</p>
+                  <p className="text-gray-500 text-base font-light leading-relaxed text-justify">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
-        <p>
-          Es muy probable que necesites un sitio web que funcione como una
-          tarjeta de presentación para tu negocio. Este sitio web implicaría un
-          pequeño proyecto en el que mostrarías fotos de tu negocio, su
-          ubicación, imágenes de tus proyectos o productos, una interacción
-          mínima con el cliente permitiendo que se pongan en contacto contigo a
-          través de un formulario de contacto o tus redes sociales, que estarían
-          claramente indicadas.
-        </p>
+      </section>
 
-        <p>
-          Si estás en esta posición, y además, contás con un nivel de
-          presupuesto bajo, creeme que no hace falta que contrates un
-          desarrollador Full Stack y que gastes grandes sumas de dinero. De
-          hecho hasta inclusive, lo podés hacer vos mismo.
-        </p>
+      {/* ── DIVIDER NIVEL 1 ── */}
+      <section className="bg-black text-white py-14 px-6 sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto flex items-center gap-8"
+        >
+          <span className="text-8xl sm:text-9xl font-black text-gray-800 leading-none shrink-0">N1</span>
+          <div>
+            <p className="text-gray-500 text-[15px] tracking-[0.4em] uppercase mb-2">Nivel 1</p>
+            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              Tarjeta de presentación digital
+            </h3>
+            <p className="text-gray-400 font-light text-sm leading-relaxed max-w-xl">
+              Presupuesto bajo · Resultado profesional · Sin conocimientos técnicos. Si sólo necesitás mostrar tu negocio con fotos, ubicación y contacto, este nivel es para vos.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-        <p>
-          Una de las opciones que existe hoy en dia es, por ejemplo
-          <a href="https://es.wix.com/" target="_blanck">
-            WIX
+      {/* ── WIX ── */}
+      <section className="py-20 sm:py-24 px-6 sm:px-12 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-[10px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">Opción gratuita</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+              WIX<br />
+              <span className="text-gray-300 font-light italic">sin código</span>
+            </h2>
+            <div className="w-10 h-0.5 bg-black mb-8" />
+            <p className="text-gray-600 text-base leading-relaxed text-justify">
+              Creá páginas web con calidad profesional sin conocer ningún lenguaje de programación, completamente gratis. Más de 800 plantillas personalizables. Sin hosting, sin dominio extra, sin contratar a nadie.
+            </p>
+            <a
+              href="https://es.wix.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 border border-black text-black text-xs font-bold tracking-[0.2em] uppercase px-6 py-3 hover:bg-black hover:text-white transition-colors duration-300"
+            >
+              Visitar WIX →
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="absolute -top-4 -left-4 w-full h-full border border-gray-200" />
+            <div className="relative z-10 bg-gray-50 h-90 flex items-center justify-center p-10 border border-gray-100">
+              <img src={wixPage} alt="WIX" className="max-h-100 object-contain" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── GOOGLE SITES highlight ── */}
+      <section className="bg-gray-50 py-16 px-6 sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto text-center"
+        >
+          <p className="text-gray-500 text-sm tracking-widest uppercase mb-4">— También gratuito —</p>
+          <blockquote className="text-2xl sm:text-3xl font-light text-gray-800 leading-relaxed italic mb-6">
+            "Con Google Sites, en solo 20 minutos tenés tu sitio con hosting y dominio incluido."
+          </blockquote>
+          <a
+            href="https://marroquineria-baggi.negocio.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs tracking-widest uppercase text-gray-400 hover:text-gray-900 transition-colors underline"
+          >
+            Ver ejemplo real →
           </a>
-          . Con esta plataforma podés tener la libertad de crear páginas webs
-          con calidad profesional sin conocer ningún tipo de lenguaje de
-          programación y completamente gratis. Vas a poder elegir entre más de
-          800 plantillas de webs personalizables para satisfacer las necesidades
-          de tu negocio.
-        </p>
+        </motion.div>
+      </section>
 
-        <img src={wixPage} alt="WIX Page"></img>
-        <p>
-          De esta manera te vas a olvidar de necesitar de un hosting, de un
-          dominio, y las horas de pagos que implica contratar a un personal
-          idóneo
-        </p>
+      {/* ── DIVIDER NIVEL 2 ── */}
+      <section className="bg-black text-white py-14 px-6 sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto flex items-center gap-8"
+        >
+          <span className="text-8xl sm:text-9xl font-black text-gray-800 leading-none shrink-0">N2</span>
+          <div>
+            <p className="text-gray-500 text-[15px] tracking-[0.4em] uppercase mb-2">Nivel 2</p>
+            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              Tienda online completa
+            </h3>
+            <p className="text-gray-400 font-light text-sm leading-relaxed max-w-xl">
+              Vendé tus productos, recibí pagos y gestioná inventario. Mayor presupuesto · Mayor expansión · Conocimientos básicos suficientes.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-        <p>
-          Si por alguna razón las direcciones que te provean no es de tu agrado,
-          o quieres algo más personalizado, o no quieres que en tu sitio web
-          aparezca alguna marca de agua, puedes soltar algunas monedas y
-          contratar otros tipos de planes premium que te permitirá gozar de
-          ciertos beneficios según tus necesidades.
-        </p>
+      {/* ── PLATAFORMAS NIVEL 2 ── */}
+      {[
+        {
+          tag: "Integrado con Mercado Libre",
+          title: "Mercado Shops",
+          italic: "todo en uno",
+          desc: "Administrás tu tienda desde el mismo lugar que tus ventas en ML. Se integra con todas las redes sociales y es completamente personalizable. Publicá en tu Shop, en Mercado Libre o en ambos canales.",
+          img: mShops,
+          imgBg: "bg-yellow-50",
+          reverse: false,
+        },
+        {
+          tag: "Para emprendimientos",
+          title: "Tienda Nube",
+          italic: "desde cero",
+          desc: "Ideal para quienes empiezan desde cero o ya venden en otras plataformas digitales. Sin costos por transacción ni mantenimiento mensual. Planes premium según la necesidad de tu negocio.",
+          img: tiendaNube,
+          imgBg: "bg-blue-50",
+          reverse: true,
+        },
+        {
+          tag: "Hosting y dominio",
+          title: "Don Web",
+          italic: "latinoamérica",
+          desc: "Hosting y dominio para toda Latinoamérica. Podés crear tu propia tienda virtual sin programación. Valores moderados con planes mensuales o anuales según el servicio que necesites.",
+          img: donWeb,
+          imgBg: "bg-orange-50",
+          reverse: false,
+        },
+        {
+          tag: "E-commerce avanzado",
+          title: "Shopify",
+          italic: "pymes y grandes",
+          desc: "Ofrece herramientas para dueños de ecommerce: generador de logos, fotos de stock y punto de venta. Permite vender sin inventario propio mediante dropshipping con Oberlo.",
+          img: shopify,
+          imgBg: "bg-green-50",
+          reverse: true,
+        },
+      ].map(({ tag, title, italic, desc, img, imgBg, reverse }, i) => (
+        <section key={title} className="py-20 sm:py-24 px-6 sm:px-12 bg-white border-t border-gray-100">
+          <div className={`max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center`}>
+            <motion.div
+              initial={{ opacity: 0, x: reverse ? 30 : -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className={reverse ? "order-1 lg:order-2" : ""}
+            >
+              <p className="text-[10px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">{tag}</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                {title}<br />
+                <span className="text-gray-300 font-light italic">{italic}</span>
+              </h2>
+              <div className="w-10 h-0.5 bg-black mb-8" />
+              <p className="text-gray-600 text-base leading-relaxed font-light">{desc}</p>
+            </motion.div>
 
-        <p>
-          Otras de las opciones completamente gratis y cuya herramienta es muy
-          recomendable por las poderosas funcionalidades que ofrece, es el mismo
-          google, en este caso GOOGLE SITES
-        </p>
+            <motion.div
+              initial={{ opacity: 0, x: reverse ? -30 : 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className={`relative ${reverse ? "order-2 lg:order-1" : ""}`}
+            >
+              <div className={`absolute ${reverse ? "-bottom-4 -right-4" : "-top-4 -left-4"} w-full h-full border border-gray-200`} />
+              <div className={`relative z-10 ${imgBg} h-56 flex items-center justify-center p-10`}>
+                <img src={img} alt={title} className="max-h-80 object-contain" />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      ))}
 
-        <p>
-          Podés ver un ejemplo de este negocio que ocupó dicha plataforma{" "}
-          <a href="https://marroquineria-baggi.negocio.site/" target="_blanck">
-            Sitio Web creado con Google Sites
-          </a>
-        </p>
-
-        <p>
-          En ésta plataforma, con sólo llenar un formulario, podrás contar con
-          una Página Web con hosting y dirección incluida en tán solo 20
-          minutos.
-        </p>
-
-        <p>
-          Este tipo de plataforma ofrece mapas de manera de que puedan ubicar tu
-          negocio, formularios de contacto entre cliente y tu negocio, ligado
-          directamente con tu correo gmail, formatos de diseños sencillos y
-          agradables. Además permite que aparezcas entre los primeros lugares
-          del listado en el momento cuando un futuro cliente busca por ejemplo
-          "peluquerias en buenos aires". En este caso google, al devolver la
-          respuesta, proporcionará un listado de todas las peluquerias con los
-          datos de contactos, y entre ellos, aparecerá tu empresa con el link
-          directo de tu sitio.
-        </p>
-
-        <p>
-          Por supuesto que si quieres contar con algún beneficio extra, como
-          tener un correo electrónico personalizado con tu dominio, asistencias
-          las 24 horas, etc, puedes acceder a los paquetes premium.
-        </p>
-
-        <p>
-          En cualquiera de las dos opciones que eligas, según tus preferencias,
-          tu costo por contar con una sitio web será de $ 0. Con diseños
-          inclusive aún mejor que otras que son pagos.
-        </p>
-
-        <p>
-          Si tu tiempo es muy limitado y le tienes fobia a la computadora y a
-          ligar con cualquier error que puedas encontrar en el camino, puedes
-          contratar a alguien que pueda realizar dicho trabaj. Pero recuerda que
-          justamente las funciones principales de estas plataformas es que
-          dichas páginas se puedan crear de manera rápida y de forma sencilla y
-          con un producto final muy atractivo a la vista
-        </p>
-
-        <div className="titGral">
-          <h3>NIVEL 2</h3>
+      {/* ── WORDPRESS ── */}
+      <section className="py-20 sm:py-24 px-6 sm:px-12 bg-gray-50 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-[10px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">Blogs y cursos</p>
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+              WordPress<br />
+              <span className="text-gray-300 font-light italic">50.000 plugins</span>
+            </h2>
+            <div className="w-10 h-0.5 bg-black mb-8" />
+            <p className="text-gray-600 text-base leading-relaxed font-light">
+              Ideal si vendés cursos o dependés de suscriptores. Más de 50.000 plugins gratuitos para ampliar la funcionalidad de tu sitio. No requiere programación, pero sí cierta experiencia en la plataforma.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="absolute -top-4 -left-4 w-full h-full border border-gray-200" />
+            <div className="relative z-10 bg-blue-50 h-56 flex items-center justify-center p-10">
+              <img src={wordPress} alt="WordPress" className="max-h-80 object-contain" />
+            </div>
+          </motion.div>
         </div>
+      </section>
 
-        <p>
-          Subiremos un poco los niveles, en donde tanto los niveles de expansión
-          del sitio como los niveles de presupuesto y alcance de tu negocio
-          aumenten. Para esto el tiempo disponible tiene que ser mayor también.
-        </p>
-        <p>
-          Muchos negocios, no sólo necesitan mostrar lo que venden, si no que
-          además deben vender los productos, por otra parte necesitan también
-          tener informes de cuáles son los productos de ofertas, niveles de
-          venta, etc.
-        </p>
-        <p>
-          Este tipo de proyecto por supuesto que incluirá operaciones con
-          tarjetas, cuentas bancarias, y otros modos de pagos, es decir, de a
-          poco se va convirtiendo todo un poco más complejo.
-        </p>
-        <p>
-          Aunque no lo creas, si tu nivel de presupuesto es aún bajo y cuentas
-          con tiempo disponible y algún tipo de conocimiento básico de
-          computación, ejecutar ésta modalidad está en tus manos.
-        </p>
+      {/* ── DIVIDER NIVEL 3 ── */}
+      <section className="bg-black text-white py-14 px-6 sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto flex items-center gap-8"
+        >
+          <span className="text-8xl sm:text-9xl font-black text-gray-800 leading-none shrink-0">N3</span>
+          <div>
+            <p className="text-gray-500 text-[15px] tracking-[0.4em] uppercase mb-2">Nivel 3</p>
+            <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              Desarrollo a medida
+            </h3>
+            <p className="text-gray-400 font-light text-sm leading-relaxed max-w-xl">
+              Alta complejidad · Presupuesto elevado · Equipo profesional dedicado. Para sitios que requieren lógica propia y no pueden resolverse con plataformas estándar.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-        <h5>* MERCADO SHOPS</h5>
-        <p>
-          Además de vender tus productos por mercado libre, tienes la
-          posibilidad de realizar tu propio E-commerce a través de Mercado Shops
-          de Mercado Libre.
-        </p>
-        <p>
-          Esta plataforma está integrada completamente con ML, lo cual te
-          permite acceder a todas sus herraminetas y beneficios.
-        </p>
-        <p>
-          A diferencia de otros sistemas, con Mercado Shops administrás tu
-          tienda desde el mismo lugar en el que gestionás tus ventas en Mercado
-          Libre. En cualquier momento podrás elegir si publicar sólo en tu Shop,
-          en Mercado Libre o en ambos canales disminuyendo así tu carga
-          operacional.
-        </p>
-        <img src={mShops} alt="Mercado Shops"></img>
-        <p>
-          Se integra con todas las redes sociales y es completamente
-          personalizable, con distintas tipologias a elegir de manera de
-          reflejar la identidad de tu negocio.
-        </p>
-        <p className="blackP">
-          No solo ML te ofrece estas plantillas en donde sólo debes cargar tus
-          produtos y venderlos. Otras opciones que existen son las siguentes:{" "}
-        </p>
-
-        <h5>* TIENDA NUBE</h5>
-        <p>
-          Es la opción para aquellas personas que están comenzando su negocio
-          desde cero, como también para los emprendimientos que ya venden en
-          diferentes plataformas digitales. No tiene costos por transacción ni
-          mantenimiento mensual, sin embargo y según la necesidad de tu negocio
-          deberás contratar algun tipo de plan premium.
-        </p>
-        <img src={tiendaNube} alt="Tienda Nube"></img>
-
-        <h5>* DON WEB</h5>
-
-        <p>
-          Esta plataforma ofrece servios de hosting y dominio en toda
-          Latinoamérica. De hecho este dominio al que estas accediendo en este
-          momento (www.pymesya.com) lo compré en esta empresa. Don Web ofrece
-          además distintos tipos de servicios como la posibilidad de que vos
-          mismo crees tu página web o tienda virtual sin ningún conocimiento de
-          programación. Los costes pueden ser mensuales o anuales y varian según
-          el tipo de servicio que ocupes ya que por ejemplo ellos también pueden
-          realizar todo el trabajo por vos, lo que implicaria un plan un poco
-          mas elevado. De todas maneras todos los valores como precios de sus
-          servicios son bastante moderados.
-        </p>
-        <img src={donWeb} alt="Don Web"></img>
-
-        <h5>* SHOPIFY</h5>
-        <p>
-          Si bien su público objetivo son emprendedores y pymes, también apunta
-          a grandes empresas a través de su plan Shopify Plus.
-        </p>
-        <p>
-          Shopify ofrece un montón de herramientas y recursos para dueños de
-          ecommerce, desde un generador de nombres comerciales y logos gratuito
-          hasta fotos de stock y soluciones de punto de venta.
-        </p>
-        <img src={shopify} alt="Shopify"></img>
-        <p>
-          Por último, cabe destacar que Shopify te permite crear tu propia
-          tienda sin necesidad de tener un inventario de productos mediante
-          dropshipping a través de Oberlo. Solo tienes que escoger qué productos
-          ofrecer en tu tienda online y realizar tu pedido cada vez que vendas
-          algo. Oberlo se encarga de gestionar el inventario, el embalaje y el
-          envío de los productos por ti.
-        </p>
-
-        <p className="blackP">
-          Suena curioso que PYMESYA ofrezca servicios de la competencia, pero el
-          objetivo de este articulo es asesorarte lo mejor posible y que tengas
-          todo un abanico de opciones, de manera que tengas conocimiento del
-          camino que estarás tomando y tener asi un vista más clara del objetivo
-          al que querés llegar.
-        </p>
-
-        <h5>* WORDPRESS</h5>
-        <p>
-          Si tu empresa se encarga de vender cursos, o tienes por ejemplo, como
-          principal ingreso, la cantidad de suscriptores. Una opcion muy viable
-          puede ser Wordpress. Si bien para utilizar este tipo de plataforma no
-          se necesita ser un programador con conocimiento en algún lenguaje en
-          particular, si es necesario tener experiencia de uso de la plataforma
-          ya que es un poco más compleja.
-        </p>
-
-        <p>
-          Si bien sus servicios sirven para una gran variedad de sitios webs,
-          como tiendas de comercio electrónico, portfolios, portales de
-          información, etc. Es muy conocido principalmente como una plataforma
-          de blogs ya que inicialmente se desarrolló con éste objetivo.
-        </p>
-        <p>
-          Wordpress ofrece más de 50.000 plugins gratuitos y freemium para
-          diferentes propósitos. ¿Para que sirven? Son pequeños softwares que
-          permiten ampliar la funcionalidad de tus páginas y añadirle nuevas
-          características.
-        </p>
-        <p>
-          Tu objetivo como dueño de tu empresa será siempre llegar a la mayor
-          cantidad de gente posible. Es decir tener un alto tráfico. WordPres
-          ofrece plugins que te ayudarán a posicionarte en los motores de
-          búsqueda.
-        </p>
-
-        <img src={wordPress} alt="WordPress"></img>
-
-        <div className="titGral">
-          <h3>NIVEL 3</h3>
+      {/* ── TEXTO NIVEL 3 ── */}
+      <section className="py-20 sm:py-28 px-6 sm:px-12 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-gray-600 text-base leading-relaxed font-light mb-6 text-justify">
+              Puede que la expansión del sitio no sea muy elevada, pero su complejidad sí lo sea. Esto implica presupuesto elevado y contratar uno o varios programadores.
+            </p>
+            <p className="text-gray-600 text-base leading-relaxed font-light text-justify">
+              Sería muy complicado que el sitio de un banco sea realizado con WordPress o Wix. Sin embargo, eso no significa que vos como emprendedor tengas que recorrer el mismo camino.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+            className="bg-black text-white p-8"
+          >
+            <p className="text-gray-400 text-[10px] tracking-widest uppercase mb-4">Reflexión final</p>
+            <p className="text-white text-lg font-light leading-relaxed italic text-justify">
+              "Las opciones están. Solo depende de que evalúes cuál es la mejor alternativa para tu compañía, analizando PRO y CONTRAS, considerando tiempo, economía e ingresos."
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        <p>
-          Como última etapa, puede que la expansión de la página no sea muy
-          elevado, pero el nivel de complejidad de la misma si lo sea. Esto por
-          consiguiente implica que tengas un nivel de presupuesto elevado y como
-          obligatoriedad implique contratar a uno o varios programadores.
-        </p>
-        <p>
-          A pesar de que todas las plataformas mencionadas son muy poderosas y
-          cada vez mejoran aún más, seria muy complicado y poco probable por
-          ejemplo de que un sitio web de un banco sea realizado con Wordpress o
-          Wix u otra plataforma similar.
-        </p>
-        <p>
-          En la empresa donde yo presto mis servicios, todo el ingreso monetario
-          está directamente relacionado con el sitio web. Dicha página está
-          restringida, por lo tanto, disponible sólo para un número muy bajo de
-          usuarios, sin embargo su complejidad es muy elevada, y esto implica
-          que detrás de ella, exista todo un equipo de testers, desarrolladores
-          backend, frontend, técnicos de soporte, devops, etc.
-        </p>
-        <p>
-          Existen empresas que prefirieron por distintas circunstancias optar
-          por realizar sus tiendas virtuales desde cero contratando a todo un
-          equipo bajo su dependencia obviando todas las opciones que mencioné en
-          el NIVEL 2. Este tipo de deciones son internas de cada empresa y se
-          debe a muchos factores, sin embargo eso no quiere decir que vos como
-          emprendedor tengas que recorrer el mismo camino. Las opciones están,
-          sólo depende de que evalues cual es la mejor alternativa para tu
-          compañia, analizando siempre todos los PRO y CONTRAS, considerando
-          tiempo, economia, ingresos al crear el sitio, etc.{" "}
-        </p>
+      {/* ── FOOTER ── */}
+      {/* <footer className="bg-black text-white py-10 px-6 sm:px-12">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-500 text-xs tracking-[0.3em] uppercase font-light">PYMESYA</p>
+          <p className="text-gray-600 text-xs tracking-widest uppercase">Tecnología · Negocios · Web</p>
+        </div>
+      </footer> */}
 
-        {/* <div className="containerCompRedes">
-      <h3>Comparte Nuestras Publicaciones</h3>
-     <a href="https://www.facebook.com/sharer.php?u=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-facebook'} /></a>
-     <a href="https://www.linkedin.com/shareArticle?url=www.pymesya.com/inversionBolsa" target="_blank"><IonIcon className="IconComp" name={'logo-linkedin'} /></a>
-     </div> */}
-      </div>
-      <ButtonDonacion />
+    </div>
+      {/* <ButtonDonacion /> */}
     </>
   );
 };
