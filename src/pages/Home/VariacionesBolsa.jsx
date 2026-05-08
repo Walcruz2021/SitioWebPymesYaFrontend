@@ -2,6 +2,7 @@
 import subprime from "../Home/imagenes/bolsaValores/crisisSubprime1.jpg";
 import subprime2 from "../Home/imagenes/bolsaValores/crisisSubprime2.jpg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "./VariacionesBolsa.css";
 import ButtonDonacion from "./ButtonDonacion";
@@ -29,239 +30,286 @@ const VariacionesBolsa = () => {
       dispatch(getUserLogin());
     }
   }, [dispatch, loginUser]);
+
+  const FACTORES = [
+    {
+      num: "01",
+      title: "Economía global y nacional",
+      desc: "El crecimiento del PIB, la tasa de desempleo, la inflación y la política monetaria impactan directamente en el rendimiento de las bolsas.",
+    },
+    {
+      num: "02",
+      title: "Noticias y eventos geopolíticos",
+      desc: "Acontecimientos políticos, sociales y económicos nacionales e internacionales generan incertidumbre y afectan las decisiones de los inversores.",
+    },
+    {
+      num: "03",
+      title: "Resultados empresariales",
+      desc: "Los informes de ganancias trimestrales y anuales influyen en el precio de las acciones. Buenos resultados generan confianza; malos resultados provocan ventas masivas.",
+    },
+    {
+      num: "04",
+      title: "Política y regulación",
+      desc: "Nuevos impuestos, reformas fiscales o medidas regulatorias pueden afectar la confianza de los inversores y mover los mercados.",
+    },
+    {
+      num: "05",
+      title: "Tasas de interés",
+      desc: "Tasas bajas hacen más atractivas las acciones frente a los bonos. Tasas altas pueden generar el efecto contrario.",
+    },
+    {
+      num: "06",
+      title: "Eventos naturales y desastres",
+      desc: "Terremotos, huracanes u otros eventos inesperados generan volatilidad si afectan la capacidad operativa de las empresas.",
+    },
+  ];
+
+  const CONSECUENCIAS = [
+    { title: "Desempleo masivo", desc: "La recesión global resultó en pérdida masiva de empleos. Muchas empresas redujeron plantillas o cerraron. La tasa de desempleo aumentó significativamente en todo el mundo." },
+    { title: "Caída de la demanda", desc: "Con el desempleo en alza y la confianza destruida, la demanda de bienes y servicios se desplomó. Industrias como la automotriz, la construcción y el turismo fueron las más golpeadas." },
+    { title: "Rescates financieros", desc: "Los gobiernos tuvieron que intervenir con enormes rescates a bancos y financieras. Estos se financiaron con dinero público, disparando la deuda soberana en muchos países." },
+    { title: "Caída bursátil global", desc: "Los mercados de valores experimentaron caídas dramáticas en todo el mundo. Los inversores perdieron una cantidad sustancial de dinero en cuestión de semanas." },
+    { title: "Reestructuración financiera", desc: "Muchas instituciones se vieron obligadas a fusionarse o cerrar. La crisis expuso la falta de regulación y la asunción de riesgos excesivos del sistema." },
+  ];
   return (
     <>
-      <ButtonDonacion />
-      <div className="containerGlobalWeb">
-        <div className="titGral">
-          <h1>VARIACIONES DE LA BOLSA</h1>
-        </div>
 
-        <div className="containerLike">
+      <div className="min-h-screen bg-white text-gray-900 font-inter">
+
+        {/* ── HERO ── */}
+        <section className="relative bg-black text-white overflow-hidden min-h-[60vh] flex items-end">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-black" />
           <div
-            className="fb-like"
-            data-href="http://www.pymesya.com/variaciones"
-            data-width=""
-            data-layout="button_count"
-            data-action=""
-            data-size="large"
-            data-share="true"
-          ></div>
-        </div>
-        <p>
-          Las bolsas de valores son sistemas complejos y están influenciadas por
-          una amplia gama de factores que pueden afectar sus movimientos al alza
-          o a la baja. Algunos de los factores más importantes que pueden
-          influir en el comportamiento de una bolsa de valores incluyen:
-        </p>
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
+              backgroundSize: "60px 60px",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
 
-        <p>
-          <span>Economía global y nacional</span>: Las condiciones económicas
-          generales, como el crecimiento del PIB, la tasa de desempleo, la
-          inflación y la política monetaria, pueden tener un impacto
-          significativo en el rendimiento de las bolsas de valores.
-        </p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="relative z-10 max-w-5xl mx-auto px-6 sm:px-12 pb-16 pt-28"
+          >
+            <p className="text-gray-400 text-[12px] tracking-[0.5em] uppercase mb-6">
+              Finanzas · Mercados · Crisis
+            </p>
+            <h1 className="text-5xl sm:text-8xl font-black tracking-[-0.04em] leading-[1.5] mb-6 mt-20">
+              VARIACIONES<br />DE LA BOLSA
+            </h1>
+            <div className="w-16 h-px bg-gray-500 mb-6" />
+            <p className="text-gray-300 text-lg sm:text-xl font-light max-w-xl leading-relaxed mt-20">
+              Qué mueve los mercados y cómo una crisis puede sacudir la economía mundial
+            </p>
+          </motion.div>
+        </section>
 
-        <p>
-          <span>Noticias y eventos geopolíticos</span>: Acontecimientos
-          políticos, sociales y económicos tanto a nivel nacional como
-          internacional pueden generar incertidumbre en los mercados y afectar
-          las decisiones de los inversores.
-        </p>
+        {/* ── INTRODUCCIÓN FACTORES ── */}
+        <section className="py-18 sm:py-27 px-6 sm:px-12 bg-white mt-10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="mb-14"
+            >
+              <p className="text-[12px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">Factores clave</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                ¿Qué mueve<br />
+                <span className="text-gray-300 font-light italic">los mercados?</span>
+              </h2>
+              <div className="w-10 h-0.5 bg-black mb-8" />
+              <p className="text-gray-600 text-base leading-relaxed font-light max-w-2xl text-justify">
+                Las bolsas de valores son sistemas complejos influenciados por una amplia gama de factores. Estos no actúan de manera aislada y están frecuentemente interconectados, lo que contribuye a la naturaleza impredecible de los mercados.
+              </p>
+            </motion.div>
 
-        <p>
-          <span>Resultados empresariales</span>: Los informes de ganancias
-          trimestrales y anuales de las empresas cotizadas en bolsa pueden
-          influir en el precio de las acciones. Unos buenos resultados pueden
-          aumentar la confianza de los inversores, mientras que unos resultados
-          por debajo de las expectativas pueden generar ventas masivas.
-        </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {FACTORES.map(({ num, title, desc }) => (
+                <motion.div
+                  key={num}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7 }}
+                  className="border border-gray-100 p-8 hover:border-gray-300 transition-colors duration-300"
+                >
+                  <span className="text-4xl font-black text-gray-300 block mb-4 leading-none">{num}</span>
+                  <p className="font-black text-gray-900 tracking-tight mb-3">{title}</p>
+                  <p className="text-gray-500 text-sm font-light leading-relaxed text-justify">{desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <p>
-          <span>Política y regulación</span>: Cambios en las políticas
-          gubernamentales y las regulaciones relacionadas con los mercados
-          financieros pueden tener un impacto en las bolsas de valores. Anuncios
-          de nuevos impuestos, reformas fiscales o medidas regulatorias pueden
-          afectar la confianza de los inversores.
-        </p>
+        {/* ── DIVIDER CRISIS SUBPRIME ── */}
+        <section className="bg-black text-white py-20 px-6 sm:px-15">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto flex items-center gap-8"
+          >
+            <span className="text-7xl sm:text-9xl font-black text-gray-800 leading-none shrink-0">2008</span>
+            <div>
+              <p className="text-gray-500 text-[12px] tracking-[0.4em] uppercase mb-2">Crisis global</p>
+              <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+                Crisis Subprime
+              </h3>
+              <p className="text-gray-400 font-light text-base leading-relaxed max-w-xl text-justify">
+                Una crisis financiera que sacudió la economía mundial. Se originó en los Estados Unidos y rápidamente se contagió al conjunto de economías globales.
+              </p>
+            </div>
+          </motion.div>
+        </section>
 
-        <p>
-          <span>Tasas de interés</span>: Las tasas de interés pueden influir en
-          la toma de decisiones de inversión. Tasas más bajas pueden hacer que
-          las inversiones en acciones sean más atractivas en comparación con las
-          inversiones en bonos, y viceversa.
-        </p>
+        {/* ── EL EFECTO DOMINÓ ── */}
+        <section className="py-27 sm:py-30 px-6 sm:px-12 bg-gray-50 mt-20 mb-20">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-[10px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">El detonante</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight mb-6">
+                El efecto<br />
+                <span className="text-gray-300 font-light italic">dominó</span>
+              </h2>
+              <div className="w-10 h-0.5 bg-black mb-8" />
+              <p className="text-gray-600 text-base leading-relaxed font-light mb-4 text-justify">
+                Algunos bancos comenzaron a prestar dinero a personas con bajo historial crediticio — los llamados préstamos <span className="font-semibold text-gray-800">"subprime"</span>. Al principio todo parecía bien. Pero luego, como en un juego de dominós, cuando una ficha cae, afecta a las demás.
+              </p>
+              <p className="text-gray-600 text-base leading-relaxed font-light text-justify">
+                Muchas personas no podían pagar sus préstamos. Las casas perdieron valor. Los bancos dejaron de recibir el dinero esperado y comenzaron a colapsar uno tras otro.
+              </p>
+            </motion.div>
 
-        <p>
-          <span>Eventos naturales y desastres</span>: Desastres naturales, como
-          terremotos, huracanes u otros eventos inesperados, pueden generar
-          volatilidad en el mercado si afectan a las empresas y su capacidad
-          para operar.
-        </p>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute -top-4 -left-4 w-full h-full border border-gray-200" />
+              <div className="relative z-10 bg-black text-white p-10 space-y-5">
+                {[
+                  { step: "1", text: "Bancos otorgan hipotecas de alto riesgo (subprime)" },
+                  { step: "2", text: "Personas no pueden pagar sus préstamos" },
+                  { step: "3", text: "El valor de las propiedades cae" },
+                  { step: "4", text: "Los bancos pierden liquidez y colapsan" },
+                  { step: "5", text: "Pánico financiero y crisis global" },
+                ].map(({ step, text }) => (
+                  <div key={step} className="flex items-start gap-4">
+                    <span className="text-2xl font-black text-gray-700 shrink-0 leading-none">{step}</span>
+                    <p className="text-gray-400 text-sm font-light leading-relaxed">{text}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-        <p>
-          {" "}
-          Es importante destacar que estos factores no actúan de manera aislada
-          y a menudo están interconectados. Además, la percepción de cómo estos
-          factores influyen en el mercado puede variar entre inversores y
-          analistas, lo que contribuye a la naturaleza compleja e impredecible
-          de los movimientos de las bolsas de valores.
-        </p>
+        {/* ── QUOTE CREDIT CRUNCH ── */}
+        <section className="bg-black text-white py-24 sm:py-22 px-6 sm:px-12 mt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <p className="text-gray-500 text-sm tracking-widest uppercase mb-6">— Credit Crunch —</p>
+            <blockquote className="text-2xl sm:text-3xl md:text-4xl font-light text-white leading-relaxed italic mb-8 ">
+              "Menos crédito = Crisis mundial"
+            </blockquote>
+            <p className="text-gray-400 font-light text-base max-w-2xl mx-auto leading-relaxed">
+              La evidencia de que importantes entidades bancarias tenían comprometidos sus activos en hipotecas de alto riesgo provocó una contracción repentina del crédito, una enorme volatilidad bursátil y una espiral de desconfianza y pánico inversor.
+            </p>
+          </motion.div>
+        </section>
 
-        <div className="titGral">
-          <h2>CRISIS SUBPRIME</h2>
-        </div>
+        {/* ── CONSECUENCIAS ── */}
+        <section className="py-15 sm:py-20 px-6 sm:px-12 bg-white mt-10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="mb-14"
+            >
+              <p className="text-[12px] font-semibold tracking-[0.4em] uppercase text-gray-400 mb-4">Impacto global</p>
+              <h2 className="text-3xl sm:text-4xl font-black text-gray-900 leading-tight tracking-tight">
+                Consecuencias<br />
+                <span className="text-gray-300 font-light italic">de la crisis</span>
+              </h2>
+              <div className="w-10 h-0.5 bg-black mt-6 mb-8" />
+              <p className="text-gray-600 text-base leading-relaxed font-light max-w-2xl text-justify">
+                Aunque la crisis comenzó en los Estados Unidos, rápidamente se propagó a nivel global debido a la interconexión de los mercados financieros. La crisis subprime del 2008 tuvo enormes repercusiones a nivel de empleo y economía en todo el mundo.
+              </p>
+            </motion.div>
 
-        <div className="imgGral">
-          <img src={subprime} alt="Crisis Subprime" />
-        </div>
+            <div className="space-y-0">
+              {CONSECUENCIAS.map(({ title, desc }, i) => (
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: i * 0.08 }}
+                  className="flex gap-8 items-start py-8 border-b border-gray-100 last:border-0"
+                >
+                  <span className="text-2xl font-black text-gray-300 shrink-0 w-8 leading-none mt-1">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p className="font-black text-gray-900 tracking-tight mb-2">{title}</p>
+                    <p className="text-gray-500 text-base font-light leading-relaxed text-justify">{desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <p>
-          La crisis subprime fue una crisis financiera que sucudió la economi­a
-          mundial en el año 2008. Se originó en los Estados Unidos, pero
-          rápidamente se contagió al conjunto de economias globales. Se denomina
-          crisis subprime por el hecho que su detonante fue el elevado riesgo
-          crediticio. Así­ como, también, el impago de unos activos que se
-          encontraban sujetos a hipotecas de alto riesgo.
-        </p>
-
-        <p>
-          Imagina que el sistema financiero es como un enorme juego de dominó.
-          Las personas a menudo piden dinero prestado a los bancos para comprar
-          casas. Estos préstamos son como los primeros dominós en una fila. Todo
-          esta bien si las personas pueden pagar sus préstamos, porque eso
-          mantiene el juego en marcha.
-        </p>
-
-        <p>
-          Pero aquí está la trampa: algunos bancos empezaron a prestar dinero a
-          personas que no eran muy buenas en pagar sus deudas. Como si dejaran
-          que algunos dominós un poco tambaleantes se unieran al juego. Estas
-          personas eran consideradas "de alto riesgo" porque no tení­an un
-          historial sólido de pagar sus deudas a tiempo.
-        </p>
-
-        <p>
-          Al principio, todo parecí­a estar bien. Las personas que obtuvieron
-          estos préstamos "subprime" (que significa que son más riesgosos)
-          pudieron comprar casas, y todos estaban felices. Pero luego, como en
-          un juego de dominós, cuando un ficha cae, afecta a los demás.
-        </p>
-
-        <p>
-          Resulta que muchas de estas personas no podí­an pagar sus préstamos
-          porque eran demasiado grandes o tení­an intereses altos. Esto fue como
-          si algunos dominós comenzaran a tambalear y a caer. Como resultado,
-          algunas de estas casas que la gente compró comenzaron a ser menos
-          valiosas de lo que se esperaba. Imagina que compraste un juguete
-          pensando que sería súper genial para siempre, pero luego todos tus
-          amigos dejaron de quererlo. Esto hizo que el precio de las casas
-          bajara mucho. Cuando las casas valí­an menos de lo que la gente habí­a
-          pagado, algunos dejaron de pagar sus hipotecas (los pagos de las
-          casas), y eso causó problemas.
-        </p>
-
-        <p>
-          Aquí es donde el efecto dominó se pone en marcha. Los bancos habí­an
-          hecho préstamos basados en estas casas, incluso algunos préstamos a
-          otros bancos. Cuando la gente dejó de pagar, los bancos no recibieron
-          el dinero que esperaban.
-        </p>
-
-        <p>
-          Los bancos comenzaron a preocuparse porque no tenían suficiente dinero
-          para mantenerse fuertes. Algunos de los bancos más pequeños se
-          tambalearon y colapsaron como si fueran dominós cayendo uno tras otro.
-          Esto creó una especie de pánico en el sistema financiero, y la
-          confianza en los bancos disminuyó.
-        </p>
-
-        <p>
-          Con los bancos en problemas, comenzaron a prestar menos dinero en
-          general. Esto afectó a las personas y las empresas que necesitaban
-          préstamos para cosas como expandir negocios o comprar casas. La
-          economí­a en general comenzó a tambalearse
-        </p>
-
-        <h4>Menos crédito = Crisis mundial</h4>
-
-        <p>
-          La evidencia de que importantes entidades bancarias y grandes fondos
-          de inversión tenían comprometidos sus activos en hipotecas de alto
-          riesgo provocó una repentina contracción del crédito (fenómeno
-          conocido técnicamente como Credit Crunch) y una enorme volatilidad de
-          los valores bursátiles, generándose una espiral de desconfianza y
-          pánico inversionista, y una repentina caí­da de las bolsas de valores
-          de todo el mundo, debida, especialmente, a la falta de liquidez.
-        </p>
-
-        <div className="titGral">
-          <h2>CONSECUENCIAS</h2>
-        </div>
-
-        <div className="imgGral">
-          <img src={subprime2} alt="Crisis Subprime" />
-        </div>
-
-        <p>
-          Aunque la crisis comenzó en los Estados Unidos, rápidamente se propagó
-          a nivel global debido a la interconexión de los mercados financieros y
-          la dependencia económica entre paí­ses. Muchos paí­ses experimentaron
-          recesiones y desafí­os económicos como resultado.
-        </p>
-        <p>
-          La crisis subprime del 2008 tuvo enormes repercusiones a nivel de
-          empleo y economí­a en todo el mundo
-        </p>
-
-        <p>
-          <span>Desempleo</span>: La crisis provocó una recesión económica
-          global que resultó en la pérdida masiva de empleos en varios sectores.
-          Muchas empresas se vieron obligadas a reducir su plantilla laboral o
-          cerrar debido a la disminución de la demanda y la falta de crédito. La
-          tasa de desempleo aumentó significativamente en muchas regiones,
-          afectando a millones de personas.
-        </p>
-
-        <p>
-          <span>Caída de la demanda</span>: A medida que las personas perdí­an
-          sus empleos y la confianza en la economí­a disminuía, la demanda de
-          bienes y servicios disminuyó drásticamente. Esto afectó a industrias
-          como la automotriz, la construcción, la tecnologÃ­a y el turismo,
-          entre otras.
-        </p>
-
-        <p>
-          <span>Rescates financieros</span>: Para evitar un colapso completo del
-          sistema financiero, muchos gobiernos tuvieron que intervenir y
-          proporcionar enormes rescates a bancos y otras instituciones
-          financieras en problemas. Estos rescates se financiaron con dinero
-          público y llevaron a un aumento significativo en la deuda pública en
-          varios países.
-        </p>
-
-        <p>
-          <span>Caída de los mercados bursátiles</span>: Los mercados de valores
-          experimentaron caí­das dramáticas en todo el mundo debido a la
-          incertidumbre y el miedo a una recesión económica prolongada. Los
-          inversores perdieron una cantidad sustancial de dinero.
-        </p>
-
-        <p>
-          <span>Reestructuración financiera</span>: Muchas instituciones
-          financieras se vieron obligadas a reestructurarse, fusionarse o cerrar
-          debido a las pérdidas y al deterioro de sus activos. La crisis expuso
-          la falta de regulación y la asunción de riesgos excesivos por parte de
-          algunas instituciones financieras.
-        </p>
-
-        <h4>TE PUEDE INTERESAR</h4>
-        <Link to="/winnersPrime">Ganadores con esta Crisis</Link>
-        <br></br>
-        <br></br>
+        <section className="py-0 sm:py-0 px-6 sm:px-12 bg-gray-50">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-[14px] font-semibold tracking-[0.4em] uppercase text-gray-500 mb-8">— Te puede interesar —</p>
+              <a
+                href="/winnersPrime"
+                className="no-underline group flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-black text-white p-8 sm:p-10 hover:bg-gray-900 transition-colors duration-300"
+              >
+                <div>
+                  <p className="text-gray-500 text-[10px] tracking-[0.4em] uppercase mb-3">Siguiente artículo</p>
+                  <h3 className="text-2xl sm:text-3xl font-black leading-tight tracking-tight mb-2">
+                    Ganadores con<br />
+                    <span className="text-gray-400 font-light italic">esta Crisis</span>
+                  </h3>
+                  <p className="text-gray-500 text-base font-light">
+                    ¿Quiénes salieron beneficiados de la crisis subprime del 2008?
+                  </p>
+                </div>
+                <span className="text-4xl sm:text-6xl font-black text-gray-700 group-hover:text-gray-500 transition-colors duration-300 shrink-0">
+                  →
+                </span>
+              </a>
+            </motion.div>
+          </div>
+        </section>
       </div>
-      <ButtonDonacion />
-  
     </>
   );
 };
