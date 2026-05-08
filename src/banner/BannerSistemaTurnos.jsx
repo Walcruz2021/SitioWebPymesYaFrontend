@@ -126,54 +126,70 @@ export default function BannerSistemaTurnos({ onAccess }) {
         </motion.p>
 
         {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        <motion.button
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={onAccess}
+          className="
+    group
+    relative
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    px-8
+    py-2
+    rounded-sm
+    overflow-hidden
+  "
+          style={{
+            background: "linear-gradient(135deg, #c0bdbd, #646363, #2b2a2a)",
+            boxShadow:
+              "0 0 30px rgba(235, 232, 228, 0.3), 0 4px 20px rgba(0,0,0,0.4)"
+          }}
         >
-          <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={onAccess}
-            className="group relative inline-flex items-center gap-3 px-8 rounded-sm overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, #c0bdbd, #646363, #2b2a2a)",
-              boxShadow: "0 0 30px rgba(235, 232, 228, 0.3), 0 4px 20px rgba(0,0,0,0.4)"
+          {/* Shimmer effect */}
+          <motion.div
+            animate={{ x: ["-100%", "200%"] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatDelay: 3,
+              ease: "easeInOut"
             }}
-          >
-            {/* Shimmer effect */}
-            <motion.div
-              animate={{ x: ["-100%", "200%"] }}
-              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3, ease: "easeInOut" }}
-              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-            />
-            <a
-              href="https://frontend-app-peluqueria.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-               className="no-underline text-inherit"
-            >
-              <span className="relative text-white font-semibold text-xs  tracking-[0.1em] uppercase">
-                Accedé al sistema
-              </span>
-            </a>
-            <motion.div
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative"
-            >
-              <ArrowRight className="w-4 h-3 text-white" />
-            </motion.div>
-          </motion.button>
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+          />
 
-          {/* <button
-            onClick={onAccess}
-            className="text-stone-400 hover:text-stone-200 text-sm tracking-[0.15em] uppercase transition-colors duration-300 underline underline-offset-4 decoration-stone-600 hover:decoration-stone-400"
+          <a
+            href="https://www.sistemapy.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+      relative
+      flex
+      items-center
+      justify-center
+      no-underline
+      text-inherit
+    "
           >
-            Ver demo
-          </button> */}
-        </motion.div>
+            <span className="text-white font-semibold text-xs tracking-[0.1em] uppercase leading-none">
+              Accedé al sistema
+            </span>
+          </a>
+
+          <motion.div
+            animate={{ x: [0, 4, 0] }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            className="relative flex items-center justify-center"
+          >
+            <ArrowRight className="w-4 h-4 text-white" />
+          </motion.div>
+        </motion.button>
 
         {/* Trust indicators */}
         <motion.div

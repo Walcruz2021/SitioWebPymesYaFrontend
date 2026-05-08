@@ -128,7 +128,23 @@ export default function BannerSistemaTurnosOptions({ onAccess }) {
               onClick={onAccess}
               className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-sm bg-stone-900 hover:bg-stone-800 text-white text-sm font-semibold tracking-[0.08em] uppercase transition-colors duration-300 shadow-lg shadow-stone-900/20"
             >
-              Accedé al sistema
+              <a
+                href="https://www.sistemapy.com.ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+      relative
+      flex
+      items-center
+      justify-center
+      no-underline
+      text-inherit
+    "
+              >
+                <span className="text-white font-semibold text-xs tracking-[0.1em] uppercase leading-none">
+                  Accedé al sistema
+                </span>
+              </a>
               <motion.span
                 animate={{ x: [0, 4, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
