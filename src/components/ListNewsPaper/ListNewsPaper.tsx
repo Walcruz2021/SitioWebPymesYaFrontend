@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import NewPaperCard from './NewPaper/NewPaper';
@@ -7,6 +8,7 @@ import { NewPaperItem } from "../../types/typeApp";
 import "./ListNewsPaper.css";
 import { formatWithOptions } from 'util';
 import Ads from "../../pages/Home/Ads";
+import { InfinitySpin } from "react-loader-spinner";
 
 const GRID_PATTERN = [
   'md:col-span-12',  // 0 → featured full-width
@@ -31,11 +33,18 @@ type Props = {
 
 
 const ListNewsPaper = (codigo: any) => {
+
+  const [stateLoading, setStateLoading] = useState(true)
   const dispatch = useDispatch();
   const listNewsPaper = useSelector(
     (state: RootState) => state.reducerNewsPaper.listNewsPaper
   );
 
+  useEffect(() => {
+    if (listNewsPaper && listNewsPaper.length) {
+      setStateLoading(false)
+    }
+  }, [listNewsPaper])
 
   return (
     <section className="min-h-screen bg-background px-3 py-16 sm:px-8 lg:px-14">
@@ -65,41 +74,75 @@ const ListNewsPaper = (codigo: any) => {
       </motion.div>
 
       {/* Dynamic Editorial Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-10">
-        {listNewsPaper &&
-          listNewsPaper.map((newpaper: NewPaperItem, index: number) => {
-            const patternIndex = index % GRID_PATTERN.length;
-            const colSpan = GRID_PATTERN[patternIndex];
-            const isFeatured = patternIndex === 0;
 
-            return (
-              <motion.div
-                key={newpaper._id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{
-                  duration: 0.7,
-                  delay: (index % 6) * 0.08,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className={colSpan}
-              >
-                <Link
-                  to={`/detailsNewPaper/${newpaper._id}`}
-                  state={{ newpaper }}
-                  className="group block no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm"
-                >
-                  <NewPaperCard
-                    newpaper={newpaper}
-                    isFeatured={isFeatured}
-                  />
-                </Link>
-              </motion.div>
-            );
-          })}
-      </div>
-       <Ads />
+      {
+        stateLoading ?
+          <div
+            style={{
+              height: "80vh",
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "20px",
+            }}
+          >
+            <InfinitySpin
+              width="200"
+              height="400"
+              color="#ebe4e4"
+            />
+
+            <h2
+              style={{
+                fontSize: "50px",
+                fontWeight: "400",
+                color: "#efe9e9",
+                margin: 0,
+              }}
+            >
+              Cargando...
+            </h2>
+          </div>
+
+          :
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-10">
+            {listNewsPaper &&
+              listNewsPaper.map((newpaper: NewPaperItem, index: number) => {
+                const patternIndex = index % GRID_PATTERN.length;
+                const colSpan = GRID_PATTERN[patternIndex];
+                const isFeatured = patternIndex === 0;
+
+                return (
+                  <motion.div
+                    key={newpaper._id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{
+                      duration: 0.7,
+                      delay: (index % 6) * 0.08,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                    }}
+                    className={colSpan}
+                  >
+                    <Link
+                      to={`/detailsNewPaper/${newpaper._id}`}
+                      state={{ newpaper }}
+                      className="group block no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-4 focus-visible:ring-offset-background rounded-sm"
+                    >
+                      <NewPaperCard
+                        newpaper={newpaper}
+                        isFeatured={isFeatured}
+                      />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+          </div>
+      }
+      <Ads />
     </section>
   );
 };

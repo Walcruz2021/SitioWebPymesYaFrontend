@@ -121,7 +121,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  className="text-gray-600 text-lg leading-relaxed font-light"
+                  className="text-gray-600 text-lg leading-relaxed font-light text-justify"
                 >
                   {note[key]}
                 </motion.p>
