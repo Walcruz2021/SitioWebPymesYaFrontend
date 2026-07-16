@@ -19,7 +19,7 @@ export default function CardsSection({ cards }) {
           transition={{ duration: 1 }}
           className="mb-14 sm:mb-16"
         >
-          <p className="text-muted-foreground/40 text-[12px] tracking-[0.5em] uppercase mb-4">
+          <p className="text-muted-foreground/60 text-[14px] tracking-[0.5em] uppercase mb-4">
             NUESTROS BENEFICIOS
           </p>
           <div className="flex items-end gap-6">

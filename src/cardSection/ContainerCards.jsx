@@ -39,7 +39,7 @@ const CARDS = [
 export default function ContainerCards() {
   return (
     <div className="min-h-screen bg-background selection:bg-foreground/10 containerCards">
-      <HeroSection />
+
       <CardsSection cards={CARDS} />
       <div className="containerOurServ">
         <div className="containerVideo">

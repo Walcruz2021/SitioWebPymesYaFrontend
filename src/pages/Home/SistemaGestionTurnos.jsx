@@ -21,6 +21,8 @@ import videoPublicidad from "../../../src/icons/finalPublicidad.mp4"
 import ContainerCards from "../../cardSection/ContainerCards";
 import BannerSistemaTurnos from "../../banner/BannerSistemaTurnos"
 import BannerSistemaTurnosOptions from "../../banner/BannerSistemaTurnosOptions"
+import BannerIAInformation from "../../banner/BannerIAInformation";
+import HeroSection from "../../cardSection/HeroSection";
 const SistemaGestionTurnos = () => {
 
 
@@ -28,6 +30,10 @@ const SistemaGestionTurnos = () => {
     <div>
       <BannerSistemaTurnos />
       <BannerSistemaTurnosOptions />
+      <BannerIAInformation />
+      <div className="bg-background selection:bg-foreground/10 containerCards">
+        <HeroSection />
+      </div>
       <ContainerCards />
 
       {/* <div className="containerOurServ">

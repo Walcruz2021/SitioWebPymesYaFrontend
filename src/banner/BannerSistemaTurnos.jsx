@@ -76,7 +76,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
         >
           <Star className="w-3 h-3 text-gray-400 fill-gray-400" />
           <span className="text-gray-400/90 text-[10px] tracking-[0.3em] uppercase font-medium">
-            Sistema para veterinarias y petshops
+            Sistema para veterinarias, petshops y negocios de ropa y calzados
           </span>
           <Star className="w-3 h-3 text-gray-400 fill-gray-400" />
         </motion.div>
@@ -114,7 +114,7 @@ export default function BannerSistemaTurnos({ onAccess }) {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-stone-300 text-xsmd:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-4"
         >
-          Turnos, ventas y gastos en un solo lugar.
+          Turnos,inventarios,compras,ventas y gastos en un solo lugar.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
