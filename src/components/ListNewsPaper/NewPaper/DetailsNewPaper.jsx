@@ -227,6 +227,20 @@ const DetailsCompany = () => {
                   </motion.h1>
                 );
 
+              case 'subtitle':
+                return (
+                  <motion.h1
+                    key={key}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                    className="font-editorial text-foreground text-2xl sm:text-4xl md:text-4xl leading-[1.05] tracking-[-0.02em] mb-8"
+                  >
+                    {value}
+                  </motion.h1>
+                );
+
               case 'summary':
                 return (
                   <motion.div
@@ -278,6 +292,34 @@ const DetailsCompany = () => {
                     <span className="mt-2 h-px w-6 shrink-0 bg-foreground/40" />
                     {value}
                   </motion.li>
+                );
+
+              case 'strong':
+                return (
+                  <motion.p
+                    key={key}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-40px' }}
+                    transition={{ duration: 0.7 }}
+                    className="
+        text-foreground
+        text-lg sm:text-xl
+        leading-[1.8]
+        font-bold
+        italic
+        mb-8
+        text-center
+        px-6 py-5
+        border-l-4
+        border-primary
+        bg-muted/40
+        rounded-r-lg
+        shadow-sm
+      "
+                  >
+                    “{value}”
+                  </motion.p>
                 );
 
               default:

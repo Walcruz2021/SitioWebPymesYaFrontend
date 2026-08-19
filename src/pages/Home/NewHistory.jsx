@@ -78,7 +78,7 @@ const [visible, setVisible] = useState(false);
 
               {/* Subtitle */}
               <p className="text-white/50 text-[13px] leading-snug font-light mb-4">
-                {subtitle || 'Crisis Financiera Burbuja.com'}
+                {subtitle || 'Sin IA tu negocio en crisis'}
               </p>
 
               {/* CTA */}
