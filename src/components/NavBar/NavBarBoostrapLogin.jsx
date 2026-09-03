@@ -103,7 +103,10 @@ function NavBarBoostrapLogin(userProp) {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {userLogedEmail ? (
+
+          {/* MOMENTANEAMENTE SE MANEJARA EL PROCESO DE LOGIN */}
+          
+          {/* {userLogedEmail ? (
             <NavDropdown
               title={userLogedName ? userLogedName : null}
               id="basic-nav-dropdown"
@@ -119,7 +122,7 @@ function NavBarBoostrapLogin(userProp) {
             <Nav.Link as={Link} to="/login">
               LOGIN
             </Nav.Link>
-          )}
+          )} */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
