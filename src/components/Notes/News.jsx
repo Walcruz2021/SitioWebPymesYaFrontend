@@ -12,8 +12,6 @@ const News = () => {
     (state) => state.reducerNewsPaper.listNewsPaper
   );
 
-
-
   useEffect(() => {
     dispatch(getNewsPaper());
   }, [dispatch]);
@@ -21,7 +19,10 @@ const News = () => {
   return (
     <>
      
-      <NewHistory/>
+     {/* newHistory es la card que se muestra en la parte inferior derecha de la pantalla, con un efecto de animación y un botón para cerrarla. */}
+      <NewHistory/> 
+
+      {/* listado de las noticias que se muestran en la parte central de la pantalla, con un efecto de animación y un botón para cerrarlas. */}
       <ListNewsPaper />
       
     </>

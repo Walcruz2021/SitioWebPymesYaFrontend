@@ -3,6 +3,7 @@ import rutaBackend from "../../helpers/rutaBackend";
 
 export const GET_NEWS_PAPER = "GET_NEWS_PAPER";
 export const ADD_NEWS_PAPER = "ADD_NEWS_PAPER";
+export const GET_NEWS_PAPER_BY_ID = "GET_NEWS_PAPER_BY_ID";
 
 export const getNewsPaper = () => {
     return async (dispatch) => {
@@ -19,3 +20,14 @@ export const addNewsPaper = (newsPaper) => {
     };
 };      
 
+export const getNewsPaperById = (id) => {
+    return async (dispatch) => {
+        try {
+            const response = await axios.get(`${rutaBackend}/api/newsPaper/${id}`);
+
+            dispatch({ type: GET_NEWS_PAPER_BY_ID, payload: response.data});
+        } catch (error) {
+            console.error("Error fetching news paper by ID:", error);
+        }
+    };
+};

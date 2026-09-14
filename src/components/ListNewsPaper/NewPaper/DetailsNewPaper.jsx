@@ -4,6 +4,7 @@ import { useLocation, Link } from 'react-router-dom';
 import "./DetailsNewPaper.css";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useDispatch, useSelector } from "react-redux";
+import { getNewsPaperById } from "../../../store/actions/actionsNewsPaper";
 
 import "./DetailsNewPaper.css";
 import Ads from "../../../pages/Home/Ads";
@@ -87,8 +88,29 @@ function ArticleImage({ src, index }) {
 }
 
 const DetailsCompany = () => {
+  const [newpaper, setNewPaper] = React.useState(null);
+
+
+  const dispatch = useDispatch();
   const location = useLocation();
-  const newpaper = location.state?.newpaper;
+  const dataNewPaper = useSelector((state) => state.reducerNewsPaper.newpaper.newPaper);
+
+  useEffect(() => {
+    if (location.state?.newpaper) {
+      setNewPaper(location.state.newpaper);
+    } else {
+      dispatch(getNewsPaperById("68100649a679483ec8a7f3fe"));
+    }
+  }, [location.state, dispatch]);
+
+  useEffect(() => {
+    if (!location.state?.newpaper && dataNewPaper) {
+      setNewPaper(dataNewPaper);
+    }
+  }, [dataNewPaper, location.state]);
+
+
+
   let imgCounter = 0;
 
   return (
@@ -97,7 +119,7 @@ const DetailsCompany = () => {
 
       <div className="min-h-screen bg-background">
         {/* Hero */}
-        {newpaper.img1 && <HeroImage src={newpaper.img1} alt={newpaper.title1} />}
+        {newpaper?.img1 && <HeroImage src={newpaper?.img1} alt={newpaper?.title1} />}
         {/* Back button */}
         <div className="px-5 sm:px-10 lg:px-20 mt-8">
           <motion.div
@@ -208,101 +230,104 @@ const DetailsCompany = () => {
           })} */}
         {/* Article body */}
         <article className="max-w-3xl mx-auto px-5 sm:px-10 lg:px-0 pb-28 pt-10">
-          {Object.entries(newpaper).map(([key, value]) => {
-            if (!value) return null;
-            const tag = getTag(key);
 
-            switch (tag) {
-              case 'title':
-                return (
-                  <motion.h1
-                    key={key}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    className="font-editorial text-foreground text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-[-0.02em] mb-8"
-                  >
-                    {value}
-                  </motion.h1>
-                );
+          {
+            newpaper &&
+            Object.entries(newpaper).map(([key, value]) => {
+              if (!value) return null;
+              const tag = getTag(key);
 
-              case 'subtitle':
-                return (
-                  <motion.h1
-                    key={key}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.1 }}
-                    className="font-editorial text-foreground text-2xl sm:text-4xl md:text-4xl leading-[1.05] tracking-[-0.02em] mb-8"
-                  >
-                    {value}
-                  </motion.h1>
-                );
-
-              case 'summary':
-                return (
-                  <motion.div
-                    key={key}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7, delay: 0.15 }}
-                    className="mb-10"
-                  >
-                    <p className="font-editorial italic text-xl sm:text-2xl text-muted-foreground leading-relaxed border-l-2 border-foreground pl-6 text-justify">
+              switch (tag) {
+                case 'title':
+                  return (
+                    <motion.h1
+                      key={key}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.1 }}
+                      className="font-editorial text-foreground text-4xl sm:text-5xl md:text-6xl leading-[1.05] tracking-[-0.02em] mb-8"
+                    >
                       {value}
-                    </p>
-                    <div className="mt-10 h-px w-full bg-border" />
-                  </motion.div>
-                );
+                    </motion.h1>
+                  );
 
-              case 'paragraph':
-                return (
-                  <motion.p
-                    key={key}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ duration: 0.7 }}
-                    className="text-muted-foreground text-base sm:text-lg leading-[1.85] font-light mb-7 text-justify"
-                  >
-                    {value}
-                  </motion.p>
-                );
+                case 'subtitle':
+                  return (
+                    <motion.h1
+                      key={key}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.1 }}
+                      className="font-editorial text-foreground text-2xl sm:text-4xl md:text-4xl leading-[1.05] tracking-[-0.02em] mb-8"
+                    >
+                      {value}
+                    </motion.h1>
+                  );
 
-              case 'img': {
-                if (key === 'img1') return null; // hero already rendered
-                imgCounter++;
-                const counter = imgCounter;
-                return <ArticleImage key={key} src={value} index={counter} />;
-              }
+                case 'summary':
+                  return (
+                    <motion.div
+                      key={key}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.7, delay: 0.15 }}
+                      className="mb-10"
+                    >
+                      <p className="font-editorial italic text-xl sm:text-2xl text-muted-foreground leading-relaxed border-l-2 border-foreground pl-6 text-justify">
+                        {value}
+                      </p>
+                      <div className="mt-10 h-px w-full bg-border" />
+                    </motion.div>
+                  );
 
-              case 'list':
-                return (
-                  <motion.li
-                    key={key}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="flex items-start gap-4 text-muted-foreground text-base sm:text-lg leading-relaxed font-light mb-4 list-none"
-                  >
-                    <span className="mt-2 h-px w-6 shrink-0 bg-foreground/40" />
-                    {value}
-                  </motion.li>
-                );
+                case 'paragraph':
+                  return (
+                    <motion.p
+                      key={key}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 0.7 }}
+                      className="text-muted-foreground text-base sm:text-lg leading-[1.85] font-light mb-7 text-justify"
+                    >
+                      {value}
+                    </motion.p>
+                  );
 
-              case 'strong':
-                return (
-                  <motion.p
-                    key={key}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-40px' }}
-                    transition={{ duration: 0.7 }}
-                    className="
+                case 'img': {
+                  if (key === 'img1') return null; // hero already rendered
+                  imgCounter++;
+                  const counter = imgCounter;
+                  return <ArticleImage key={key} src={value} index={counter} />;
+                }
+
+                case 'list':
+                  return (
+                    <motion.li
+                      key={key}
+                      initial={{ opacity: 0, x: -16 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6 }}
+                      className="flex items-start gap-4 text-muted-foreground text-base sm:text-lg leading-relaxed font-light mb-4 list-none"
+                    >
+                      <span className="mt-2 h-px w-6 shrink-0 bg-foreground/40" />
+                      {value}
+                    </motion.li>
+                  );
+
+                case 'strong':
+                  return (
+                    <motion.p
+                      key={key}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-40px' }}
+                      transition={{ duration: 0.7 }}
+                      className="
         text-foreground
         text-lg sm:text-xl
         leading-[1.8]
@@ -317,15 +342,15 @@ const DetailsCompany = () => {
         rounded-r-lg
         shadow-sm
       "
-                  >
-                    “{value}”
-                  </motion.p>
-                );
+                    >
+                      “{value}”
+                    </motion.p>
+                  );
 
-              default:
-                return null;
-            }
-          })}
+                default:
+                  return null;
+              }
+            })}
 
           {/* Footer rule */}
           <motion.div

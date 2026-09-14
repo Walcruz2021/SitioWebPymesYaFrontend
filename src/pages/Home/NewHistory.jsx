@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Zap } from 'lucide-react';
 
 const NewHistory = ({ title, subtitle, onClick, onDismiss }) => {
- 
-const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
+  const [visible, setVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
@@ -18,9 +19,12 @@ const [visible, setVisible] = useState(false);
     onDismiss?.();
   };
 
+  const handleClick = () => {
+    navigate('/detailsNewPaper/6a99b5fad5b9dd019e0c4197');
+  };
 
   return (
- <AnimatePresence>
+    <AnimatePresence>
       {visible && (
         <motion.div
           initial={{ opacity: 0, y: 80, scale: 0.95 }}
@@ -37,6 +41,7 @@ const [visible, setVisible] = useState(false);
             animate={{ opacity: hovered ? 1 : 0.5 }}
             transition={{ duration: 0.4 }}
             className="absolute -inset-[1px] rounded-sm bg-gradient-to-br from-white/20 via-white/5 to-transparent blur-sm"
+      
           />
 
           {/* Card */}
@@ -86,7 +91,8 @@ const [visible, setVisible] = useState(false);
                 animate={{ x: hovered ? 4 : 0 }}
                 transition={{ duration: 0.25 }}
                 className="flex items-center gap-2 text-white text-[11px] uppercase tracking-[0.2em] font-medium"
-              >
+                    onClick={handleClick}
+             >
                 <span>Leer ahora</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </motion.div>
@@ -116,3 +122,9 @@ const [visible, setVisible] = useState(false);
 };
 
 export default NewHistory;
+
+
+
+
+
+
