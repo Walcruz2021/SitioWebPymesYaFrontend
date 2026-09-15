@@ -93,7 +93,7 @@ const DetailsCompany = () => {
 
   const dispatch = useDispatch();
   const location = useLocation();
-  const dataNewPaper = useSelector((state) => state.reducerNewsPaper.newpaper.newPaper);
+  const dataNewPaper = useSelector((state) => state.reducerNewsPaper?.newpaper?.newPaper);
 
   useEffect(() => {
     if (location.state?.newpaper) {
