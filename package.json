@@ -59,10 +59,10 @@
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
   },
-  "homepage": "http://pymesya.com",
+  "homepage": "https://www.pymesya.com.ar",
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "doc": "jsdoc -c jsdoc.json"

@@ -1,50 +1,17 @@
+DEPLOY GITHUB
 
-    PAGINA PARA VISUALIZAR NUEVOS ICONOS
+--> insertar 
 
-    https://www.svgrepo.com/
+git remote -v
 
-    https://ionic.io/ionicons
+--> deberia aparecer el siguiente Mensaje
 
-    //CSS CON TAILWIND
-cuadricula: 
+origin  git@github.com:Walcruz2021/NOMBRE-REPO.git (fetch)
+origin  git@github.com:Walcruz2021/NOMBRE-REPO.git (push)
 
-    //
-FORMULARIO QUE SE ESTA OMITIENDO HASTA QUE FUNCIONE BIEN (ARCHIVO CONTACTS)
+-->insertar
 
-    <div className="containerTitForm">
-                    <h5>Formulario de Contacto</h5>
-                </div>
-                <Form className="Form" onSubmit={(e: any) => submitForm(e)}>
-                {/* <Form className="Form"> */}
-                    <h1>{message}</h1>
-                    <label className="labelForm" htmlFor="email">E-mail</label>
-                    <Field type="email" name="email" className="Field" value={stateInput.email} onChange={(e:any)=>onChange1(e)}/>
-                    {touched.email && errors.email &&
-                        <ErrorMessage
-                            name="email"
-                            component={() => <div className="error">{errors.email}</div>}
-                        ></ErrorMessage>
-                    }
+ git remote set-url origin https://github.com/Walcruz2021/SitioWebPymesYaFrontend.git
 
-                    <label className="labelForm" htmlFor="name">Nombre</label>
-                    <Field type="name" name="name" className="Field"  value={stateInput.name} onChange={(e:any)=>onChange1(e)}/>
-                    {touched.name && errors.name &&
-                        <ErrorMessage
-                            name="name"
-                            component={() => <div className="error">{errors.name}</div>}
-                        ></ErrorMessage>
-                    }
-
-                    <label className="labelForm" htmlFor="name">Mensaje</label>
-                    <Field type="message" name="message" className="Field" value={stateInput.message} onChange={(e:any)=>onChange1(e)} />
-                    {touched.message && errors.message &&
-                        <ErrorMessage
-                            name="message"
-                            component={() => <div className="error">{errors.message}</div>}
-                        ></ErrorMessage>
-                    }
-
-                    <button type="submit" disabled={isSubmitting} className="buttonForm">
-                        Submit
-                    </button>
-                </Form>
+ -->insertar
+ git push origin master
