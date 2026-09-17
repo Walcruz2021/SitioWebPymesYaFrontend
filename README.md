@@ -52,5 +52,13 @@ PymesYa es una plataforma diseñada para optimizar la búsqueda de negocios y pr
    - Esto asegura que los cambios sean revisados, probados, y fusionados de manera estructurada.  
 
 
+NOTAS: Se instala npm install --save-dev cross-env porque vercel pide que el build sea "build": "CI=false react-scripts build". Sin embargo desde windows cuando quiero generar el build npm run build no responde 
+y se necesita cambiar a  "build": "react-scripts build". Nuevamente al deployar en vercel tira error, por tanto
+con npm install --save-dev cross-env solventamos el error.
+Luego cambiamos a cross-env CI=false react-scripts build en build de package.json
+
+
+
+
 
 
