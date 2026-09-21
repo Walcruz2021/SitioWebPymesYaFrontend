@@ -11,5 +11,18 @@
       "destination": "https://www.pymesya.com.ar/:path*",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/detailsNewPaper/:id",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(facebookexternalhit|Facebot|WhatsApp|Twitterbot|LinkedInBot|Pinterest|TelegramBot).*"
+        }
+      ],
+      "destination": "/api/article?id=:id"
+    }
   ]
 }

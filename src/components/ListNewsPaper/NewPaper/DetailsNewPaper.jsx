@@ -9,6 +9,7 @@ import { getNewsPaperById } from "../../../store/actions/actionsNewsPaper";
 import "./DetailsNewPaper.css";
 import Ads from "../../../pages/Home/Ads";
 import { ArrowLeft } from 'lucide-react';
+import DemoSocialShare from '../../DemoSocialShare';
 
 const FIELD_ORDER = [
   'title1', 'summary1', 'img1',
@@ -110,6 +111,61 @@ const DetailsCompany = () => {
   }, [dataNewPaper, location.state]);
 
 
+  useEffect(() => {
+  if (!newpaper) return;
+
+  document.title = `${newpaper.title1} | PymesYa`;
+
+  const setMeta = (selector, attribute, value) => {
+    let element = document.querySelector(selector);
+
+    if (!element) {
+      element = document.createElement("meta");
+      element.setAttribute(attribute, selector.includes("property=")
+        ? selector.split('"')[1]
+        : selector.split('"')[1]
+      );
+      document.head.appendChild(element);
+    }
+
+    element.setAttribute("content", value || "");
+  };
+
+  setMeta(
+    'meta[property="og:title"]',
+    "property",
+    newpaper.title1
+  );
+
+  setMeta(
+    'meta[property="og:description"]',
+    "property",
+    newpaper.summary1
+  );
+
+  setMeta(
+    'meta[property="og:image"]',
+    "property",
+    newpaper.img1
+  );
+
+  setMeta(
+    'meta[property="og:url"]',
+    "property",
+    window.location.href
+  );
+
+  setMeta(
+    'meta[property="og:type"]',
+    "property",
+    "article"
+  );
+
+}, [newpaper]);
+
+  const articleUrl = newpaper?._id
+    ? `${window.location.origin}/detailsNewPaper/${newpaper._id}`
+    : window.location.href;
 
   let imgCounter = 0;
 
@@ -368,6 +424,25 @@ const DetailsCompany = () => {
           </motion.div>
         </article>
       </div>
+
+
+      <article>
+
+        {/* <h1>{article.title}</h1>
+        <p>{article.description}</p> */}
+
+
+
+        {/* contenido del artículo */}
+
+        <DemoSocialShare
+          title={newpaper?.title1}
+          description={newpaper?.summary1}
+          url={articleUrl}
+        />
+
+      </article>
+
     </div>
   );
 };
