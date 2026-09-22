@@ -34,6 +34,7 @@ export const addNewsPaper = (newsPaper) => {
 };      
 
 export const getNewsPaperById = (id) => {
+
     return async (dispatch) => {
         try {
             const response = await axios.get(`${rutaBackend}/api/newsPaper/${id}`);

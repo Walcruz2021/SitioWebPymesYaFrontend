@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 
 export default function SocialShare({ title, description, url }) {
+
   const [copied, setCopied] = useState(false);
 
   const encodedUrl = encodeURIComponent(url);

@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useDispatch, useSelector } from "react-redux";
 import { getNewsPaperById } from "../../../store/actions/actionsNewsPaper";
 
+
 import "./DetailsNewPaper.css";
 import Ads from "../../../pages/Home/Ads";
 import { ArrowLeft } from 'lucide-react';
@@ -28,6 +29,7 @@ const FIELD_ORDER = [
 function getTag(key) {
   return key.replace(/\d+$/, '');
 }
+
 
 
 function sortedEntries(obj) {
@@ -88,19 +90,28 @@ function ArticleImage({ src, index }) {
   );
 }
 
-const DetailsCompany = () => {
+const DetailsNewPaper = () => {
+  const { id } = useParams();
+
   const [newpaper, setNewPaper] = React.useState(null);
 
 
   const dispatch = useDispatch();
+
+  //es un Hook de React Router que te permite conocer información sobre la URL actual de tu aplicación.
   const location = useLocation();
+
   const dataNewPaper = useSelector((state) => state.reducerNewsPaper?.newpaper?.newPaper);
 
+  //cuando accedemos desde la pagina a unas de las cards se envia por parametro interno los valores del id y newPaper,
+  //si se accede desde un link externo solo se envia el id y se hace la peticion a la base de datos para obtener los valores del newpaper. 
+  //El id se lo obtiene de la url con el hook useParams y el newpaper se obtiene del estado global de redux con useSelector.
   useEffect(() => {
     if (location.state?.newpaper) {
       setNewPaper(location.state.newpaper);
-    } else {
-      dispatch(getNewsPaperById("68100649a679483ec8a7f3fe"));
+    }
+    else {
+      dispatch(getNewsPaperById(id));
     }
   }, [location.state, dispatch]);
 
@@ -112,56 +123,56 @@ const DetailsCompany = () => {
 
 
   useEffect(() => {
-  if (!newpaper) return;
+    if (!newpaper) return;
 
-  document.title = `${newpaper.title1} | PymesYa`;
+    document.title = `${newpaper.title1} | PymesYa`;
 
-  const setMeta = (selector, attribute, value) => {
-    let element = document.querySelector(selector);
+    const setMeta = (selector, attribute, value) => {
+      let element = document.querySelector(selector);
 
-    if (!element) {
-      element = document.createElement("meta");
-      element.setAttribute(attribute, selector.includes("property=")
-        ? selector.split('"')[1]
-        : selector.split('"')[1]
-      );
-      document.head.appendChild(element);
-    }
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, selector.includes("property=")
+          ? selector.split('"')[1]
+          : selector.split('"')[1]
+        );
+        document.head.appendChild(element);
+      }
 
-    element.setAttribute("content", value || "");
-  };
+      element.setAttribute("content", value || "");
+    };
 
-  setMeta(
-    'meta[property="og:title"]',
-    "property",
-    newpaper.title1
-  );
+    setMeta(
+      'meta[property="og:title"]',
+      "property",
+      newpaper.title1
+    );
 
-  setMeta(
-    'meta[property="og:description"]',
-    "property",
-    newpaper.summary1
-  );
+    setMeta(
+      'meta[property="og:description"]',
+      "property",
+      newpaper.summary1
+    );
 
-  setMeta(
-    'meta[property="og:image"]',
-    "property",
-    newpaper.img1
-  );
+    setMeta(
+      'meta[property="og:image"]',
+      "property",
+      newpaper.img1
+    );
 
-  setMeta(
-    'meta[property="og:url"]',
-    "property",
-    window.location.href
-  );
+    setMeta(
+      'meta[property="og:url"]',
+      "property",
+      window.location.href
+    );
 
-  setMeta(
-    'meta[property="og:type"]',
-    "property",
-    "article"
-  );
+    setMeta(
+      'meta[property="og:type"]',
+      "property",
+      "article"
+    );
 
-}, [newpaper]);
+  }, [newpaper]);
 
   const articleUrl = newpaper?._id
     ? `${window.location.origin}/detailsNewPaper/${newpaper._id}`
@@ -447,4 +458,4 @@ const DetailsCompany = () => {
   );
 };
 
-export default DetailsCompany;
+export default DetailsNewPaper;
