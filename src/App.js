@@ -33,6 +33,7 @@ import FormsLogin from "././forms/FormsLogin";
 import ListServices from "././pages/Home/ListServices";
 import {validationAddService} from "../src/store/actions/actions"
 import "./App.css";
+import SiteFooter from "./footer/SiteFooter";
 
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
@@ -152,6 +153,7 @@ const App = () => {
         />
       </Routes>
       {/* <ButtonBarBoostrap /> */}
+      <SiteFooter/>
     </BrowserRouter>
   );
 };

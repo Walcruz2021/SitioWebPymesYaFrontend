@@ -20,7 +20,7 @@ const NewHistory = ({ title, subtitle, onClick, onDismiss }) => {
   };
 
   const handleClick = () => {
-    navigate('/detailsNewPaper/6a99b5fad5b9dd019e0c4197');
+    navigate('/detailsNewPaper/6ac52156ebb9def1a2a862ec');
   };
 
   return (
@@ -83,7 +83,7 @@ const NewHistory = ({ title, subtitle, onClick, onDismiss }) => {
 
               {/* Subtitle */}
               <p className="text-white/50 text-[13px] leading-snug font-light mb-4">
-                {subtitle || '5 Cosas que tu Pyme puede Automatizar'}
+                {subtitle || 'Programar desde chico es un arte, y este artículo te enseñará cómo dominarlo. ¡No te lo pierdas!'}
               </p>
 
               {/* CTA */}

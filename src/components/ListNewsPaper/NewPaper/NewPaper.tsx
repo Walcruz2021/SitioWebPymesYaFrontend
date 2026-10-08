@@ -7,6 +7,7 @@ type Props = {
 };
 
 const NewPaper = ({ newpaper,isFeatured }: Props) => {
+
   // return (
   //   <div>
   //     <div className="CardNewPaper">

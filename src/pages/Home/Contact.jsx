@@ -24,7 +24,7 @@ export default function Contact() {
       <TechSection />
       <WhyUsSection />
       <ContactSection onPresupuesto={handlePresupuesto} />
-      <ContactFooter />
+      {/* <ContactFooter /> */}
     </div>
   );
 }
