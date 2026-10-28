@@ -104,7 +104,7 @@ const DetailsNewPaper = () => {
   //es un Hook de React Router que te permite conocer información sobre la URL actual de tu aplicación.
   const location = useLocation();
 
-  const dataNewPaper = useSelector((state) => state.reducerNewsPaper);
+  const dataNewPaper = useSelector((state) => state.reducerNewsPaper?.newpaper);
 
   //cuando accedemos desde la pagina a unas de las cards se envia por parametro interno los valores del id y newPaper,
   //si se accede desde un link externo solo se envia el id y se hace la peticion a la base de datos para obtener los valores del newpaper. 
@@ -366,6 +366,20 @@ const DetailsNewPaper = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.1 }}
                         className="font-editorial text-foreground text-2xl sm:text-4xl md:text-4xl leading-[1.05] tracking-[-0.02em] mb-8"
+                      >
+                        {value}
+                      </motion.h2>
+                    );
+
+                  case 'subtitleh':
+                    return (
+                      <motion.h2
+                        key={key}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.1 }}
+                        className="font-editorial text-foreground text-xl sm:text-4xl md:text-4xl leading-[1.05] tracking-[-0.02em] mb-8"
                       >
                         {value}
                       </motion.h2>

@@ -38,8 +38,8 @@ export const getNewsPaperById = (id) => {
     return async (dispatch) => {
         try {
             const response = await axios.get(`${rutaBackend}/api/newsPaper/${id}`);
-console.log(response,"actions")
-            dispatch({ type: GET_NEWS_PAPER_BY_ID, payload: response.data});
+
+            dispatch({ type: GET_NEWS_PAPER_BY_ID, payload: response.data?.newPaper});
         } catch (error) {
             console.error("Error fetching news paper by ID:", error);
         }
