@@ -104,8 +104,8 @@ const DetailsNewPaper = () => {
   //es un Hook de React Router que te permite conocer información sobre la URL actual de tu aplicación.
   const location = useLocation();
 
-  const dataNewPaper = useSelector((state) => state.reducerNewsPaper?.newpaper?.newPaper);
-
+  const dataNewPaper = useSelector((state) => state.reducerNewsPaper);
+console.log(dataNewPaper)
   //cuando accedemos desde la pagina a unas de las cards se envia por parametro interno los valores del id y newPaper,
   //si se accede desde un link externo solo se envia el id y se hace la peticion a la base de datos para obtener los valores del newpaper. 
   //El id se lo obtiene de la url con el hook useParams y el newpaper se obtiene del estado global de redux con useSelector.

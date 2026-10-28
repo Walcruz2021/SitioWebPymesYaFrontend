@@ -1,17 +1,28 @@
 DEPLOY GITHUB
 
---> insertar 
+--> configurar repositorio
+
+git remote set-url origin git@github-walcruz2021:Walcruz2021/SitioWebPymesYaFrontend.git
+
+--> verificar
 
 git remote -v
 
+
 --> deberia aparecer el siguiente Mensaje
 
-origin  git@github.com:Walcruz2021/NOMBRE-REPO.git (fetch)
-origin  git@github.com:Walcruz2021/NOMBRE-REPO.git (push)
+origin  git@github-walcruz2021:Walcruz2021/SitioWebPymesYaFrontend.git (fetch)
+origin  git@github-walcruz2021:Walcruz2021/SitioWebPymesYaFrontend.git (push)
 
--->insertar
+--> Probar la autenticacion
 
- git remote set-url origin https://github.com/Walcruz2021/SitioWebPymesYaFrontend.git
+ssh -T git@github-walcruz2021
+
+
+--> mensaje de bienvenida
+
+Hi Walcruz2021! You've successfully authenticated, but GitHub does not provide shell access.
+
 
  -->insertar
  git push origin master
