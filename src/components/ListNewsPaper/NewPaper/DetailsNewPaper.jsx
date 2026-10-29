@@ -130,6 +130,12 @@ const DetailsNewPaper = () => {
     }
   }, [dataNewPaper])
 
+    useEffect(() => {
+    if (newpaper) {
+      setStateLoading(false)
+    }
+  }, [newpaper])
+
   useEffect(() => {
     if (!newpaper) return;
 
