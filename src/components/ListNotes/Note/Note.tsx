@@ -4,78 +4,91 @@ import ButtonDonacion from "../../../pages/Home/ButtonDonacion"
 import { motion } from "framer-motion";
 
 type Props = {
-    note: NoteItem,
-    siguiente: () => void;
-    anterior: () => void;
-    buttonBack: boolean;
-    buttonNext: boolean;
+  note: NoteItem,
+  siguiente: () => void;
+  anterior: () => void;
+  buttonBack: boolean;
+  buttonNext: boolean;
 
 }
 
 const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
-    /**
-     * note (object of notes from BD) is passed by Object.keys. Return title1,paragraph1,img1,etc
-     */
-    const noteKeys = Object.keys(note)
+  /**
+   * note (object of notes from BD) is passed by Object.keys. Return title1,paragraph1,img1,etc
+   */
+  const noteKeys = Object.keys(note)
 
-    /**
-     * the functions clasifiedParagraph - clasifiedTitle - clasifiedImg determine 
-     * the type of tag (title-img-etc) to which the passed string belongs 
-     * (belongs(pertence))
-     * Since the values ​​come with a one or two digit number, at the end it is passed through the slice 
-     * function to eliminate them. return title of title1 or title10
-     */
+  /**
+   * the functions clasifiedParagraph - clasifiedTitle - clasifiedImg determine 
+   * the type of tag (title-img-etc) to which the passed string belongs 
+   * (belongs(pertence))
+   * Since the values ​​come with a one or two digit number, at the end it is passed through the slice 
+   * function to eliminate them. return title of title1 or title10
+   */
 
-    function clasifiedParagraph(value: string) {
-        value = value.slice(0, -1)
-        if (value === "paragraph") {
-            return true
-        } else {
-            value = value.slice(0, -1)
-            if (value === "paragraph") {
-                return true
-            } else return false
-        }
+  function clasifiedParagraph(value: string) {
+    value = value.slice(0, -1)
+    if (value === "paragraph") {
+      return true
+    } else {
+      value = value.slice(0, -1)
+      if (value === "paragraph") {
+        return true
+      } else return false
     }
-    function clasifiedTitle(value: string) {
-        value = value.slice(0, -1)
-        if (value === "title") {
-            return true
-        } else {
-            value = value.slice(0, -1)
-            if (value === "title") {
-                return true
-            } else return false
-        }
+  }
+  function clasifiedTitle(value: string) {
+    value = value.slice(0, -1)
+    if (value === "title") {
+      return true
+    } else {
+      value = value.slice(0, -1)
+      if (value === "title") {
+        return true
+      } else return false
     }
+  }
 
-    function clasifiedList(value: string) {
-        value = value.slice(0, -1)
-        if (value === "list") {
-            return true
-        } else {
-            value = value.slice(0, -1)
-            if (value === "list") {
-                return true
-            } else return false
-        }
+  function clasifiedList(value: string) {
+    value = value.slice(0, -1)
+    if (value === "list") {
+      return true
+    } else {
+      value = value.slice(0, -1)
+      if (value === "list") {
+        return true
+      } else return false
     }
+  }
 
 
-    function clasifiedImg(value: string) {
-        value = value.slice(0, -1)
-        //console.log(value)
-        if (value === "img") {
-            return true
-        } else {
-            value = value.slice(0, -1)
-            if (value === "img") {
-                return true
-            } else return false
-        }
+  function clasifiedImg(value: string) {
+    value = value.slice(0, -1)
+    //console.log(value)
+    if (value === "img") {
+      return true
+    } else {
+      value = value.slice(0, -1)
+      if (value === "img") {
+        return true
+      } else return false
     }
-    return (
-      <div className="min-h-screen bg-white text-gray-900">
+  }
+
+  function clasifiedNoteHighlighted(value: string) {
+    value = value.slice(0, -1)
+    if (value === "highlight") {
+      return true
+    } else {
+      value = value.slice(0, -1)
+      if (value === "highlight") {
+        return true
+      } else return false
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900">
 
       {/* HERO (usa la primera imagen si existe) */}
       {noteKeys.find(clasifiedImg) && (
@@ -101,18 +114,19 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
 
           {noteKeys.map((key, index) => {
             // TITULOS
-            if (clasifiedTitle(key)) {
-              return (
-                <motion.h2
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  className="text-3xl sm:text-4xl font-black leading-tight"
-                >
-                  {note[key]}
-                </motion.h2>
-              );
-            }
+            // if (clasifiedTitle(key)) {
+            //   return (
+            //     <motion.h2
+            //       key={index}
+            //       initial={{ opacity: 0, y: 20 }}
+            //       whileInView={{ opacity: 1, y: 0 }}
+            //       className="text-3xl sm:text-4xl font-black leading-tight"
+            //     >
+            //       {note[key]}
+            //     </motion.h2>
+            //   );
+            // }
+
 
             // PARRAFOS
             if (clasifiedParagraph(key)) {
@@ -154,9 +168,35 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                   <img
                     src={note[key]}
                     alt="contenido"
-                    className="w-full h-80 object-cover grayscale rounded-sm"
+                    className="w-full h-90 object-cover grayscale rounded-sm"
                   />
                 </motion.div>
+              );
+            }
+
+            // NOTA RESALTADA
+            if (clasifiedNoteHighlighted(key)) {
+              return (
+                <motion.p
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="
+        my-10
+        font-serif
+        text-xl
+        md:text-2xl
+        font-semibold
+        leading-relaxed
+        tracking-[-0.02em]
+        text-[#353535]
+        text-justify
+      "
+                >
+                  {note[key]}
+                </motion.p>
               );
             }
 
@@ -164,7 +204,7 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
           })}
 
           {/* BOTONES */}
-          <div className="flex gap-4 pt-10">
+          {/* <div className="flex gap-4 pt-10">
             {buttonBack && (
               <button
                 onClick={anterior}
@@ -182,11 +222,11 @@ const Note = ({ note, siguiente, anterior, buttonBack, buttonNext }: Props) => {
                 Siguiente
               </button>
             )}
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
-    )
+  )
 }
 
 export default Note

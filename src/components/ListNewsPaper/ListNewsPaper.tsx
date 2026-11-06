@@ -40,6 +40,7 @@ const ListNewsPaper = (codigo: any) => {
     (state: RootState) => state.reducerNewsPaper.listNewsPaper
   );
 
+
   useEffect(() => {
     if (listNewsPaper && listNewsPaper.length) {
       setStateLoading(false)

@@ -34,7 +34,7 @@ import ListServices from "././pages/Home/ListServices";
 import {validationAddService} from "../src/store/actions/actions"
 import "./App.css";
 import SiteFooter from "./footer/SiteFooter";
-
+import HistoryDetail from "./components/ListNotes/HistoryDetail";
 //React Router es la librería que nos permite navegar entre rutas en una aplicación en React. Para instalarla ejecutamos lo siguiente en t
 //terminal:
 //npm install react-router-dom
@@ -99,6 +99,7 @@ const App = () => {
 
         {/* <Route path="/empleos"><EmpleosProf/></Route> */}
         <Route path="/histories" element={<ListNotes />} />
+        <Route path="/histories/:id" element={<HistoryDetail />} />
 
         <Route path="/finanzas/bolsaValores" element={<Finanzas />} />
 
