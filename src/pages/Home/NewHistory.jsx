@@ -20,7 +20,7 @@ const NewHistory = ({ title, subtitle, onClick, onDismiss }) => {
   };
 
   const handleClick = () => {
-    navigate('/detailsNewPaper/6ae2429dc4d2d1bb4e8e7b84');
+    navigate('/histories');
   };
 
   return (
@@ -83,7 +83,7 @@ const NewHistory = ({ title, subtitle, onClick, onDismiss }) => {
 
               {/* Subtitle */}
               <p className="text-white/50 text-[13px] leading-snug font-light mb-4">
-                {subtitle || 'Descubrí cuáles son los errores más comunes que pueden estar afectando tu negocio y qué estrategias podés implementar para recuperar ventas y volver a crecer..'}
+                {subtitle || 'De la pobreza a crear WhatsApp: la historia de Jan Koum demuestra que una idea sencilla, nacida de una necesidad, puede cambiar la forma en que se comunica el mundo.'}
               </p>
 
               {/* CTA */}
